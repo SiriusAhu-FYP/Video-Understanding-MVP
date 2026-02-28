@@ -1,0 +1,22 @@
+[capture]
+window_title_keyword = "PotPlayer"
+screenshot_interval_ms = 500
+max_size = 512
+recording_duration_s = 20
+
+[algorithm]
+method = "mse"            # "mse" 或 "ssim"
+diff_threshold = 500.0    # MSE 阈值；SSIM 时改为 0~1 区间
+
+[queue]
+max_size = 50
+expiry_time_ms = 10000
+
+[llm]
+vllm_base_url = "http://localhost:8000/v1"
+vllm_model = "Qwen/Qwen3-VL-2B-Instruct"
+
+[log]
+log_dir = "logs"
+console_level = "INFO"
+file_level = "DEBUG"
