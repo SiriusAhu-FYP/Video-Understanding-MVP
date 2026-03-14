@@ -21,7 +21,7 @@ import win32gui
 from loguru import logger as lg
 
 from pipeline.config import get_settings
-from pipeline.models import KeyFrame
+from pipeline.models import KeyFrame, OnFrameSampledCallback
 
 if TYPE_CHECKING:
     from numpy.typing import NDArray
@@ -190,20 +190,22 @@ def run_capture_loop(
     queue: asyncio.Queue[KeyFrame],
     loop: asyncio.AbstractEventLoop,
     stop_event: asyncio.Event,
+    on_frame_sampled: OnFrameSampledCallback | None = None,
 ) -> None:
     """截图主循环：在独立线程中运行，将关键帧推入异步队列。
 
-    参数:
-        queue: 异步队列，用于向消费者传递关键帧
-        loop: 主事件循环引用，用于线程安全地操作异步队列
-        stop_event: 外部通知停止的信号
+    Args:
+        queue: 异步队列，用于向消费者传递关键帧。
+        loop: 主事件循环引用，用于线程安全地操作异步队列。
+        stop_event: 外部通知停止的信号。
+        on_frame_sampled: 可选回调，每次采样时调用（无论是否为关键帧），
+            签名: (frame_idx, timestamp_ms, frame_bgr, diff_value, is_keyframe, reason)。
     """
     cfg = get_settings()
     interval_s = cfg.capture.screenshot_interval_ms / 1000.0
     method = cfg.algorithm.method
     threshold = cfg.algorithm.diff_threshold
 
-    # 查找目标窗口
     hwnd, title = find_window(cfg.capture.window_title_keyword)
     lg.info(
         "截图循环启动 | 窗口='{}' | 间隔={}ms | 算法={} | 阈值={}",
@@ -212,6 +214,7 @@ def run_capture_loop(
 
     last_keyframe: NDArray[np.uint8] | None = None
     frame_id = 0
+    sample_idx = 0
     start_time = time.monotonic()
 
     while not stop_event.is_set():
@@ -224,19 +227,32 @@ def run_capture_loop(
             time.sleep(interval_s)
             continue
 
+        elapsed_ms = int((time.monotonic() - start_time) * 1000)
+
         if last_keyframe is not None:
             diff = compute_diff(last_keyframe, frame, method)
             if diff < threshold:
+                reason = f"差异值 {diff:.2f} < 阈值 {threshold:.2f}"
+                if on_frame_sampled is not None:
+                    on_frame_sampled(sample_idx, elapsed_ms, frame, diff, False, reason)
+                sample_idx += 1
                 elapsed = time.perf_counter() - iter_start
                 sleep_time = max(0, interval_s - elapsed)
                 time.sleep(sleep_time)
                 continue
+            reason = f"差异值 {diff:.2f} >= 阈值 {threshold:.2f}"
             lg.debug("帧差异值: {:.2f} (超过阈值 {:.2f})，提取为关键帧 #{}", diff, threshold, frame_id)
+        else:
+            diff = None
+            reason = "首帧，自动标记为关键帧"
 
         # 当前帧确认为关键帧
+        if on_frame_sampled is not None:
+            on_frame_sampled(sample_idx, elapsed_ms, frame, diff, True, reason)
+        sample_idx += 1
+
         last_keyframe = frame.copy()
         b64 = frame_to_base64(frame)
-        elapsed_ms = int((time.monotonic() - start_time) * 1000)
 
         keyframe = KeyFrame(
             frame_id=frame_id,
@@ -245,7 +261,6 @@ def run_capture_loop(
         )
         frame_id += 1
 
-        # 线程安全地把关键帧放入异步队列
         future = asyncio.run_coroutine_threadsafe(
             _safe_put(queue, keyframe), loop
         )
@@ -258,7 +273,7 @@ def run_capture_loop(
         sleep_time = max(0, interval_s - elapsed)
         time.sleep(sleep_time)
 
-    lg.info("截图循环结束 | 共提取 {} 个关键帧", frame_id)
+    lg.info("截图循环结束 | 共采样 {} 帧，提取 {} 个关键帧", sample_idx, frame_id)
 
 
 async def _safe_put(queue: asyncio.Queue[KeyFrame], item: KeyFrame) -> None:

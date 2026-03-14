@@ -57,6 +57,7 @@ class EnvSecrets(BaseSettings):
 
     deepseek_api_key: str = ""
     deepseek_api_base_url: str = "https://api.deepseek.com"
+    player_exe_path: str = ""
 
 
 # ── 聚合配置 ──────────────────────────────────────────────────────
