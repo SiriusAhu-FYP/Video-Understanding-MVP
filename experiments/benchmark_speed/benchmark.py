@@ -23,9 +23,10 @@ from statistics import mean, stdev
 from loguru import logger as lg
 from openai import OpenAI
 
-_PROJECT_ROOT = Path(__file__).resolve().parent
+_EXPERIMENT_DIR = Path(__file__).resolve().parent
+_PROJECT_ROOT = _EXPERIMENT_DIR.parent.parent
 _ASSETS_DIR = _PROJECT_ROOT / "assets"
-_REPORTS_DIR = _PROJECT_ROOT / "reports"
+_REPORTS_DIR = _EXPERIMENT_DIR / "reports"
 
 SUPPORTED_IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".bmp"}
 
