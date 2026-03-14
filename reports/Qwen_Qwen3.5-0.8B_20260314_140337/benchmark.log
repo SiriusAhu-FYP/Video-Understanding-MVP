@@ -1,0 +1,1706 @@
+2026-03-14 14:03:37.312 | INFO    | ============================================================
+2026-03-14 14:03:37.312 | INFO    | VLM 基准测试启动
+2026-03-14 14:03:37.312 | INFO    | 模型: Qwen/Qwen3.5-0.8B | 重复次数: 3 | 预热次数: 1
+2026-03-14 14:03:37.312 | INFO    | 报告目录: E:\FYP-PROJECT\core\Video-Understanding-MVP\reports\Qwen_Qwen3.5-0.8B_20260314_140337
+2026-03-14 14:03:37.312 | INFO    | ============================================================
+2026-03-14 14:03:37.331 | DEBUG   | 已加载图片: Arknights_01.png (7329.8 KB)
+2026-03-14 14:03:37.336 | DEBUG   | 已加载图片: Cyberpunk-2077_01.png (1414.6 KB)
+2026-03-14 14:03:37.339 | DEBUG   | 已加载图片: Genshin-Impact_01.png (933.2 KB)
+2026-03-14 14:03:37.344 | DEBUG   | 已加载图片: Minecraft_01.png (2343.7 KB)
+2026-03-14 14:03:37.347 | DEBUG   | 已加载图片: P5R_01.png (760.5 KB)
+2026-03-14 14:03:37.348 | DEBUG   | 已加载图片: SuperMarioBros_01.png (553.4 KB)
+2026-03-14 14:03:37.348 | INFO    | 共加载 6 张图片
+2026-03-14 14:03:37.348 | INFO    | 测试场景: ['short_desc', 'detailed_desc', 'object_detection', 'scene_classification', 'action_analysis', 'ui_recognition', 'bilingual', 'narrative']
+2026-03-14 14:03:37.349 | INFO    | ────────────────────────────────────────
+2026-03-14 14:03:37.349 | INFO    | 场景: 短文本描述 (short_desc)
+2026-03-14 14:03:37.349 | DEBUG   | 预热 1/1 | short_desc | Arknights_01.png
+2026-03-14 14:04:44.545 | INFO    | [1/144] short_desc | Arknights_01.png | run 1
+2026-03-14 14:04:46.894 | INFO    |   TTFT=2.280s | 吞吐=212.0 tok/s | 总耗时=2.313s | Tokens=7
+2026-03-14 14:04:46.894 | INFO    | [2/144] short_desc | Arknights_01.png | run 2
+2026-03-14 14:04:49.277 | INFO    |   TTFT=2.301s | 吞吐=147.4 tok/s | 总耗时=2.348s | Tokens=7
+2026-03-14 14:04:49.277 | INFO    | [3/144] short_desc | Arknights_01.png | run 3
+2026-03-14 14:04:51.706 | INFO    |   TTFT=2.311s | 吞吐=89.2 tok/s | 总耗时=2.390s | Tokens=7
+2026-03-14 14:04:51.707 | DEBUG   | 预热 1/1 | short_desc | Cyberpunk-2077_01.png
+2026-03-14 14:04:54.388 | INFO    | [4/144] short_desc | Cyberpunk-2077_01.png | run 1
+2026-03-14 14:04:56.656 | INFO    |   TTFT=2.135s | 吞吐=201.0 tok/s | 总耗时=2.235s | Tokens=20
+2026-03-14 14:04:56.657 | INFO    | [5/144] short_desc | Cyberpunk-2077_01.png | run 2
+2026-03-14 14:04:58.952 | INFO    |   TTFT=2.158s | 吞吐=193.1 tok/s | 总耗时=2.262s | Tokens=20
+2026-03-14 14:04:58.952 | INFO    | [6/144] short_desc | Cyberpunk-2077_01.png | run 3
+2026-03-14 14:05:01.273 | INFO    |   TTFT=2.153s | 吞吐=150.3 tok/s | 总耗时=2.286s | Tokens=20
+2026-03-14 14:05:01.273 | DEBUG   | 预热 1/1 | short_desc | Genshin-Impact_01.png
+2026-03-14 14:05:03.657 | INFO    | [7/144] short_desc | Genshin-Impact_01.png | run 1
+2026-03-14 14:05:05.973 | INFO    |   TTFT=2.132s | 吞吐=213.1 tok/s | 总耗时=2.283s | Tokens=32
+2026-03-14 14:05:05.973 | INFO    | [8/144] short_desc | Genshin-Impact_01.png | run 2
+2026-03-14 14:05:08.315 | INFO    |   TTFT=2.116s | 吞吐=167.4 tok/s | 总耗时=2.308s | Tokens=32
+2026-03-14 14:05:08.315 | INFO    | [9/144] short_desc | Genshin-Impact_01.png | run 3
+2026-03-14 14:05:10.613 | INFO    |   TTFT=2.108s | 吞吐=204.3 tok/s | 总耗时=2.264s | Tokens=32
+2026-03-14 14:05:10.613 | DEBUG   | 预热 1/1 | short_desc | Minecraft_01.png
+2026-03-14 14:05:13.525 | INFO    | [10/144] short_desc | Minecraft_01.png | run 1
+2026-03-14 14:05:15.918 | INFO    |   TTFT=2.175s | 吞吐=194.8 tok/s | 总耗时=2.360s | Tokens=36
+2026-03-14 14:05:15.918 | INFO    | [11/144] short_desc | Minecraft_01.png | run 2
+2026-03-14 14:05:18.306 | INFO    |   TTFT=2.160s | 吞吐=185.2 tok/s | 总耗时=2.355s | Tokens=36
+2026-03-14 14:05:18.306 | INFO    | [12/144] short_desc | Minecraft_01.png | run 3
+2026-03-14 14:05:20.701 | INFO    |   TTFT=2.168s | 吞吐=186.3 tok/s | 总耗时=2.361s | Tokens=36
+2026-03-14 14:05:20.701 | DEBUG   | 预热 1/1 | short_desc | P5R_01.png
+2026-03-14 14:05:23.227 | INFO    | [13/144] short_desc | P5R_01.png | run 1
+2026-03-14 14:05:25.643 | INFO    |   TTFT=2.117s | 吞吐=230.0 tok/s | 总耗时=2.382s | Tokens=61
+2026-03-14 14:05:25.643 | INFO    | [14/144] short_desc | P5R_01.png | run 2
+2026-03-14 14:05:28.033 | INFO    |   TTFT=2.089s | 吞吐=231.4 tok/s | 总耗时=2.352s | Tokens=61
+2026-03-14 14:05:28.033 | INFO    | [15/144] short_desc | P5R_01.png | run 3
+2026-03-14 14:05:30.438 | INFO    |   TTFT=2.103s | 吞吐=229.1 tok/s | 总耗时=2.369s | Tokens=61
+2026-03-14 14:05:30.438 | DEBUG   | 预热 1/1 | short_desc | SuperMarioBros_01.png
+2026-03-14 14:05:32.906 | INFO    | [16/144] short_desc | SuperMarioBros_01.png | run 1
+2026-03-14 14:05:35.274 | INFO    |   TTFT=2.119s | 吞吐=204.8 tok/s | 总耗时=2.334s | Tokens=44
+2026-03-14 14:05:35.275 | INFO    | [17/144] short_desc | SuperMarioBros_01.png | run 2
+2026-03-14 14:05:37.632 | INFO    |   TTFT=2.113s | 吞吐=209.4 tok/s | 总耗时=2.323s | Tokens=44
+2026-03-14 14:05:37.632 | INFO    | [18/144] short_desc | SuperMarioBros_01.png | run 3
+2026-03-14 14:05:39.980 | INFO    |   TTFT=2.107s | 吞吐=214.6 tok/s | 总耗时=2.312s | Tokens=44
+2026-03-14 14:05:39.980 | INFO    | ────────────────────────────────────────
+2026-03-14 14:05:39.980 | INFO    | 场景: 详细描述 (detailed_desc)
+2026-03-14 14:05:39.980 | DEBUG   | 预热 1/1 | detailed_desc | Arknights_01.png
+2026-03-14 14:05:42.237 | ERROR   | 预热失败: detailed_desc | Arknights_01.png
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 441, in run_benchmark
+    run_single_inference(client, model, scenario, img_name, img_b64, img_mime, -1)
+    │                    │       │      │         │         │        └ 'image/png'
+    │                    │       │      │         │         └ 'iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAIAAAAf3FwlAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAGYktHRAD/AP8A/6C9...
+    │                    │       │      │         └ 'Arknights_01.png'
+    │                    │       │      └ Scenario(id='detailed_desc', name='详细描述', prompt='请用中文详细描述这张游戏截图中的所有元素，包括角色、环境、颜色、光照、构图、以及任何可以观察到的细节。尽可能全面。', max_tokens=512)
+    │                    │       └ 'Qwen/Qwen3.5-0.8B'
+    │                    └ <openai.OpenAI object at 0x000002539419C710>
+    └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '请用中文详细描述这张游戏截图中的所有元素，包括角色、...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -13. (parameter=max_tokens, value=-13)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:05:42.390 | INFO    | [19/144] detailed_desc | Arknights_01.png | run 1
+2026-03-14 14:05:42.626 | ERROR   | 推理失败: detailed_desc | Arknights_01.png | run 1
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '请用中文详细描述这张游戏截图中的所有元素，包括角色、...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -13. (parameter=max_tokens, value=-13)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:05:42.752 | INFO    | [20/144] detailed_desc | Arknights_01.png | run 2
+2026-03-14 14:05:43.001 | ERROR   | 推理失败: detailed_desc | Arknights_01.png | run 2
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '请用中文详细描述这张游戏截图中的所有元素，包括角色、...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -13. (parameter=max_tokens, value=-13)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:05:43.118 | INFO    | [21/144] detailed_desc | Arknights_01.png | run 3
+2026-03-14 14:05:43.346 | ERROR   | 推理失败: detailed_desc | Arknights_01.png | run 3
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '请用中文详细描述这张游戏截图中的所有元素，包括角色、...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -13. (parameter=max_tokens, value=-13)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:05:43.464 | DEBUG   | 预热 1/1 | detailed_desc | Cyberpunk-2077_01.png
+2026-03-14 14:05:45.631 | INFO    | [22/144] detailed_desc | Cyberpunk-2077_01.png | run 1
+2026-03-14 14:05:49.762 | INFO    |   TTFT=2.143s | 吞吐=261.9 tok/s | 总耗时=4.098s | Tokens=512
+2026-03-14 14:05:49.762 | INFO    | [23/144] detailed_desc | Cyberpunk-2077_01.png | run 2
+2026-03-14 14:05:53.849 | INFO    |   TTFT=2.135s | 吞吐=266.8 tok/s | 总耗时=4.054s | Tokens=512
+2026-03-14 14:05:53.849 | INFO    | [24/144] detailed_desc | Cyberpunk-2077_01.png | run 3
+2026-03-14 14:05:57.944 | INFO    |   TTFT=2.128s | 吞吐=264.9 tok/s | 总耗时=4.060s | Tokens=512
+2026-03-14 14:05:57.944 | DEBUG   | 预热 1/1 | detailed_desc | Genshin-Impact_01.png
+2026-03-14 14:06:01.965 | INFO    | [25/144] detailed_desc | Genshin-Impact_01.png | run 1
+2026-03-14 14:06:05.981 | INFO    |   TTFT=2.131s | 吞吐=270.0 tok/s | 总耗时=3.984s | Tokens=500
+2026-03-14 14:06:05.981 | INFO    | [26/144] detailed_desc | Genshin-Impact_01.png | run 2
+2026-03-14 14:06:09.982 | INFO    |   TTFT=2.107s | 吞吐=268.8 tok/s | 总耗时=3.968s | Tokens=500
+2026-03-14 14:06:09.982 | INFO    | [27/144] detailed_desc | Genshin-Impact_01.png | run 3
+2026-03-14 14:06:13.984 | INFO    |   TTFT=2.099s | 吞吐=267.6 tok/s | 总耗时=3.967s | Tokens=500
+2026-03-14 14:06:13.985 | DEBUG   | 预热 1/1 | detailed_desc | Minecraft_01.png
+2026-03-14 14:06:17.612 | INFO    | [28/144] detailed_desc | Minecraft_01.png | run 1
+2026-03-14 14:06:21.254 | INFO    |   TTFT=2.151s | 吞吐=258.0 tok/s | 总耗时=3.609s | Tokens=376
+2026-03-14 14:06:21.254 | INFO    | [29/144] detailed_desc | Minecraft_01.png | run 2
+2026-03-14 14:06:24.957 | INFO    |   TTFT=2.197s | 吞吐=255.4 tok/s | 总耗时=3.669s | Tokens=376
+2026-03-14 14:06:24.957 | INFO    | [30/144] detailed_desc | Minecraft_01.png | run 3
+2026-03-14 14:06:28.574 | INFO    |   TTFT=2.136s | 吞吐=259.9 tok/s | 总耗时=3.583s | Tokens=376
+2026-03-14 14:06:28.574 | DEBUG   | 预热 1/1 | detailed_desc | P5R_01.png
+2026-03-14 14:06:32.616 | INFO    | [31/144] detailed_desc | P5R_01.png | run 1
+2026-03-14 14:06:36.658 | INFO    |   TTFT=2.110s | 吞吐=269.8 tok/s | 总耗时=4.008s | Tokens=512
+2026-03-14 14:06:36.658 | INFO    | [32/144] detailed_desc | P5R_01.png | run 2
+2026-03-14 14:06:40.732 | INFO    |   TTFT=2.105s | 吞吐=264.8 tok/s | 总耗时=4.039s | Tokens=512
+2026-03-14 14:06:40.732 | INFO    | [33/144] detailed_desc | P5R_01.png | run 3
+2026-03-14 14:06:44.798 | INFO    |   TTFT=2.090s | 吞吐=263.6 tok/s | 总耗时=4.033s | Tokens=512
+2026-03-14 14:06:44.798 | DEBUG   | 预热 1/1 | detailed_desc | SuperMarioBros_01.png
+2026-03-14 14:06:48.886 | INFO    | [34/144] detailed_desc | SuperMarioBros_01.png | run 1
+2026-03-14 14:06:53.000 | INFO    |   TTFT=2.095s | 吞吐=257.8 tok/s | 总耗时=4.081s | Tokens=512
+2026-03-14 14:06:53.000 | INFO    | [35/144] detailed_desc | SuperMarioBros_01.png | run 2
+2026-03-14 14:06:57.083 | INFO    |   TTFT=2.109s | 吞吐=264.2 tok/s | 总耗时=4.047s | Tokens=512
+2026-03-14 14:06:57.083 | INFO    | [36/144] detailed_desc | SuperMarioBros_01.png | run 3
+2026-03-14 14:07:01.237 | INFO    |   TTFT=2.127s | 吞吐=257.0 tok/s | 总耗时=4.120s | Tokens=512
+2026-03-14 14:07:01.237 | INFO    | ────────────────────────────────────────
+2026-03-14 14:07:01.237 | INFO    | 场景: JSON 物体检测 (object_detection)
+2026-03-14 14:07:01.237 | DEBUG   | 预热 1/1 | object_detection | Arknights_01.png
+2026-03-14 14:07:03.500 | ERROR   | 预热失败: object_detection | Arknights_01.png
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 441, in run_benchmark
+    run_single_inference(client, model, scenario, img_name, img_b64, img_mime, -1)
+    │                    │       │      │         │         │        └ 'image/png'
+    │                    │       │      │         │         └ 'iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAIAAAAf3FwlAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAGYktHRAD/AP8A/6C9...
+    │                    │       │      │         └ 'Arknights_01.png'
+    │                    │       │      └ Scenario(id='object_detection', name='JSON 物体检测', prompt='识别这张游戏截图中的所有主要物体和角色，输出 JSON 格式，每个对象包含 bbox_2d (左上角x, 左上角y, 右下角x, 右下...
+    │                    │       └ 'Qwen/Qwen3.5-0.8B'
+    │                    └ <openai.OpenAI object at 0x000002539419C710>
+    └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '识别这张游戏截图中的所有主要物体和角色，输出 JSO...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -57. (parameter=max_tokens, value=-57)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:07:03.643 | INFO    | [37/144] object_detection | Arknights_01.png | run 1
+2026-03-14 14:07:03.867 | ERROR   | 推理失败: object_detection | Arknights_01.png | run 1
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '识别这张游戏截图中的所有主要物体和角色，输出 JSO...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -57. (parameter=max_tokens, value=-57)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:07:03.988 | INFO    | [38/144] object_detection | Arknights_01.png | run 2
+2026-03-14 14:07:04.213 | ERROR   | 推理失败: object_detection | Arknights_01.png | run 2
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '识别这张游戏截图中的所有主要物体和角色，输出 JSO...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -57. (parameter=max_tokens, value=-57)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:07:04.334 | INFO    | [39/144] object_detection | Arknights_01.png | run 3
+2026-03-14 14:07:04.568 | ERROR   | 推理失败: object_detection | Arknights_01.png | run 3
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '识别这张游戏截图中的所有主要物体和角色，输出 JSO...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -57. (parameter=max_tokens, value=-57)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:07:04.694 | DEBUG   | 预热 1/1 | object_detection | Cyberpunk-2077_01.png
+2026-03-14 14:07:06.898 | INFO    | [40/144] object_detection | Cyberpunk-2077_01.png | run 1
+2026-03-14 14:07:11.045 | INFO    |   TTFT=2.136s | 吞吐=259.1 tok/s | 总耗时=4.112s | Tokens=512
+2026-03-14 14:07:11.045 | INFO    | [41/144] object_detection | Cyberpunk-2077_01.png | run 2
+2026-03-14 14:07:15.184 | INFO    |   TTFT=2.123s | 吞吐=258.2 tok/s | 总耗时=4.106s | Tokens=512
+2026-03-14 14:07:15.184 | INFO    | [42/144] object_detection | Cyberpunk-2077_01.png | run 3
+2026-03-14 14:07:19.283 | INFO    |   TTFT=2.129s | 吞吐=264.3 tok/s | 总耗时=4.066s | Tokens=512
+2026-03-14 14:07:19.283 | DEBUG   | 预热 1/1 | object_detection | Genshin-Impact_01.png
+2026-03-14 14:07:23.416 | INFO    | [43/144] object_detection | Genshin-Impact_01.png | run 1
+2026-03-14 14:07:27.450 | INFO    |   TTFT=2.100s | 吞吐=269.7 tok/s | 总耗时=3.999s | Tokens=512
+2026-03-14 14:07:27.450 | INFO    | [44/144] object_detection | Genshin-Impact_01.png | run 2
+2026-03-14 14:07:31.512 | INFO    |   TTFT=2.116s | 吞吐=267.5 tok/s | 总耗时=4.029s | Tokens=512
+2026-03-14 14:07:31.512 | INFO    | [45/144] object_detection | Genshin-Impact_01.png | run 3
+2026-03-14 14:07:35.519 | INFO    |   TTFT=2.110s | 吞吐=275.0 tok/s | 总耗时=3.972s | Tokens=512
+2026-03-14 14:07:35.520 | DEBUG   | 预热 1/1 | object_detection | Minecraft_01.png
+2026-03-14 14:07:39.685 | INFO    | [46/144] object_detection | Minecraft_01.png | run 1
+2026-03-14 14:07:43.845 | INFO    |   TTFT=2.146s | 吞吐=258.5 tok/s | 总耗时=4.126s | Tokens=512
+2026-03-14 14:07:43.846 | INFO    | [47/144] object_detection | Minecraft_01.png | run 2
+2026-03-14 14:07:48.021 | INFO    |   TTFT=2.152s | 吞吐=257.3 tok/s | 总耗时=4.142s | Tokens=512
+2026-03-14 14:07:48.021 | INFO    | [48/144] object_detection | Minecraft_01.png | run 3
+2026-03-14 14:07:52.208 | INFO    |   TTFT=2.141s | 吞吐=254.8 tok/s | 总耗时=4.151s | Tokens=512
+2026-03-14 14:07:52.209 | DEBUG   | 预热 1/1 | object_detection | P5R_01.png
+2026-03-14 14:07:56.286 | INFO    | [49/144] object_detection | P5R_01.png | run 1
+2026-03-14 14:08:00.340 | INFO    |   TTFT=2.094s | 吞吐=265.8 tok/s | 总耗时=4.020s | Tokens=512
+2026-03-14 14:08:00.340 | INFO    | [50/144] object_detection | P5R_01.png | run 2
+2026-03-14 14:08:04.390 | INFO    |   TTFT=2.095s | 吞吐=266.5 tok/s | 总耗时=4.016s | Tokens=512
+2026-03-14 14:08:04.391 | INFO    | [51/144] object_detection | P5R_01.png | run 3
+2026-03-14 14:08:08.437 | INFO    |   TTFT=2.098s | 吞吐=267.4 tok/s | 总耗时=4.012s | Tokens=512
+2026-03-14 14:08:08.437 | DEBUG   | 预热 1/1 | object_detection | SuperMarioBros_01.png
+2026-03-14 14:08:12.541 | INFO    | [52/144] object_detection | SuperMarioBros_01.png | run 1
+2026-03-14 14:08:16.649 | INFO    |   TTFT=2.134s | 吞吐=263.9 tok/s | 总耗时=4.074s | Tokens=512
+2026-03-14 14:08:16.649 | INFO    | [53/144] object_detection | SuperMarioBros_01.png | run 2
+2026-03-14 14:08:20.707 | INFO    |   TTFT=2.095s | 吞吐=265.7 tok/s | 总耗时=4.022s | Tokens=512
+2026-03-14 14:08:20.707 | INFO    | [54/144] object_detection | SuperMarioBros_01.png | run 3
+2026-03-14 14:08:24.715 | INFO    |   TTFT=2.108s | 吞吐=274.3 tok/s | 总耗时=3.975s | Tokens=512
+2026-03-14 14:08:24.715 | INFO    | ────────────────────────────────────────
+2026-03-14 14:08:24.715 | INFO    | 场景: 场景分类 (scene_classification)
+2026-03-14 14:08:24.715 | DEBUG   | 预热 1/1 | scene_classification | Arknights_01.png
+2026-03-14 14:08:26.953 | ERROR   | 预热失败: scene_classification | Arknights_01.png
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 441, in run_benchmark
+    run_single_inference(client, model, scenario, img_name, img_b64, img_mime, -1)
+    │                    │       │      │         │         │        └ 'image/png'
+    │                    │       │      │         │         └ 'iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAIAAAAf3FwlAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAGYktHRAD/AP8A/6C9...
+    │                    │       │      │         └ 'Arknights_01.png'
+    │                    │       │      └ Scenario(id='scene_classification', name='场景分类', prompt='对这张游戏截图进行分类，给出：1) 游戏类型（如RPG/动作/平台/射击等）；2) 场景类型（如战斗/探索/对话/菜单等）。只输出分类结...
+    │                    │       └ 'Qwen/Qwen3.5-0.8B'
+    │                    └ <openai.OpenAI object at 0x000002539419C710>
+    └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '对这张游戏截图进行分类，给出：1) 游戏类型（如RP...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -34. (parameter=max_tokens, value=-34)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:08:27.103 | INFO    | [55/144] scene_classification | Arknights_01.png | run 1
+2026-03-14 14:08:27.325 | ERROR   | 推理失败: scene_classification | Arknights_01.png | run 1
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '对这张游戏截图进行分类，给出：1) 游戏类型（如RP...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -34. (parameter=max_tokens, value=-34)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:08:27.442 | INFO    | [56/144] scene_classification | Arknights_01.png | run 2
+2026-03-14 14:08:27.675 | ERROR   | 推理失败: scene_classification | Arknights_01.png | run 2
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '对这张游戏截图进行分类，给出：1) 游戏类型（如RP...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -34. (parameter=max_tokens, value=-34)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:08:27.799 | INFO    | [57/144] scene_classification | Arknights_01.png | run 3
+2026-03-14 14:08:28.024 | ERROR   | 推理失败: scene_classification | Arknights_01.png | run 3
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '对这张游戏截图进行分类，给出：1) 游戏类型（如RP...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -34. (parameter=max_tokens, value=-34)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:08:28.144 | DEBUG   | 预热 1/1 | scene_classification | Cyberpunk-2077_01.png
+2026-03-14 14:08:28.409 | INFO    | [58/144] scene_classification | Cyberpunk-2077_01.png | run 1
+2026-03-14 14:08:30.667 | INFO    |   TTFT=2.157s | 吞吐=182.0 tok/s | 总耗时=2.223s | Tokens=12
+2026-03-14 14:08:30.667 | INFO    | [59/144] scene_classification | Cyberpunk-2077_01.png | run 2
+2026-03-14 14:08:32.954 | INFO    |   TTFT=2.173s | 吞吐=148.0 tok/s | 总耗时=2.254s | Tokens=12
+2026-03-14 14:08:32.954 | INFO    | [60/144] scene_classification | Cyberpunk-2077_01.png | run 3
+2026-03-14 14:08:35.276 | INFO    |   TTFT=2.184s | 吞吐=115.5 tok/s | 总耗时=2.288s | Tokens=12
+2026-03-14 14:08:35.276 | DEBUG   | 预热 1/1 | scene_classification | Genshin-Impact_01.png
+2026-03-14 14:08:37.522 | INFO    | [61/144] scene_classification | Genshin-Impact_01.png | run 1
+2026-03-14 14:08:39.772 | INFO    |   TTFT=2.124s | 吞吐=130.7 tok/s | 总耗时=2.216s | Tokens=12
+2026-03-14 14:08:39.772 | INFO    | [62/144] scene_classification | Genshin-Impact_01.png | run 2
+2026-03-14 14:08:42.072 | INFO    |   TTFT=2.168s | 吞吐=122.1 tok/s | 总耗时=2.266s | Tokens=12
+2026-03-14 14:08:42.072 | INFO    | [63/144] scene_classification | Genshin-Impact_01.png | run 3
+2026-03-14 14:08:44.362 | INFO    |   TTFT=2.163s | 吞吐=128.9 tok/s | 总耗时=2.257s | Tokens=12
+2026-03-14 14:08:44.362 | DEBUG   | 预热 1/1 | scene_classification | Minecraft_01.png
+2026-03-14 14:08:46.622 | INFO    | [64/144] scene_classification | Minecraft_01.png | run 1
+2026-03-14 14:08:48.883 | INFO    |   TTFT=2.168s | 吞吐=172.3 tok/s | 总耗时=2.226s | Tokens=10
+2026-03-14 14:08:48.883 | INFO    | [65/144] scene_classification | Minecraft_01.png | run 2
+2026-03-14 14:08:51.168 | INFO    |   TTFT=2.175s | 吞吐=130.3 tok/s | 总耗时=2.252s | Tokens=10
+2026-03-14 14:08:51.169 | INFO    | [66/144] scene_classification | Minecraft_01.png | run 3
+2026-03-14 14:08:53.456 | INFO    |   TTFT=2.172s | 吞吐=125.0 tok/s | 总耗时=2.252s | Tokens=10
+2026-03-14 14:08:53.456 | DEBUG   | 预热 1/1 | scene_classification | P5R_01.png
+2026-03-14 14:08:55.655 | INFO    | [67/144] scene_classification | P5R_01.png | run 1
+2026-03-14 14:08:57.872 | INFO    |   TTFT=2.099s | 吞吐=152.2 tok/s | 总耗时=2.184s | Tokens=13
+2026-03-14 14:08:57.872 | INFO    | [68/144] scene_classification | P5R_01.png | run 2
+2026-03-14 14:09:00.104 | INFO    |   TTFT=2.112s | 吞吐=149.7 tok/s | 总耗时=2.199s | Tokens=13
+2026-03-14 14:09:00.104 | INFO    | [69/144] scene_classification | P5R_01.png | run 3
+2026-03-14 14:09:02.366 | INFO    |   TTFT=2.116s | 吞吐=115.1 tok/s | 总耗时=2.229s | Tokens=13
+2026-03-14 14:09:02.366 | DEBUG   | 预热 1/1 | scene_classification | SuperMarioBros_01.png
+2026-03-14 14:09:04.631 | INFO    | [70/144] scene_classification | SuperMarioBros_01.png | run 1
+2026-03-14 14:09:06.820 | INFO    |   TTFT=2.107s | 吞吐=201.1 tok/s | 总耗时=2.156s | Tokens=10
+2026-03-14 14:09:06.821 | INFO    | [71/144] scene_classification | SuperMarioBros_01.png | run 2
+2026-03-14 14:09:09.024 | INFO    |   TTFT=2.115s | 吞吐=182.2 tok/s | 总耗时=2.170s | Tokens=10
+2026-03-14 14:09:09.024 | INFO    | [72/144] scene_classification | SuperMarioBros_01.png | run 3
+2026-03-14 14:09:11.243 | INFO    |   TTFT=2.123s | 吞吐=161.8 tok/s | 总耗时=2.184s | Tokens=10
+2026-03-14 14:09:11.243 | INFO    | ────────────────────────────────────────
+2026-03-14 14:09:11.243 | INFO    | 场景: 角色动作分析 (action_analysis)
+2026-03-14 14:09:11.243 | DEBUG   | 预热 1/1 | action_analysis | Arknights_01.png
+2026-03-14 14:09:13.499 | ERROR   | 预热失败: action_analysis | Arknights_01.png
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 441, in run_benchmark
+    run_single_inference(client, model, scenario, img_name, img_b64, img_mime, -1)
+    │                    │       │      │         │         │        └ 'image/png'
+    │                    │       │      │         │         └ 'iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAIAAAAf3FwlAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAGYktHRAD/AP8A/6C9...
+    │                    │       │      │         └ 'Arknights_01.png'
+    │                    │       │      └ Scenario(id='action_analysis', name='角色动作分析', prompt='分析这张游戏截图中角色正在执行什么动作或行为。描述角色的姿态、朝向、与环境的交互，以及可能正在进行的游戏操作。', max_tokens=256)
+    │                    │       └ 'Qwen/Qwen3.5-0.8B'
+    │                    └ <openai.OpenAI object at 0x000002539419C710>
+    └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '分析这张游戏截图中角色正在执行什么动作或行为。描述角...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -12. (parameter=max_tokens, value=-12)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:09:13.635 | INFO    | [73/144] action_analysis | Arknights_01.png | run 1
+2026-03-14 14:09:13.860 | ERROR   | 推理失败: action_analysis | Arknights_01.png | run 1
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '分析这张游戏截图中角色正在执行什么动作或行为。描述角...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -12. (parameter=max_tokens, value=-12)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:09:13.977 | INFO    | [74/144] action_analysis | Arknights_01.png | run 2
+2026-03-14 14:09:14.213 | ERROR   | 推理失败: action_analysis | Arknights_01.png | run 2
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '分析这张游戏截图中角色正在执行什么动作或行为。描述角...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -12. (parameter=max_tokens, value=-12)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:09:14.342 | INFO    | [75/144] action_analysis | Arknights_01.png | run 3
+2026-03-14 14:09:14.569 | ERROR   | 推理失败: action_analysis | Arknights_01.png | run 3
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '分析这张游戏截图中角色正在执行什么动作或行为。描述角...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -12. (parameter=max_tokens, value=-12)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:09:14.692 | DEBUG   | 预热 1/1 | action_analysis | Cyberpunk-2077_01.png
+2026-03-14 14:09:15.973 | INFO    | [76/144] action_analysis | Cyberpunk-2077_01.png | run 1
+2026-03-14 14:09:19.115 | INFO    |   TTFT=2.132s | 吞吐=262.0 tok/s | 总耗时=3.109s | Tokens=256
+2026-03-14 14:09:19.115 | INFO    | [77/144] action_analysis | Cyberpunk-2077_01.png | run 2
+2026-03-14 14:09:22.306 | INFO    |   TTFT=2.125s | 吞吐=248.1 tok/s | 总耗时=3.156s | Tokens=256
+2026-03-14 14:09:22.306 | INFO    | [78/144] action_analysis | Cyberpunk-2077_01.png | run 3
+2026-03-14 14:09:25.476 | INFO    |   TTFT=2.127s | 吞吐=253.8 tok/s | 总耗时=3.136s | Tokens=256
+2026-03-14 14:09:25.476 | DEBUG   | 预热 1/1 | action_analysis | Genshin-Impact_01.png
+2026-03-14 14:09:28.602 | INFO    | [79/144] action_analysis | Genshin-Impact_01.png | run 1
+2026-03-14 14:09:31.721 | INFO    |   TTFT=2.104s | 吞吐=261.1 tok/s | 总耗时=3.084s | Tokens=256
+2026-03-14 14:09:31.721 | INFO    | [80/144] action_analysis | Genshin-Impact_01.png | run 2
+2026-03-14 14:09:34.835 | INFO    |   TTFT=2.101s | 吞吐=263.4 tok/s | 总耗时=3.073s | Tokens=256
+2026-03-14 14:09:34.835 | INFO    | [81/144] action_analysis | Genshin-Impact_01.png | run 3
+2026-03-14 14:09:38.010 | INFO    |   TTFT=2.139s | 吞吐=255.8 tok/s | 总耗时=3.140s | Tokens=256
+2026-03-14 14:09:38.010 | DEBUG   | 预热 1/1 | action_analysis | Minecraft_01.png
+2026-03-14 14:09:41.229 | INFO    | [82/144] action_analysis | Minecraft_01.png | run 1
+2026-03-14 14:09:44.441 | INFO    |   TTFT=2.153s | 吞吐=249.7 tok/s | 总耗时=3.179s | Tokens=256
+2026-03-14 14:09:44.441 | INFO    | [83/144] action_analysis | Minecraft_01.png | run 2
+2026-03-14 14:09:47.647 | INFO    |   TTFT=2.143s | 吞吐=249.2 tok/s | 总耗时=3.170s | Tokens=256
+2026-03-14 14:09:47.647 | INFO    | [84/144] action_analysis | Minecraft_01.png | run 3
+2026-03-14 14:09:50.854 | INFO    |   TTFT=2.148s | 吞吐=250.1 tok/s | 总耗时=3.172s | Tokens=256
+2026-03-14 14:09:50.854 | DEBUG   | 预热 1/1 | action_analysis | P5R_01.png
+2026-03-14 14:09:53.982 | INFO    | [85/144] action_analysis | P5R_01.png | run 1
+2026-03-14 14:09:57.074 | INFO    |   TTFT=2.093s | 吞吐=265.0 tok/s | 总耗时=3.059s | Tokens=256
+2026-03-14 14:09:57.074 | INFO    | [86/144] action_analysis | P5R_01.png | run 2
+2026-03-14 14:10:00.197 | INFO    |   TTFT=2.095s | 吞吐=258.1 tok/s | 总耗时=3.087s | Tokens=256
+2026-03-14 14:10:00.197 | INFO    | [87/144] action_analysis | P5R_01.png | run 3
+2026-03-14 14:10:03.671 | INFO    |   TTFT=2.140s | 吞吐=260.8 tok/s | 总耗时=3.121s | Tokens=256
+2026-03-14 14:10:03.671 | DEBUG   | 预热 1/1 | action_analysis | SuperMarioBros_01.png
+2026-03-14 14:10:06.821 | INFO    | [88/144] action_analysis | SuperMarioBros_01.png | run 1
+2026-03-14 14:10:09.984 | INFO    |   TTFT=2.101s | 吞吐=249.0 tok/s | 总耗时=3.129s | Tokens=256
+2026-03-14 14:10:09.984 | INFO    | [89/144] action_analysis | SuperMarioBros_01.png | run 2
+2026-03-14 14:10:13.107 | INFO    |   TTFT=2.114s | 吞吐=262.4 tok/s | 总耗时=3.090s | Tokens=256
+2026-03-14 14:10:13.107 | INFO    | [90/144] action_analysis | SuperMarioBros_01.png | run 3
+2026-03-14 14:10:16.211 | INFO    |   TTFT=2.092s | 吞吐=261.7 tok/s | 总耗时=3.070s | Tokens=256
+2026-03-14 14:10:16.211 | INFO    | ────────────────────────────────────────
+2026-03-14 14:10:16.211 | INFO    | 场景: 游戏 UI 识别 (ui_recognition)
+2026-03-14 14:10:16.211 | DEBUG   | 预热 1/1 | ui_recognition | Arknights_01.png
+2026-03-14 14:10:18.463 | ERROR   | 预热失败: ui_recognition | Arknights_01.png
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 441, in run_benchmark
+    run_single_inference(client, model, scenario, img_name, img_b64, img_mime, -1)
+    │                    │       │      │         │         │        └ 'image/png'
+    │                    │       │      │         │         └ 'iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAIAAAAf3FwlAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAGYktHRAD/AP8A/6C9...
+    │                    │       │      │         └ 'Arknights_01.png'
+    │                    │       │      └ Scenario(id='ui_recognition', name='游戏 UI 识别', prompt='识别这张游戏截图中所有可见的 UI/HUD 元素，例如：血条、蓝条、小地图、技能图标、物品栏、计分板、对话框等。逐一列出每个 UI 元素的位...
+    │                    │       └ 'Qwen/Qwen3.5-0.8B'
+    │                    └ <openai.OpenAI object at 0x000002539419C710>
+    └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '识别这张游戏截图中所有可见的 UI/HUD 元素，例...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -39. (parameter=max_tokens, value=-39)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:10:18.606 | INFO    | [91/144] ui_recognition | Arknights_01.png | run 1
+2026-03-14 14:10:18.837 | ERROR   | 推理失败: ui_recognition | Arknights_01.png | run 1
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '识别这张游戏截图中所有可见的 UI/HUD 元素，例...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -39. (parameter=max_tokens, value=-39)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:10:18.951 | INFO    | [92/144] ui_recognition | Arknights_01.png | run 2
+2026-03-14 14:10:19.187 | ERROR   | 推理失败: ui_recognition | Arknights_01.png | run 2
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '识别这张游戏截图中所有可见的 UI/HUD 元素，例...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -39. (parameter=max_tokens, value=-39)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:10:19.306 | INFO    | [93/144] ui_recognition | Arknights_01.png | run 3
+2026-03-14 14:10:19.552 | ERROR   | 推理失败: ui_recognition | Arknights_01.png | run 3
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '识别这张游戏截图中所有可见的 UI/HUD 元素，例...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -39. (parameter=max_tokens, value=-39)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:10:19.688 | DEBUG   | 预热 1/1 | ui_recognition | Cyberpunk-2077_01.png
+2026-03-14 14:10:20.912 | INFO    | [94/144] ui_recognition | Cyberpunk-2077_01.png | run 1
+2026-03-14 14:10:24.081 | INFO    |   TTFT=2.129s | 吞吐=254.6 tok/s | 总耗时=3.135s | Tokens=256
+2026-03-14 14:10:24.081 | INFO    | [95/144] ui_recognition | Cyberpunk-2077_01.png | run 2
+2026-03-14 14:10:27.262 | INFO    |   TTFT=2.143s | 吞吐=255.4 tok/s | 总耗时=3.146s | Tokens=256
+2026-03-14 14:10:27.262 | INFO    | [96/144] ui_recognition | Cyberpunk-2077_01.png | run 3
+2026-03-14 14:10:30.490 | INFO    |   TTFT=2.152s | 吞吐=245.7 tok/s | 总耗时=3.195s | Tokens=256
+2026-03-14 14:10:30.490 | DEBUG   | 预热 1/1 | ui_recognition | Genshin-Impact_01.png
+2026-03-14 14:10:33.169 | INFO    | [97/144] ui_recognition | Genshin-Impact_01.png | run 1
+2026-03-14 14:10:35.865 | INFO    |   TTFT=2.121s | 吞吐=247.1 tok/s | 总耗时=2.659s | Tokens=133
+2026-03-14 14:10:35.865 | INFO    | [98/144] ui_recognition | Genshin-Impact_01.png | run 2
+2026-03-14 14:10:38.581 | INFO    |   TTFT=2.121s | 吞吐=236.8 tok/s | 总耗时=2.683s | Tokens=133
+2026-03-14 14:10:38.581 | INFO    | [99/144] ui_recognition | Genshin-Impact_01.png | run 3
+2026-03-14 14:10:41.309 | INFO    |   TTFT=2.142s | 吞吐=240.7 tok/s | 总耗时=2.695s | Tokens=133
+2026-03-14 14:10:41.309 | DEBUG   | 预热 1/1 | ui_recognition | Minecraft_01.png
+2026-03-14 14:10:44.499 | INFO    | [100/144] ui_recognition | Minecraft_01.png | run 1
+2026-03-14 14:10:47.676 | INFO    |   TTFT=2.144s | 吞吐=255.9 tok/s | 总耗时=3.144s | Tokens=256
+2026-03-14 14:10:47.677 | INFO    | [101/144] ui_recognition | Minecraft_01.png | run 2
+2026-03-14 14:10:50.901 | INFO    |   TTFT=2.169s | 吞吐=250.5 tok/s | 总耗时=3.191s | Tokens=256
+2026-03-14 14:10:50.902 | INFO    | [102/144] ui_recognition | Minecraft_01.png | run 3
+2026-03-14 14:10:54.100 | INFO    |   TTFT=2.160s | 吞吐=255.0 tok/s | 总耗时=3.164s | Tokens=256
+2026-03-14 14:10:54.100 | DEBUG   | 预热 1/1 | ui_recognition | P5R_01.png
+2026-03-14 14:10:57.252 | INFO    | [103/144] ui_recognition | P5R_01.png | run 1
+2026-03-14 14:11:00.385 | INFO    |   TTFT=2.089s | 吞吐=253.1 tok/s | 总耗时=3.100s | Tokens=256
+2026-03-14 14:11:00.386 | INFO    | [104/144] ui_recognition | P5R_01.png | run 2
+2026-03-14 14:11:03.497 | INFO    |   TTFT=2.111s | 吞吐=264.8 tok/s | 总耗时=3.078s | Tokens=256
+2026-03-14 14:11:03.497 | INFO    | [105/144] ui_recognition | P5R_01.png | run 3
+2026-03-14 14:11:06.593 | INFO    |   TTFT=2.090s | 吞吐=263.4 tok/s | 总耗时=3.062s | Tokens=256
+2026-03-14 14:11:06.593 | DEBUG   | 预热 1/1 | ui_recognition | SuperMarioBros_01.png
+2026-03-14 14:11:09.745 | INFO    | [106/144] ui_recognition | SuperMarioBros_01.png | run 1
+2026-03-14 14:11:12.876 | INFO    |   TTFT=2.099s | 吞吐=257.4 tok/s | 总耗时=3.093s | Tokens=256
+2026-03-14 14:11:12.876 | INFO    | [107/144] ui_recognition | SuperMarioBros_01.png | run 2
+2026-03-14 14:11:16.039 | INFO    |   TTFT=2.105s | 吞吐=249.8 tok/s | 总耗时=3.130s | Tokens=256
+2026-03-14 14:11:16.039 | INFO    | [108/144] ui_recognition | SuperMarioBros_01.png | run 3
+2026-03-14 14:11:19.177 | INFO    |   TTFT=2.093s | 吞吐=253.2 tok/s | 总耗时=3.104s | Tokens=256
+2026-03-14 14:11:19.177 | INFO    | ────────────────────────────────────────
+2026-03-14 14:11:19.177 | INFO    | 场景: 中英双语描述 (bilingual)
+2026-03-14 14:11:19.177 | DEBUG   | 预热 1/1 | bilingual | Arknights_01.png
+2026-03-14 14:11:21.416 | ERROR   | 预热失败: bilingual | Arknights_01.png
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 441, in run_benchmark
+    run_single_inference(client, model, scenario, img_name, img_b64, img_mime, -1)
+    │                    │       │      │         │         │        └ 'image/png'
+    │                    │       │      │         │         └ 'iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAIAAAAf3FwlAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAGYktHRAD/AP8A/6C9...
+    │                    │       │      │         └ 'Arknights_01.png'
+    │                    │       │      └ Scenario(id='bilingual', name='中英双语描述', prompt='请对这张游戏截图进行描述，先用中文写一段（2-3句），然后用英文写一段（2-3 sentences）。两段内容应保持一致。', max_tokens=512)
+    │                    │       └ 'Qwen/Qwen3.5-0.8B'
+    │                    └ <openai.OpenAI object at 0x000002539419C710>
+    └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '请对这张游戏截图进行描述，先用中文写一段（2-3句）...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -16. (parameter=max_tokens, value=-16)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:11:21.558 | INFO    | [109/144] bilingual | Arknights_01.png | run 1
+2026-03-14 14:11:21.788 | ERROR   | 推理失败: bilingual | Arknights_01.png | run 1
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '请对这张游戏截图进行描述，先用中文写一段（2-3句）...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -16. (parameter=max_tokens, value=-16)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:11:21.902 | INFO    | [110/144] bilingual | Arknights_01.png | run 2
+2026-03-14 14:11:22.127 | ERROR   | 推理失败: bilingual | Arknights_01.png | run 2
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '请对这张游戏截图进行描述，先用中文写一段（2-3句）...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -16. (parameter=max_tokens, value=-16)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:11:22.247 | INFO    | [111/144] bilingual | Arknights_01.png | run 3
+2026-03-14 14:11:22.474 | ERROR   | 推理失败: bilingual | Arknights_01.png | run 3
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '请对这张游戏截图进行描述，先用中文写一段（2-3句）...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -16. (parameter=max_tokens, value=-16)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:11:22.598 | DEBUG   | 预热 1/1 | bilingual | Cyberpunk-2077_01.png
+2026-03-14 14:11:23.333 | INFO    | [112/144] bilingual | Cyberpunk-2077_01.png | run 1
+2026-03-14 14:11:26.033 | INFO    |   TTFT=2.147s | 吞吐=253.9 tok/s | 总耗时=2.667s | Tokens=132
+2026-03-14 14:11:26.033 | INFO    | [113/144] bilingual | Cyberpunk-2077_01.png | run 2
+2026-03-14 14:11:28.743 | INFO    |   TTFT=2.130s | 吞吐=242.4 tok/s | 总耗时=2.675s | Tokens=132
+2026-03-14 14:11:28.743 | INFO    | [114/144] bilingual | Cyberpunk-2077_01.png | run 3
+2026-03-14 14:11:31.426 | INFO    |   TTFT=2.127s | 吞吐=254.1 tok/s | 总耗时=2.647s | Tokens=132
+2026-03-14 14:11:31.426 | DEBUG   | 预热 1/1 | bilingual | Genshin-Impact_01.png
+2026-03-14 14:11:34.112 | INFO    | [115/144] bilingual | Genshin-Impact_01.png | run 1
+2026-03-14 14:11:36.801 | INFO    |   TTFT=2.132s | 吞吐=252.7 tok/s | 总耗时=2.655s | Tokens=132
+2026-03-14 14:11:36.801 | INFO    | [116/144] bilingual | Genshin-Impact_01.png | run 2
+2026-03-14 14:11:39.479 | INFO    |   TTFT=2.101s | 吞吐=243.7 tok/s | 总耗时=2.642s | Tokens=132
+2026-03-14 14:11:39.479 | INFO    | [117/144] bilingual | Genshin-Impact_01.png | run 3
+2026-03-14 14:11:42.148 | INFO    |   TTFT=2.094s | 吞吐=243.6 tok/s | 总耗时=2.636s | Tokens=132
+2026-03-14 14:11:42.148 | DEBUG   | 预热 1/1 | bilingual | Minecraft_01.png
+2026-03-14 14:11:44.713 | INFO    | [118/144] bilingual | Minecraft_01.png | run 1
+2026-03-14 14:11:47.253 | INFO    |   TTFT=2.137s | 吞吐=233.1 tok/s | 总耗时=2.506s | Tokens=86
+2026-03-14 14:11:47.253 | INFO    | [119/144] bilingual | Minecraft_01.png | run 2
+2026-03-14 14:11:49.809 | INFO    |   TTFT=2.142s | 吞吐=225.9 tok/s | 总耗时=2.523s | Tokens=86
+2026-03-14 14:11:49.809 | INFO    | [120/144] bilingual | Minecraft_01.png | run 3
+2026-03-14 14:11:52.384 | INFO    |   TTFT=2.147s | 吞吐=218.2 tok/s | 总耗时=2.542s | Tokens=86
+2026-03-14 14:11:52.385 | DEBUG   | 预热 1/1 | bilingual | P5R_01.png
+2026-03-14 14:11:56.498 | INFO    | [121/144] bilingual | P5R_01.png | run 1
+2026-03-14 14:12:00.536 | INFO    |   TTFT=2.093s | 吞吐=268.1 tok/s | 总耗时=4.002s | Tokens=512
+2026-03-14 14:12:00.536 | INFO    | [122/144] bilingual | P5R_01.png | run 2
+2026-03-14 14:12:04.554 | INFO    |   TTFT=2.103s | 吞吐=272.4 tok/s | 总耗时=3.982s | Tokens=512
+2026-03-14 14:12:04.554 | INFO    | [123/144] bilingual | P5R_01.png | run 3
+2026-03-14 14:12:08.594 | INFO    |   TTFT=2.103s | 吞吐=268.8 tok/s | 总耗时=4.008s | Tokens=512
+2026-03-14 14:12:08.595 | DEBUG   | 预热 1/1 | bilingual | SuperMarioBros_01.png
+2026-03-14 14:12:11.466 | INFO    | [124/144] bilingual | SuperMarioBros_01.png | run 1
+2026-03-14 14:12:14.346 | INFO    |   TTFT=2.109s | 吞吐=254.8 tok/s | 总耗时=2.847s | Tokens=188
+2026-03-14 14:12:14.347 | INFO    | [125/144] bilingual | SuperMarioBros_01.png | run 2
+2026-03-14 14:12:17.233 | INFO    |   TTFT=2.116s | 吞吐=254.7 tok/s | 总耗时=2.854s | Tokens=188
+2026-03-14 14:12:17.233 | INFO    | [126/144] bilingual | SuperMarioBros_01.png | run 3
+2026-03-14 14:12:20.125 | INFO    |   TTFT=2.109s | 吞吐=251.1 tok/s | 总耗时=2.858s | Tokens=188
+2026-03-14 14:12:20.125 | INFO    | ────────────────────────────────────────
+2026-03-14 14:12:20.125 | INFO    | 场景: 叙事性描述 (narrative)
+2026-03-14 14:12:20.125 | DEBUG   | 预热 1/1 | narrative | Arknights_01.png
+2026-03-14 14:12:22.361 | ERROR   | 预热失败: narrative | Arknights_01.png
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 441, in run_benchmark
+    run_single_inference(client, model, scenario, img_name, img_b64, img_mime, -1)
+    │                    │       │      │         │         │        └ 'image/png'
+    │                    │       │      │         │         └ 'iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAIAAAAf3FwlAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAGYktHRAD/AP8A/6C9...
+    │                    │       │      │         └ 'Arknights_01.png'
+    │                    │       │      └ Scenario(id='narrative', name='叙事性描述', prompt='以游戏解说或故事旁白的口吻，用中文描述这张游戏截图中正在发生的事情。语言要生动有画面感，像是在讲述一个精彩的游戏瞬间。', max_tokens=256)
+    │                    │       └ 'Qwen/Qwen3.5-0.8B'
+    │                    └ <openai.OpenAI object at 0x000002539419C710>
+    └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '以游戏解说或故事旁白的口吻，用中文描述这张游戏截图中...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -17. (parameter=max_tokens, value=-17)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:12:22.507 | INFO    | [127/144] narrative | Arknights_01.png | run 1
+2026-03-14 14:12:22.751 | ERROR   | 推理失败: narrative | Arknights_01.png | run 1
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '以游戏解说或故事旁白的口吻，用中文描述这张游戏截图中...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -17. (parameter=max_tokens, value=-17)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:12:22.872 | INFO    | [128/144] narrative | Arknights_01.png | run 2
+2026-03-14 14:12:23.099 | ERROR   | 推理失败: narrative | Arknights_01.png | run 2
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '以游戏解说或故事旁白的口吻，用中文描述这张游戏截图中...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -17. (parameter=max_tokens, value=-17)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:12:23.225 | INFO    | [129/144] narrative | Arknights_01.png | run 3
+2026-03-14 14:12:23.468 | ERROR   | 推理失败: narrative | Arknights_01.png | run 3
+Traceback (most recent call last):
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 498, in <module>
+    main()
+    └ <function main at 0x00000253944F5F80>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 489, in main
+    run_benchmark(
+    └ <function run_benchmark at 0x00000253944F5EE0>
+
+> File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 453, in run_benchmark
+    result = run_single_inference(
+             └ <function run_single_inference at 0x00000253944F5940>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\benchmark.py", line 211, in run_single_inference
+    response = client.chat.completions.create(
+               │      │    │           └ <function Completions.create at 0x00000253946CBA60>
+               │      │    └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+               │      └ <openai.resources.chat.chat.Chat object at 0x00000253945C1340>
+               └ <openai.OpenAI object at 0x000002539419C710>
+
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           │     │       └ {'model': 'Qwen/Qwen3.5-0.8B', 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '以游戏解说或故事旁白的口吻，用中文描述这张游戏截图中...
+           │     └ (<openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>,)
+           └ <function Completions.create at 0x00000253946CB920>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1204, in create
+    return self._post(
+           │    └ <bound method SyncAPIClient.post of <openai.OpenAI object at 0x000002539419C710>>
+           └ <openai.resources.chat.completions.completions.Completions object at 0x00000253947AFE00>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+           │    │          │    │       │        │            │                  └ openai.Stream[openai.types.chat.chat_completion_chunk.ChatCompletionChunk]
+           │    │          │    │       │        │            └ True
+           │    │          │    │       │        └ FinalRequestOptions(method='post', url='/chat/completions', params={}, headers=NOT_GIVEN, max_retries=NOT_GIVEN, timeout=NOT_...
+           │    │          │    │       └ <class 'openai.types.chat.chat_completion.ChatCompletion'>
+           │    │          │    └ <function SyncAPIClient.request at 0x0000025394382700>
+           │    │          └ <openai.OpenAI object at 0x000002539419C710>
+           │    └ ~ResponseT
+           └ <function cast at 0x00000253917AD080>
+  File "E:\FYP-PROJECT\core\Video-Understanding-MVP\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+          │    └ <function BaseClient._make_status_error_from_response at 0x0000025394380EA0>
+          └ <openai.OpenAI object at 0x000002539419C710>
+
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'max_tokens must be at least 1, got -17. (parameter=max_tokens, value=-17)', 'type': 'BadRequestError', 'param': 'max_tokens', 'code': 400}}
+2026-03-14 14:12:23.606 | DEBUG   | 预热 1/1 | narrative | Cyberpunk-2077_01.png
+2026-03-14 14:12:24.816 | INFO    | [130/144] narrative | Cyberpunk-2077_01.png | run 1
+2026-03-14 14:12:28.003 | INFO    |   TTFT=2.133s | 吞吐=250.7 tok/s | 总耗时=3.154s | Tokens=256
+2026-03-14 14:12:28.003 | INFO    | [131/144] narrative | Cyberpunk-2077_01.png | run 2
+2026-03-14 14:12:31.181 | INFO    |   TTFT=2.129s | 吞吐=252.7 tok/s | 总耗时=3.142s | Tokens=256
+2026-03-14 14:12:31.181 | INFO    | [132/144] narrative | Cyberpunk-2077_01.png | run 3
+2026-03-14 14:12:34.396 | INFO    |   TTFT=2.161s | 吞吐=250.6 tok/s | 总耗时=3.182s | Tokens=256
+2026-03-14 14:12:34.396 | DEBUG   | 预热 1/1 | narrative | Genshin-Impact_01.png
+2026-03-14 14:12:37.568 | INFO    | [133/144] narrative | Genshin-Impact_01.png | run 1
+2026-03-14 14:12:40.744 | INFO    |   TTFT=2.156s | 吞吐=260.0 tok/s | 总耗时=3.141s | Tokens=256
+2026-03-14 14:12:40.744 | INFO    | [134/144] narrative | Genshin-Impact_01.png | run 2
+2026-03-14 14:12:43.866 | INFO    |   TTFT=2.109s | 吞吐=261.1 tok/s | 总耗时=3.089s | Tokens=256
+2026-03-14 14:12:43.866 | INFO    | [135/144] narrative | Genshin-Impact_01.png | run 3
+2026-03-14 14:12:47.045 | INFO    |   TTFT=2.150s | 吞吐=257.9 tok/s | 总耗时=3.143s | Tokens=256
+2026-03-14 14:12:47.045 | DEBUG   | 预热 1/1 | narrative | Minecraft_01.png
+2026-03-14 14:12:50.266 | INFO    | [136/144] narrative | Minecraft_01.png | run 1
+2026-03-14 14:12:53.499 | INFO    |   TTFT=2.165s | 吞吐=247.9 tok/s | 总耗时=3.198s | Tokens=256
+2026-03-14 14:12:53.499 | INFO    | [137/144] narrative | Minecraft_01.png | run 2
+2026-03-14 14:12:56.696 | INFO    |   TTFT=2.167s | 吞吐=257.4 tok/s | 总耗时=3.161s | Tokens=256
+2026-03-14 14:12:56.696 | INFO    | [138/144] narrative | Minecraft_01.png | run 3
+2026-03-14 14:12:59.902 | INFO    |   TTFT=2.166s | 吞吐=255.2 tok/s | 总耗时=3.170s | Tokens=256
+2026-03-14 14:12:59.902 | DEBUG   | 预热 1/1 | narrative | P5R_01.png
+2026-03-14 14:13:03.047 | INFO    | [139/144] narrative | P5R_01.png | run 1
+2026-03-14 14:13:06.152 | INFO    |   TTFT=2.098s | 吞吐=262.9 tok/s | 总耗时=3.072s | Tokens=256
+2026-03-14 14:13:06.152 | INFO    | [140/144] narrative | P5R_01.png | run 2
+2026-03-14 14:13:09.243 | INFO    |   TTFT=2.095s | 吞吐=265.9 tok/s | 总耗时=3.058s | Tokens=256
+2026-03-14 14:13:09.244 | INFO    | [141/144] narrative | P5R_01.png | run 3
+2026-03-14 14:13:12.377 | INFO    |   TTFT=2.091s | 吞吐=254.2 tok/s | 总耗时=3.098s | Tokens=256
+2026-03-14 14:13:12.377 | DEBUG   | 预热 1/1 | narrative | SuperMarioBros_01.png
+2026-03-14 14:13:15.460 | INFO    | [142/144] narrative | SuperMarioBros_01.png | run 1
+2026-03-14 14:13:18.567 | INFO    |   TTFT=2.119s | 吞吐=245.4 tok/s | 总耗时=3.073s | Tokens=234
+2026-03-14 14:13:18.568 | INFO    | [143/144] narrative | SuperMarioBros_01.png | run 2
+2026-03-14 14:13:21.633 | INFO    |   TTFT=2.123s | 吞吐=257.7 tok/s | 总耗时=3.031s | Tokens=234
+2026-03-14 14:13:21.633 | INFO    | [144/144] narrative | SuperMarioBros_01.png | run 3
+2026-03-14 14:13:24.717 | INFO    |   TTFT=2.096s | 吞吐=245.8 tok/s | 总耗时=3.048s | Tokens=234
+2026-03-14 14:13:24.717 | INFO    | ============================================================
+2026-03-14 14:13:24.719 | INFO    | 报告已保存至: E:\FYP-PROJECT\core\Video-Understanding-MVP\reports\Qwen_Qwen3.5-0.8B_20260314_140337\report.md
+2026-03-14 14:13:24.719 | INFO    | 基准测试完成 | 成功: 123/144 | 报告: E:\FYP-PROJECT\core\Video-Understanding-MVP\reports\Qwen_Qwen3.5-0.8B_20260314_140337
+2026-03-14 14:13:24.719 | INFO    | CSV 数据: E:\FYP-PROJECT\core\Video-Understanding-MVP\reports\Qwen_Qwen3.5-0.8B_20260314_140337\raw_data.csv
