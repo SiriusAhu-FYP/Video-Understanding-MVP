@@ -12,8 +12,8 @@ wheels/
 # Secrets
 .env
 
-# Logs
-logs/
+# Logs (root-level only)
+/logs/
 
 # Temporary Files
 tmp/

@@ -213,29 +213,45 @@ def load_images(assets_dir: Path) -> list[tuple[str, str, str, Path]]:
 # ── Bounding Box 绘制 ─────────────────────────────────────────────
 
 def _parse_bbox_json(text: str) -> list[dict] | None:
-    """尝试从模型输出中提取 bbox JSON 数组。"""
-    # 尝试提取 ```json ... ``` 代码块
-    m = re.search(r"```(?:json)?\s*\n?(.*?)```", text, re.DOTALL)
+    """尝试从模型输出中提取 bbox JSON 数组，支持被截断的 JSON。"""
+    # 剥离 ```json ... ``` 代码块（可能不完整）
+    m = re.search(r"```(?:json)?\s*\n?(.*?)(?:```|$)", text, re.DOTALL)
     raw = m.group(1).strip() if m else text.strip()
 
     # 尝试直接解析
-    try:
-        data = json.loads(raw)
-        if isinstance(data, list):
-            return data
-        if isinstance(data, dict) and "objects" in data:
-            return data["objects"]
+    for candidate in [raw]:
+        try:
+            data = json.loads(candidate)
+            if isinstance(data, list):
+                return data
+            if isinstance(data, dict) and "objects" in data:
+                return data["objects"]
+        except json.JSONDecodeError:
+            pass
+
+    # 提取以 [ 开头的部分（可能被截断）
+    idx = raw.find("[")
+    if idx == -1:
         return None
+    fragment = raw[idx:]
+
+    # 完整数组
+    try:
+        return json.loads(fragment)
     except json.JSONDecodeError:
         pass
 
-    # 尝试提取最外层的 JSON 数组
-    m2 = re.search(r"\[.*\]", raw, re.DOTALL)
-    if m2:
+    # 处理被截断的 JSON 数组：找到最后一个完整的 } 并闭合数组
+    last_brace = fragment.rfind("}")
+    if last_brace > 0:
+        truncated = fragment[: last_brace + 1] + "]"
         try:
-            return json.loads(m2.group(0))
+            result = json.loads(truncated)
+            if isinstance(result, list):
+                return result
         except json.JSONDecodeError:
             pass
+
     return None
 
 
