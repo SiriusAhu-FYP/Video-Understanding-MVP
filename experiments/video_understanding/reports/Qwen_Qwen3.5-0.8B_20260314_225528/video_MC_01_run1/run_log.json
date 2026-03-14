@@ -1,0 +1,515 @@
+{
+  "video": "video_MC_01.mp4",
+  "model": "Qwen/Qwen3.5-0.8B",
+  "config": {
+    "screenshot_interval_ms": 500,
+    "max_size": 512,
+    "recording_duration_s": 27,
+    "algorithm": "mse",
+    "diff_threshold": 500.0
+  },
+  "stats": {
+    "total_sampled": 55,
+    "total_keyframes": 32,
+    "total_dropped": 0,
+    "duration_s": 27.0
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_ms": 31,
+      "diff_value": null,
+      "is_keyframe": true,
+      "reason": "首帧，自动标记为关键帧",
+      "image_filename": "frame_0000_key.png",
+      "vlm_response": "画面显示一名身穿深色制服的人员正站在室内，手持长条状物体，身体略微前倾，似乎正在进行某种操作或检查。该人员周围没有明显的动物或关键物体，场景为封闭的室内空间，整体氛围显得较为安静且专注。"
+    },
+    {
+      "frame_idx": 1,
+      "timestamp_ms": 531,
+      "diff_value": 2768.069327416012,
+      "is_keyframe": true,
+      "reason": "差异值 2768.07 >= 阈值 500.00",
+      "image_filename": "frame_0001_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地注视着前方。背景中隐约可见其他人员活动，但主体人物处于静止状态。场景位于一间光线明亮的办公室或会议室，整体氛围显得安静而正式。"
+    },
+    {
+      "frame_idx": 2,
+      "timestamp_ms": 1031,
+      "diff_value": 6395.339194412631,
+      "is_keyframe": true,
+      "reason": "差异值 6395.34 >= 阈值 500.00",
+      "image_filename": "frame_0002_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他手持一把黑色手枪，枪口指向画面右侧的墙壁，处于静止状态。背景中可见模糊的室内环境，光线昏暗，整体氛围显得紧张且充满压迫感。"
+    },
+    {
+      "frame_idx": 3,
+      "timestamp_ms": 1531,
+      "diff_value": 1851.7701669529886,
+      "is_keyframe": true,
+      "reason": "差异值 1851.77 >= 阈值 500.00",
+      "image_filename": "frame_0003_key.png",
+      "vlm_response": "画面显示一名身穿深色制服的人员正站在室内，其姿态静止，周围无其他显著人物或动物。场景为室内环境，光线均匀，未见明显动态变化或显著动作发生。"
+    },
+    {
+      "frame_idx": 4,
+      "timestamp_ms": 2031,
+      "diff_value": 5918.4954767942845,
+      "is_keyframe": true,
+      "reason": "差异值 5918.50 >= 阈值 500.00",
+      "image_filename": "frame_0004_key.png",
+      "vlm_response": "画面显示一名身穿深色制服的人员正站在室内，手持长条状物体，身体略微前倾，似乎正在进行某种操作或检查。该人员周围没有明显的动物或关键物体，场景为封闭的室内空间，整体氛围显得较为安静且专注。"
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_ms": 2531,
+      "diff_value": 145.18118557755236,
+      "is_keyframe": false,
+      "reason": "差异值 145.18 < 阈值 500.00",
+      "image_filename": "frame_0005_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 6,
+      "timestamp_ms": 3031,
+      "diff_value": 145.1072838268979,
+      "is_keyframe": false,
+      "reason": "差异值 145.11 < 阈值 500.00",
+      "image_filename": "frame_0006_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 7,
+      "timestamp_ms": 3531,
+      "diff_value": 5616.768501854276,
+      "is_keyframe": true,
+      "reason": "差异值 5616.77 >= 阈值 500.00",
+      "image_filename": "frame_0007_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地凝视着前方。背景中隐约可见其他人物轮廓，但细节模糊。场景位于一间光线明亮的办公室或会议室，整体氛围显得平静而严肃。"
+    },
+    {
+      "frame_idx": 8,
+      "timestamp_ms": 4031,
+      "diff_value": 1444.3663660285777,
+      "is_keyframe": true,
+      "reason": "差异值 1444.37 >= 阈值 500.00",
+      "image_filename": "frame_0008_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地凝视着前方。背景中隐约可见其他人物轮廓，但细节模糊。场景位于一间光线明亮的办公室或会议室，整体氛围显得安静而严肃。"
+    },
+    {
+      "frame_idx": 9,
+      "timestamp_ms": 4531,
+      "diff_value": 4003.3697388334426,
+      "is_keyframe": true,
+      "reason": "差异值 4003.37 >= 阈值 500.00",
+      "image_filename": "frame_0009_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，身体微微前倾，似乎正在与对面的人进行交谈。场景位于一间光线明亮的办公室或会议室，背景中可见办公桌椅和电脑屏幕。该人物表情专注，姿态放松，整体氛围显得专业且安静。"
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_ms": 5031,
+      "diff_value": 2434.0496649351003,
+      "is_keyframe": true,
+      "reason": "差异值 2434.05 >= 阈值 500.00",
+      "image_filename": "frame_0010_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地凝视着前方。背景中隐约可见其他人物轮廓，但细节模糊。场景为室内，光线均匀，整体氛围显得平静而严肃。"
+    },
+    {
+      "frame_idx": 11,
+      "timestamp_ms": 5531,
+      "diff_value": 367.67924438263526,
+      "is_keyframe": false,
+      "reason": "差异值 367.68 < 阈值 500.00",
+      "image_filename": "frame_0011_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 12,
+      "timestamp_ms": 6031,
+      "diff_value": 1653.3513426456152,
+      "is_keyframe": true,
+      "reason": "差异值 1653.35 >= 阈值 500.00",
+      "image_filename": "frame_0012_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地凝视前方。背景中隐约可见其他人物轮廓，但细节模糊。场景为室内环境，光线柔和，整体氛围显得平静而严肃。"
+    },
+    {
+      "frame_idx": 13,
+      "timestamp_ms": 6531,
+      "diff_value": 1206.3305451025306,
+      "is_keyframe": true,
+      "reason": "差异值 1206.33 >= 阈值 500.00",
+      "image_filename": "frame_0013_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地注视着前方。背景中隐约可见其他人物活动，但焦点集中在该男子的动作上。场景为室内环境，光线明亮，整体氛围显得平静而正式。"
+    },
+    {
+      "frame_idx": 14,
+      "timestamp_ms": 7031,
+      "diff_value": 3018.79274548702,
+      "is_keyframe": true,
+      "reason": "差异值 3018.79 >= 阈值 500.00",
+      "image_filename": "frame_0014_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地注视着前方。背景中隐约可见其他人员，但细节模糊。场景为室内环境，光线均匀。画面中无显著动态变化，人物处于静止或缓慢移动状态。"
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_ms": 7531,
+      "diff_value": 2262.7944821662304,
+      "is_keyframe": true,
+      "reason": "差异值 2262.79 >= 阈值 500.00",
+      "image_filename": "frame_0015_key.png",
+      "vlm_response": "画面显示一名身穿深色制服的人员正站在室内，手持白色长条状物体，身体微微前倾，似乎正在进行某种操作或检查。背景中可见模糊的室内环境，光线均匀，整体氛围显得专业且专注。"
+    },
+    {
+      "frame_idx": 16,
+      "timestamp_ms": 8031,
+      "diff_value": 4156.51743155541,
+      "is_keyframe": true,
+      "reason": "差异值 4156.52 >= 阈值 500.00",
+      "image_filename": "frame_0016_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地凝视着前方。背景中隐约可见其他人员，但细节模糊。场景位于一间光线明亮的办公室或会议室，整体氛围显得安静而严肃。"
+    },
+    {
+      "frame_idx": 17,
+      "timestamp_ms": 8531,
+      "diff_value": 2298.8923310018545,
+      "is_keyframe": true,
+      "reason": "差异值 2298.89 >= 阈值 500.00",
+      "image_filename": "frame_0017_key.png",
+      "vlm_response": "画面中显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地注视着前方。背景中隐约可见一些模糊的物体轮廓，但无法辨认具体细节。整个场景处于静止状态，没有明显的动态变化。"
+    },
+    {
+      "frame_idx": 18,
+      "timestamp_ms": 9031,
+      "diff_value": 2918.156711864638,
+      "is_keyframe": true,
+      "reason": "差异值 2918.16 >= 阈值 500.00",
+      "image_filename": "frame_0018_key.png",
+      "vlm_response": "画面显示一位身穿深色制服的男性正站在室内，他手持一把长柄武器，姿态警觉地注视着前方。他周围没有明显的动物或关键物体，场景设定为室内，整体氛围紧张且充满动态感。"
+    },
+    {
+      "frame_idx": 19,
+      "timestamp_ms": 9531,
+      "diff_value": 3385.163000722622,
+      "is_keyframe": true,
+      "reason": "差异值 3385.16 >= 阈值 500.00",
+      "image_filename": "frame_0019_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地注视着前方。背景中隐约可见其他人员活动，但主体人物处于静止状态。整个场景位于明亮的室内环境中，光线充足，氛围显得平静而正式。"
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_ms": 10031,
+      "diff_value": 3606.6357592304757,
+      "is_keyframe": true,
+      "reason": "差异值 3606.64 >= 阈值 500.00",
+      "image_filename": "frame_0020_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地凝视着前方。背景中隐约可见其他人物轮廓，但细节模糊。场景位于一间光线明亮的办公室或会议室，整体氛围显得安静而严肃。"
+    },
+    {
+      "frame_idx": 21,
+      "timestamp_ms": 10531,
+      "diff_value": 807.4252222404014,
+      "is_keyframe": true,
+      "reason": "差异值 807.43 >= 阈值 500.00",
+      "image_filename": "frame_0021_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地注视着前方。背景中隐约可见一些模糊的物体轮廓，但无法辨认具体细节。整个场景处于静止状态，人物姿态稳定，未发生明显的动态变化。"
+    },
+    {
+      "frame_idx": 22,
+      "timestamp_ms": 11046,
+      "diff_value": 3767.4896293493675,
+      "is_keyframe": true,
+      "reason": "差异值 3767.49 >= 阈值 500.00",
+      "image_filename": "frame_0022_key.png",
+      "vlm_response": "画面显示一名身穿深色制服的男性正站在室内走廊中，他手持一把长柄刀具，身体微微前倾，似乎正在对前方的一名身穿浅色上衣的男性进行攻击。该男性处于静止状态，面部表情严肃，周围没有明显的其他人物或动物。场景为室内走廊，光线明亮，氛围紧张。"
+    },
+    {
+      "frame_idx": 23,
+      "timestamp_ms": 11546,
+      "diff_value": 4244.586874863656,
+      "is_keyframe": true,
+      "reason": "差异值 4244.59 >= 阈值 500.00",
+      "image_filename": "frame_0023_key.png",
+      "vlm_response": "画面中显示一名身穿深色制服的人员正站在室内，其姿态静止，周围无其他显著人物或动物。场景为室内环境，光线均匀，整体氛围安静，未见明显动态变化。"
+    },
+    {
+      "frame_idx": 24,
+      "timestamp_ms": 12046,
+      "diff_value": 5299.48318199171,
+      "is_keyframe": true,
+      "reason": "差异值 5299.48 >= 阈值 500.00",
+      "image_filename": "frame_0024_key.png",
+      "vlm_response": "画面中显示一名身穿深色制服的人员正站在室内，其姿态静止，周围无其他显著人物或动物。场景为室内环境，光线均匀，未见明显动态变化或显著动作发生。"
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_ms": 12546,
+      "diff_value": 8426.929133603295,
+      "is_keyframe": true,
+      "reason": "差异值 8426.93 >= 阈值 500.00",
+      "image_filename": "frame_0025_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地注视着前方。背景中隐约可见其他人物轮廓，但细节模糊。场景位于一间光线明亮的办公室或会议室，整体氛围显得安静而严肃。"
+    },
+    {
+      "frame_idx": 26,
+      "timestamp_ms": 13046,
+      "diff_value": 7023.212551469786,
+      "is_keyframe": true,
+      "reason": "差异值 7023.21 >= 阈值 500.00",
+      "image_filename": "frame_0026_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地凝视着前方。背景中隐约可见其他人员，但细节模糊。场景位于一间光线明亮的办公室或会议室，整体氛围显得严肃而安静。"
+    },
+    {
+      "frame_idx": 27,
+      "timestamp_ms": 13546,
+      "diff_value": 4154.482082719786,
+      "is_keyframe": true,
+      "reason": "差异值 4154.48 >= 阈值 500.00",
+      "image_filename": "frame_0027_key.png",
+      "vlm_response": "画面中显示一名身穿深色制服的人员正站在室内，周围摆放着若干白色圆柱形物体，该人员似乎正在操作或整理这些物品。场景位于室内，光线充足，整体氛围显得井然有序。"
+    },
+    {
+      "frame_idx": 28,
+      "timestamp_ms": 14046,
+      "diff_value": 2047.8501036212915,
+      "is_keyframe": true,
+      "reason": "差异值 2047.85 >= 阈值 500.00",
+      "image_filename": "frame_0028_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地凝视着前方。背景中隐约可见其他人物轮廓，但细节模糊。场景为室内，光线均匀，整体氛围显得平静而正式。"
+    },
+    {
+      "frame_idx": 29,
+      "timestamp_ms": 14546,
+      "diff_value": 4016.9294863928885,
+      "is_keyframe": true,
+      "reason": "差异值 4016.93 >= 阈值 500.00",
+      "image_filename": "frame_0029_key.png",
+      "vlm_response": "画面显示一名身穿深色制服的人员正站在室内，手持红色物体，周围有两名身穿浅色制服的人员正在围绕其移动。场景为室内，背景中可见模糊的窗户和墙壁结构。"
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_ms": 15046,
+      "diff_value": 2639.4079986092934,
+      "is_keyframe": true,
+      "reason": "差异值 2639.41 >= 阈值 500.00",
+      "image_filename": "frame_0030_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地凝视前方。背景中隐约可见其他人员活动，但焦点集中在该男子的动作与神态上。场景为室内环境，光线柔和，整体氛围显得平静而严肃。"
+    },
+    {
+      "frame_idx": 31,
+      "timestamp_ms": 15546,
+      "diff_value": 6015.489648096641,
+      "is_keyframe": true,
+      "reason": "差异值 6015.49 >= 阈值 500.00",
+      "image_filename": "frame_0031_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地注视着前方。背景中隐约可见其他人员活动，但主体人物处于静止状态。场景位于一间光线明亮的办公室或会议室，整体氛围显得安静而正式。"
+    },
+    {
+      "frame_idx": 32,
+      "timestamp_ms": 16046,
+      "diff_value": 4048.498201966078,
+      "is_keyframe": true,
+      "reason": "差异值 4048.50 >= 阈值 500.00",
+      "image_filename": "frame_0032_key.png",
+      "vlm_response": "画面显示一位身穿深色西装的男性正站在室内，他双手交叉于胸前，神情专注地注视着前方。背景中隐约可见其他人物轮廓，但细节模糊。场景为室内环境，光线柔和，整体氛围显得安静而正式。"
+    },
+    {
+      "frame_idx": 33,
+      "timestamp_ms": 16546,
+      "diff_value": 3483.3426098249347,
+      "is_keyframe": true,
+      "reason": "差异值 3483.34 >= 阈值 500.00",
+      "image_filename": "frame_0033_key.png",
+      "vlm_response": "画面中显示一名身穿深色制服的人员正站在室内，其姿态静止，未进行明显动作。背景环境为室内，光线均匀，未见其他显著人物或动态物体。"
+    },
+    {
+      "frame_idx": 34,
+      "timestamp_ms": 17046,
+      "diff_value": 29.232905895506107,
+      "is_keyframe": false,
+      "reason": "差异值 29.23 < 阈值 500.00",
+      "image_filename": "frame_0034_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_ms": 17546,
+      "diff_value": 93.2029477530541,
+      "is_keyframe": false,
+      "reason": "差异值 93.20 < 阈值 500.00",
+      "image_filename": "frame_0035_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 36,
+      "timestamp_ms": 18046,
+      "diff_value": 219.73905500109075,
+      "is_keyframe": false,
+      "reason": "差异值 219.74 < 阈值 500.00",
+      "image_filename": "frame_0036_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 37,
+      "timestamp_ms": 18546,
+      "diff_value": 282.3605697125873,
+      "is_keyframe": false,
+      "reason": "差异值 282.36 < 阈值 500.00",
+      "image_filename": "frame_0037_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 38,
+      "timestamp_ms": 19046,
+      "diff_value": 321.5918872027705,
+      "is_keyframe": false,
+      "reason": "差异值 321.59 < 阈值 500.00",
+      "image_filename": "frame_0038_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 39,
+      "timestamp_ms": 19546,
+      "diff_value": 339.2651171193281,
+      "is_keyframe": false,
+      "reason": "差异值 339.27 < 阈值 500.00",
+      "image_filename": "frame_0039_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_ms": 20046,
+      "diff_value": 1174.3772241083116,
+      "is_keyframe": true,
+      "reason": "差异值 1174.38 >= 阈值 500.00",
+      "image_filename": "frame_0040_key.png",
+      "vlm_response": "画面显示一位身穿深色制服的男性正站在室内，他手持一把长柄武器，姿态警觉地观察四周。背景中隐约可见一名身穿白色制服的人员正俯身靠近，两人之间似乎正在进行某种对峙或交流。整个场景发生在室内，光线明亮，氛围紧张。"
+    },
+    {
+      "frame_idx": 41,
+      "timestamp_ms": 20546,
+      "diff_value": 141.29816856184556,
+      "is_keyframe": false,
+      "reason": "差异值 141.30 < 阈值 500.00",
+      "image_filename": "frame_0041_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 42,
+      "timestamp_ms": 21046,
+      "diff_value": 132.35505801428883,
+      "is_keyframe": false,
+      "reason": "差异值 132.36 < 阈值 500.00",
+      "image_filename": "frame_0042_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 43,
+      "timestamp_ms": 21546,
+      "diff_value": 186.02936675119983,
+      "is_keyframe": false,
+      "reason": "差异值 186.03 < 阈值 500.00",
+      "image_filename": "frame_0043_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 44,
+      "timestamp_ms": 22046,
+      "diff_value": 170.59605250599913,
+      "is_keyframe": false,
+      "reason": "差异值 170.60 < 阈值 500.00",
+      "image_filename": "frame_0044_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_ms": 22546,
+      "diff_value": 122.10889268379145,
+      "is_keyframe": false,
+      "reason": "差异值 122.11 < 阈值 500.00",
+      "image_filename": "frame_0045_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 46,
+      "timestamp_ms": 23046,
+      "diff_value": 131.43452600076353,
+      "is_keyframe": false,
+      "reason": "差异值 131.43 < 阈值 500.00",
+      "image_filename": "frame_0046_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 47,
+      "timestamp_ms": 23546,
+      "diff_value": 134.25298763361693,
+      "is_keyframe": false,
+      "reason": "差异值 134.25 < 阈值 500.00",
+      "image_filename": "frame_0047_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 48,
+      "timestamp_ms": 24046,
+      "diff_value": 164.39539192026615,
+      "is_keyframe": false,
+      "reason": "差异值 164.40 < 阈值 500.00",
+      "image_filename": "frame_0048_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 49,
+      "timestamp_ms": 24546,
+      "diff_value": 164.35328213623472,
+      "is_keyframe": false,
+      "reason": "差异值 164.35 < 阈值 500.00",
+      "image_filename": "frame_0049_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_ms": 25046,
+      "diff_value": 164.35328213623472,
+      "is_keyframe": false,
+      "reason": "差异值 164.35 < 阈值 500.00",
+      "image_filename": "frame_0050_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 51,
+      "timestamp_ms": 25546,
+      "diff_value": 164.35328213623472,
+      "is_keyframe": false,
+      "reason": "差异值 164.35 < 阈值 500.00",
+      "image_filename": "frame_0051_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 52,
+      "timestamp_ms": 26046,
+      "diff_value": 164.35328213623472,
+      "is_keyframe": false,
+      "reason": "差异值 164.35 < 阈值 500.00",
+      "image_filename": "frame_0052_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 53,
+      "timestamp_ms": 26546,
+      "diff_value": 164.35328213623472,
+      "is_keyframe": false,
+      "reason": "差异值 164.35 < 阈值 500.00",
+      "image_filename": "frame_0053_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 54,
+      "timestamp_ms": 27046,
+      "diff_value": 164.35328213623472,
+      "is_keyframe": false,
+      "reason": "差异值 164.35 < 阈值 500.00",
+      "image_filename": "frame_0054_skip.png",
+      "vlm_response": null
+    }
+  ],
+  "summary": "视频开始于室内环境，一名身穿深色制服的人员在进行操作或检查，随后画面多次切换至一位穿深色西装的男性在办公室或会议室中专注站立或交谈，整体氛围安静正式。视频中段出现关键转折，该男性持手枪指向墙壁，随后另一名制服人员持长柄刀具在走廊中对一名浅色上衣男性做出攻击姿态，使氛围转为紧张。视频后段回归到制服人员的操作及多人场景。整体来看，视频主题围绕室内环境中人员从平静检查到突发对峙的转变，核心内容可能是一次安全演练或突发事件的情景展示。"
+}

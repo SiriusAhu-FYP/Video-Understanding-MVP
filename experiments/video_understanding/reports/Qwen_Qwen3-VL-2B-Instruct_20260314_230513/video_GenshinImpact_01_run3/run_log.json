@@ -1,0 +1,497 @@
+{
+  "video": "video_GenshinImpact_01.mp4",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "config": {
+    "screenshot_interval_ms": 500,
+    "max_size": 512,
+    "recording_duration_s": 26,
+    "algorithm": "mse",
+    "diff_threshold": 500.0
+  },
+  "stats": {
+    "total_sampled": 53,
+    "total_keyframes": 45,
+    "total_dropped": 0,
+    "duration_s": 26.0
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_ms": 15,
+      "diff_value": null,
+      "is_keyframe": true,
+      "reason": "首帧，自动标记为关键帧",
+      "image_filename": "frame_0000_key.png",
+      "vlm_response": "这是一张游戏《原神》的区域地图截图，显示了玩家在“第12层”地图中，正在探索“璃月”区域。地图上标有多个地点，如“沉玉谷”、“碧水原”和“明冠山地”等。画面底部的字幕显示“璃月有一处地方”，表明玩家正在寻找或定位某个特定地点。"
+    },
+    {
+      "frame_idx": 1,
+      "timestamp_ms": 515,
+      "diff_value": 3220.621311900087,
+      "is_keyframe": true,
+      "reason": "差异值 3220.62 >= 阈值 500.00",
+      "image_filename": "frame_0001_key.png",
+      "vlm_response": "这是一张游戏《原神》的野外地图截图，显示了玩家的当前位置和可探索区域。地图上标有多个地点，如“明冠山地”、“沉玉谷”、“碧水原”等。画面下方的字幕“璃月有一处地方”表明玩家正在璃月地区寻找某个特定地点。"
+    },
+    {
+      "frame_idx": 2,
+      "timestamp_ms": 1015,
+      "diff_value": 3203.4554769306283,
+      "is_keyframe": true,
+      "reason": "差异值 3203.46 >= 阈值 500.00",
+      "image_filename": "frame_0002_key.png",
+      "vlm_response": "这是一张游戏《原神》的探索地图截图，显示了玩家当前所在区域的地形和任务点。地图上标注了多个地点，其中“璃月”区域的“一处地方”被特别标出，下方有文字提示“璃月有一处地方”。玩家处于第12层第3间，已收集186/200的资源。"
+    },
+    {
+      "frame_idx": 3,
+      "timestamp_ms": 1515,
+      "diff_value": 3994.2941975485382,
+      "is_keyframe": true,
+      "reason": "差异值 3994.29 >= 阈值 500.00",
+      "image_filename": "frame_0003_key.png",
+      "vlm_response": "这是一张游戏《原神》的地图界面截图，显示了玩家在第12层第3间区域的探索。地图上有一个蓝色的宝箱，周围有黄色的路径，表明玩家正在接近宝箱。画面下方有文字“宝箱很丰富”，暗示宝箱内物品丰富。"
+    },
+    {
+      "frame_idx": 4,
+      "timestamp_ms": 2015,
+      "diff_value": 299.00760116710296,
+      "is_keyframe": false,
+      "reason": "差异值 299.01 < 阈值 500.00",
+      "image_filename": "frame_0004_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_ms": 2515,
+      "diff_value": 2405.877053678556,
+      "is_keyframe": true,
+      "reason": "差异值 2405.88 >= 阈值 500.00",
+      "image_filename": "frame_0005_key.png",
+      "vlm_response": "这是一张游戏《原神》的地图界面截图，显示了玩家在地图上标记了一个位置。画面中央的蓝色圆圈标示出一个宝箱，下方有文字“宝箱很丰富”，表明该宝箱内物品丰富。右侧的标记栏显示了玩家已标记了29个点，当前正在查看或导航。"
+    },
+    {
+      "frame_idx": 6,
+      "timestamp_ms": 3015,
+      "diff_value": 768.4105618728184,
+      "is_keyframe": true,
+      "reason": "差异值 768.41 >= 阈值 500.00",
+      "image_filename": "frame_0006_key.png",
+      "vlm_response": "这是一张游戏《原神》的界面截图，显示了地图和任务信息。画面中央是游戏地图，一个蓝色的标记点位于山丘上，一条黄色的路径环绕其周围。右上角显示了玩家的资源（5个资源，186/200的体力值）和任务进度（总标记29/30）。屏幕下方的字幕写着“如果你是萌新刚好做到这里的任务”。"
+    },
+    {
+      "frame_idx": 7,
+      "timestamp_ms": 3515,
+      "diff_value": 1854.911671370528,
+      "is_keyframe": true,
+      "reason": "差异值 1854.91 >= 阈值 500.00",
+      "image_filename": "frame_0007_key.png",
+      "vlm_response": "这是一张游戏《原神》的地图界面截图，显示了玩家在“第12层 第3间”区域的探索状态。地图上有一个蓝色的标记点，代表当前任务的地点，周围是绿色的山地和水域。屏幕下方的字幕提示：“如果你是萌新刚好做到这里的任务”，表明这是新手玩家完成任务的指引。"
+    },
+    {
+      "frame_idx": 8,
+      "timestamp_ms": 4015,
+      "diff_value": 33.600314954188484,
+      "is_keyframe": false,
+      "reason": "差异值 33.60 < 阈值 500.00",
+      "image_filename": "frame_0008_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 9,
+      "timestamp_ms": 4515,
+      "diff_value": 79.56088262161867,
+      "is_keyframe": false,
+      "reason": "差异值 79.56 < 阈值 500.00",
+      "image_filename": "frame_0009_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_ms": 5015,
+      "diff_value": 6874.024524841841,
+      "is_keyframe": true,
+      "reason": "差异值 6874.02 >= 阈值 500.00",
+      "image_filename": "frame_0010_key.png",
+      "vlm_response": "一个粉色长发、头戴白色角饰的动漫风格角色背对镜头，站在一条由石块铺成的狭窄小径上。小径两侧是石墙，墙上挂着燃烧的火把，为场景提供照明。角色似乎正准备进入或正在穿过一个由绿色植物和藤蔓环绕的洞穴或通道。"
+    },
+    {
+      "frame_idx": 11,
+      "timestamp_ms": 5515,
+      "diff_value": 1765.6408908704188,
+      "is_keyframe": true,
+      "reason": "差异值 1765.64 >= 阈值 500.00",
+      "image_filename": "frame_0011_key.png",
+      "vlm_response": "一个粉色长发、头戴牛角装饰的动漫风格角色背对镜头，站在一个石砌拱门下，正准备穿过一条石板路。拱门两侧有燃烧的火把，照亮了周围的石墙和绿植，营造出一种神秘的氛围。画面下方的字幕显示“最好找一位大佬来帮你”。"
+    },
+    {
+      "frame_idx": 12,
+      "timestamp_ms": 6015,
+      "diff_value": 1308.6694310373036,
+      "is_keyframe": true,
+      "reason": "差异值 1308.67 >= 阈值 500.00",
+      "image_filename": "frame_0012_key.png",
+      "vlm_response": "一个粉色长发、头戴角饰的动漫风格女性角色，正背对镜头站在一条石板小径的入口处。她身后的石拱门两侧有燃烧的火把，照亮了周围的环境。画面下方有字幕显示“最好找一位大佬来帮你”。"
+    },
+    {
+      "frame_idx": 13,
+      "timestamp_ms": 6515,
+      "diff_value": 1142.8159989228839,
+      "is_keyframe": true,
+      "reason": "差异值 1142.82 >= 阈值 500.00",
+      "image_filename": "frame_0013_key.png",
+      "vlm_response": "一个粉色长发、头戴角饰的动漫角色背对着镜头，站在一条石板路上，正走向一个被绿植环绕的拱门。拱门两侧有燃烧的火把，照亮了周围的环境。画面下方有字幕：“最好找一位大佬来帮你”。"
+    },
+    {
+      "frame_idx": 14,
+      "timestamp_ms": 7015,
+      "diff_value": 1298.8514108175175,
+      "is_keyframe": true,
+      "reason": "差异值 1298.85 >= 阈值 500.00",
+      "image_filename": "frame_0014_key.png",
+      "vlm_response": "一个粉色长发、头戴角饰的动漫风格女性角色正站在一个石砌拱门下，她背对镜头，似乎正准备进入或走出一个幽暗的洞穴或遗迹。拱门两侧有燃烧的火把，照亮了石墙和周围的绿色藤蔓。画面下方有字幕：“最好找一位大佬来帮你”。"
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_ms": 7531,
+      "diff_value": 1731.6704859974914,
+      "is_keyframe": true,
+      "reason": "差异值 1731.67 >= 阈值 500.00",
+      "image_filename": "frame_0015_key.png",
+      "vlm_response": "一个粉色双马尾的女性角色背对着镜头，站在一个石砌拱门下，正准备进入一个被藤蔓和绿植覆盖的洞穴或通道。她身后的通道两侧有燃烧的火把，照亮了周围的环境，远处是绿色的植被和水域。画面下方有字幕“因为里面的东西”。"
+    },
+    {
+      "frame_idx": 16,
+      "timestamp_ms": 8015,
+      "diff_value": 1066.3291117882854,
+      "is_keyframe": true,
+      "reason": "差异值 1066.33 >= 阈值 500.00",
+      "image_filename": "frame_0016_key.png",
+      "vlm_response": "一个粉色长发、头戴角饰的动漫风格角色背对镜头，站在一个石砌拱门下，正准备进入一个充满绿色植物和光亮的洞穴或森林区域。画面下方的字幕显示“因为里面的东西”，暗示角色正在探索或准备进入一个未知的区域。"
+    },
+    {
+      "frame_idx": 17,
+      "timestamp_ms": 8531,
+      "diff_value": 1416.9509690635907,
+      "is_keyframe": true,
+      "reason": "差异值 1416.95 >= 阈值 500.00",
+      "image_filename": "frame_0017_key.png",
+      "vlm_response": "一个粉色头发、头上有角的女性角色背对着镜头，站在一个石砌拱门下，正准备进入一个充满绿色植物的洞穴或森林区域。她身后的拱门两侧各有一盏燃烧的火把，照亮了周围的环境。画面下方有字幕“因为里面的东西”。"
+    },
+    {
+      "frame_idx": 18,
+      "timestamp_ms": 9015,
+      "diff_value": 1656.4931964441537,
+      "is_keyframe": true,
+      "reason": "差异值 1656.49 >= 阈值 500.00",
+      "image_filename": "frame_0018_key.png",
+      "vlm_response": "一个粉色长发、头戴角饰的动漫风格女性角色背对镜头，站在一个石砌的拱门下，正朝着前方的森林小径走去。她身后的拱门两侧有燃烧的火把，照亮了周围的环境。画面下方有字幕“不是你所能敌的”。"
+    },
+    {
+      "frame_idx": 19,
+      "timestamp_ms": 9531,
+      "diff_value": 3328.820443730912,
+      "is_keyframe": true,
+      "reason": "差异值 3328.82 >= 阈值 500.00",
+      "image_filename": "frame_0019_key.png",
+      "vlm_response": "这是一个游戏画面，视角位于一个角色的身后，该角色是粉色的、有角的，正站在一条石板路上。画面的两侧是深色的石墙，前方是绿色的草地和发光的植物。画面中还有几个发光的橙色蝴蝶状物体在空中飞舞。画面下方有游戏界面元素，包括一个圆形的技能图标和一个写着“不是你所能敌的”的文字。"
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_ms": 10031,
+      "diff_value": 3376.6062714741493,
+      "is_keyframe": true,
+      "reason": "差异值 3376.61 >= 阈值 500.00",
+      "image_filename": "frame_0020_key.png",
+      "vlm_response": "在一处石墙环绕的奇幻场景中，一名角色正站在一条小路上，抬头仰望着天空中一个正在发光的、类似球体的神秘物体。该物体周围有橙黄色的光点和碎片在飞舞，似乎在进行某种能量释放或召唤。角色似乎正准备应对或观察这个现象。"
+    },
+    {
+      "frame_idx": 21,
+      "timestamp_ms": 10515,
+      "diff_value": 5089.830672924847,
+      "is_keyframe": true,
+      "reason": "差异值 5089.83 >= 阈值 500.00",
+      "image_filename": "frame_0021_key.png",
+      "vlm_response": "在一片充满奇幻色彩的森林中，一个角色正向前奔跑，周围漂浮着发光的橙色碎片和一个巨大的发光球体。画面下方的字幕显示“来到前面的装置”，暗示角色正在执行任务或探索。"
+    },
+    {
+      "frame_idx": 22,
+      "timestamp_ms": 11031,
+      "diff_value": 3916.422948707461,
+      "is_keyframe": true,
+      "reason": "差异值 3916.42 >= 阈值 500.00",
+      "image_filename": "frame_0022_key.png",
+      "vlm_response": "在一片充满奇幻色彩的森林中，一名角色正站在草地上，面对着一个发光的、类似南瓜的怪物。怪物在空中悬浮，周围环绕着橙色的光晕，似乎正在被攻击或准备攻击。画面下方的字幕提示“来到前面的装置”，暗示角色需要前往某个特定地点。"
+    },
+    {
+      "frame_idx": 23,
+      "timestamp_ms": 11515,
+      "diff_value": 3742.2648273887435,
+      "is_keyframe": true,
+      "reason": "差异值 3742.26 >= 阈值 500.00",
+      "image_filename": "frame_0023_key.png",
+      "vlm_response": "在一片充满奇幻色彩的草地上，一个角色正在奔跑，背景中漂浮着巨大的发光南瓜和神秘的生物。画面下方的字幕显示“来到前面的装置”，暗示角色正朝着一个特定目标前进。"
+    },
+    {
+      "frame_idx": 24,
+      "timestamp_ms": 12015,
+      "diff_value": 3844.9588020151614,
+      "is_keyframe": true,
+      "reason": "差异值 3844.96 >= 阈值 500.00",
+      "image_filename": "frame_0024_key.png",
+      "vlm_response": "在一片充满奇幻色彩的绿色草地上，一个粉色头发的角色正在奔跑。背景中，巨大的黑色物体悬停在空中，远处有发光的橙色晶体和水体。画面下方显示着游戏界面，包括角色等级和“启动它”等文字。"
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_ms": 12531,
+      "diff_value": 2882.0562298892887,
+      "is_keyframe": true,
+      "reason": "差异值 2882.06 >= 阈值 500.00",
+      "image_filename": "frame_0025_key.png",
+      "vlm_response": "在一片绿意盎然的森林中，一个角色正站在一块蓝色的岩石上，面对着一个发光的黑色石碑。石碑顶部有一个橙色的火焰状物体，周围是散发着橙色光芒的岩石和茂密的植被。画面下方显示着“启动它”的提示，表明角色正在准备进行某种操作。"
+    },
+    {
+      "frame_idx": 26,
+      "timestamp_ms": 13015,
+      "diff_value": 3914.9693328697645,
+      "is_keyframe": true,
+      "reason": "差异值 3914.97 >= 阈值 500.00",
+      "image_filename": "frame_0026_key.png",
+      "vlm_response": "在一处充满奇幻色彩的户外场景中，一名粉发角色正站在一个发光的黑色石碑前，似乎在进行某种仪式或准备行动。背景是绿色的草地和远处的山峦，周围有发光的岩石，营造出一种神秘的氛围。"
+    },
+    {
+      "frame_idx": 27,
+      "timestamp_ms": 13531,
+      "diff_value": 2175.9365404804757,
+      "is_keyframe": true,
+      "reason": "差异值 2175.94 >= 阈值 500.00",
+      "image_filename": "frame_0027_key.png",
+      "vlm_response": "一名粉色头发的女性角色站在一个发光的黑色石碑前，背景是充满绿色植被和橙色晶体的奇幻洞穴环境。她手持一把弓箭，似乎正准备进行战斗或探索。"
+    },
+    {
+      "frame_idx": 28,
+      "timestamp_ms": 14031,
+      "diff_value": 1767.5171350076353,
+      "is_keyframe": true,
+      "reason": "差异值 1767.52 >= 阈值 500.00",
+      "image_filename": "frame_0028_key.png",
+      "vlm_response": "在一处充满奇幻色彩的户外场景中，一名角色正站在一个发光的石碑前，准备开始一场名为“消灭5只魔物”的挑战。画面中央的石碑上有一个橙色的发光标志，周围环境是绿色的草地和岩石，背景中还有发光的晶体。"
+    },
+    {
+      "frame_idx": 29,
+      "timestamp_ms": 14531,
+      "diff_value": 6806.289820912412,
+      "is_keyframe": true,
+      "reason": "差异值 6806.29 >= 阈值 500.00",
+      "image_filename": "frame_0029_key.png",
+      "vlm_response": "在一款游戏的战斗场景中，一名角色正在草地上奔跑，准备迎接挑战。画面中央的蓝色横幅显示“消灭5只怪物”，下方的“挑战开始”按钮表明任务已启动。"
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_ms": 15031,
+      "diff_value": 2538.992402241492,
+      "is_keyframe": true,
+      "reason": "差异值 2538.99 >= 阈值 500.00",
+      "image_filename": "frame_0030_key.png",
+      "vlm_response": "在一片潮湿的草地上，一名粉发角色正面对着一个巨大的、被火焰环绕的怪物。屏幕上的文字显示“消灭5只怪物”和“守护轻策密藏不被破坏”，表明这是一场战斗。角色似乎正在执行任务，而怪物则处于攻击状态。"
+    },
+    {
+      "frame_idx": 31,
+      "timestamp_ms": 15531,
+      "diff_value": 2562.398580660995,
+      "is_keyframe": true,
+      "reason": "差异值 2562.40 >= 阈值 500.00",
+      "image_filename": "frame_0031_key.png",
+      "vlm_response": "在一片绿色的草地上，一名身着蓝紫色服饰的女性角色正面对着一个巨大的、由岩石构成的敌人。屏幕上方显示着“消灭5只魔物”的任务目标，下方则有文字提示“第一波和第二波的独眼小宝”，表明这是一场战斗。"
+    },
+    {
+      "frame_idx": 32,
+      "timestamp_ms": 16031,
+      "diff_value": 2692.493412889943,
+      "is_keyframe": true,
+      "reason": "差异值 2692.49 >= 阈值 500.00",
+      "image_filename": "frame_0032_key.png",
+      "vlm_response": "在一片绿色的草地上，一名玩家角色正与一个巨大的、类似怪物的敌人对峙。敌人身上有火焰特效，屏幕中央显示着“消灭5只怪物”的任务提示。画面下方的字幕显示“第一波和第二波的独眼小宝”，表明这是一场战斗任务。"
+    },
+    {
+      "frame_idx": 33,
+      "timestamp_ms": 16531,
+      "diff_value": 8986.110452116056,
+      "is_keyframe": true,
+      "reason": "差异值 8986.11 >= 阈值 500.00",
+      "image_filename": "frame_0033_key.png",
+      "vlm_response": "这是一张游戏战斗结束后的画面，显示玩家成功击败了5只怪物，获得了2704的战利品。画面中央的光效和文字表明，这是一场在草地上进行的战斗，玩家的队伍正在清理敌方小怪。"
+    },
+    {
+      "frame_idx": 34,
+      "timestamp_ms": 17031,
+      "diff_value": 10644.344411267452,
+      "is_keyframe": true,
+      "reason": "差异值 10644.34 >= 阈值 500.00",
+      "image_filename": "frame_0034_key.png",
+      "vlm_response": "在一处充满奇幻色彩的地下洞穴或遗迹中，一个巨大的、类似树干的生物正被攻击，其身上有发光的黄色能量，周围有紫色的光效和数字“10099”显示着伤害值。画面下方的字幕提示“第一波和第二波的独眼小宝”，表明这是一场战斗，主角正在与该生物进行对抗。"
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_ms": 17531,
+      "diff_value": 9858.432719445353,
+      "is_keyframe": true,
+      "reason": "差异值 9858.43 >= 阈值 500.00",
+      "image_filename": "frame_0035_key.png",
+      "vlm_response": "在一场激烈的战斗中，一个巨大的机械敌人正被攻击，其腿部和脚部正在释放出蓝色的光效。画面下方的字幕显示“你可能还可以应对”，表明玩家正在与敌人进行对抗。"
+    },
+    {
+      "frame_idx": 36,
+      "timestamp_ms": 18031,
+      "diff_value": 9120.145344199935,
+      "is_keyframe": true,
+      "reason": "差异值 9120.15 >= 阈值 500.00",
+      "image_filename": "frame_0036_key.png",
+      "vlm_response": "在一处充满蓝色魔法光芒的洞穴或地下场景中，一名绿发角色正与一个巨大的、装甲厚重的机械敌人对峙。该角色似乎正在施放技能，周围环绕着蓝色的光效，而敌人的脚下也泛起光芒，表明战斗正在进行中。画面下方的字幕显示“你可能还可以应对”，暗示着战斗的紧张状态。"
+    },
+    {
+      "frame_idx": 37,
+      "timestamp_ms": 18531,
+      "diff_value": 6605.654787712696,
+      "is_keyframe": true,
+      "reason": "差异值 6605.65 >= 阈值 500.00",
+      "image_filename": "frame_0037_key.png",
+      "vlm_response": "在一场战斗中，一个巨大的、由岩石构成的敌人正从水中浮现，其身上散发着蓝紫色的光芒。一名角色正从下方的水面上跃起，似乎在进行攻击或躲避。画面中显示“敌人再次来袭！(3/3)”和“你可能还可以应对”等文字，表明这是一场持续的战斗。"
+    },
+    {
+      "frame_idx": 38,
+      "timestamp_ms": 19031,
+      "diff_value": 7332.671835801156,
+      "is_keyframe": true,
+      "reason": "差异值 7332.67 >= 阈值 500.00",
+      "image_filename": "frame_0038_key.png",
+      "vlm_response": "在一片充满奇幻色彩的绿色草地上，一名红发角色正手持武器，面对着空中漂浮的敌人进行战斗。画面中充满了动态的光效和能量特效，显示着激烈的战斗场面。"
+    },
+    {
+      "frame_idx": 39,
+      "timestamp_ms": 19531,
+      "diff_value": 5523.546085910231,
+      "is_keyframe": true,
+      "reason": "差异值 5523.55 >= 阈值 500.00",
+      "image_filename": "frame_0039_key.png",
+      "vlm_response": "一名红发女性角色手持武器，正面对着一个巨大的、正在释放能量的敌人。画面中充满了战斗特效，包括光束和能量碎片，表明正在进行激烈的战斗。场景似乎是在一个充满奇幻色彩的洞穴或地下城中。"
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_ms": 20031,
+      "diff_value": 3524.5949259653144,
+      "is_keyframe": true,
+      "reason": "差异值 3524.59 >= 阈值 500.00",
+      "image_filename": "frame_0040_key.png",
+      "vlm_response": "在一处充满奇幻色彩的洞穴或森林场景中，一名身着红黑服饰、头戴尖角头饰的女性角色正手持发光武器，与空中漂浮的多个橙色、类似眼球的敌人进行激烈战斗。战斗中，角色正在释放技能，击中敌人后，屏幕上显示了巨大的伤害数值“6525”，表明攻击造成了显著的伤害。"
+    },
+    {
+      "frame_idx": 41,
+      "timestamp_ms": 20531,
+      "diff_value": 2881.0249117173867,
+      "is_keyframe": true,
+      "reason": "差异值 2881.02 >= 阈值 500.00",
+      "image_filename": "frame_0041_key.png",
+      "vlm_response": "在一款动作游戏中，一名红发角色正手持武器，与一个名为“遗迹猎者”的敌人进行战斗。角色处于攻击姿态，周围有光效和伤害数值，表明正在发动攻击。场景设定在充满奇幻色彩的森林或洞穴环境中。"
+    },
+    {
+      "frame_idx": 42,
+      "timestamp_ms": 21031,
+      "diff_value": 1629.4100863738001,
+      "is_keyframe": true,
+      "reason": "差异值 1629.41 >= 阈值 500.00",
+      "image_filename": "frame_0042_key.png",
+      "vlm_response": "一名红发角色正在使用弓箭攻击空中漂浮的敌人，画面中可见多个发光的、类似眼球的敌人。场景设定在一个充满奇幻色彩的洞穴或地下空间，背景有绿色的植被和发光的岩石。"
+    },
+    {
+      "frame_idx": 43,
+      "timestamp_ms": 21531,
+      "diff_value": 0.7654937690881326,
+      "is_keyframe": false,
+      "reason": "差异值 0.77 < 阈值 500.00",
+      "image_filename": "frame_0043_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 44,
+      "timestamp_ms": 22031,
+      "diff_value": 12.628473358420594,
+      "is_keyframe": false,
+      "reason": "差异值 12.63 < 阈值 500.00",
+      "image_filename": "frame_0044_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_ms": 22531,
+      "diff_value": 12.849887175501745,
+      "is_keyframe": false,
+      "reason": "差异值 12.85 < 阈值 500.00",
+      "image_filename": "frame_0045_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 46,
+      "timestamp_ms": 23031,
+      "diff_value": 13.347018842713787,
+      "is_keyframe": false,
+      "reason": "差异值 13.35 < 阈值 500.00",
+      "image_filename": "frame_0046_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 47,
+      "timestamp_ms": 23531,
+      "diff_value": 13.354021801374346,
+      "is_keyframe": false,
+      "reason": "差异值 13.35 < 阈值 500.00",
+      "image_filename": "frame_0047_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 48,
+      "timestamp_ms": 24046,
+      "diff_value": 10353.476949375545,
+      "is_keyframe": true,
+      "reason": "差异值 10353.48 >= 阈值 500.00",
+      "image_filename": "frame_0048_key.png",
+      "vlm_response": "这是一张《我的世界》游戏的截图，视角位于玩家角色的视角。画面右侧是一座由方块构成的木屋，屋旁是绿色的草地和一条通往湖边的小路。湖面平静，远处是连绵的山丘和天空中的云朵。画面左下角可以看到玩家角色的方块状身体。"
+    },
+    {
+      "frame_idx": 49,
+      "timestamp_ms": 24546,
+      "diff_value": 3449.6478784904016,
+      "is_keyframe": true,
+      "reason": "差异值 3449.65 >= 阈值 500.00",
+      "image_filename": "frame_0049_key.png",
+      "vlm_response": "这是一张《我的世界》游戏的截图，视角位于玩家角色的视角。画面中，玩家正站在一座由石块和木头建造的房屋前，旁边是一条通往湖边的小路。画面右下角可以看到玩家的武器和物品栏，表明玩家处于游戏中的一个场景。"
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_ms": 25046,
+      "diff_value": 6966.198127999563,
+      "is_keyframe": true,
+      "reason": "差异值 6966.20 >= 阈值 500.00",
+      "image_filename": "frame_0050_key.png",
+      "vlm_response": "这是一张《我的世界》游戏的截图，视角正对着一个由木板和石块构成的建筑结构。画面中可以看到建筑的木制门板，门板上有几个小窗格，透过窗格可以看到内部的石块。在画面的右侧，可以看到一些绿色的植物和水流。画面下方是游戏的用户界面，显示了玩家的生命值、饥饿值、经验值和物品栏。"
+    },
+    {
+      "frame_idx": 51,
+      "timestamp_ms": 25546,
+      "diff_value": 1881.0400595140707,
+      "is_keyframe": true,
+      "reason": "差异值 1881.04 >= 阈值 500.00",
+      "image_filename": "frame_0051_key.png",
+      "vlm_response": "这是一张《我的世界》游戏的截图，画面中一个玩家角色站在一个由石块和木板搭建的室内空间里。角色的视角正对着一个由石块和木板构成的房间，房间内有木制的墙壁、一个点燃的火把和一个窗户。角色的界面显示其生命值为68，当前持有15个物品。"
+    },
+    {
+      "frame_idx": 52,
+      "timestamp_ms": 26046,
+      "diff_value": 5853.298915044175,
+      "is_keyframe": true,
+      "reason": "差异值 5853.30 >= 阈值 500.00",
+      "image_filename": "frame_0052_key.png",
+      "vlm_response": "这是一个《我的世界》游戏的交易界面截图。玩家的物品栏中，一个绿色的方块（可能是草块或某种资源）被选中，准备进行交易。界面显示了交易的进度条，以及玩家的物品栏和当前的健康值。"
+    }
+  ],
+  "summary": "这是一段《原神》游戏攻略视频，主要展示了在璃月地区“沉玉谷”附近寻找并挑战一个高难度宝箱任务的过程。视频首先引导玩家在地图上定位任务地点，并建议新手玩家寻求帮助。随后，玩家角色进入一个神秘遗迹，启动装置后连续迎战多波强大的敌人，包括“独眼小宝”和“遗迹猎者”。整个视频的核心主题是攻略一个奖励丰厚但挑战性极高的世界任务，旨在为玩家提供通关指引。"
+}

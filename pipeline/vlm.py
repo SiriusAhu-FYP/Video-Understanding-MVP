@@ -1,4 +1,8 @@
-"""vLLM 本地推理客户端：异步调用 OpenAI 兼容接口，对关键帧进行视觉描述。"""
+"""vLLM 本地推理客户端：异步调用 OpenAI 兼容接口，对关键帧进行视觉描述。
+
+支持视觉语言模型（VLM，发送图片）和纯文本模型（仅发送文本提示词）。
+通过模型名称中是否包含 "VL" 自动判断模型类型。
+"""
 
 from __future__ import annotations
 
@@ -13,6 +17,8 @@ from pipeline.models import FrameDescription, KeyFrame
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 _PROMPT_PATH = _PROJECT_ROOT / "prompts" / "vlm_prompt.md"
 
+_VLM_KEYWORDS = {"vl", "vision", "visual"}
+
 
 def load_vlm_prompt() -> str:
     """从 prompts/vlm_prompt.md 读取提示词。"""
@@ -21,11 +27,24 @@ def load_vlm_prompt() -> str:
     return _PROMPT_PATH.read_text(encoding="utf-8").strip()
 
 
+def is_vision_model(model_id: str) -> bool:
+    """判断模型是否为视觉语言模型（根据模型名称中的关键词）。
+
+    Args:
+        model_id: 模型标识符，如 "Qwen/Qwen3-VL-2B-Instruct"。
+
+    Returns:
+        True 表示该模型支持图片输入。
+    """
+    parts = model_id.lower().replace("/", "-").replace("_", "-").split("-")
+    return bool(set(parts) & _VLM_KEYWORDS)
+
+
 class VLMClient:
     """异步 vLLM 推理客户端。
 
-    通过 httpx.AsyncClient 调用本地 vLLM 的 OpenAI 兼容 chat/completions 接口，
-    将关键帧图片（Base64）发送给视觉语言模型，获取帧描述。
+    通过 httpx.AsyncClient 调用本地 vLLM 的 OpenAI 兼容 chat/completions 接口。
+    对于 VLM 模型发送图片 + 文本，对于纯文本模型仅发送文本提示词。
     """
 
     def __init__(
@@ -41,6 +60,12 @@ class VLMClient:
         self._prompt = prompt or load_vlm_prompt()
         self._timeout = timeout
         self._client: httpx.AsyncClient | None = None
+        self._is_vlm = is_vision_model(self._model)
+        if not self._is_vlm:
+            lg.warning(
+                "模型 '{}' 不是视觉语言模型，将以纯文本模式调用（不发送图片）",
+                self._model,
+            )
 
     async def _ensure_client(self) -> httpx.AsyncClient:
         if self._client is None or self._client.is_closed:
@@ -51,30 +76,42 @@ class VLMClient:
         return self._client
 
     async def describe_frame(self, keyframe: KeyFrame) -> FrameDescription:
-        """对单个关键帧调用 vLLM，返回结构化描述。"""
+        """对单个关键帧调用 vLLM，返回结构化描述。
+
+        Args:
+            keyframe: 包含 Base64 图像的关键帧。
+
+        Returns:
+            FrameDescription 包含帧 ID、时间戳和文本描述。
+        """
         client = await self._ensure_client()
+
+        if self._is_vlm:
+            user_content: list[dict] | str = [
+                {"type": "text", "text": self._prompt},
+                {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": f"data:image/jpeg;base64,{keyframe.base64_image}",
+                    },
+                },
+            ]
+        else:
+            user_content = self._prompt
 
         payload = {
             "model": self._model,
             "messages": [
-                {
-                    "role": "user",
-                    "content": [
-                        {"type": "text", "text": self._prompt},
-                        {
-                            "type": "image_url",
-                            "image_url": {
-                                "url": f"data:image/jpeg;base64,{keyframe.base64_image}",
-                            },
-                        },
-                    ],
-                },
+                {"role": "user", "content": user_content},
             ],
             "max_tokens": 512,
             "temperature": 0.1,
         }
 
-        lg.debug("调用 vLLM 描述关键帧 #{} (timestamp={}ms)", keyframe.frame_id, keyframe.timestamp_ms)
+        lg.debug(
+            "调用 vLLM 描述关键帧 #{} (timestamp={}ms, vlm={})",
+            keyframe.frame_id, keyframe.timestamp_ms, self._is_vlm,
+        )
 
         response = await client.post("/chat/completions", json=payload)
         response.raise_for_status()
@@ -94,6 +131,7 @@ class VLMClient:
         )
 
     async def close(self) -> None:
+        """关闭 HTTP 客户端连接。"""
         if self._client is not None and not self._client.is_closed:
             await self._client.aclose()
             lg.debug("vLLM 客户端已关闭")

@@ -40,6 +40,7 @@ from pipeline.capture import (
     compute_diff,
     find_window,
     frame_to_base64,
+    run_capture_loop,
 )
 from pipeline.config import Settings, get_settings, setup_logging
 from pipeline.models import (
@@ -172,9 +173,9 @@ async def run_single_pipeline(
     keyword = cfg.capture.window_title_keyword
     wait_for_window(keyword)
 
-    # 运行流水线
+    # 运行流水线：使用 cfg 中的实际模型名（自动检测的，非 config.toml 默认值）
     queue = KeyFrameQueue()
-    vlm_client = VLMClient()
+    vlm_client = VLMClient(model=cfg.llm.vllm_model)
     summarizer = Summarizer()
     results: list[FrameDescription] = []
     stop_event = asyncio.Event()
