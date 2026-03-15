@@ -230,7 +230,7 @@ def run_benchmark_speed_for_model(
 
 
 def run_video_understanding_for_model(
-    output_dir: Path, config: dict,
+    output_dir: Path, config: dict, base_url: str | None = None,
 ) -> bool:
     vu_cfg = config.get("video_understanding", {})
     if not vu_cfg.get("enabled", True):
@@ -244,6 +244,7 @@ def run_video_understanding_for_model(
             run_experiment(
                 num_runs=vu_cfg.get("runs", 3),
                 output_dir=output_dir,
+                base_url=base_url,
             )
         )
         total_runs = sum(len(v) for v in results.values())
@@ -957,7 +958,7 @@ def main() -> None:
 
             if config.get("video_understanding", {}).get("enabled", True):
                 lg.info("── Running video_understanding ──")
-                run_video_understanding_for_model(video_dir, config)
+                run_video_understanding_for_model(video_dir, config, base_url)
 
             completed_models.append(model_id)
             lg.info("Model {} completed", model_id)

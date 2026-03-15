@@ -342,20 +342,23 @@ def generate_model_report(
 async def run_experiment(
     num_runs: int = 3,
     output_dir: Path | None = None,
+    base_url: str | None = None,
 ) -> dict[str, list[PipelineResult]]:
     """运行完整实验：对所有视频执行多次流水线。
 
     Args:
         output_dir: If provided, use this as the parent directory.
                     Report will be placed in output_dir/{model_short_name}/.
+        base_url: Override vLLM base URL (e.g. for WSL2 IP connectivity).
 
     Returns:
         {video_name: [PipelineResult per run]}
     """
     cfg = get_settings()
+    effective_url = base_url or cfg.llm.vllm_base_url
 
     # 自动检测模型
-    model_id = detect_model(cfg.llm.vllm_base_url)
+    model_id = detect_model(effective_url)
     short_name = model_short_name(model_id)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
@@ -381,9 +384,10 @@ async def run_experiment(
         sys.exit(1)
     lg.info("视频文件: {}", [v.name for v in videos])
 
-    # 修改配置：设置模型名（自动检测）
+    # 修改配置：设置模型名（自动检测）+ base_url
     cfg_dict = cfg.model_dump()
     cfg_dict["llm"]["vllm_model"] = model_id
+    cfg_dict["llm"]["vllm_base_url"] = effective_url
 
     all_results: dict[str, list[PipelineResult]] = {}
 
