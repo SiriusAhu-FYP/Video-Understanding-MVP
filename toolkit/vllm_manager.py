@@ -24,13 +24,13 @@ DEFAULT_VLLM_ARGS: dict[str, str | int | float] = {
 
 MODEL_SPECIFIC_ARGS: dict[str, dict] = {
     "Qwen/Qwen3.5-2B": {
-        "mm-processor-kwargs": "'\"max_dynamic_patch\": 448, \"min_dynamic_patch\": 32}'",
+        "mm-processor-kwargs": '\'"max_dynamic_patch": 448, "min_dynamic_patch": 32}\'',
     },
     "Qwen/Qwen3.5-0.8B": {
-        "mm-processor-kwargs": "'{\"max_dynamic_patch\": 448, \"min_dynamic_patch\": 32}'",
+        "mm-processor-kwargs": '\'{"max_dynamic_patch": 448, "min_dynamic_patch": 32}\'',
     },
     "Qwen/Qwen3-VL-2B-Instruct": {
-        "mm-processor-kwargs": "'{\"max_dynamic_patch\": 448, \"min_dynamic_patch\": 32}'",
+        "mm-processor-kwargs": '\'{"max_dynamic_patch": 448, "min_dynamic_patch": 32}\'',
     },
     "OpenGVLab/InternVL2_5-2B": {
         "max-model-len": 4096,
@@ -45,7 +45,7 @@ MODEL_SPECIFIC_ARGS: dict[str, dict] = {
         "max-model-len": 8192,
     },
     "deepseek-ai/deepseek-vl2-tiny": {
-        "hf-overrides": "'{\"architectures\": [\"DeepseekVLV2ForCausalLM\"]}'",
+        "hf-overrides": '\'{"architectures": ["DeepseekVLV2ForCausalLM"]}\'',
         "max-model-len": 4096,
     },
     "vikhyatk/moondream2": {
@@ -86,8 +86,8 @@ def create_launch_script(model_id: str, extra_args: dict | None = None) -> str:
     vllm_cmd = build_vllm_command(model_id, extra_args)
     script_content = f"source {VLLM_VENV_ACTIVATE}\n{vllm_cmd}\n"
 
-    import tempfile
     import os
+    import tempfile
 
     with tempfile.NamedTemporaryFile(
         mode="w", suffix=".sh", delete=False, newline="\n"
@@ -98,11 +98,19 @@ def create_launch_script(model_id: str, extra_args: dict | None = None) -> str:
     try:
         wsl_script_path = subprocess.run(
             ["wsl", "wslpath", "-u", tmp_path],
-            capture_output=True, text=True, check=True, timeout=5,
+            capture_output=True,
+            text=True,
+            check=True,
+            timeout=5,
         ).stdout.strip()
 
         subprocess.run(
-            ["wsl", "bash", "-c", f"cp {wsl_script_path} {script_path} && chmod +x {script_path}"],
+            [
+                "wsl",
+                "bash",
+                "-c",
+                f"cp {wsl_script_path} {script_path} && chmod +x {script_path}",
+            ],
             check=True,
             timeout=10,
         )
@@ -123,8 +131,12 @@ def start_vllm(model_id: str, extra_args: dict | None = None) -> subprocess.Pope
 
     lg.info("正在启动 vLLM 服务: {} ...", model_id)
     proc = subprocess.Popen(
-        ["wsl", "bash", "-c",
-         f"HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 bash {script_path}"],
+        [
+            "wsl",
+            "bash",
+            "-c",
+            f"HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 bash {script_path}",
+        ],
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
     )

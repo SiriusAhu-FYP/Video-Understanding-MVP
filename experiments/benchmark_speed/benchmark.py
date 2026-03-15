@@ -76,15 +76,6 @@ SCENARIOS: list[Scenario] = [
         max_tokens=512,
     ),
     Scenario(
-        id="scene_classification",
-        name="场景分类",
-        prompt=(
-            "对这张游戏截图进行分类，给出：1) 游戏类型（如RPG/动作/平台/射击等）；"
-            "2) 场景类型（如战斗/探索/对话/菜单等）。只输出分类结果，不要额外解释。"
-        ),
-        max_tokens=64,
-    ),
-    Scenario(
         id="action_analysis",
         name="角色动作分析",
         prompt=(
@@ -100,24 +91,6 @@ SCENARIOS: list[Scenario] = [
             "识别这张游戏截图中所有可见的 UI/HUD 元素，"
             "例如：血条、蓝条、小地图、技能图标、物品栏、计分板、对话框等。"
             "逐一列出每个 UI 元素的位置（画面的哪个区域）和当前显示的状态/数值。"
-        ),
-        max_tokens=256,
-    ),
-    Scenario(
-        id="bilingual",
-        name="中英双语描述",
-        prompt=(
-            "请对这张游戏截图进行描述，先用中文写一段（2-3句），"
-            "然后用英文写一段（2-3 sentences）。两段内容应保持一致。"
-        ),
-        max_tokens=512,
-    ),
-    Scenario(
-        id="narrative",
-        name="叙事性描述",
-        prompt=(
-            "以游戏解说或故事旁白的口吻，用中文描述这张游戏截图中正在发生的事情。"
-            "语言要生动有画面感，像是在讲述一个精彩的游戏瞬间。"
         ),
         max_tokens=256,
     ),

@@ -25,7 +25,7 @@ poll_interval_s = 15
 enabled = true
 runs = 3
 warmup = 1
-scenarios = "all"
+scenarios = ["short_desc", "detailed_desc", "object_detection", "action_analysis", "ui_recognition"]
 images = "all"
 
 [video_understanding]

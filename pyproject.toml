@@ -8,12 +8,15 @@ dependencies = [
     "ahu-paimon-toolkit>=0.1.0",
     "httpx>=0.28.1",
     "loguru>=0.7.3",
+    "matplotlib>=3.10.0",
     "mss>=10.1.0",
     "numpy>=2.4.2",
+    "openai>=1.0.0",
     "opencv-python-headless>=4.13.0.92",
     "pydantic>=2.12.5",
     "pydantic-settings>=2.13.1",
     "pywin32>=311",
+    "seaborn>=0.13.0",
 ]
 
 [dependency-groups]
