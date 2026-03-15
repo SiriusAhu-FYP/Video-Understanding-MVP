@@ -116,13 +116,15 @@ def create_launch_script(model_id: str, extra_args: dict | None = None) -> str:
 def start_vllm(model_id: str, extra_args: dict | None = None) -> subprocess.Popen:
     """Start vLLM service in WSL for the given model.
 
+    Uses HF_HUB_OFFLINE=1 to avoid network issues in WSL.
     Returns the Popen handle for the background process.
     """
     script_path = create_launch_script(model_id, extra_args)
 
     lg.info("正在启动 vLLM 服务: {} ...", model_id)
     proc = subprocess.Popen(
-        ["wsl", "bash", script_path],
+        ["wsl", "bash", "-c",
+         f"HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 bash {script_path}"],
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
     )
