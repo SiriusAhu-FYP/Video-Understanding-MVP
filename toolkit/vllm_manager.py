@@ -26,7 +26,7 @@ def get_wsl_ip() -> str:
     try:
         result = subprocess.run(
             ["wsl", "bash", "-c",
-             "ip addr show eth0 2>/dev/null | grep 'inet ' | awk '{print $2}' | cut -d/ -f1"],
+             "ip -4 -o addr show eth0 2>/dev/null | tr -s ' ' | cut -d' ' -f4 | cut -d/ -f1"],
             capture_output=True, text=True, timeout=5,
         )
         ip = result.stdout.strip()
