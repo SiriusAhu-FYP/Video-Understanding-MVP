@@ -1,0 +1,369 @@
+2026-03-15 23:37:06.757 | INFO    | ============================================================
+2026-03-15 23:37:06.757 | INFO    | VLM 基准测试启动
+2026-03-15 23:37:06.757 | INFO    | 模型: Qwen/Qwen3-VL-2B-Instruct | 重复次数: 3 | 预热次数: 1
+2026-03-15 23:37:06.757 | INFO    | 报告目录: experiments\multi_model_benchmark\2026-03-15_23-17-31\benchmark_speed\Qwen_Qwen3-VL-2B-Instruct
+2026-03-15 23:37:06.757 | INFO    | ============================================================
+2026-03-15 23:37:06.765 | DEBUG   | 已加载图片: Arknights_01.png (3155.5 KB)
+2026-03-15 23:37:06.769 | DEBUG   | 已加载图片: Cyberpunk-2077_01.png (1414.6 KB)
+2026-03-15 23:37:06.772 | DEBUG   | 已加载图片: Genshin-Impact_01.png (933.2 KB)
+2026-03-15 23:37:06.776 | DEBUG   | 已加载图片: Minecraft_01.png (2343.7 KB)
+2026-03-15 23:37:06.778 | DEBUG   | 已加载图片: P5R_01.png (760.5 KB)
+2026-03-15 23:37:06.780 | DEBUG   | 已加载图片: SuperMarioBros_01.png (553.4 KB)
+2026-03-15 23:37:06.780 | INFO    | 共加载 6 张图片
+2026-03-15 23:37:06.780 | INFO    | 测试场景: ['short_desc', 'detailed_desc', 'object_detection', 'scene_classification', 'action_analysis', 'ui_recognition', 'bilingual', 'narrative']
+2026-03-15 23:37:06.780 | INFO    | ────────────────────────────────────────
+2026-03-15 23:37:06.780 | INFO    | 场景: 短文本描述 (short_desc)
+2026-03-15 23:37:06.780 | DEBUG   | 预热 1/1 | short_desc | Arknights_01.png
+2026-03-15 23:37:10.018 | INFO    | [1/144] short_desc | Arknights_01.png | run 1
+2026-03-15 23:37:12.526 | INFO    |   TTFT=2.146s | 吞吐=115.1 tok/s | 总耗时=2.476s | Tokens=38
+2026-03-15 23:37:12.526 | INFO    | [2/144] short_desc | Arknights_01.png | run 2
+2026-03-15 23:37:15.031 | INFO    |   TTFT=2.137s | 吞吐=113.3 tok/s | 总耗时=2.473s | Tokens=38
+2026-03-15 23:37:15.031 | INFO    | [3/144] short_desc | Arknights_01.png | run 3
+2026-03-15 23:37:17.521 | INFO    |   TTFT=2.126s | 吞吐=114.8 tok/s | 总耗时=2.457s | Tokens=38
+2026-03-15 23:37:17.521 | DEBUG   | 预热 1/1 | short_desc | Cyberpunk-2077_01.png
+2026-03-15 23:37:20.628 | INFO    | [4/144] short_desc | Cyberpunk-2077_01.png | run 1
+2026-03-15 23:37:23.211 | INFO    |   TTFT=2.108s | 吞吐=134.6 tok/s | 总耗时=2.539s | Tokens=58
+2026-03-15 23:37:23.211 | INFO    | [5/144] short_desc | Cyberpunk-2077_01.png | run 2
+2026-03-15 23:37:25.795 | INFO    |   TTFT=2.119s | 吞吐=134.0 tok/s | 总耗时=2.552s | Tokens=58
+2026-03-15 23:37:25.795 | INFO    | [6/144] short_desc | Cyberpunk-2077_01.png | run 3
+2026-03-15 23:37:28.398 | INFO    |   TTFT=2.110s | 吞吐=126.1 tok/s | 总耗时=2.570s | Tokens=58
+2026-03-15 23:37:28.398 | DEBUG   | 预热 1/1 | short_desc | Genshin-Impact_01.png
+2026-03-15 23:37:30.969 | INFO    | [7/144] short_desc | Genshin-Impact_01.png | run 1
+2026-03-15 23:37:33.419 | INFO    |   TTFT=2.127s | 吞吐=123.1 tok/s | 总耗时=2.419s | Tokens=36
+2026-03-15 23:37:33.419 | INFO    | [8/144] short_desc | Genshin-Impact_01.png | run 2
+2026-03-15 23:37:35.837 | INFO    |   TTFT=2.087s | 吞吐=119.7 tok/s | 总耗时=2.388s | Tokens=36
+2026-03-15 23:37:35.837 | INFO    | [9/144] short_desc | Genshin-Impact_01.png | run 3
+2026-03-15 23:37:38.249 | INFO    |   TTFT=2.085s | 吞吐=121.8 tok/s | 总耗时=2.381s | Tokens=36
+2026-03-15 23:37:38.249 | DEBUG   | 预热 1/1 | short_desc | Minecraft_01.png
+2026-03-15 23:37:42.011 | INFO    | [10/144] short_desc | Minecraft_01.png | run 1
+2026-03-15 23:37:44.565 | INFO    |   TTFT=2.132s | 吞吐=130.2 tok/s | 总耗时=2.523s | Tokens=51
+2026-03-15 23:37:44.565 | INFO    | [11/144] short_desc | Minecraft_01.png | run 2
+2026-03-15 23:37:47.150 | INFO    |   TTFT=2.135s | 吞吐=121.8 tok/s | 总耗时=2.554s | Tokens=51
+2026-03-15 23:37:47.150 | INFO    | [12/144] short_desc | Minecraft_01.png | run 3
+2026-03-15 23:37:49.744 | INFO    |   TTFT=2.131s | 吞吐=118.5 tok/s | 总耗时=2.561s | Tokens=51
+2026-03-15 23:37:49.744 | DEBUG   | 预热 1/1 | short_desc | P5R_01.png
+2026-03-15 23:37:52.414 | INFO    | [13/144] short_desc | P5R_01.png | run 1
+2026-03-15 23:37:54.932 | INFO    |   TTFT=2.082s | 吞吐=126.7 tok/s | 总耗时=2.484s | Tokens=51
+2026-03-15 23:37:54.932 | INFO    | [14/144] short_desc | P5R_01.png | run 2
+2026-03-15 23:37:57.431 | INFO    |   TTFT=2.077s | 吞吐=130.6 tok/s | 总耗时=2.468s | Tokens=51
+2026-03-15 23:37:57.431 | INFO    | [15/144] short_desc | P5R_01.png | run 3
+2026-03-15 23:37:59.951 | INFO    |   TTFT=2.102s | 吞吐=132.0 tok/s | 总耗时=2.489s | Tokens=51
+2026-03-15 23:37:59.951 | DEBUG   | 预热 1/1 | short_desc | SuperMarioBros_01.png
+2026-03-15 23:38:02.701 | INFO    | [16/144] short_desc | SuperMarioBros_01.png | run 1
+2026-03-15 23:38:05.213 | INFO    |   TTFT=2.083s | 吞吐=118.7 tok/s | 总耗时=2.479s | Tokens=47
+2026-03-15 23:38:05.213 | INFO    | [17/144] short_desc | SuperMarioBros_01.png | run 2
+2026-03-15 23:38:07.725 | INFO    |   TTFT=2.104s | 吞吐=124.8 tok/s | 总耗时=2.480s | Tokens=47
+2026-03-15 23:38:07.725 | INFO    | [18/144] short_desc | SuperMarioBros_01.png | run 3
+2026-03-15 23:38:10.246 | INFO    |   TTFT=2.082s | 吞吐=116.1 tok/s | 总耗时=2.487s | Tokens=47
+2026-03-15 23:38:10.246 | INFO    | ────────────────────────────────────────
+2026-03-15 23:38:10.246 | INFO    | 场景: 详细描述 (detailed_desc)
+2026-03-15 23:38:10.246 | DEBUG   | 预热 1/1 | detailed_desc | Arknights_01.png
+2026-03-15 23:38:16.115 | INFO    | [19/144] detailed_desc | Arknights_01.png | run 1
+2026-03-15 23:38:21.793 | INFO    |   TTFT=2.122s | 吞吐=145.3 tok/s | 总耗时=5.645s | Tokens=512
+2026-03-15 23:38:21.793 | INFO    | [20/144] detailed_desc | Arknights_01.png | run 2
+2026-03-15 23:38:27.470 | INFO    |   TTFT=2.124s | 吞吐=145.4 tok/s | 总耗时=5.645s | Tokens=512
+2026-03-15 23:38:27.470 | INFO    | [21/144] detailed_desc | Arknights_01.png | run 3
+2026-03-15 23:38:33.182 | INFO    |   TTFT=2.124s | 吞吐=144.1 tok/s | 总耗时=5.678s | Tokens=512
+2026-03-15 23:38:33.182 | DEBUG   | 预热 1/1 | detailed_desc | Cyberpunk-2077_01.png
+2026-03-15 23:38:38.992 | INFO    | [22/144] detailed_desc | Cyberpunk-2077_01.png | run 1
+2026-03-15 23:38:44.635 | INFO    |   TTFT=2.111s | 吞吐=146.3 tok/s | 总耗时=5.612s | Tokens=512
+2026-03-15 23:38:44.635 | INFO    | [23/144] detailed_desc | Cyberpunk-2077_01.png | run 2
+2026-03-15 23:38:50.337 | INFO    |   TTFT=2.115s | 吞吐=144.0 tok/s | 总耗时=5.672s | Tokens=512
+2026-03-15 23:38:50.337 | INFO    | [24/144] detailed_desc | Cyberpunk-2077_01.png | run 3
+2026-03-15 23:38:55.999 | INFO    |   TTFT=2.120s | 吞吐=145.8 tok/s | 总耗时=5.631s | Tokens=512
+2026-03-15 23:38:55.999 | DEBUG   | 预热 1/1 | detailed_desc | Genshin-Impact_01.png
+2026-03-15 23:39:01.584 | INFO    | [25/144] detailed_desc | Genshin-Impact_01.png | run 1
+2026-03-15 23:39:07.158 | INFO    |   TTFT=2.097s | 吞吐=148.7 tok/s | 总耗时=5.541s | Tokens=512
+2026-03-15 23:39:07.158 | INFO    | [26/144] detailed_desc | Genshin-Impact_01.png | run 2
+2026-03-15 23:39:12.715 | INFO    |   TTFT=2.084s | 吞吐=148.8 tok/s | 总耗时=5.526s | Tokens=512
+2026-03-15 23:39:12.715 | INFO    | [27/144] detailed_desc | Genshin-Impact_01.png | run 3
+2026-03-15 23:39:18.272 | INFO    |   TTFT=2.086s | 吞吐=148.9 tok/s | 总耗时=5.524s | Tokens=512
+2026-03-15 23:39:18.272 | DEBUG   | 预热 1/1 | detailed_desc | Minecraft_01.png
+2026-03-15 23:39:24.345 | INFO    | [28/144] detailed_desc | Minecraft_01.png | run 1
+2026-03-15 23:39:30.121 | INFO    |   TTFT=2.133s | 吞吐=141.8 tok/s | 总耗时=5.745s | Tokens=512
+2026-03-15 23:39:30.122 | INFO    | [29/144] detailed_desc | Minecraft_01.png | run 2
+2026-03-15 23:39:35.923 | INFO    |   TTFT=2.139s | 吞吐=141.0 tok/s | 总耗时=5.771s | Tokens=512
+2026-03-15 23:39:35.923 | INFO    | [30/144] detailed_desc | Minecraft_01.png | run 3
+2026-03-15 23:39:41.717 | INFO    |   TTFT=2.139s | 吞吐=141.4 tok/s | 总耗时=5.760s | Tokens=512
+2026-03-15 23:39:41.718 | DEBUG   | 预热 1/1 | detailed_desc | P5R_01.png
+2026-03-15 23:39:47.277 | INFO    | [31/144] detailed_desc | P5R_01.png | run 1
+2026-03-15 23:39:52.823 | INFO    |   TTFT=2.083s | 吞吐=149.2 tok/s | 总耗时=5.514s | Tokens=512
+2026-03-15 23:39:52.823 | INFO    | [32/144] detailed_desc | P5R_01.png | run 2
+2026-03-15 23:39:58.353 | INFO    |   TTFT=2.084s | 吞吐=149.9 tok/s | 总耗时=5.499s | Tokens=512
+2026-03-15 23:39:58.354 | INFO    | [33/144] detailed_desc | P5R_01.png | run 3
+2026-03-15 23:40:03.840 | INFO    |   TTFT=2.078s | 吞吐=151.7 tok/s | 总耗时=5.454s | Tokens=512
+2026-03-15 23:40:03.840 | DEBUG   | 预热 1/1 | detailed_desc | SuperMarioBros_01.png
+2026-03-15 23:40:09.535 | INFO    | [34/144] detailed_desc | SuperMarioBros_01.png | run 1
+2026-03-15 23:40:15.111 | INFO    |   TTFT=2.082s | 吞吐=147.9 tok/s | 总耗时=5.544s | Tokens=512
+2026-03-15 23:40:15.112 | INFO    | [35/144] detailed_desc | SuperMarioBros_01.png | run 2
+2026-03-15 23:40:20.700 | INFO    |   TTFT=2.083s | 吞吐=147.4 tok/s | 总耗时=5.558s | Tokens=512
+2026-03-15 23:40:20.700 | INFO    | [36/144] detailed_desc | SuperMarioBros_01.png | run 3
+2026-03-15 23:40:26.308 | INFO    |   TTFT=2.092s | 吞吐=147.1 tok/s | 总耗时=5.572s | Tokens=512
+2026-03-15 23:40:26.308 | INFO    | ────────────────────────────────────────
+2026-03-15 23:40:26.308 | INFO    | 场景: JSON 物体检测 (object_detection)
+2026-03-15 23:40:26.308 | DEBUG   | 预热 1/1 | object_detection | Arknights_01.png
+2026-03-15 23:40:32.161 | INFO    | [37/144] object_detection | Arknights_01.png | run 1
+2026-03-15 23:40:37.832 | INFO    |   TTFT=2.136s | 吞吐=146.1 tok/s | 总耗时=5.639s | Tokens=512
+2026-03-15 23:40:37.832 | INFO    | [38/144] object_detection | Arknights_01.png | run 2
+2026-03-15 23:40:43.531 | INFO    |   TTFT=2.121s | 吞吐=144.4 tok/s | 总耗时=5.667s | Tokens=512
+2026-03-15 23:40:43.531 | INFO    | [39/144] object_detection | Arknights_01.png | run 3
+2026-03-15 23:40:49.197 | INFO    |   TTFT=2.121s | 吞吐=145.8 tok/s | 总耗时=5.634s | Tokens=512
+2026-03-15 23:40:49.197 | DEBUG   | 预热 1/1 | object_detection | Cyberpunk-2077_01.png
+2026-03-15 23:40:55.018 | INFO    | [40/144] object_detection | Cyberpunk-2077_01.png | run 1
+2026-03-15 23:41:00.716 | INFO    |   TTFT=2.122s | 吞吐=144.4 tok/s | 总耗时=5.667s | Tokens=512
+2026-03-15 23:41:00.716 | INFO    | [41/144] object_detection | Cyberpunk-2077_01.png | run 2
+2026-03-15 23:41:06.390 | INFO    |   TTFT=2.121s | 吞吐=145.4 tok/s | 总耗时=5.643s | Tokens=512
+2026-03-15 23:41:06.390 | INFO    | [42/144] object_detection | Cyberpunk-2077_01.png | run 3
+2026-03-15 23:41:12.083 | INFO    |   TTFT=2.121s | 吞吐=144.6 tok/s | 总耗时=5.662s | Tokens=512
+2026-03-15 23:41:12.083 | DEBUG   | 预热 1/1 | object_detection | Genshin-Impact_01.png
+2026-03-15 23:41:15.876 | INFO    | [43/144] object_detection | Genshin-Impact_01.png | run 1
+2026-03-15 23:41:19.589 | INFO    |   TTFT=2.082s | 吞吐=149.3 tok/s | 总耗时=3.682s | Tokens=239
+2026-03-15 23:41:19.590 | INFO    | [44/144] object_detection | Genshin-Impact_01.png | run 2
+2026-03-15 23:41:23.329 | INFO    |   TTFT=2.098s | 吞吐=148.4 tok/s | 总耗时=3.708s | Tokens=239
+2026-03-15 23:41:23.330 | INFO    | [45/144] object_detection | Genshin-Impact_01.png | run 3
+2026-03-15 23:41:27.070 | INFO    |   TTFT=2.085s | 吞吐=147.0 tok/s | 总耗时=3.711s | Tokens=239
+2026-03-15 23:41:27.070 | DEBUG   | 预热 1/1 | object_detection | Minecraft_01.png
+2026-03-15 23:41:33.080 | INFO    | [46/144] object_detection | Minecraft_01.png | run 1
+2026-03-15 23:41:38.918 | INFO    |   TTFT=2.188s | 吞吐=141.4 tok/s | 总耗时=5.807s | Tokens=512
+2026-03-15 23:41:38.918 | INFO    | [47/144] object_detection | Minecraft_01.png | run 2
+2026-03-15 23:41:44.701 | INFO    |   TTFT=2.131s | 吞吐=141.4 tok/s | 总耗时=5.750s | Tokens=512
+2026-03-15 23:41:44.701 | INFO    | [48/144] object_detection | Minecraft_01.png | run 3
+2026-03-15 23:41:50.499 | INFO    |   TTFT=2.147s | 吞吐=141.4 tok/s | 总耗时=5.768s | Tokens=512
+2026-03-15 23:41:50.500 | DEBUG   | 预热 1/1 | object_detection | P5R_01.png
+2026-03-15 23:41:56.067 | INFO    | [49/144] object_detection | P5R_01.png | run 1
+2026-03-15 23:42:01.601 | INFO    |   TTFT=2.081s | 吞吐=149.7 tok/s | 总耗时=5.502s | Tokens=512
+2026-03-15 23:42:01.601 | INFO    | [50/144] object_detection | P5R_01.png | run 2
+2026-03-15 23:42:07.184 | INFO    |   TTFT=2.084s | 吞吐=147.6 tok/s | 总耗时=5.552s | Tokens=512
+2026-03-15 23:42:07.184 | INFO    | [51/144] object_detection | P5R_01.png | run 3
+2026-03-15 23:42:12.701 | INFO    |   TTFT=2.082s | 吞吐=150.4 tok/s | 总耗时=5.486s | Tokens=512
+2026-03-15 23:42:12.701 | DEBUG   | 预热 1/1 | object_detection | SuperMarioBros_01.png
+2026-03-15 23:42:18.463 | INFO    | [52/144] object_detection | SuperMarioBros_01.png | run 1
+2026-03-15 23:42:24.089 | INFO    |   TTFT=2.096s | 吞吐=146.4 tok/s | 总耗时=5.593s | Tokens=512
+2026-03-15 23:42:24.089 | INFO    | [53/144] object_detection | SuperMarioBros_01.png | run 2
+2026-03-15 23:42:29.686 | INFO    |   TTFT=2.085s | 吞吐=147.1 tok/s | 总耗时=5.565s | Tokens=512
+2026-03-15 23:42:29.687 | INFO    | [54/144] object_detection | SuperMarioBros_01.png | run 3
+2026-03-15 23:42:35.279 | INFO    |   TTFT=2.087s | 吞吐=147.3 tok/s | 总耗时=5.563s | Tokens=512
+2026-03-15 23:42:35.279 | INFO    | ────────────────────────────────────────
+2026-03-15 23:42:35.279 | INFO    | 场景: 场景分类 (scene_classification)
+2026-03-15 23:42:35.279 | DEBUG   | 预热 1/1 | scene_classification | Arknights_01.png
+2026-03-15 23:42:37.765 | INFO    | [55/144] scene_classification | Arknights_01.png | run 1
+2026-03-15 23:42:40.062 | INFO    |   TTFT=2.133s | 吞吐=98.8 tok/s | 总耗时=2.265s | Tokens=13
+2026-03-15 23:42:40.062 | INFO    | [56/144] scene_classification | Arknights_01.png | run 2
+2026-03-15 23:42:42.483 | INFO    |   TTFT=2.161s | 吞吐=57.1 tok/s | 总耗时=2.388s | Tokens=13
+2026-03-15 23:42:42.483 | INFO    | [57/144] scene_classification | Arknights_01.png | run 3
+2026-03-15 23:42:44.774 | INFO    |   TTFT=2.125s | 吞吐=96.2 tok/s | 总耗时=2.260s | Tokens=13
+2026-03-15 23:42:44.774 | DEBUG   | 预热 1/1 | scene_classification | Cyberpunk-2077_01.png
+2026-03-15 23:42:47.373 | INFO    | [58/144] scene_classification | Cyberpunk-2077_01.png | run 1
+2026-03-15 23:42:49.654 | INFO    |   TTFT=2.122s | 吞吐=94.2 tok/s | 总耗时=2.249s | Tokens=12
+2026-03-15 23:42:49.654 | INFO    | [59/144] scene_classification | Cyberpunk-2077_01.png | run 2
+2026-03-15 23:42:52.074 | INFO    |   TTFT=2.159s | 吞吐=51.9 tok/s | 总耗时=2.390s | Tokens=12
+2026-03-15 23:42:52.074 | INFO    | [60/144] scene_classification | Cyberpunk-2077_01.png | run 3
+2026-03-15 23:42:54.350 | INFO    |   TTFT=2.120s | 吞吐=96.2 tok/s | 总耗时=2.245s | Tokens=12
+2026-03-15 23:42:54.350 | DEBUG   | 预热 1/1 | scene_classification | Genshin-Impact_01.png
+2026-03-15 23:42:56.721 | INFO    | [61/144] scene_classification | Genshin-Impact_01.png | run 1
+2026-03-15 23:42:58.938 | INFO    |   TTFT=2.087s | 吞吐=101.3 tok/s | 总耗时=2.185s | Tokens=10
+2026-03-15 23:42:58.938 | INFO    | [62/144] scene_classification | Genshin-Impact_01.png | run 2
+2026-03-15 23:43:01.273 | INFO    |   TTFT=2.128s | 吞吐=56.9 tok/s | 总耗时=2.304s | Tokens=10
+2026-03-15 23:43:01.273 | INFO    | [63/144] scene_classification | Genshin-Impact_01.png | run 3
+2026-03-15 23:43:03.485 | INFO    |   TTFT=2.087s | 吞吐=107.1 tok/s | 总耗时=2.180s | Tokens=10
+2026-03-15 23:43:03.485 | DEBUG   | 预热 1/1 | scene_classification | Minecraft_01.png
+2026-03-15 23:43:06.029 | INFO    | [64/144] scene_classification | Minecraft_01.png | run 1
+2026-03-15 23:43:08.357 | INFO    |   TTFT=2.152s | 吞吐=84.7 tok/s | 总耗时=2.294s | Tokens=12
+2026-03-15 23:43:08.357 | INFO    | [65/144] scene_classification | Minecraft_01.png | run 2
+2026-03-15 23:43:10.826 | INFO    |   TTFT=2.190s | 吞吐=50.7 tok/s | 总耗时=2.427s | Tokens=12
+2026-03-15 23:43:10.827 | INFO    | [66/144] scene_classification | Minecraft_01.png | run 3
+2026-03-15 23:43:13.158 | INFO    |   TTFT=2.145s | 吞吐=77.0 tok/s | 总耗时=2.301s | Tokens=12
+2026-03-15 23:43:13.158 | DEBUG   | 预热 1/1 | scene_classification | P5R_01.png
+2026-03-15 23:43:15.523 | INFO    | [67/144] scene_classification | P5R_01.png | run 1
+2026-03-15 23:43:17.753 | INFO    |   TTFT=2.082s | 吞吐=102.7 tok/s | 总耗时=2.199s | Tokens=12
+2026-03-15 23:43:17.753 | INFO    | [68/144] scene_classification | P5R_01.png | run 2
+2026-03-15 23:43:20.083 | INFO    |   TTFT=2.112s | 吞吐=64.6 tok/s | 总耗时=2.298s | Tokens=12
+2026-03-15 23:43:20.083 | INFO    | [69/144] scene_classification | P5R_01.png | run 3
+2026-03-15 23:43:22.316 | INFO    |   TTFT=2.089s | 吞吐=109.1 tok/s | 总耗时=2.199s | Tokens=12
+2026-03-15 23:43:22.316 | DEBUG   | 预热 1/1 | scene_classification | SuperMarioBros_01.png
+2026-03-15 23:43:24.733 | INFO    | [70/144] scene_classification | SuperMarioBros_01.png | run 1
+2026-03-15 23:43:26.968 | INFO    |   TTFT=2.096s | 吞吐=94.2 tok/s | 总耗时=2.202s | Tokens=10
+2026-03-15 23:43:26.968 | INFO    | [71/144] scene_classification | SuperMarioBros_01.png | run 2
+2026-03-15 23:43:29.268 | INFO    |   TTFT=2.114s | 吞吐=64.4 tok/s | 总耗时=2.269s | Tokens=10
+2026-03-15 23:43:29.268 | INFO    | [72/144] scene_classification | SuperMarioBros_01.png | run 3
+2026-03-15 23:43:31.487 | INFO    |   TTFT=2.088s | 吞吐=99.7 tok/s | 总耗时=2.188s | Tokens=10
+2026-03-15 23:43:31.487 | INFO    | ────────────────────────────────────────
+2026-03-15 23:43:31.487 | INFO    | 场景: 角色动作分析 (action_analysis)
+2026-03-15 23:43:31.487 | DEBUG   | 预热 1/1 | action_analysis | Arknights_01.png
+2026-03-15 23:43:35.617 | INFO    | [73/144] action_analysis | Arknights_01.png | run 1
+2026-03-15 23:43:39.605 | INFO    |   TTFT=2.137s | 吞吐=140.7 tok/s | 总耗时=3.957s | Tokens=256
+2026-03-15 23:43:39.605 | INFO    | [74/144] action_analysis | Arknights_01.png | run 2
+2026-03-15 23:43:43.593 | INFO    |   TTFT=2.131s | 吞吐=140.2 tok/s | 总耗时=3.957s | Tokens=256
+2026-03-15 23:43:43.593 | INFO    | [75/144] action_analysis | Arknights_01.png | run 3
+2026-03-15 23:43:47.557 | INFO    |   TTFT=2.121s | 吞吐=141.3 tok/s | 总耗时=3.933s | Tokens=256
+2026-03-15 23:43:47.558 | DEBUG   | 预热 1/1 | action_analysis | Cyberpunk-2077_01.png
+2026-03-15 23:43:51.688 | INFO    | [76/144] action_analysis | Cyberpunk-2077_01.png | run 1
+2026-03-15 23:43:55.601 | INFO    |   TTFT=2.096s | 吞吐=143.4 tok/s | 总耗时=3.882s | Tokens=256
+2026-03-15 23:43:55.602 | INFO    | [77/144] action_analysis | Cyberpunk-2077_01.png | run 2
+2026-03-15 23:43:59.538 | INFO    |   TTFT=2.098s | 吞吐=141.5 tok/s | 总耗时=3.907s | Tokens=256
+2026-03-15 23:43:59.538 | INFO    | [78/144] action_analysis | Cyberpunk-2077_01.png | run 3
+2026-03-15 23:44:03.475 | INFO    |   TTFT=2.098s | 吞吐=141.5 tok/s | 总耗时=3.907s | Tokens=256
+2026-03-15 23:44:03.475 | DEBUG   | 预热 1/1 | action_analysis | Genshin-Impact_01.png
+2026-03-15 23:44:07.397 | INFO    | [79/144] action_analysis | Genshin-Impact_01.png | run 1
+2026-03-15 23:44:11.263 | INFO    |   TTFT=2.086s | 吞吐=146.5 tok/s | 总耗时=3.833s | Tokens=256
+2026-03-15 23:44:11.263 | INFO    | [80/144] action_analysis | Genshin-Impact_01.png | run 2
+2026-03-15 23:44:15.121 | INFO    |   TTFT=2.081s | 吞吐=146.7 tok/s | 总耗时=3.826s | Tokens=256
+2026-03-15 23:44:15.121 | INFO    | [81/144] action_analysis | Genshin-Impact_01.png | run 3
+2026-03-15 23:44:18.976 | INFO    |   TTFT=2.095s | 吞吐=148.1 tok/s | 总耗时=3.823s | Tokens=256
+2026-03-15 23:44:18.976 | DEBUG   | 预热 1/1 | action_analysis | Minecraft_01.png
+2026-03-15 23:44:23.247 | INFO    | [82/144] action_analysis | Minecraft_01.png | run 1
+2026-03-15 23:44:27.282 | INFO    |   TTFT=2.146s | 吞吐=137.8 tok/s | 总耗时=4.004s | Tokens=256
+2026-03-15 23:44:27.283 | INFO    | [83/144] action_analysis | Minecraft_01.png | run 2
+2026-03-15 23:44:31.288 | INFO    |   TTFT=2.145s | 吞吐=139.9 tok/s | 总耗时=3.975s | Tokens=256
+2026-03-15 23:44:31.288 | INFO    | [84/144] action_analysis | Minecraft_01.png | run 3
+2026-03-15 23:44:35.289 | INFO    |   TTFT=2.140s | 吞吐=139.9 tok/s | 总耗时=3.970s | Tokens=256
+2026-03-15 23:44:35.289 | DEBUG   | 预热 1/1 | action_analysis | P5R_01.png
+2026-03-15 23:44:39.167 | INFO    | [85/144] action_analysis | P5R_01.png | run 1
+2026-03-15 23:44:43.040 | INFO    |   TTFT=2.094s | 吞吐=146.3 tok/s | 总耗时=3.843s | Tokens=256
+2026-03-15 23:44:43.041 | INFO    | [86/144] action_analysis | P5R_01.png | run 2
+2026-03-15 23:44:46.898 | INFO    |   TTFT=2.082s | 吞吐=146.9 tok/s | 总耗时=3.825s | Tokens=256
+2026-03-15 23:44:46.898 | INFO    | [87/144] action_analysis | P5R_01.png | run 3
+2026-03-15 23:44:50.714 | INFO    |   TTFT=2.077s | 吞吐=149.8 tok/s | 总耗时=3.786s | Tokens=256
+2026-03-15 23:44:50.714 | DEBUG   | 预热 1/1 | action_analysis | SuperMarioBros_01.png
+2026-03-15 23:44:54.705 | INFO    | [88/144] action_analysis | SuperMarioBros_01.png | run 1
+2026-03-15 23:44:58.596 | INFO    |   TTFT=2.096s | 吞吐=145.2 tok/s | 总耗时=3.859s | Tokens=256
+2026-03-15 23:44:58.596 | INFO    | [89/144] action_analysis | SuperMarioBros_01.png | run 2
+2026-03-15 23:45:02.511 | INFO    |   TTFT=2.095s | 吞吐=143.2 tok/s | 总耗时=3.884s | Tokens=256
+2026-03-15 23:45:02.511 | INFO    | [90/144] action_analysis | SuperMarioBros_01.png | run 3
+2026-03-15 23:45:06.359 | INFO    |   TTFT=2.080s | 吞吐=147.3 tok/s | 总耗时=3.818s | Tokens=256
+2026-03-15 23:45:06.359 | INFO    | ────────────────────────────────────────
+2026-03-15 23:45:06.359 | INFO    | 场景: 游戏 UI 识别 (ui_recognition)
+2026-03-15 23:45:06.359 | DEBUG   | 预热 1/1 | ui_recognition | Arknights_01.png
+2026-03-15 23:45:10.529 | INFO    | [91/144] ui_recognition | Arknights_01.png | run 1
+2026-03-15 23:45:14.548 | INFO    |   TTFT=2.128s | 吞吐=137.6 tok/s | 总耗时=3.988s | Tokens=256
+2026-03-15 23:45:14.548 | INFO    | [92/144] ui_recognition | Arknights_01.png | run 2
+2026-03-15 23:45:18.521 | INFO    |   TTFT=2.127s | 吞吐=141.1 tok/s | 总耗时=3.942s | Tokens=256
+2026-03-15 23:45:18.521 | INFO    | [93/144] ui_recognition | Arknights_01.png | run 3
+2026-03-15 23:45:22.535 | INFO    |   TTFT=2.126s | 吞吐=137.9 tok/s | 总耗时=3.982s | Tokens=256
+2026-03-15 23:45:22.535 | DEBUG   | 预热 1/1 | ui_recognition | Cyberpunk-2077_01.png
+2026-03-15 23:45:26.658 | INFO    | [94/144] ui_recognition | Cyberpunk-2077_01.png | run 1
+2026-03-15 23:45:30.634 | INFO    |   TTFT=2.106s | 吞吐=139.3 tok/s | 总耗时=3.944s | Tokens=256
+2026-03-15 23:45:30.634 | INFO    | [95/144] ui_recognition | Cyberpunk-2077_01.png | run 2
+2026-03-15 23:45:34.571 | INFO    |   TTFT=2.109s | 吞吐=142.5 tok/s | 总耗时=3.906s | Tokens=256
+2026-03-15 23:45:34.571 | INFO    | [96/144] ui_recognition | Cyberpunk-2077_01.png | run 3
+2026-03-15 23:45:38.535 | INFO    |   TTFT=2.125s | 吞吐=141.6 tok/s | 总耗时=3.932s | Tokens=256
+2026-03-15 23:45:38.535 | DEBUG   | 预热 1/1 | ui_recognition | Genshin-Impact_01.png
+2026-03-15 23:45:42.447 | INFO    | [97/144] ui_recognition | Genshin-Impact_01.png | run 1
+2026-03-15 23:45:46.354 | INFO    |   TTFT=2.139s | 吞吐=147.3 tok/s | 总耗时=3.877s | Tokens=256
+2026-03-15 23:45:46.354 | INFO    | [98/144] ui_recognition | Genshin-Impact_01.png | run 2
+2026-03-15 23:45:50.240 | INFO    |   TTFT=2.096s | 吞吐=145.8 tok/s | 总耗时=3.852s | Tokens=256
+2026-03-15 23:45:50.240 | INFO    | [99/144] ui_recognition | Genshin-Impact_01.png | run 3
+2026-03-15 23:45:54.102 | INFO    |   TTFT=2.085s | 吞吐=146.7 tok/s | 总耗时=3.830s | Tokens=256
+2026-03-15 23:45:54.102 | DEBUG   | 预热 1/1 | ui_recognition | Minecraft_01.png
+2026-03-15 23:45:58.383 | INFO    | [100/144] ui_recognition | Minecraft_01.png | run 1
+2026-03-15 23:46:02.416 | INFO    |   TTFT=2.137s | 吞吐=137.5 tok/s | 总耗时=3.999s | Tokens=256
+2026-03-15 23:46:02.416 | INFO    | [101/144] ui_recognition | Minecraft_01.png | run 2
+2026-03-15 23:46:06.482 | INFO    |   TTFT=2.143s | 吞吐=135.4 tok/s | 总耗时=4.034s | Tokens=256
+2026-03-15 23:46:06.482 | INFO    | [102/144] ui_recognition | Minecraft_01.png | run 3
+2026-03-15 23:46:10.629 | INFO    |   TTFT=2.192s | 吞吐=133.0 tok/s | 总耗时=4.117s | Tokens=256
+2026-03-15 23:46:10.629 | DEBUG   | 预热 1/1 | ui_recognition | P5R_01.png
+2026-03-15 23:46:14.582 | INFO    | [103/144] ui_recognition | P5R_01.png | run 1
+2026-03-15 23:46:18.405 | INFO    |   TTFT=2.078s | 吞吐=149.4 tok/s | 总耗时=3.792s | Tokens=256
+2026-03-15 23:46:18.405 | INFO    | [104/144] ui_recognition | P5R_01.png | run 2
+2026-03-15 23:46:22.271 | INFO    |   TTFT=2.082s | 吞吐=146.2 tok/s | 总耗时=3.833s | Tokens=256
+2026-03-15 23:46:22.271 | INFO    | [105/144] ui_recognition | P5R_01.png | run 3
+2026-03-15 23:46:26.097 | INFO    |   TTFT=2.088s | 吞吐=149.9 tok/s | 总耗时=3.796s | Tokens=256
+2026-03-15 23:46:26.097 | DEBUG   | 预热 1/1 | ui_recognition | SuperMarioBros_01.png
+2026-03-15 23:46:30.051 | INFO    | [106/144] ui_recognition | SuperMarioBros_01.png | run 1
+2026-03-15 23:46:33.930 | INFO    |   TTFT=2.081s | 吞吐=144.8 tok/s | 总耗时=3.848s | Tokens=256
+2026-03-15 23:46:33.931 | INFO    | [107/144] ui_recognition | SuperMarioBros_01.png | run 2
+2026-03-15 23:46:37.868 | INFO    |   TTFT=2.088s | 吞吐=140.8 tok/s | 总耗时=3.906s | Tokens=256
+2026-03-15 23:46:37.868 | INFO    | [108/144] ui_recognition | SuperMarioBros_01.png | run 3
+2026-03-15 23:46:41.747 | INFO    |   TTFT=2.082s | 吞吐=145.0 tok/s | 总耗时=3.848s | Tokens=256
+2026-03-15 23:46:41.747 | INFO    | ────────────────────────────────────────
+2026-03-15 23:46:41.747 | INFO    | 场景: 中英双语描述 (bilingual)
+2026-03-15 23:46:41.747 | DEBUG   | 预热 1/1 | bilingual | Arknights_01.png
+2026-03-15 23:46:45.435 | INFO    | [109/144] bilingual | Arknights_01.png | run 1
+2026-03-15 23:46:48.895 | INFO    |   TTFT=2.125s | 吞吐=142.0 tok/s | 总耗时=3.427s | Tokens=185
+2026-03-15 23:46:48.895 | INFO    | [110/144] bilingual | Arknights_01.png | run 2
+2026-03-15 23:46:52.367 | INFO    |   TTFT=2.118s | 吞吐=139.9 tok/s | 总耗时=3.440s | Tokens=185
+2026-03-15 23:46:52.367 | INFO    | [111/144] bilingual | Arknights_01.png | run 3
+2026-03-15 23:46:55.902 | INFO    |   TTFT=2.128s | 吞吐=134.7 tok/s | 总耗时=3.502s | Tokens=185
+2026-03-15 23:46:55.902 | DEBUG   | 预热 1/1 | bilingual | Cyberpunk-2077_01.png
+2026-03-15 23:46:59.540 | INFO    | [112/144] bilingual | Cyberpunk-2077_01.png | run 1
+2026-03-15 23:47:03.096 | INFO    |   TTFT=2.115s | 吞吐=139.2 tok/s | 总耗时=3.523s | Tokens=196
+2026-03-15 23:47:03.097 | INFO    | [113/144] bilingual | Cyberpunk-2077_01.png | run 2
+2026-03-15 23:47:06.661 | INFO    |   TTFT=2.128s | 吞吐=139.7 tok/s | 总耗时=3.531s | Tokens=196
+2026-03-15 23:47:06.661 | INFO    | [114/144] bilingual | Cyberpunk-2077_01.png | run 3
+2026-03-15 23:47:10.206 | INFO    |   TTFT=2.136s | 吞吐=142.4 tok/s | 总耗时=3.513s | Tokens=196
+2026-03-15 23:47:10.206 | DEBUG   | 预热 1/1 | bilingual | Genshin-Impact_01.png
+2026-03-15 23:47:13.189 | INFO    | [115/144] bilingual | Genshin-Impact_01.png | run 1
+2026-03-15 23:47:15.895 | INFO    |   TTFT=2.090s | 吞吐=130.0 tok/s | 总耗时=2.674s | Tokens=76
+2026-03-15 23:47:15.895 | INFO    | [116/144] bilingual | Genshin-Impact_01.png | run 2
+2026-03-15 23:47:18.578 | INFO    |   TTFT=2.094s | 吞吐=136.3 tok/s | 总耗时=2.652s | Tokens=76
+2026-03-15 23:47:18.579 | INFO    | [117/144] bilingual | Genshin-Impact_01.png | run 3
+2026-03-15 23:47:21.333 | INFO    |   TTFT=2.131s | 吞吐=128.6 tok/s | 总耗时=2.722s | Tokens=76
+2026-03-15 23:47:21.333 | DEBUG   | 预热 1/1 | bilingual | Minecraft_01.png
+2026-03-15 23:47:25.049 | INFO    | [118/144] bilingual | Minecraft_01.png | run 1
+2026-03-15 23:47:28.387 | INFO    |   TTFT=2.134s | 吞吐=134.2 tok/s | 总耗时=3.304s | Tokens=157
+2026-03-15 23:47:28.387 | INFO    | [119/144] bilingual | Minecraft_01.png | run 2
+2026-03-15 23:47:31.764 | INFO    |   TTFT=2.124s | 吞吐=128.6 tok/s | 总耗时=3.344s | Tokens=157
+2026-03-15 23:47:31.764 | INFO    | [120/144] bilingual | Minecraft_01.png | run 3
+2026-03-15 23:47:35.175 | INFO    |   TTFT=2.151s | 吞吐=128.2 tok/s | 总耗时=3.376s | Tokens=157
+2026-03-15 23:47:35.175 | DEBUG   | 预热 1/1 | bilingual | P5R_01.png
+2026-03-15 23:47:38.721 | INFO    | [121/144] bilingual | P5R_01.png | run 1
+2026-03-15 23:47:42.320 | INFO    |   TTFT=2.095s | 吞吐=130.3 tok/s | 总耗时=3.568s | Tokens=192
+2026-03-15 23:47:42.321 | INFO    | [122/144] bilingual | P5R_01.png | run 2
+2026-03-15 23:47:45.833 | INFO    |   TTFT=2.093s | 吞吐=138.7 tok/s | 总耗时=3.477s | Tokens=192
+2026-03-15 23:47:45.833 | INFO    | [123/144] bilingual | P5R_01.png | run 3
+2026-03-15 23:47:49.387 | INFO    |   TTFT=2.134s | 吞吐=138.4 tok/s | 总耗时=3.521s | Tokens=192
+2026-03-15 23:47:49.388 | DEBUG   | 预热 1/1 | bilingual | SuperMarioBros_01.png
+2026-03-15 23:47:52.823 | INFO    | [124/144] bilingual | SuperMarioBros_01.png | run 1
+2026-03-15 23:47:56.651 | INFO    |   TTFT=2.088s | 吞吐=129.5 tok/s | 总耗时=3.795s | Tokens=221
+2026-03-15 23:47:56.651 | INFO    | [125/144] bilingual | SuperMarioBros_01.png | run 2
+2026-03-15 23:48:00.463 | INFO    |   TTFT=2.085s | 吞吐=130.5 tok/s | 总耗时=3.778s | Tokens=221
+2026-03-15 23:48:00.463 | INFO    | [126/144] bilingual | SuperMarioBros_01.png | run 3
+2026-03-15 23:48:04.308 | INFO    |   TTFT=2.076s | 吞吐=127.3 tok/s | 总耗时=3.812s | Tokens=221
+2026-03-15 23:48:04.308 | INFO    | ────────────────────────────────────────
+2026-03-15 23:48:04.308 | INFO    | 场景: 叙事性描述 (narrative)
+2026-03-15 23:48:04.308 | DEBUG   | 预热 1/1 | narrative | Arknights_01.png
+2026-03-15 23:48:08.542 | INFO    | [127/144] narrative | Arknights_01.png | run 1
+2026-03-15 23:48:12.587 | INFO    |   TTFT=2.120s | 吞吐=135.1 tok/s | 总耗时=4.015s | Tokens=256
+2026-03-15 23:48:12.587 | INFO    | [128/144] narrative | Arknights_01.png | run 2
+2026-03-15 23:48:16.687 | INFO    |   TTFT=2.126s | 吞吐=131.9 tok/s | 总耗时=4.067s | Tokens=256
+2026-03-15 23:48:16.687 | INFO    | [129/144] narrative | Arknights_01.png | run 3
+2026-03-15 23:48:20.811 | INFO    |   TTFT=2.119s | 吞吐=129.8 tok/s | 总耗时=4.092s | Tokens=256
+2026-03-15 23:48:20.811 | DEBUG   | 预热 1/1 | narrative | Cyberpunk-2077_01.png
+2026-03-15 23:48:25.097 | INFO    | [130/144] narrative | Cyberpunk-2077_01.png | run 1
+2026-03-15 23:48:29.197 | INFO    |   TTFT=2.118s | 吞吐=131.3 tok/s | 总耗时=4.067s | Tokens=256
+2026-03-15 23:48:29.197 | INFO    | [131/144] narrative | Cyberpunk-2077_01.png | run 2
+2026-03-15 23:48:33.306 | INFO    |   TTFT=2.119s | 吞吐=130.7 tok/s | 总耗时=4.079s | Tokens=256
+2026-03-15 23:48:33.306 | INFO    | [132/144] narrative | Cyberpunk-2077_01.png | run 3
+2026-03-15 23:48:37.393 | INFO    |   TTFT=2.108s | 吞吐=131.6 tok/s | 总耗时=4.054s | Tokens=256
+2026-03-15 23:48:37.393 | DEBUG   | 预热 1/1 | narrative | Genshin-Impact_01.png
+2026-03-15 23:48:41.469 | INFO    | [133/144] narrative | Genshin-Impact_01.png | run 1
+2026-03-15 23:48:45.479 | INFO    |   TTFT=2.087s | 吞吐=135.3 tok/s | 总耗时=3.978s | Tokens=256
+2026-03-15 23:48:45.479 | INFO    | [134/144] narrative | Genshin-Impact_01.png | run 2
+2026-03-15 23:48:49.491 | INFO    |   TTFT=2.091s | 吞吐=135.6 tok/s | 总耗时=3.980s | Tokens=256
+2026-03-15 23:48:49.491 | INFO    | [135/144] narrative | Genshin-Impact_01.png | run 3
+2026-03-15 23:48:53.495 | INFO    |   TTFT=2.085s | 吞吐=135.7 tok/s | 总耗时=3.971s | Tokens=256
+2026-03-15 23:48:53.496 | DEBUG   | 预热 1/1 | narrative | Minecraft_01.png
+2026-03-15 23:48:57.880 | INFO    | [136/144] narrative | Minecraft_01.png | run 1
+2026-03-15 23:49:02.102 | INFO    |   TTFT=2.127s | 吞吐=124.0 tok/s | 总耗时=4.191s | Tokens=256
+2026-03-15 23:49:02.102 | INFO    | [137/144] narrative | Minecraft_01.png | run 2
+2026-03-15 23:49:06.280 | INFO    |   TTFT=2.126s | 吞吐=126.8 tok/s | 总耗时=4.146s | Tokens=256
+2026-03-15 23:49:06.281 | INFO    | [138/144] narrative | Minecraft_01.png | run 3
+2026-03-15 23:49:10.516 | INFO    |   TTFT=2.173s | 吞吐=126.2 tok/s | 总耗时=4.202s | Tokens=256
+2026-03-15 23:49:10.516 | DEBUG   | 预热 1/1 | narrative | P5R_01.png
+2026-03-15 23:49:14.552 | INFO    | [139/144] narrative | P5R_01.png | run 1
+2026-03-15 23:49:18.612 | INFO    |   TTFT=2.095s | 吞吐=132.4 tok/s | 总耗时=4.029s | Tokens=256
+2026-03-15 23:49:18.612 | INFO    | [140/144] narrative | P5R_01.png | run 2
+2026-03-15 23:49:22.609 | INFO    |   TTFT=2.079s | 吞吐=135.8 tok/s | 总耗时=3.964s | Tokens=256
+2026-03-15 23:49:22.609 | INFO    | [141/144] narrative | P5R_01.png | run 3
+2026-03-15 23:49:26.602 | INFO    |   TTFT=2.079s | 吞吐=135.9 tok/s | 总耗时=3.962s | Tokens=256
+2026-03-15 23:49:26.602 | DEBUG   | 预热 1/1 | narrative | SuperMarioBros_01.png
+2026-03-15 23:49:30.725 | INFO    | [142/144] narrative | SuperMarioBros_01.png | run 1
+2026-03-15 23:49:34.814 | INFO    |   TTFT=2.086s | 吞吐=130.3 tok/s | 总耗时=4.051s | Tokens=256
+2026-03-15 23:49:34.814 | INFO    | [143/144] narrative | SuperMarioBros_01.png | run 2
+2026-03-15 23:49:38.785 | INFO    |   TTFT=2.084s | 吞吐=138.1 tok/s | 总耗时=3.937s | Tokens=256
+2026-03-15 23:49:38.785 | INFO    | [144/144] narrative | SuperMarioBros_01.png | run 3
+2026-03-15 23:49:42.883 | INFO    |   TTFT=2.088s | 吞吐=129.5 tok/s | 总耗时=4.065s | Tokens=256
+2026-03-15 23:49:42.884 | INFO    | ============================================================
+2026-03-15 23:49:42.886 | INFO    | 报告已保存至: experiments\multi_model_benchmark\2026-03-15_23-17-31\benchmark_speed\Qwen_Qwen3-VL-2B-Instruct\report.md
+2026-03-15 23:49:42.886 | INFO    | 基准测试完成 | 成功: 144/144 | 报告: experiments\multi_model_benchmark\2026-03-15_23-17-31\benchmark_speed\Qwen_Qwen3-VL-2B-Instruct
+2026-03-15 23:49:42.886 | INFO    | CSV 数据: experiments\multi_model_benchmark\2026-03-15_23-17-31\benchmark_speed\Qwen_Qwen3-VL-2B-Instruct\raw_data.csv

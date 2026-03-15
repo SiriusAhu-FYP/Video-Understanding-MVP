@@ -1,0 +1,22 @@
+{
+  "git_hash": "533a9e710dab",
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4080 SUPER",
+    "memory_total_mb": 16376,
+    "memory_free_mb": 12539,
+    "memory_used_mb": 3507
+  },
+  "python_version": "3.12.11",
+  "start_time": "2026-03-15T23:17:31",
+  "end_time": "2026-03-15T23:53:05.441981",
+  "models": [
+    "Qwen/Qwen3.5-0.8B",
+    "Qwen/Qwen3-VL-2B-Instruct"
+  ],
+  "completed_models": [
+    "Qwen/Qwen3.5-0.8B",
+    "Qwen/Qwen3-VL-2B-Instruct"
+  ],
+  "failed_models": [],
+  "note": "Only 2 of 8 models available (cached in WSL). Other models need download."
+}
