@@ -94,12 +94,29 @@ def create_launch_script(model_id: str, extra_args: dict | None = None) -> str:
 _VLLM_LOG_PATH = str(VLLM_SERVER_DIR / "vllm_output.log")
 
 
+def _kill_all_vllm() -> None:
+    """Kill any existing vLLM processes in WSL to free port 8000."""
+    try:
+        subprocess.run(
+            ["wsl", "bash", "-c",
+             "pkill -9 -f 'vllm serve' 2>/dev/null; "
+             "pkill -9 -f 'vllm.entrypoints' 2>/dev/null; "
+             "true"],
+            timeout=10,
+        )
+        time.sleep(2)
+    except Exception:
+        pass
+
+
 def start_vllm(model_id: str, extra_args: dict | None = None) -> subprocess.Popen:
     """Start vLLM service in WSL for the given model.
 
+    Kills any existing vLLM processes first to ensure a clean port.
     Uses HF_HUB_OFFLINE=1 to avoid network issues in WSL.
     Returns the Popen handle for the background process.
     """
+    _kill_all_vllm()
     script_path = create_launch_script(model_id, extra_args)
 
     lg.info("正在启动 vLLM 服务: {} ...", model_id)
