@@ -24,22 +24,32 @@ DEFAULT_VLLM_ARGS: dict[str, str | int | float] = {
 
 MODEL_SPECIFIC_ARGS: dict[str, dict] = {
     "Qwen/Qwen3.5-2B": {
-        "mm-processor-kwargs": '{"max_dynamic_patch": 448, "min_dynamic_patch": 32}',
+        "mm-processor-kwargs": "'\"max_dynamic_patch\": 448, \"min_dynamic_patch\": 32}'",
     },
     "Qwen/Qwen3.5-0.8B": {
-        "mm-processor-kwargs": '{"max_dynamic_patch": 448, "min_dynamic_patch": 32}',
+        "mm-processor-kwargs": "'{\"max_dynamic_patch\": 448, \"min_dynamic_patch\": 32}'",
     },
     "Qwen/Qwen3-VL-2B-Instruct": {
-        "mm-processor-kwargs": '{"max_dynamic_patch": 448, "min_dynamic_patch": 32}',
+        "mm-processor-kwargs": "'{\"max_dynamic_patch\": 448, \"min_dynamic_patch\": 32}'",
     },
-    "OpenGVLab/InternVL2_5-2B": {},
-    "Zero-Point-AI/MARTHA-2B": {},
-    "mistralai/Ministral-3-3B-Instruct-2512": {},
+    "OpenGVLab/InternVL2_5-2B": {
+        "max-model-len": 4096,
+    },
+    "Zero-Point-AI/MARTHA-2B": {
+        "max-model-len": 4096,
+    },
+    "mistralai/Ministral-3-3B-Instruct-2512": {
+        "tokenizer_mode": "mistral",
+        "config_format": "mistral",
+        "load_format": "mistral",
+        "max-model-len": 8192,
+    },
     "deepseek-ai/deepseek-vl2-tiny": {
+        "hf-overrides": "'{\"architectures\": [\"DeepseekVLV2ForCausalLM\"]}'",
         "max-model-len": 4096,
     },
     "vikhyatk/moondream2": {
-        "max-model-len": 4096,
+        "max-model-len": 2048,
     },
 }
 
@@ -76,12 +86,29 @@ def create_launch_script(model_id: str, extra_args: dict | None = None) -> str:
     vllm_cmd = build_vllm_command(model_id, extra_args)
     script_content = f"source {VLLM_VENV_ACTIVATE}\n{vllm_cmd}\n"
 
-    wsl_cmd = f"echo '{script_content}' > {script_path} && chmod +x {script_path}"
-    subprocess.run(
-        ["wsl", "bash", "-c", wsl_cmd],
-        check=True,
-        timeout=10,
-    )
+    import tempfile
+    import os
+
+    with tempfile.NamedTemporaryFile(
+        mode="w", suffix=".sh", delete=False, newline="\n"
+    ) as tmp:
+        tmp.write(script_content)
+        tmp_path = tmp.name
+
+    try:
+        wsl_script_path = subprocess.run(
+            ["wsl", "wslpath", "-u", tmp_path],
+            capture_output=True, text=True, check=True, timeout=5,
+        ).stdout.strip()
+
+        subprocess.run(
+            ["wsl", "bash", "-c", f"cp {wsl_script_path} {script_path} && chmod +x {script_path}"],
+            check=True,
+            timeout=10,
+        )
+    finally:
+        os.unlink(tmp_path)
+
     lg.info("已创建 vLLM 启动脚本: {}", script_path)
     return script_path
 

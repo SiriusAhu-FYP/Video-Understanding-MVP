@@ -340,8 +340,13 @@ def run_benchmark(
     num_runs: int = 3,
     warmup_runs: int = 1,
     scenario_ids: list[str] | None = None,
+    output_dir: Path | None = None,
 ) -> tuple[list[RunResult], Path]:
     """执行完整的基准测试流程。
+
+    Args:
+        output_dir: If provided, use this as the parent directory.
+                    Report will be placed in output_dir/{model_short_name}/.
 
     返回: (所有结果列表, 报告目录路径)
     """
@@ -351,7 +356,11 @@ def run_benchmark(
     model = detect_model(client)
     short_name = model_short_name(model)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    report_dir = _REPORTS_DIR / f"{short_name}_{timestamp}"
+
+    if output_dir is not None:
+        report_dir = output_dir / short_name
+    else:
+        report_dir = _REPORTS_DIR / f"{short_name}_{timestamp}"
     report_dir.mkdir(parents=True, exist_ok=True)
 
     # 配置日志到文件

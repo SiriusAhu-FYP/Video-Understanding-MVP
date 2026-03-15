@@ -339,8 +339,15 @@ def generate_model_report(
 
 # ── 主流程 ────────────────────────────────────────────────────────
 
-async def run_experiment(num_runs: int = 3) -> dict[str, list[PipelineResult]]:
+async def run_experiment(
+    num_runs: int = 3,
+    output_dir: Path | None = None,
+) -> dict[str, list[PipelineResult]]:
     """运行完整实验：对所有视频执行多次流水线。
+
+    Args:
+        output_dir: If provided, use this as the parent directory.
+                    Report will be placed in output_dir/{model_short_name}/.
 
     Returns:
         {video_name: [PipelineResult per run]}
@@ -351,7 +358,11 @@ async def run_experiment(num_runs: int = 3) -> dict[str, list[PipelineResult]]:
     model_id = detect_model(cfg.llm.vllm_base_url)
     short_name = model_short_name(model_id)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    report_dir = _REPORTS_DIR / f"{short_name}_{timestamp}"
+
+    if output_dir is not None:
+        report_dir = output_dir / short_name
+    else:
+        report_dir = _REPORTS_DIR / f"{short_name}_{timestamp}"
     report_dir.mkdir(parents=True, exist_ok=True)
 
     log_path = report_dir / "experiment.log"
