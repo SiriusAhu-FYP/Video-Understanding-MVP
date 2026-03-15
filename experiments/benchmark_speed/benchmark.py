@@ -10,9 +10,7 @@
 from __future__ import annotations
 
 import argparse
-import base64
 import csv
-import subprocess
 import sys
 import time
 from dataclasses import dataclass
@@ -25,10 +23,19 @@ from openai import OpenAI
 
 _EXPERIMENT_DIR = Path(__file__).resolve().parent
 _PROJECT_ROOT = _EXPERIMENT_DIR.parent.parent
-_ASSETS_DIR = _PROJECT_ROOT / "assets" / "images"
 _REPORTS_DIR = _EXPERIMENT_DIR / "reports"
 
-SUPPORTED_IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".bmp"}
+sys.path.insert(0, str(_PROJECT_ROOT))
+
+from toolkit.common import (
+    ASSETS_IMAGES_DIR,
+    detect_model,
+    encode_image,
+    get_gpu_memory_mb,
+    get_image_mime,
+    load_images as _load_images_full,
+    model_short_name,
+)
 
 
 # ── 场景定义 ──────────────────────────────────────────────────────
@@ -121,62 +128,10 @@ SCENARIO_MAP: dict[str, Scenario] = {s.id: s for s in SCENARIOS}
 
 # ── 工具函数 ──────────────────────────────────────────────────────
 
-def encode_image(path: Path) -> str:
-    """将图片文件编码为 Base64 字符串。"""
-    with open(path, "rb") as f:
-        return base64.b64encode(f.read()).decode("utf-8")
-
-
-def get_image_mime(path: Path) -> str:
-    """根据扩展名返回 MIME 类型。"""
-    ext = path.suffix.lower()
-    mime_map = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".bmp": "image/bmp"}
-    return mime_map.get(ext, "image/png")
-
-
-def get_gpu_memory_mb() -> int:
-    """通过 nvidia-smi 获取当前 GPU 显存使用量 (MB)。"""
-    try:
-        result = subprocess.run(
-            ["nvidia-smi", "--query-gpu=memory.used", "--format=csv,noheader,nounits"],
-            capture_output=True, text=True, check=True, timeout=5,
-        )
-        return int(result.stdout.strip().split("\n")[0])
-    except Exception:
-        return 0
-
-
-def detect_model(client: OpenAI) -> str:
-    """通过 /v1/models 接口自动检测当前运行的模型。"""
-    models = client.models.list()
-    if models.data:
-        model_id = models.data[0].id
-        lg.info("自动检测到模型: {}", model_id)
-        return model_id
-    raise RuntimeError("未检测到任何运行中的模型")
-
-
-def model_short_name(model_id: str) -> str:
-    """从完整模型 ID 提取简短名称，用于目录命名。"""
-    return model_id.replace("/", "_").replace(" ", "_")
-
-
-def load_images(assets_dir: Path) -> list[tuple[str, str, str]]:
-    """加载 assets 目录下所有支持格式的图片。
-
-    返回: [(文件名, base64_data, mime_type), ...]
-    """
-    images = []
-    for p in sorted(assets_dir.iterdir()):
-        if p.suffix.lower() in SUPPORTED_IMAGE_EXTENSIONS:
-            b64 = encode_image(p)
-            mime = get_image_mime(p)
-            images.append((p.name, b64, mime))
-            lg.debug("已加载图片: {} ({:.1f} KB)", p.name, len(b64) * 3 / 4 / 1024)
-    if not images:
-        raise FileNotFoundError(f"assets 目录中未找到支持的图片: {assets_dir}")
-    lg.info("共加载 {} 张图片", len(images))
-    return images
+def load_images(assets_dir: Path | None = None) -> list[tuple[str, str, str]]:
+    """Load images returning (filename, base64, mime) tuples."""
+    full = _load_images_full(assets_dir)
+    return [(name, b64, mime) for name, b64, mime, _ in full]
 
 
 # ── 单次推理 ──────────────────────────────────────────────────────
@@ -411,7 +366,7 @@ def run_benchmark(
     lg.info("=" * 60)
 
     # 加载图片
-    images = load_images(_ASSETS_DIR)
+    images = load_images(ASSETS_IMAGES_DIR)
 
     # 筛选场景
     scenarios = SCENARIOS

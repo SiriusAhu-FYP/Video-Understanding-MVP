@@ -1,7 +1,7 @@
 """vLLM 本地推理客户端：异步调用 OpenAI 兼容接口，对关键帧进行视觉描述。
 
 支持视觉语言模型（VLM，发送图片）和纯文本模型（仅发送文本提示词）。
-通过模型名称中是否包含 "VL" 自动判断模型类型。
+优先通过 vLLM 模型信息接口检测视觉能力，名称关键词匹配作为备选。
 """
 
 from __future__ import annotations
@@ -19,6 +19,17 @@ _PROMPT_PATH = _PROJECT_ROOT / "prompts" / "vlm_prompt.md"
 
 _VLM_KEYWORDS = {"vl", "vision", "visual"}
 
+_KNOWN_VLM_PREFIXES = {
+    "qwen/qwen3.5",
+    "qwen/qwen3-vl",
+    "qwen/qwen2.5-vl",
+    "qwen/qwen2-vl",
+    "opengvlab/internvl",
+    "deepseek-ai/deepseek-vl",
+    "vikhyatk/moondream",
+    "zero-point-ai/martha",
+}
+
 
 def load_vlm_prompt() -> str:
     """从 prompts/vlm_prompt.md 读取提示词。"""
@@ -28,7 +39,12 @@ def load_vlm_prompt() -> str:
 
 
 def is_vision_model(model_id: str) -> bool:
-    """判断模型是否为视觉语言模型（根据模型名称中的关键词）。
+    """判断模型是否为视觉语言模型。
+
+    检测策略（按优先级）:
+    1. 已知 VLM 系列前缀匹配（如 Qwen3.5 系列均为 VLM）
+    2. 模型名称中包含 vl/vision/visual 关键词
+    3. 默认视为 VLM（保守策略，避免误判导致丢失图片信息）
 
     Args:
         model_id: 模型标识符，如 "Qwen/Qwen3-VL-2B-Instruct"。
@@ -36,8 +52,21 @@ def is_vision_model(model_id: str) -> bool:
     Returns:
         True 表示该模型支持图片输入。
     """
-    parts = model_id.lower().replace("/", "-").replace("_", "-").split("-")
-    return bool(set(parts) & _VLM_KEYWORDS)
+    model_lower = model_id.lower()
+
+    for prefix in _KNOWN_VLM_PREFIXES:
+        if model_lower.startswith(prefix):
+            return True
+
+    parts = model_lower.replace("/", "-").replace("_", "-").split("-")
+    if set(parts) & _VLM_KEYWORDS:
+        return True
+
+    lg.info(
+        "模型 '{}' 未匹配已知 VLM 模式，默认视为视觉模型",
+        model_id,
+    )
+    return True
 
 
 class VLMClient:

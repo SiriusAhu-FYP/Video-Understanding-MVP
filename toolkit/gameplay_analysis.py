@@ -1,24 +1,17 @@
-"""游戏画面分析专项实验脚本。
+"""游戏画面分析模块（可复用）。
 
 针对项目实际需求（陪玩 AI），测试 VLM 在以下 4 个任务上的表现：
 1. UI 元素检测 (Bounding Box)
 2. 画面描述
 3. 玩家意图推测
 4. 情况评价（情感支持 + 客观评价）
-
-用法:
-    uv run experiments/gameplay_analysis/run_experiment.py
-    uv run experiments/gameplay_analysis/run_experiment.py --runs 5
-    uv run experiments/gameplay_analysis/run_experiment.py --tasks ui_bbox scene_desc
 """
 
 from __future__ import annotations
 
-import argparse
 import csv
 import json
 import re
-import sys
 import time
 from dataclasses import dataclass
 from datetime import datetime
@@ -29,13 +22,6 @@ import cv2
 import numpy as np
 from loguru import logger as lg
 from openai import OpenAI
-
-_EXPERIMENT_DIR = Path(__file__).resolve().parent
-_PROJECT_ROOT = _EXPERIMENT_DIR.parent.parent
-_REPORTS_DIR = _EXPERIMENT_DIR / "reports"
-_LOGS_DIR = _EXPERIMENT_DIR / "logs"
-
-sys.path.insert(0, str(_PROJECT_ROOT))
 
 from toolkit.common import (
     ASSETS_IMAGES_DIR,
@@ -492,13 +478,25 @@ def run_experiment(
     num_runs: int = 3,
     warmup_runs: int = 1,
     task_ids: list[str] | None = None,
+    output_dir: Path | None = None,
 ) -> tuple[list[RunResult], Path]:
+    """Run the gameplay analysis experiment.
+
+    Args:
+        output_dir: If provided, use this directory for reports instead of the
+                    default experiments/gameplay_analysis/reports/ path.
+    """
     client = OpenAI(base_url=base_url, api_key="EMPTY")
 
     model = detect_model(client)
     short_name = model_short_name(model)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    report_dir = _REPORTS_DIR / f"{short_name}_{timestamp}"
+
+    if output_dir is not None:
+        report_dir = output_dir / short_name
+    else:
+        from toolkit.common import PROJECT_ROOT
+        report_dir = PROJECT_ROOT / "experiments" / "gameplay_analysis" / "reports" / f"{short_name}_{timestamp}"
     report_dir.mkdir(parents=True, exist_ok=True)
 
     log_path = report_dir / "experiment.log"
@@ -518,13 +516,13 @@ def run_experiment(
         tasks = [TASK_MAP[tid] for tid in task_ids if tid in TASK_MAP]
         if not tasks:
             lg.error("未找到匹配的任务 ID: {}", task_ids)
-            sys.exit(1)
+            raise ValueError(f"未找到匹配的任务 ID: {task_ids}")
     lg.info("测试任务: {}", [t.id for t in tasks])
 
     csv_path = report_dir / "raw_data.csv"
     init_csv(csv_path)
 
-    bbox_dir = _LOGS_DIR / f"bbox_{short_name}_{timestamp}"
+    bbox_dir = report_dir / "bbox_images"
     bbox_dir.mkdir(parents=True, exist_ok=True)
 
     all_results: list[RunResult] = []
@@ -588,24 +586,3 @@ def run_experiment(
     return all_results, report_dir
 
 
-# ── CLI ───────────────────────────────────────────────────────────
-
-def main() -> None:
-    parser = argparse.ArgumentParser(description="游戏画面分析专项实验")
-    parser.add_argument("--base-url", default="http://localhost:8000/v1", help="vLLM 服务地址")
-    parser.add_argument("--runs", type=int, default=3, help="每任务每图重复次数 (默认 3)")
-    parser.add_argument("--warmup", type=int, default=1, help="预热次数 (默认 1)")
-    parser.add_argument("--tasks", nargs="+", default=None,
-                        help=f"指定任务 ID (可选: {', '.join(t.id for t in TASKS)})")
-    args = parser.parse_args()
-
-    run_experiment(
-        base_url=args.base_url,
-        num_runs=args.runs,
-        warmup_runs=args.warmup,
-        task_ids=args.tasks,
-    )
-
-
-if __name__ == "__main__":
-    main()

@@ -28,11 +28,15 @@ from openai import OpenAI
 
 _EXPERIMENT_DIR = Path(__file__).resolve().parent
 _PROJECT_ROOT = _EXPERIMENT_DIR.parent.parent
-_ASSETS_DIR = _PROJECT_ROOT / "assets"
-_VIDEOS_DIR = _ASSETS_DIR / "videos"
 _REPORTS_DIR = _EXPERIMENT_DIR / "reports"
 
 sys.path.insert(0, str(_PROJECT_ROOT))
+
+from toolkit.common import (
+    ASSETS_VIDEOS_DIR,
+    detect_model_from_url as detect_model,
+    model_short_name,
+)
 
 from pipeline.capture import (
     WindowNotFoundError,
@@ -53,6 +57,8 @@ from pipeline.queue_manager import KeyFrameQueue
 from pipeline.summarizer import Summarizer
 from pipeline.vlm import VLMClient
 
+_VIDEOS_DIR = ASSETS_VIDEOS_DIR
+
 
 # ── 工具函数 ──────────────────────────────────────────────────────
 
@@ -65,21 +71,6 @@ def get_video_duration_s(video_path: Path) -> float:
     if fps <= 0:
         raise ValueError(f"无法读取视频 FPS: {video_path}")
     return frame_count / fps
-
-
-def detect_model(base_url: str = "http://localhost:8000/v1") -> str:
-    """自动检测当前运行的 vLLM 模型。"""
-    client = OpenAI(base_url=base_url, api_key="EMPTY")
-    models = client.models.list()
-    if models.data:
-        model_id = models.data[0].id
-        lg.info("自动检测到模型: {}", model_id)
-        return model_id
-    raise RuntimeError("未检测到任何运行中的模型")
-
-
-def model_short_name(model_id: str) -> str:
-    return model_id.replace("/", "_").replace(" ", "_")
 
 
 def launch_player(video_path: Path) -> None:
