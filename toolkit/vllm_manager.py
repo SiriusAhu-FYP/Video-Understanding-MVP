@@ -23,15 +23,9 @@ DEFAULT_VLLM_ARGS: dict[str, str | int | float] = {
 }
 
 MODEL_SPECIFIC_ARGS: dict[str, dict] = {
-    "Qwen/Qwen3.5-2B": {
-        "mm-processor-kwargs": '\'"max_dynamic_patch": 448, "min_dynamic_patch": 32}\'',
-    },
-    "Qwen/Qwen3.5-0.8B": {
-        "mm-processor-kwargs": '\'{"max_dynamic_patch": 448, "min_dynamic_patch": 32}\'',
-    },
-    "Qwen/Qwen3-VL-2B-Instruct": {
-        "mm-processor-kwargs": '\'{"max_dynamic_patch": 448, "min_dynamic_patch": 32}\'',
-    },
+    "Qwen/Qwen3.5-2B": {},
+    "Qwen/Qwen3.5-0.8B": {},
+    "Qwen/Qwen3-VL-2B-Instruct": {},
     "OpenGVLab/InternVL2_5-2B": {
         "max-model-len": 4096,
     },
@@ -79,46 +73,25 @@ def build_vllm_command(model_id: str, extra_args: dict | None = None) -> str:
 
 
 def create_launch_script(model_id: str, extra_args: dict | None = None) -> str:
-    """Create a vLLM launch script in WSL and return its path."""
+    """Create a vLLM launch script in WSL and return its WSL path."""
     script_name = _sanitize_script_name(model_id)
     script_path = str(VLLM_SERVER_DIR / script_name)
 
     vllm_cmd = build_vllm_command(model_id, extra_args)
     script_content = f"source {VLLM_VENV_ACTIVATE}\n{vllm_cmd}\n"
 
-    import os
-    import tempfile
-
-    with tempfile.NamedTemporaryFile(
-        mode="w", suffix=".sh", delete=False, newline="\n"
-    ) as tmp:
-        tmp.write(script_content)
-        tmp_path = tmp.name
-
-    try:
-        wsl_script_path = subprocess.run(
-            ["wsl", "wslpath", "-u", tmp_path],
-            capture_output=True,
-            text=True,
-            check=True,
-            timeout=5,
-        ).stdout.strip()
-
-        subprocess.run(
-            [
-                "wsl",
-                "bash",
-                "-c",
-                f"cp {wsl_script_path} {script_path} && chmod +x {script_path}",
-            ],
-            check=True,
-            timeout=10,
-        )
-    finally:
-        os.unlink(tmp_path)
+    subprocess.run(
+        ["wsl", "bash", "-c",
+         f"tr -d '\\r' > {script_path} && chmod +x {script_path}"],
+        input=script_content,
+        text=True, check=True, timeout=10,
+    )
 
     lg.info("已创建 vLLM 启动脚本: {}", script_path)
     return script_path
+
+
+_VLLM_LOG_PATH = str(VLLM_SERVER_DIR / "vllm_output.log")
 
 
 def start_vllm(model_id: str, extra_args: dict | None = None) -> subprocess.Popen:
@@ -135,13 +108,24 @@ def start_vllm(model_id: str, extra_args: dict | None = None) -> subprocess.Pope
             "wsl",
             "bash",
             "-c",
-            f"HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 bash {script_path}",
+            f"HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 bash {script_path} "
+            f"> {_VLLM_LOG_PATH} 2>&1",
         ],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
     )
     lg.info("vLLM 进程已启动 (PID: {})", proc.pid)
     return proc
+
+
+def read_vllm_log(tail: int = 80) -> str:
+    """Read the last N lines of the vLLM output log."""
+    try:
+        result = subprocess.run(
+            ["wsl", "bash", "-c", f"tail -n {tail} {_VLLM_LOG_PATH}"],
+            capture_output=True, text=True, timeout=5,
+        )
+        return result.stdout
+    except Exception:
+        return ""
 
 
 def stop_vllm(proc: subprocess.Popen | None = None) -> None:
