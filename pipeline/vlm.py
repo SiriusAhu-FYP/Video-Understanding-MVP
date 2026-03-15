@@ -26,6 +26,7 @@ _KNOWN_VLM_PREFIXES = {
     "qwen/qwen2-vl",
     "opengvlab/internvl",
     "deepseek-ai/deepseek-vl",
+    "mistralai/ministral",
     "vikhyatk/moondream",
     "zero-point-ai/martha",
 }

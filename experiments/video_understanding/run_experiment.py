@@ -166,7 +166,7 @@ async def run_single_pipeline(
 
     # 运行流水线：使用 cfg 中的实际模型名（自动检测的，非 config.toml 默认值）
     queue = KeyFrameQueue()
-    vlm_client = VLMClient(model=cfg.llm.vllm_model)
+    vlm_client = VLMClient(base_url=cfg.llm.vllm_base_url, model=cfg.llm.vllm_model)
     summarizer = Summarizer()
     results: list[FrameDescription] = []
     stop_event = asyncio.Event()

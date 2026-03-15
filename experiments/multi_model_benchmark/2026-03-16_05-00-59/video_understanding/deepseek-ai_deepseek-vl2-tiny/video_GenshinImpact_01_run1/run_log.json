@@ -1,0 +1,497 @@
+{
+  "video": "video_GenshinImpact_01.mp4",
+  "model": "deepseek-ai/deepseek-vl2-tiny",
+  "config": {
+    "screenshot_interval_ms": 500,
+    "max_size": 512,
+    "recording_duration_s": 26,
+    "algorithm": "mse",
+    "diff_threshold": 500.0
+  },
+  "stats": {
+    "total_sampled": 53,
+    "total_keyframes": 44,
+    "total_dropped": 43,
+    "duration_s": 26.0
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_ms": 47,
+      "diff_value": null,
+      "is_keyframe": true,
+      "reason": "首帧，自动标记为关键帧",
+      "image_filename": "frame_0000_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 1,
+      "timestamp_ms": 547,
+      "diff_value": 4050.598452156959,
+      "is_keyframe": true,
+      "reason": "差异值 4050.60 >= 阈值 500.00",
+      "image_filename": "frame_0001_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 2,
+      "timestamp_ms": 1047,
+      "diff_value": 715.8403601521596,
+      "is_keyframe": true,
+      "reason": "差异值 715.84 >= 阈值 500.00",
+      "image_filename": "frame_0002_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 3,
+      "timestamp_ms": 1547,
+      "diff_value": 1663.4855969813482,
+      "is_keyframe": true,
+      "reason": "差异值 1663.49 >= 阈值 500.00",
+      "image_filename": "frame_0003_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 4,
+      "timestamp_ms": 2047,
+      "diff_value": 2099.68930655541,
+      "is_keyframe": true,
+      "reason": "差异值 2099.69 >= 阈值 500.00",
+      "image_filename": "frame_0004_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_ms": 2547,
+      "diff_value": 64.73148451134381,
+      "is_keyframe": false,
+      "reason": "差异值 64.73 < 阈值 500.00",
+      "image_filename": "frame_0005_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 6,
+      "timestamp_ms": 3047,
+      "diff_value": 1392.0663704597514,
+      "is_keyframe": true,
+      "reason": "差异值 1392.07 >= 阈值 500.00",
+      "image_filename": "frame_0006_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 7,
+      "timestamp_ms": 3547,
+      "diff_value": 316.9223914021597,
+      "is_keyframe": false,
+      "reason": "差异值 316.92 < 阈值 500.00",
+      "image_filename": "frame_0007_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 8,
+      "timestamp_ms": 4047,
+      "diff_value": 1444.7297290848603,
+      "is_keyframe": true,
+      "reason": "差异值 1444.73 >= 阈值 500.00",
+      "image_filename": "frame_0008_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 9,
+      "timestamp_ms": 4547,
+      "diff_value": 16.734845386125656,
+      "is_keyframe": false,
+      "reason": "差异值 16.73 < 阈值 500.00",
+      "image_filename": "frame_0009_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_ms": 5047,
+      "diff_value": 42.04453840804974,
+      "is_keyframe": false,
+      "reason": "差异值 42.04 < 阈值 500.00",
+      "image_filename": "frame_0010_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 11,
+      "timestamp_ms": 5547,
+      "diff_value": 3874.2776863138088,
+      "is_keyframe": true,
+      "reason": "差异值 3874.28 >= 阈值 500.00",
+      "image_filename": "frame_0011_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 12,
+      "timestamp_ms": 6047,
+      "diff_value": 880.4441297174957,
+      "is_keyframe": true,
+      "reason": "差异值 880.44 >= 阈值 500.00",
+      "image_filename": "frame_0012_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 13,
+      "timestamp_ms": 6547,
+      "diff_value": 704.7426289130672,
+      "is_keyframe": true,
+      "reason": "差异值 704.74 >= 阈值 500.00",
+      "image_filename": "frame_0013_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 14,
+      "timestamp_ms": 7047,
+      "diff_value": 663.562092672884,
+      "is_keyframe": true,
+      "reason": "差异值 663.56 >= 阈值 500.00",
+      "image_filename": "frame_0014_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_ms": 7547,
+      "diff_value": 660.785921479603,
+      "is_keyframe": true,
+      "reason": "差异值 660.79 >= 阈值 500.00",
+      "image_filename": "frame_0015_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 16,
+      "timestamp_ms": 8047,
+      "diff_value": 979.6331090477748,
+      "is_keyframe": true,
+      "reason": "差异值 979.63 >= 阈值 500.00",
+      "image_filename": "frame_0016_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 17,
+      "timestamp_ms": 8547,
+      "diff_value": 574.0365077579625,
+      "is_keyframe": true,
+      "reason": "差异值 574.04 >= 阈值 500.00",
+      "image_filename": "frame_0017_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 18,
+      "timestamp_ms": 9047,
+      "diff_value": 804.3817098194808,
+      "is_keyframe": true,
+      "reason": "差异值 804.38 >= 阈值 500.00",
+      "image_filename": "frame_0018_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 19,
+      "timestamp_ms": 9547,
+      "diff_value": 944.5664232929755,
+      "is_keyframe": true,
+      "reason": "差异值 944.57 >= 阈值 500.00",
+      "image_filename": "frame_0019_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_ms": 10047,
+      "diff_value": 1682.7740118482766,
+      "is_keyframe": true,
+      "reason": "差异值 1682.77 >= 阈值 500.00",
+      "image_filename": "frame_0020_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 21,
+      "timestamp_ms": 10547,
+      "diff_value": 1889.4790984947645,
+      "is_keyframe": true,
+      "reason": "差异值 1889.48 >= 阈值 500.00",
+      "image_filename": "frame_0021_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 22,
+      "timestamp_ms": 11047,
+      "diff_value": 2840.0343586387435,
+      "is_keyframe": true,
+      "reason": "差异值 2840.03 >= 阈值 500.00",
+      "image_filename": "frame_0022_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 23,
+      "timestamp_ms": 11547,
+      "diff_value": 2277.7327900032724,
+      "is_keyframe": true,
+      "reason": "差异值 2277.73 >= 阈值 500.00",
+      "image_filename": "frame_0023_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 24,
+      "timestamp_ms": 12047,
+      "diff_value": 2109.2146801374347,
+      "is_keyframe": true,
+      "reason": "差异值 2109.21 >= 阈值 500.00",
+      "image_filename": "frame_0024_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_ms": 12547,
+      "diff_value": 2151.74369409904,
+      "is_keyframe": true,
+      "reason": "差异值 2151.74 >= 阈值 500.00",
+      "image_filename": "frame_0025_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 26,
+      "timestamp_ms": 13047,
+      "diff_value": 1401.3081506326353,
+      "is_keyframe": true,
+      "reason": "差异值 1401.31 >= 阈值 500.00",
+      "image_filename": "frame_0026_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 27,
+      "timestamp_ms": 13547,
+      "diff_value": 2165.707542539267,
+      "is_keyframe": true,
+      "reason": "差异值 2165.71 >= 阈值 500.00",
+      "image_filename": "frame_0027_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 28,
+      "timestamp_ms": 14047,
+      "diff_value": 1449.8823148451133,
+      "is_keyframe": true,
+      "reason": "差异值 1449.88 >= 阈值 500.00",
+      "image_filename": "frame_0028_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 29,
+      "timestamp_ms": 14562,
+      "diff_value": 1095.2719257880672,
+      "is_keyframe": true,
+      "reason": "差异值 1095.27 >= 阈值 500.00",
+      "image_filename": "frame_0029_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_ms": 15047,
+      "diff_value": 3761.7750344268106,
+      "is_keyframe": true,
+      "reason": "差异值 3761.78 >= 阈值 500.00",
+      "image_filename": "frame_0030_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 31,
+      "timestamp_ms": 15562,
+      "diff_value": 1503.8010249645506,
+      "is_keyframe": true,
+      "reason": "差异值 1503.80 >= 阈值 500.00",
+      "image_filename": "frame_0031_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 32,
+      "timestamp_ms": 16047,
+      "diff_value": 1405.8655905731894,
+      "is_keyframe": true,
+      "reason": "差异值 1405.87 >= 阈值 500.00",
+      "image_filename": "frame_0032_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 33,
+      "timestamp_ms": 16562,
+      "diff_value": 1539.7407763416231,
+      "is_keyframe": true,
+      "reason": "差异值 1539.74 >= 阈值 500.00",
+      "image_filename": "frame_0033_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 34,
+      "timestamp_ms": 17062,
+      "diff_value": 4747.180897551265,
+      "is_keyframe": true,
+      "reason": "差异值 4747.18 >= 阈值 500.00",
+      "image_filename": "frame_0034_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_ms": 17562,
+      "diff_value": 5742.737630208333,
+      "is_keyframe": true,
+      "reason": "差异值 5742.74 >= 阈值 500.00",
+      "image_filename": "frame_0035_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 36,
+      "timestamp_ms": 18062,
+      "diff_value": 3975.7771494600784,
+      "is_keyframe": true,
+      "reason": "差异值 3975.78 >= 阈值 500.00",
+      "image_filename": "frame_0036_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 37,
+      "timestamp_ms": 18547,
+      "diff_value": 4110.468913612565,
+      "is_keyframe": true,
+      "reason": "差异值 4110.47 >= 阈值 500.00",
+      "image_filename": "frame_0037_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 38,
+      "timestamp_ms": 19062,
+      "diff_value": 3522.1303651287085,
+      "is_keyframe": true,
+      "reason": "差异值 3522.13 >= 阈值 500.00",
+      "image_filename": "frame_0038_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 39,
+      "timestamp_ms": 19562,
+      "diff_value": 3694.078314177029,
+      "is_keyframe": true,
+      "reason": "差异值 3694.08 >= 阈值 500.00",
+      "image_filename": "frame_0039_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_ms": 20062,
+      "diff_value": 3296.676210732984,
+      "is_keyframe": true,
+      "reason": "差异值 3296.68 >= 阈值 500.00",
+      "image_filename": "frame_0040_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 41,
+      "timestamp_ms": 20562,
+      "diff_value": 2164.3065588187173,
+      "is_keyframe": true,
+      "reason": "差异值 2164.31 >= 阈值 500.00",
+      "image_filename": "frame_0041_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 42,
+      "timestamp_ms": 21062,
+      "diff_value": 1810.4967413830716,
+      "is_keyframe": true,
+      "reason": "差异值 1810.50 >= 阈值 500.00",
+      "image_filename": "frame_0042_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 43,
+      "timestamp_ms": 21562,
+      "diff_value": 1083.656500531741,
+      "is_keyframe": true,
+      "reason": "差异值 1083.66 >= 阈值 500.00",
+      "image_filename": "frame_0043_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 44,
+      "timestamp_ms": 22062,
+      "diff_value": 0.2416693935427574,
+      "is_keyframe": false,
+      "reason": "差异值 0.24 < 阈值 500.00",
+      "image_filename": "frame_0044_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_ms": 22562,
+      "diff_value": 0.7630071989528796,
+      "is_keyframe": false,
+      "reason": "差异值 0.76 < 阈值 500.00",
+      "image_filename": "frame_0045_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 46,
+      "timestamp_ms": 23062,
+      "diff_value": 0.8931490646815009,
+      "is_keyframe": false,
+      "reason": "差异值 0.89 < 阈值 500.00",
+      "image_filename": "frame_0046_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 47,
+      "timestamp_ms": 23562,
+      "diff_value": 1.0974091268542758,
+      "is_keyframe": false,
+      "reason": "差异值 1.10 < 阈值 500.00",
+      "image_filename": "frame_0047_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 48,
+      "timestamp_ms": 24062,
+      "diff_value": 1.128135907504363,
+      "is_keyframe": false,
+      "reason": "差异值 1.13 < 阈值 500.00",
+      "image_filename": "frame_0048_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 49,
+      "timestamp_ms": 24562,
+      "diff_value": 5835.270925365401,
+      "is_keyframe": true,
+      "reason": "差异值 5835.27 >= 阈值 500.00",
+      "image_filename": "frame_0049_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_ms": 25062,
+      "diff_value": 4808.285306228185,
+      "is_keyframe": true,
+      "reason": "差异值 4808.29 >= 阈值 500.00",
+      "image_filename": "frame_0050_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 51,
+      "timestamp_ms": 25562,
+      "diff_value": 3125.790465136889,
+      "is_keyframe": true,
+      "reason": "差异值 3125.79 >= 阈值 500.00",
+      "image_filename": "frame_0051_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 52,
+      "timestamp_ms": 26062,
+      "diff_value": 6382.606646419612,
+      "is_keyframe": true,
+      "reason": "差异值 6382.61 >= 阈值 500.00",
+      "image_filename": "frame_0052_key.png",
+      "vlm_response": null
+    }
+  ],
+  "summary": null
+}
