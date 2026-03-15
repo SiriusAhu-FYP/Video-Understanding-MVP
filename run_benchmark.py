@@ -40,6 +40,7 @@ from toolkit.common import (
 )
 from toolkit.vllm_manager import (
     create_launch_script,
+    get_vllm_base_url,
     start_vllm,
     stop_vllm,
 )
@@ -881,7 +882,7 @@ def main() -> None:
         lg.error("No models specified")
         sys.exit(1)
 
-    base_url = config.get("vllm", {}).get("base_url", "http://localhost:8000/v1")
+    base_url = get_vllm_base_url()
     startup_timeout = config.get("vllm", {}).get("startup_timeout_s", 300)
     poll_interval = config.get("vllm", {}).get("poll_interval_s", 15)
 

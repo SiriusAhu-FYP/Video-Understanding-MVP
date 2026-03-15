@@ -15,6 +15,36 @@ from loguru import logger as lg
 VLLM_SERVER_DIR = PurePosixPath("/home/playerAhu/vLLM_server")
 VLLM_VENV_ACTIVATE = str(VLLM_SERVER_DIR / ".venv" / "bin" / "activate")
 
+_wsl_ip_cache: str | None = None
+
+
+def get_wsl_ip() -> str:
+    """Detect the WSL2 VM's eth0 IP for Windows→WSL connectivity."""
+    global _wsl_ip_cache
+    if _wsl_ip_cache is not None:
+        return _wsl_ip_cache
+    try:
+        result = subprocess.run(
+            ["wsl", "bash", "-c",
+             "ip addr show eth0 2>/dev/null | grep 'inet ' | awk '{print $2}' | cut -d/ -f1"],
+            capture_output=True, text=True, timeout=5,
+        )
+        ip = result.stdout.strip()
+        if ip:
+            _wsl_ip_cache = ip
+            lg.info("WSL2 IP: {}", ip)
+            return ip
+    except Exception:
+        pass
+    lg.warning("Could not detect WSL2 IP, falling back to localhost")
+    return "localhost"
+
+
+def get_vllm_base_url(port: int = 8000) -> str:
+    """Return the correct base URL for the vLLM server running in WSL."""
+    ip = get_wsl_ip()
+    return f"http://{ip}:{port}/v1"
+
 DEFAULT_VLLM_ARGS: dict[str, str | int | float] = {
     "trust-remote-code": True,
     "max-model-len": 8192,
@@ -173,11 +203,13 @@ def stop_vllm(proc: subprocess.Popen | None = None) -> None:
 
 
 def wait_for_ready(
-    base_url: str = "http://localhost:8000/v1",
+    base_url: str | None = None,
     timeout_s: float = 300.0,
     poll_interval_s: float = 15.0,
 ) -> str:
     """Poll vLLM until it's ready and return the detected model ID."""
     from toolkit.common import wait_for_vllm_ready
 
+    if base_url is None:
+        base_url = get_vllm_base_url()
     return wait_for_vllm_ready(base_url, timeout_s, poll_interval_s)
