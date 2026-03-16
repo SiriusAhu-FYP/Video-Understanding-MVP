@@ -1,0 +1,515 @@
+{
+  "video": "video_MC_01.mp4",
+  "model": "Qwen/Qwen3.5-0.8B",
+  "config": {
+    "screenshot_interval_ms": 500,
+    "max_size": 512,
+    "recording_duration_s": 27,
+    "algorithm": "mse",
+    "diff_threshold": 500.0
+  },
+  "stats": {
+    "total_sampled": 55,
+    "total_keyframes": 31,
+    "total_dropped": 15,
+    "duration_s": 27.0
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_ms": 46,
+      "diff_value": null,
+      "is_keyframe": true,
+      "reason": "首帧，自动标记为关键帧",
+      "image_filename": "frame_0000_key.png",
+      "vlm_response": "主要对象：画面左侧是穿着绿色围巾、白色方块服装的像素人物，右侧是木结构房屋和蓝色石墙建筑。场景环境：这是一个像素风格的游戏场景，有草地、沙地、河流、天空和远处的岛屿。显著变化：画面中人物静止，没有明显动作或动态变化。"
+    },
+    {
+      "frame_idx": 1,
+      "timestamp_ms": 531,
+      "diff_value": 2577.679051797011,
+      "is_keyframe": true,
+      "reason": "差异值 2577.68 >= 阈值 500.00",
+      "image_filename": "frame_0001_key.png",
+      "vlm_response": "主要对象：玩家视角的Minecraft游戏画面，显示一个木结构建筑、水域、草地和远处的岛屿。\n\n动作与状态：玩家站在建筑旁的沙滩上，面向水面，背景是晴朗的白天天空和远处的陆地。\n\n场景环境：这是一个典型的Minecraft游戏场景，位于一个有水的岛屿上，建筑由木头和石头搭建，周围是绿色的草地和沙地。\n\n显著变化：画面中没有任何动态变化，场景处于静止状态。"
+    },
+    {
+      "frame_idx": 2,
+      "timestamp_ms": 1031,
+      "diff_value": 5765.389242814682,
+      "is_keyframe": true,
+      "reason": "差异值 5765.39 >= 阈值 500.00",
+      "image_filename": "frame_0002_key.png",
+      "vlm_response": "主要对象：玩家视角的木制房屋、木门、火把、草地、远处建筑。动作与状态：玩家站在木门前，火把在门上方闪烁，显示有光源；远处建筑清晰可见，显示场景为白天。场景环境：这是一个像素风格的室内场景，玩家位于一栋带有蓝色石墙和棕色木门的房屋外。"
+    },
+    {
+      "frame_idx": 3,
+      "timestamp_ms": 1531,
+      "diff_value": 2932.6461946444156,
+      "is_keyframe": true,
+      "reason": "差异值 2932.65 >= 阈值 500.00",
+      "image_filename": "frame_0003_key.png",
+      "vlm_response": "主要对象：一个穿着棕色盔甲、绿色眼睛的方块人站在室内中央。场景环境：这是一个由石头和木板搭建的室内房间，墙壁和地板是灰色的石砖。显著变化：画面中人物静止不动，没有明显的动态变化。"
+    },
+    {
+      "frame_idx": 4,
+      "timestamp_ms": 2031,
+      "diff_value": 6041.2490012816315,
+      "is_keyframe": true,
+      "reason": "差异值 6041.25 >= 阈值 500.00",
+      "image_filename": "frame_0004_key.png",
+      "vlm_response": "主要对象：游戏界面中的交易窗口、物品栏、玩家角色。\n动作与状态：玩家正在查看交易窗口，物品栏中显示有64个物品，部分物品已使用，物品栏中还有未使用的物品。\n场景环境：游戏内场景，背景为石墙和树木，显示为室内或半开放空间。\n显著变化：交易窗口中显示有64个物品，物品栏中物品数量有所变化，部分物品已消耗。"
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_ms": 2531,
+      "diff_value": 146.61702900032722,
+      "is_keyframe": false,
+      "reason": "差异值 146.62 < 阈值 500.00",
+      "image_filename": "frame_0005_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 6,
+      "timestamp_ms": 3031,
+      "diff_value": 146.5893750681719,
+      "is_keyframe": false,
+      "reason": "差异值 146.59 < 阈值 500.00",
+      "image_filename": "frame_0006_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 7,
+      "timestamp_ms": 3531,
+      "diff_value": 145.36395615183247,
+      "is_keyframe": false,
+      "reason": "差异值 145.36 < 阈值 500.00",
+      "image_filename": "frame_0007_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 8,
+      "timestamp_ms": 4031,
+      "diff_value": 5564.123336605585,
+      "is_keyframe": true,
+      "reason": "差异值 5564.12 >= 阈值 500.00",
+      "image_filename": "frame_0008_key.png",
+      "vlm_response": "主要对象：一个穿着棕色衣服、绿色眼睛的方块人站在室内，旁边有火把和窗户。场景环境：这是一个室内场景，有石墙、木板和窗户，窗外是雪地。显著变化：画面中人物静止站立，没有明显的动态变化。"
+    },
+    {
+      "frame_idx": 9,
+      "timestamp_ms": 4531,
+      "diff_value": 2262.462421943172,
+      "is_keyframe": true,
+      "reason": "差异值 2262.46 >= 阈值 500.00",
+      "image_filename": "frame_0009_key.png",
+      "vlm_response": "主要对象：一个穿着棕色衣服、戴着棕色头巾的方块人站在室内中央。场景环境：这是一个由灰色石砖和木板搭建的室内房间，墙壁和地面都是方块材质。显著变化：画面中人物处于静止状态，没有明显的动态变化。"
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_ms": 5031,
+      "diff_value": 981.2067227721423,
+      "is_keyframe": true,
+      "reason": "差异值 981.21 >= 阈值 500.00",
+      "image_filename": "frame_0010_key.png",
+      "vlm_response": "主要对象：一个由多个几何结构组成的复杂星形装置，具有对称的六边形和三角形结构。\n\n动作与状态：装置处于静止状态，表面有发光点，周围有柔和的光晕效果。\n\n场景环境：背景为深蓝色渐变，整体氛围神秘科幻。\n\n显著变化：装置本身没有明显动态变化，但周围的光晕和发光点可能暗示着某种能量流动或视觉焦点。"
+    },
+    {
+      "frame_idx": 11,
+      "timestamp_ms": 5546,
+      "diff_value": 392.6436416066754,
+      "is_keyframe": false,
+      "reason": "差异值 392.64 < 阈值 500.00",
+      "image_filename": "frame_0011_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 12,
+      "timestamp_ms": 6031,
+      "diff_value": 1363.4158758726003,
+      "is_keyframe": true,
+      "reason": "差异值 1363.42 >= 阈值 500.00",
+      "image_filename": "frame_0012_key.png",
+      "vlm_response": "主要对象：一个像素风格的角色站在前景，背景是深蓝色的天空和远处的建筑轮廓。\n动作与状态：角色处于静止状态，面部表情平静。\n场景环境：场景位于一个类似游戏或VR的室内空间，有类似VR设备的结构。\n显著变化：画面中无动态变化，角色和场景均保持静态。"
+    },
+    {
+      "frame_idx": 13,
+      "timestamp_ms": 6531,
+      "diff_value": 1387.7944429673867,
+      "is_keyframe": true,
+      "reason": "差异值 1387.79 >= 阈值 500.00",
+      "image_filename": "frame_0013_key.png",
+      "vlm_response": "主要对象：一个巨大的像素风格飞船悬浮在深蓝色天空中，底部可见部分橙色物体。场景环境：天空呈深蓝色，有云层纹理，整体氛围神秘。显著变化：飞船周围有光晕效果，可能表示其正在移动或受到某种能量影响。"
+    },
+    {
+      "frame_idx": 14,
+      "timestamp_ms": 7031,
+      "diff_value": 3013.405607479821,
+      "is_keyframe": true,
+      "reason": "差异值 3013.41 >= 阈值 500.00",
+      "image_filename": "frame_0014_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_ms": 7531,
+      "diff_value": 2411.588664376091,
+      "is_keyframe": true,
+      "reason": "差异值 2411.59 >= 阈值 500.00",
+      "image_filename": "frame_0015_key.png",
+      "vlm_response": "主要对象：画面中可见多个像素风格的方块结构，包括黑色方块、蓝色和黄色图案的方块，以及部分带有文字标识的透明结构。场景环境：场景为室内，具有类似游戏或建筑设计的像素化风格，地面有绿色和黄色图案，背景有红色和金色装饰。显著变化：画面中可见多个方块结构悬浮或悬空，部分方块表面有像素化纹理，整体呈现静态的像素艺术风格。"
+    },
+    {
+      "frame_idx": 16,
+      "timestamp_ms": 8031,
+      "diff_value": 4049.7995149569156,
+      "is_keyframe": true,
+      "reason": "差异值 4049.80 >= 阈值 500.00",
+      "image_filename": "frame_0016_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 17,
+      "timestamp_ms": 8531,
+      "diff_value": 2330.304225635362,
+      "is_keyframe": true,
+      "reason": "差异值 2330.30 >= 阈值 500.00",
+      "image_filename": "frame_0017_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 18,
+      "timestamp_ms": 9031,
+      "diff_value": 3072.1497651477966,
+      "is_keyframe": true,
+      "reason": "差异值 3072.15 >= 阈值 500.00",
+      "image_filename": "frame_0018_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 19,
+      "timestamp_ms": 9531,
+      "diff_value": 2769.5546091023125,
+      "is_keyframe": true,
+      "reason": "差异值 2769.55 >= 阈值 500.00",
+      "image_filename": "frame_0019_key.png",
+      "vlm_response": "画面显示的是一个室内场景，中央是一个类似游戏或建筑游戏的方块结构，周围环绕着不同颜色的墙壁和装饰。\n\n1. 主要对象：中央是一个复杂的方块结构，包含橙色、黑色、红色等颜色的方块，以及一些带有图案的方块。\n2. 动作与状态：场景静止，没有明显的人物或动物活动。\n3. 场景环境：这是一个室内场景，墙壁和地面由不同颜色的方块组成，营造出一种游戏或建筑设计的视觉效果。\n4. 显著变化：没有明显的动态变化，场景处于静态状态。"
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_ms": 10031,
+      "diff_value": 3362.3214305191973,
+      "is_keyframe": true,
+      "reason": "差异值 3362.32 >= 阈值 500.00",
+      "image_filename": "frame_0020_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 21,
+      "timestamp_ms": 10531,
+      "diff_value": 821.9202508044284,
+      "is_keyframe": true,
+      "reason": "差异值 821.92 >= 阈值 500.00",
+      "image_filename": "frame_0021_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 22,
+      "timestamp_ms": 11031,
+      "diff_value": 3755.396971804101,
+      "is_keyframe": true,
+      "reason": "差异值 3755.40 >= 阈值 500.00",
+      "image_filename": "frame_0022_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 23,
+      "timestamp_ms": 11531,
+      "diff_value": 4109.5236522414925,
+      "is_keyframe": true,
+      "reason": "差异值 4109.52 >= 阈值 500.00",
+      "image_filename": "frame_0023_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 24,
+      "timestamp_ms": 12031,
+      "diff_value": 4493.659593831806,
+      "is_keyframe": true,
+      "reason": "差异值 4493.66 >= 阈值 500.00",
+      "image_filename": "frame_0024_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_ms": 12546,
+      "diff_value": 8049.5538131953535,
+      "is_keyframe": true,
+      "reason": "差异值 8049.55 >= 阈值 500.00",
+      "image_filename": "frame_0025_key.png",
+      "vlm_response": "主要对象：画面中可见一个像素风格的建筑，顶部有类似“X”标志的方块结构，下方是深色的建筑墙体。场景环境：这是一个室内场景，光线较暗，整体色调偏冷蓝。显著变化：画面中央有一个巨大的浅蓝色方块，其表面有类似“X”的图案，周围建筑结构呈现出像素化的块状特征。"
+    },
+    {
+      "frame_idx": 26,
+      "timestamp_ms": 13046,
+      "diff_value": 3469.529970072535,
+      "is_keyframe": true,
+      "reason": "差异值 3469.53 >= 阈值 500.00",
+      "image_filename": "frame_0026_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 27,
+      "timestamp_ms": 13546,
+      "diff_value": 5883.852511793739,
+      "is_keyframe": true,
+      "reason": "差异值 5883.85 >= 阈值 500.00",
+      "image_filename": "frame_0027_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 28,
+      "timestamp_ms": 14046,
+      "diff_value": 1363.478261684664,
+      "is_keyframe": true,
+      "reason": "差异值 1363.48 >= 阈值 500.00",
+      "image_filename": "frame_0028_key.png",
+      "vlm_response": "画面中显示的是一个室内场景，左侧是深色的像素化墙壁，中间有一个浅色的矩形物体，右侧是带有绿色网格装饰的白色结构。右侧有一个带有黑色眼睛图案的方块，下方有红色和黄色的物体。场景整体呈现像素化风格，光线较暗。"
+    },
+    {
+      "frame_idx": 29,
+      "timestamp_ms": 14546,
+      "diff_value": 3981.7931783785994,
+      "is_keyframe": true,
+      "reason": "差异值 3981.79 >= 阈值 500.00",
+      "image_filename": "frame_0029_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_ms": 15046,
+      "diff_value": 2449.309742446553,
+      "is_keyframe": true,
+      "reason": "差异值 2449.31 >= 阈值 500.00",
+      "image_filename": "frame_0030_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 31,
+      "timestamp_ms": 15546,
+      "diff_value": 10277.13369191754,
+      "is_keyframe": true,
+      "reason": "差异值 10277.13 >= 阈值 500.00",
+      "image_filename": "frame_0031_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 32,
+      "timestamp_ms": 16046,
+      "diff_value": 7135.829116901178,
+      "is_keyframe": true,
+      "reason": "差异值 7135.83 >= 阈值 500.00",
+      "image_filename": "frame_0032_key.png",
+      "vlm_response": "主要对象：多排带有几何图案的装饰性灯带，安装在白色横梁上。\n动作与状态：灯带呈水平排列，内部有发光的几何图案，整体处于静止状态。\n场景环境：室内建筑，可能是车站或公共建筑，光线昏暗。\n显著变化：画面中无动态变化，呈现静态的建筑细节。"
+    },
+    {
+      "frame_idx": 33,
+      "timestamp_ms": 16546,
+      "diff_value": 3610.583479902923,
+      "is_keyframe": true,
+      "reason": "差异值 3610.58 >= 阈值 500.00",
+      "image_filename": "frame_0033_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 34,
+      "timestamp_ms": 17046,
+      "diff_value": 27.994737129144852,
+      "is_keyframe": false,
+      "reason": "差异值 27.99 < 阈值 500.00",
+      "image_filename": "frame_0034_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_ms": 17546,
+      "diff_value": 90.55929421629581,
+      "is_keyframe": false,
+      "reason": "差异值 90.56 < 阈值 500.00",
+      "image_filename": "frame_0035_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 36,
+      "timestamp_ms": 18046,
+      "diff_value": 173.30603900796248,
+      "is_keyframe": false,
+      "reason": "差异值 173.31 < 阈值 500.00",
+      "image_filename": "frame_0036_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 37,
+      "timestamp_ms": 18546,
+      "diff_value": 290.94419277650525,
+      "is_keyframe": false,
+      "reason": "差异值 290.94 < 阈值 500.00",
+      "image_filename": "frame_0037_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 38,
+      "timestamp_ms": 19046,
+      "diff_value": 322.2172689654232,
+      "is_keyframe": false,
+      "reason": "差异值 322.22 < 阈值 500.00",
+      "image_filename": "frame_0038_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 39,
+      "timestamp_ms": 19546,
+      "diff_value": 339.52128497218587,
+      "is_keyframe": false,
+      "reason": "差异值 339.52 < 阈值 500.00",
+      "image_filename": "frame_0039_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_ms": 20062,
+      "diff_value": 1214.4951700207243,
+      "is_keyframe": true,
+      "reason": "差异值 1214.50 >= 阈值 500.00",
+      "image_filename": "frame_0040_key.png",
+      "vlm_response": "主要对象：一个发光的星形装置，底部有火焰状结构。\n动作与状态：装置顶部有发光纹路，底部有火焰，整体处于静止状态。\n场景环境：黑暗背景，可能是太空或神秘空间。\n显著变化：画面中无动态变化，呈现静态场景。"
+    },
+    {
+      "frame_idx": 41,
+      "timestamp_ms": 20546,
+      "diff_value": 132.59305635089441,
+      "is_keyframe": false,
+      "reason": "差异值 132.59 < 阈值 500.00",
+      "image_filename": "frame_0041_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 42,
+      "timestamp_ms": 21062,
+      "diff_value": 119.53025980311955,
+      "is_keyframe": false,
+      "reason": "差异值 119.53 < 阈值 500.00",
+      "image_filename": "frame_0042_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 43,
+      "timestamp_ms": 21546,
+      "diff_value": 171.1895553828534,
+      "is_keyframe": false,
+      "reason": "差异值 171.19 < 阈值 500.00",
+      "image_filename": "frame_0043_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 44,
+      "timestamp_ms": 22046,
+      "diff_value": 170.49620112074606,
+      "is_keyframe": false,
+      "reason": "差异值 170.50 < 阈值 500.00",
+      "image_filename": "frame_0044_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_ms": 22546,
+      "diff_value": 106.76595222513089,
+      "is_keyframe": false,
+      "reason": "差异值 106.77 < 阈值 500.00",
+      "image_filename": "frame_0045_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 46,
+      "timestamp_ms": 23046,
+      "diff_value": 116.00438856620855,
+      "is_keyframe": false,
+      "reason": "差异值 116.00 < 阈值 500.00",
+      "image_filename": "frame_0046_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 47,
+      "timestamp_ms": 23562,
+      "diff_value": 118.31296356893543,
+      "is_keyframe": false,
+      "reason": "差异值 118.31 < 阈值 500.00",
+      "image_filename": "frame_0047_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 48,
+      "timestamp_ms": 24046,
+      "diff_value": 147.67433089277924,
+      "is_keyframe": false,
+      "reason": "差异值 147.67 < 阈值 500.00",
+      "image_filename": "frame_0048_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 49,
+      "timestamp_ms": 24546,
+      "diff_value": 150.86654668411867,
+      "is_keyframe": false,
+      "reason": "差异值 150.87 < 阈值 500.00",
+      "image_filename": "frame_0049_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_ms": 25062,
+      "diff_value": 150.86654668411867,
+      "is_keyframe": false,
+      "reason": "差异值 150.87 < 阈值 500.00",
+      "image_filename": "frame_0050_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 51,
+      "timestamp_ms": 25546,
+      "diff_value": 150.86654668411867,
+      "is_keyframe": false,
+      "reason": "差异值 150.87 < 阈值 500.00",
+      "image_filename": "frame_0051_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 52,
+      "timestamp_ms": 26046,
+      "diff_value": 150.86654668411867,
+      "is_keyframe": false,
+      "reason": "差异值 150.87 < 阈值 500.00",
+      "image_filename": "frame_0052_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 53,
+      "timestamp_ms": 26546,
+      "diff_value": 150.86654668411867,
+      "is_keyframe": false,
+      "reason": "差异值 150.87 < 阈值 500.00",
+      "image_filename": "frame_0053_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 54,
+      "timestamp_ms": 27046,
+      "diff_value": 150.86654668411867,
+      "is_keyframe": false,
+      "reason": "差异值 150.87 < 阈值 500.00",
+      "image_filename": "frame_0054_skip.png",
+      "vlm_response": null
+    }
+  ],
+  "summary": "这段视频展示了一个像素风格游戏（如《我的世界》）中的探索与建造过程。视频开始时，玩家在一个由木石建筑构成的岛屿上活动，随后进入室内进行物品交易。视频中后段，场景转向一系列神秘的静态展示，包括复杂的星形装置、悬浮的像素飞船以及各种几何结构的室内布景。整体来看，视频的核心主题是通过静态画面串联，呈现一个充满想象与建造元素的像素游戏世界，氛围从日常探索逐渐转向科幻与神秘。"
+}

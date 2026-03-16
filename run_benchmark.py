@@ -1136,7 +1136,7 @@ def main() -> None:
 
         proc = None
         try:
-            gpu_util = gpu_util_map.get(model_id, 0.5)
+            gpu_util = gpu_util_map.get(model_id, config["vllm"]["gpu_memory_utilization"])
             proc = start_vllm(model_id, gpu_memory_utilization=gpu_util)
 
             lg.info("等待 vLLM 就绪 (超时: {}s) ...", startup_timeout)

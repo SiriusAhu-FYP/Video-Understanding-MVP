@@ -73,8 +73,25 @@ def get_video_duration_s(video_path: Path) -> float:
     return frame_count / fps
 
 
-def launch_player(video_path: Path) -> None:
-    """启动播放器播放视频。"""
+def _kill_all_players() -> None:
+    """强制终止所有 PotPlayer 进程，确保干净状态。"""
+    import psutil
+    killed = 0
+    for proc in psutil.process_iter(["name"]):
+        try:
+            name = (proc.info["name"] or "").lower()
+            if "potplayer" in name:
+                proc.kill()
+                killed += 1
+        except (psutil.NoSuchProcess, psutil.AccessDenied):
+            pass
+    if killed:
+        lg.info("已强制终止 {} 个 PotPlayer 进程", killed)
+        time.sleep(1.0)
+
+
+def launch_player(video_path: Path) -> subprocess.Popen:
+    """启动播放器播放视频，返回进程句柄用于后续清理。"""
     secrets = get_settings().secrets
     player_exe = secrets.player_exe_path
     if not player_exe:
@@ -84,8 +101,9 @@ def launch_player(video_path: Path) -> None:
     if not Path(player_exe).exists():
         raise FileNotFoundError(f"播放器不存在: {player_exe}")
 
+    _kill_all_players()
     lg.info("启动播放器: {} -> {}", Path(player_exe).name, video_path.name)
-    subprocess.Popen([player_exe, str(video_path)])
+    return subprocess.Popen([player_exe, str(video_path)])
 
 
 def wait_for_window(keyword: str, timeout_s: float = 15.0) -> tuple[int, str]:
@@ -99,16 +117,27 @@ def wait_for_window(keyword: str, timeout_s: float = 15.0) -> tuple[int, str]:
     raise WindowNotFoundError(f"等待 {timeout_s}s 后仍未找到窗口: {keyword}")
 
 
-def close_window(keyword: str) -> None:
-    """关闭匹配的窗口。"""
+def close_player(player_proc: subprocess.Popen | None, keyword: str) -> None:
+    """关闭播放器：先礼后兵，WM_CLOSE → terminate → kill。"""
     WM_CLOSE = 0x0010
     try:
         hwnd, title = find_window(keyword)
         win32gui.PostMessage(hwnd, WM_CLOSE, 0, 0)
         lg.info("已发送关闭信号: '{}'", title)
-        time.sleep(1.0)
     except WindowNotFoundError:
-        lg.debug("窗口已关闭或不存在")
+        pass
+
+    if player_proc is not None:
+        try:
+            player_proc.wait(timeout=3.0)
+            lg.info("播放器进程已正常退出")
+            return
+        except subprocess.TimeoutExpired:
+            lg.warning("播放器未响应 WM_CLOSE，强制终止")
+            player_proc.kill()
+            player_proc.wait(timeout=5.0)
+
+    _kill_all_players()
 
 
 # ── 单次运行 ──────────────────────────────────────────────────────
@@ -156,8 +185,8 @@ async def run_single_pipeline(
         )
         frame_records.append(record)
 
-    # 启动播放器
-    launch_player(video_path)
+    # 启动播放器（跟踪进程句柄用于可靠清理）
+    player_proc = launch_player(video_path)
     time.sleep(2.0)
 
     # 等待窗口
@@ -172,81 +201,81 @@ async def run_single_pipeline(
     stop_event = asyncio.Event()
     loop = asyncio.get_running_loop()
 
-    capture_task = asyncio.ensure_future(
-        asyncio.to_thread(
-            run_capture_loop,
-            queue.inner,
-            loop,
-            stop_event,
-            on_frame_sampled,
-        )
-    )
-
-    # 消费者协程
-    async def consume() -> None:
-        while True:
-            if stop_event.is_set() and queue.empty():
-                break
-            try:
-                keyframe = await asyncio.wait_for(queue.get(), timeout=1.0)
-            except asyncio.TimeoutError:
-                continue
-            if keyframe is None:
-                continue
-            try:
-                desc = await vlm_client.describe_frame(keyframe)
-                results.append(desc)
-                # 回填 vlm_response 到对应的 FrameRecord
-                for rec in frame_records:
-                    if rec.is_keyframe and rec.vlm_response is None:
-                        ts_diff = abs(rec.timestamp_ms - desc.timestamp_ms)
-                        if ts_diff < cfg.capture.screenshot_interval_ms:
-                            rec.vlm_response = desc.description
-                            break
-                lg.info("帧 #{} 描述完成 | 已描述 {} 帧", desc.frame_id, len(results))
-            except Exception:
-                lg.exception("vLLM 推理失败，跳过帧 #{}", keyframe.frame_id)
-            finally:
-                queue.task_done()
-
-    consumer_task = asyncio.ensure_future(consume())
-
-    # 定时器
-    duration_s = cfg.capture.recording_duration_s
-    async def timer() -> None:
-        lg.info("录制计时器启动，{}s 后停止", duration_s)
-        start = time.monotonic()
-        while not stop_event.is_set():
-            if time.monotonic() - start >= duration_s:
-                lg.info("录制时间已到，停止截图")
-                stop_event.set()
-                break
-            await asyncio.sleep(0.5)
-
-    timer_task = asyncio.ensure_future(timer())
-
-    await capture_task
     try:
-        await asyncio.wait_for(consumer_task, timeout=120.0)
-    except asyncio.TimeoutError:
-        lg.warning("消费者超时，强制结束")
-        consumer_task.cancel()
-    timer_task.cancel()
+        capture_task = asyncio.ensure_future(
+            asyncio.to_thread(
+                run_capture_loop,
+                queue.inner,
+                loop,
+                stop_event,
+                on_frame_sampled,
+            )
+        )
 
-    # DeepSeek 汇总
-    summary = None
-    if results:
+        # 消费者协程
+        async def consume() -> None:
+            while True:
+                if stop_event.is_set() and queue.empty():
+                    break
+                try:
+                    keyframe = await asyncio.wait_for(queue.get(), timeout=1.0)
+                except asyncio.TimeoutError:
+                    continue
+                if keyframe is None:
+                    continue
+                try:
+                    desc = await vlm_client.describe_frame(keyframe)
+                    results.append(desc)
+                    for rec in frame_records:
+                        if rec.is_keyframe and rec.vlm_response is None:
+                            ts_diff = abs(rec.timestamp_ms - desc.timestamp_ms)
+                            if ts_diff < cfg.capture.screenshot_interval_ms:
+                                rec.vlm_response = desc.description
+                                break
+                    lg.info("帧 #{} 描述完成 | 已描述 {} 帧", desc.frame_id, len(results))
+                except Exception:
+                    lg.exception("vLLM 推理失败，跳过帧 #{}", keyframe.frame_id)
+                finally:
+                    queue.task_done()
+
+        consumer_task = asyncio.ensure_future(consume())
+
+        # 定时器
+        duration_s = cfg.capture.recording_duration_s
+        async def timer() -> None:
+            lg.info("录制计时器启动，{}s 后停止", duration_s)
+            start = time.monotonic()
+            while not stop_event.is_set():
+                if time.monotonic() - start >= duration_s:
+                    lg.info("录制时间已到，停止截图")
+                    stop_event.set()
+                    break
+                await asyncio.sleep(0.5)
+
+        timer_task = asyncio.ensure_future(timer())
+
+        await capture_task
         try:
-            summary = await summarizer.summarize(results, duration_s=float(duration_s))
-            lg.info("DeepSeek 汇总完成")
-        except Exception:
-            lg.exception("DeepSeek 汇总失败")
+            await asyncio.wait_for(consumer_task, timeout=120.0)
+        except asyncio.TimeoutError:
+            lg.warning("消费者超时，强制结束")
+            consumer_task.cancel()
+        timer_task.cancel()
 
-    await vlm_client.close()
-    await summarizer.close()
+        # DeepSeek 汇总
+        summary = None
+        if results:
+            try:
+                summary = await summarizer.summarize(results, duration_s=float(duration_s))
+                lg.info("DeepSeek 汇总完成")
+            except Exception:
+                lg.exception("DeepSeek 汇总失败")
 
-    # 关闭播放器
-    close_window(keyword)
+        await vlm_client.close()
+        await summarizer.close()
+    finally:
+        # 无论成功或异常，都确保播放器被彻底关闭
+        close_player(player_proc, keyword)
 
     pipeline_result = PipelineResult(
         frame_records=frame_records,

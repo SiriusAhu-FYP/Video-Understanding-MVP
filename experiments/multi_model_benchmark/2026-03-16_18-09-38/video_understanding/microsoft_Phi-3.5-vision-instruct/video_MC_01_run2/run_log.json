@@ -1,0 +1,506 @@
+{
+  "video": "video_MC_01.mp4",
+  "model": "microsoft/Phi-3.5-vision-instruct",
+  "config": {
+    "screenshot_interval_ms": 500,
+    "max_size": 512,
+    "recording_duration_s": 27,
+    "algorithm": "mse",
+    "diff_threshold": 500.0
+  },
+  "stats": {
+    "total_sampled": 54,
+    "total_keyframes": 33,
+    "total_dropped": 27,
+    "duration_s": 27.0
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_ms": 62,
+      "diff_value": null,
+      "is_keyframe": true,
+      "reason": "首帧，自动标记为关键帧",
+      "image_filename": "frame_0000_key.png",
+      "vlm_response": " 这是一个带有玩家头像的游戏截图，玩家在一个室外环境中，树林和房屋附近。玩家的屏幕上显示的是剩余的生命值（88）、精力值（64）、战斗力（19）和剩余的精力（20）。玩家的头部上有一个玩家头像，头部上有绿色的皮肤和眼睛。场景中没有明显的动作或状态变化。"
+    },
+    {
+      "frame_idx": 1,
+      "timestamp_ms": 562,
+      "diff_value": 3005.036390161431,
+      "is_keyframe": true,
+      "reason": "差异值 3005.04 >= 阈值 500.00",
+      "image_filename": "frame_0001_key.png",
+      "vlm_response": " 这是一幅游戏截图，显示一个玩家在一个室外环境中的角色。主要对象是玩家的角色，它站在一栋建筑的顶部，可以看到一个玩家的头部和一个玩家的手。玩家的角色在游戏中处于活动状态，可以看到它的头部和手部都有红色的灯光，这通常表示玩家正在使用武器或工具。场景是一个室外环境，可以看到一个湖泊、绿色的植物和一座木屋。玩家的角色在前景中，而木屋在背景中。没有显著的动态变化可以在这张截图中观察到。"
+    },
+    {
+      "frame_idx": 2,
+      "timestamp_ms": 1062,
+      "diff_value": 5271.522476276178,
+      "is_keyframe": true,
+      "reason": "差异值 5271.52 >= 阈值 500.00",
+      "image_filename": "frame_0002_key.png",
+      "vlm_response": " 这是一幅游戏截图，显示一个玩家在一个建筑物的外部环境中。玩家的头部部分被隐藏了，但可以看到他们的头部上有一个红色的灯光。玩家的姿势表明他们正在走向一个窗户，窗户的框架和玻璃都是木质。玩家的装饰包括一个简单的灯枝和一个灯枝。玩家的剑装备显示为矿石剑，剑的长度显示为 38 厘米。玩家的衣服是矿石衣，它们的长度显示为 64 厘米。玩家的血量显示为 19 毫升，而氧气量显示为 64 毫升。玩家的气味指示器显示为 88，这可能表示玩家的气味强度。场景的环境是一个室外，可以看到一个短径的环境，包括短径和树木。"
+    },
+    {
+      "frame_idx": 3,
+      "timestamp_ms": 1546,
+      "diff_value": 4136.98468859075,
+      "is_keyframe": true,
+      "reason": "差异值 4136.98 >= 阈值 500.00",
+      "image_filename": "frame_0003_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 4,
+      "timestamp_ms": 2046,
+      "diff_value": 1612.491918220986,
+      "is_keyframe": true,
+      "reason": "差异值 1612.49 >= 阈值 500.00",
+      "image_filename": "frame_0004_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_ms": 2546,
+      "diff_value": 5566.0744420129795,
+      "is_keyframe": true,
+      "reason": "差异值 5566.07 >= 阈值 500.00",
+      "image_filename": "frame_0005_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 6,
+      "timestamp_ms": 3046,
+      "diff_value": 0.6258862347294939,
+      "is_keyframe": false,
+      "reason": "差异值 0.63 < 阈值 500.00",
+      "image_filename": "frame_0006_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 7,
+      "timestamp_ms": 3546,
+      "diff_value": 0.5242487456369983,
+      "is_keyframe": false,
+      "reason": "差异值 0.52 < 阈值 500.00",
+      "image_filename": "frame_0007_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 8,
+      "timestamp_ms": 4046,
+      "diff_value": 5474.368755453752,
+      "is_keyframe": true,
+      "reason": "差异值 5474.37 >= 阈值 500.00",
+      "image_filename": "frame_0008_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 9,
+      "timestamp_ms": 4562,
+      "diff_value": 1723.8635726848822,
+      "is_keyframe": true,
+      "reason": "差异值 1723.86 >= 阈值 500.00",
+      "image_filename": "frame_0009_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_ms": 5046,
+      "diff_value": 861.4324961823735,
+      "is_keyframe": true,
+      "reason": "差异值 861.43 >= 阈值 500.00",
+      "image_filename": "frame_0010_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 11,
+      "timestamp_ms": 5546,
+      "diff_value": 541.7506834233202,
+      "is_keyframe": true,
+      "reason": "差异值 541.75 >= 阈值 500.00",
+      "image_filename": "frame_0011_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 12,
+      "timestamp_ms": 6046,
+      "diff_value": 1684.076817803774,
+      "is_keyframe": true,
+      "reason": "差异值 1684.08 >= 阈值 500.00",
+      "image_filename": "frame_0012_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 13,
+      "timestamp_ms": 6546,
+      "diff_value": 1453.4873455906413,
+      "is_keyframe": true,
+      "reason": "差异值 1453.49 >= 阈值 500.00",
+      "image_filename": "frame_0013_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 14,
+      "timestamp_ms": 7046,
+      "diff_value": 2905.5217724012873,
+      "is_keyframe": true,
+      "reason": "差异值 2905.52 >= 阈值 500.00",
+      "image_filename": "frame_0014_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_ms": 7546,
+      "diff_value": 2452.6025867828316,
+      "is_keyframe": true,
+      "reason": "差异值 2452.60 >= 阈值 500.00",
+      "image_filename": "frame_0015_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 16,
+      "timestamp_ms": 8046,
+      "diff_value": 3848.0198755181063,
+      "is_keyframe": true,
+      "reason": "差异值 3848.02 >= 阈值 500.00",
+      "image_filename": "frame_0016_key.png",
+      "vlm_response": " 在这张截图中，主要的对象是一座高楼大楼，它在夜晚的黑暗中照亮。大楼的前部有一个窗户，窗户的灯光在黑暗中突出。大楼的反射在水面上形成了一个圆形图像。没有人物或动物在场景中，但是大楼的反射和窗户的灯光表明了人类建造的存在。场景发生在水下，可能是一个城市的水下景观。显著变化是大楼的灯光在黑暗中的突出，它们在水面上形成了一个明亮的图像。"
+    },
+    {
+      "frame_idx": 17,
+      "timestamp_ms": 8546,
+      "diff_value": 2339.5305665766796,
+      "is_keyframe": true,
+      "reason": "差异值 2339.53 >= 阈值 500.00",
+      "image_filename": "frame_0017_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 18,
+      "timestamp_ms": 9046,
+      "diff_value": 3033.759980366492,
+      "is_keyframe": true,
+      "reason": "差异值 3033.76 >= 阈值 500.00",
+      "image_filename": "frame_0018_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 19,
+      "timestamp_ms": 9546,
+      "diff_value": 2213.4138153768545,
+      "is_keyframe": true,
+      "reason": "差异值 2213.41 >= 阈值 500.00",
+      "image_filename": "frame_0019_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_ms": 10046,
+      "diff_value": 2549.0703943062827,
+      "is_keyframe": true,
+      "reason": "差异值 2549.07 >= 阈值 500.00",
+      "image_filename": "frame_0020_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 21,
+      "timestamp_ms": 10546,
+      "diff_value": 976.8337849721859,
+      "is_keyframe": true,
+      "reason": "差异值 976.83 >= 阈值 500.00",
+      "image_filename": "frame_0021_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 22,
+      "timestamp_ms": 11062,
+      "diff_value": 3685.296605720986,
+      "is_keyframe": true,
+      "reason": "差异值 3685.30 >= 阈值 500.00",
+      "image_filename": "frame_0022_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 23,
+      "timestamp_ms": 11562,
+      "diff_value": 4213.339813072644,
+      "is_keyframe": true,
+      "reason": "差异值 4213.34 >= 阈值 500.00",
+      "image_filename": "frame_0023_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 24,
+      "timestamp_ms": 12062,
+      "diff_value": 4137.094651573408,
+      "is_keyframe": true,
+      "reason": "差异值 4137.09 >= 阈值 500.00",
+      "image_filename": "frame_0024_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_ms": 12562,
+      "diff_value": 4390.710900005453,
+      "is_keyframe": true,
+      "reason": "差异值 4390.71 >= 阈值 500.00",
+      "image_filename": "frame_0025_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 26,
+      "timestamp_ms": 13046,
+      "diff_value": 6297.098235711169,
+      "is_keyframe": true,
+      "reason": "差异值 6297.10 >= 阈值 500.00",
+      "image_filename": "frame_0026_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 27,
+      "timestamp_ms": 13546,
+      "diff_value": 7730.329923033923,
+      "is_keyframe": true,
+      "reason": "差异值 7730.33 >= 阈值 500.00",
+      "image_filename": "frame_0027_key.png",
+      "vlm_response": " 在这个截图中，主要的对象是一个玩具模型，它看起来像一个玩具人。玩具人位于一个模拟的房间内，周围有玩具建筑物和玩具物品。玩具人在静态状态，没有显示任何动作。场景环境是一个模拟的房间，模拟的玩具建筑物和物品在场景中占据主导地位。没有显著的变化可以在这张截图中观察到，因为玩具人在静态状态。"
+    },
+    {
+      "frame_idx": 28,
+      "timestamp_ms": 14046,
+      "diff_value": 1595.871051142561,
+      "is_keyframe": true,
+      "reason": "差异值 1595.87 >= 阈值 500.00",
+      "image_filename": "frame_0028_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 29,
+      "timestamp_ms": 14562,
+      "diff_value": 3631.2824634598605,
+      "is_keyframe": true,
+      "reason": "差异值 3631.28 >= 阈值 500.00",
+      "image_filename": "frame_0029_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_ms": 15062,
+      "diff_value": 2162.2993598658377,
+      "is_keyframe": true,
+      "reason": "差异值 2162.30 >= 阈值 500.00",
+      "image_filename": "frame_0030_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 31,
+      "timestamp_ms": 15562,
+      "diff_value": 3831.466389547884,
+      "is_keyframe": true,
+      "reason": "差异值 3831.47 >= 阈值 500.00",
+      "image_filename": "frame_0031_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 32,
+      "timestamp_ms": 16062,
+      "diff_value": 4124.952066631217,
+      "is_keyframe": true,
+      "reason": "差异值 4124.95 >= 阈值 500.00",
+      "image_filename": "frame_0032_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 33,
+      "timestamp_ms": 16546,
+      "diff_value": 3764.113069917103,
+      "is_keyframe": true,
+      "reason": "差异值 3764.11 >= 阈值 500.00",
+      "image_filename": "frame_0033_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 34,
+      "timestamp_ms": 17062,
+      "diff_value": 27.048454883835078,
+      "is_keyframe": false,
+      "reason": "差异值 27.05 < 阈值 500.00",
+      "image_filename": "frame_0034_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_ms": 17562,
+      "diff_value": 87.99153986692845,
+      "is_keyframe": false,
+      "reason": "差异值 87.99 < 阈值 500.00",
+      "image_filename": "frame_0035_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 36,
+      "timestamp_ms": 18046,
+      "diff_value": 155.81662440008725,
+      "is_keyframe": false,
+      "reason": "差异值 155.82 < 阈值 500.00",
+      "image_filename": "frame_0036_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 37,
+      "timestamp_ms": 18546,
+      "diff_value": 294.3583421956806,
+      "is_keyframe": false,
+      "reason": "差异值 294.36 < 阈值 500.00",
+      "image_filename": "frame_0037_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 38,
+      "timestamp_ms": 19062,
+      "diff_value": 322.28911533322423,
+      "is_keyframe": false,
+      "reason": "差异值 322.29 < 阈值 500.00",
+      "image_filename": "frame_0038_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 39,
+      "timestamp_ms": 19562,
+      "diff_value": 339.8609753354058,
+      "is_keyframe": false,
+      "reason": "差异值 339.86 < 阈值 500.00",
+      "image_filename": "frame_0039_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_ms": 20062,
+      "diff_value": 1360.6586445380672,
+      "is_keyframe": true,
+      "reason": "差异值 1360.66 >= 阈值 500.00",
+      "image_filename": "frame_0040_key.png",
+      "vlm_response": " 在这张截图中，主要对象是一个具有强烈光线和电流线的复杂机器。机器的一部分显示着热量，表明其在运行或工作中。场景看起来是一个黑暗的环境，可能是一个室内的工厂或研究室。显著变化是机器的一个部分被照亮，这可能表明其在某个特定时刻的关键动作或过程。"
+    },
+    {
+      "frame_idx": 41,
+      "timestamp_ms": 20562,
+      "diff_value": 168.60393317790138,
+      "is_keyframe": false,
+      "reason": "差异值 168.60 < 阈值 500.00",
+      "image_filename": "frame_0041_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 42,
+      "timestamp_ms": 21062,
+      "diff_value": 137.46690424574606,
+      "is_keyframe": false,
+      "reason": "差异值 137.47 < 阈值 500.00",
+      "image_filename": "frame_0042_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 43,
+      "timestamp_ms": 21546,
+      "diff_value": 177.68637686791013,
+      "is_keyframe": false,
+      "reason": "差异值 177.69 < 阈值 500.00",
+      "image_filename": "frame_0043_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 44,
+      "timestamp_ms": 22062,
+      "diff_value": 182.92438713459862,
+      "is_keyframe": false,
+      "reason": "差异值 182.92 < 阈值 500.00",
+      "image_filename": "frame_0044_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_ms": 22562,
+      "diff_value": 138.00081806282722,
+      "is_keyframe": false,
+      "reason": "差异值 138.00 < 阈值 500.00",
+      "image_filename": "frame_0045_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 46,
+      "timestamp_ms": 23062,
+      "diff_value": 137.25661267452006,
+      "is_keyframe": false,
+      "reason": "差异值 137.26 < 阈值 500.00",
+      "image_filename": "frame_0046_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 47,
+      "timestamp_ms": 23562,
+      "diff_value": 139.68437772687608,
+      "is_keyframe": false,
+      "reason": "差异值 139.68 < 阈值 500.00",
+      "image_filename": "frame_0047_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 48,
+      "timestamp_ms": 24062,
+      "diff_value": 145.39323257526178,
+      "is_keyframe": false,
+      "reason": "差异值 145.39 < 阈值 500.00",
+      "image_filename": "frame_0048_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 49,
+      "timestamp_ms": 24562,
+      "diff_value": 150.45927751417975,
+      "is_keyframe": false,
+      "reason": "差异值 150.46 < 阈值 500.00",
+      "image_filename": "frame_0049_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_ms": 25062,
+      "diff_value": 154.26029054864748,
+      "is_keyframe": false,
+      "reason": "差异值 154.26 < 阈值 500.00",
+      "image_filename": "frame_0050_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 51,
+      "timestamp_ms": 25562,
+      "diff_value": 154.26029054864748,
+      "is_keyframe": false,
+      "reason": "差异值 154.26 < 阈值 500.00",
+      "image_filename": "frame_0051_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 52,
+      "timestamp_ms": 26062,
+      "diff_value": 154.26029054864748,
+      "is_keyframe": false,
+      "reason": "差异值 154.26 < 阈值 500.00",
+      "image_filename": "frame_0052_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 53,
+      "timestamp_ms": 26562,
+      "diff_value": 154.26029054864748,
+      "is_keyframe": false,
+      "reason": "差异值 154.26 < 阈值 500.00",
+      "image_filename": "frame_0053_skip.png",
+      "vlm_response": null
+    }
+  ],
+  "summary": "视频开始于一名玩家在户外游戏场景中活动，检查自身状态并持武器接近一栋建筑。随后画面突然切换至一个水下都市夜景，展现一栋灯火通明的高楼及其在水中的倒影。接着视频转入一个静态的玩具模型场景，最后呈现一个运行中、带有光线与电流的复杂机器。整体来看，视频通过快速切换截然不同的场景——从游戏世界到水下城市，再到微缩模型与工业机器——可能意在展示数字或虚拟环境中多样且跳跃的视觉体验，其核心主题或围绕于不同尺度与质感的“人造世界”的并置与对比。"
+}

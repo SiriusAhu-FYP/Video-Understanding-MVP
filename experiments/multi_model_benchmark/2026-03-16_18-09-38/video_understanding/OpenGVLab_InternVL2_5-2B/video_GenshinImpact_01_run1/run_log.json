@@ -1,0 +1,497 @@
+{
+  "video": "video_GenshinImpact_01.mp4",
+  "model": "OpenGVLab/InternVL2_5-2B",
+  "config": {
+    "screenshot_interval_ms": 500,
+    "max_size": 512,
+    "recording_duration_s": 26,
+    "algorithm": "mse",
+    "diff_threshold": 500.0
+  },
+  "stats": {
+    "total_sampled": 53,
+    "total_keyframes": 45,
+    "total_dropped": 13,
+    "duration_s": 26.0
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_ms": 0,
+      "diff_value": null,
+      "is_keyframe": true,
+      "reason": "首帧，自动标记为关键帧",
+      "image_filename": "frame_0000_key.png",
+      "vlm_response": "这张视频截图显示了一个游戏场景，画面中有一个穿着粉色服装、背着背包的女性角色，正在一条石板路上行走。她面对着一个发光的神秘装置，周围环境是户外的森林，有树木和岩石。角色的状态显示其血量为100%，周围环境中有发光的物体，可能暗示着某种魔法或科技元素。"
+    },
+    {
+      "frame_idx": 1,
+      "timestamp_ms": 532,
+      "diff_value": 7177.022900070534,
+      "is_keyframe": true,
+      "reason": "差异值 7177.02 >= 阈值 500.00",
+      "image_filename": "frame_0001_key.png",
+      "vlm_response": "这张视频截图显示的是一个游戏地图，没有出现实际的人物或动物。地图上标有多个地点名称，如“沉玉谷”、“碧水原”等，以及一些游戏内的资源数量和等级信息。地图右上角显示当前关卡为第12层，第3间。此外，屏幕底部有一行中文文字，写着“璃月有一处地方”。"
+    },
+    {
+      "frame_idx": 2,
+      "timestamp_ms": 1032,
+      "diff_value": 1505.289797052247,
+      "is_keyframe": true,
+      "reason": "差异值 1505.29 >= 阈值 500.00",
+      "image_filename": "frame_0002_key.png",
+      "vlm_response": "这张视频截图显示的是一个游戏地图，没有出现真实人物或动物。地图上有多个标记点，显示不同的地点名称，如“沉玉谷”、“碧水原”等。右上角显示玩家当前拥有的资源数量，地图环境为虚拟的游戏世界，包含森林、河流和山脉等自然景观。图中没有显著的动作或动态变化，主要展示的是地图布局和位置信息。"
+    },
+    {
+      "frame_idx": 3,
+      "timestamp_ms": 1516,
+      "diff_value": 3003.5187183000653,
+      "is_keyframe": true,
+      "reason": "差异值 3003.52 >= 阈值 500.00",
+      "image_filename": "frame_0003_key.png",
+      "vlm_response": "这张视频截图显示的是一个游戏地图，没有出现真实人物或动物。地图上有多个标记点，显示不同地点，并且右上角有游戏界面信息，如玩家资源和进度。地图环境为虚拟的游戏世界，没有显著变化。"
+    },
+    {
+      "frame_idx": 4,
+      "timestamp_ms": 2032,
+      "diff_value": 3886.6218947698517,
+      "is_keyframe": true,
+      "reason": "差异值 3886.62 >= 阈值 500.00",
+      "image_filename": "frame_0004_key.png",
+      "vlm_response": "这张视频截图显示了一个电子游戏的地图界面。画面中没有真人或动物，只有游戏内的地图元素。地图显示了一个岛屿的俯视图，其中心有一个蓝色标记，周围有黄色和绿色的区域，可能代表不同的地形或资源点。左上角显示了一个小地图图标，右上角有游戏得分信息。地图环境为虚拟岛屿，没有明显的动态变化。"
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_ms": 2532,
+      "diff_value": 121.56918425501745,
+      "is_keyframe": false,
+      "reason": "差异值 121.57 < 阈值 500.00",
+      "image_filename": "frame_0005_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 6,
+      "timestamp_ms": 3032,
+      "diff_value": 2499.4397411512873,
+      "is_keyframe": true,
+      "reason": "差异值 2499.44 >= 阈值 500.00",
+      "image_filename": "frame_0006_key.png",
+      "vlm_response": "这张视频截图展示了一个电子游戏的界面，画面中没有真人角色，只有卡通风格的地图元素。地图显示了一个岛屿的俯视图，岛屿上有山丘、河流和道路。一个标记图标被选中，旁边显示总标记数为29/300。界面右侧有一些功能按钮，用于在游戏中导航或标记地点。"
+    },
+    {
+      "frame_idx": 7,
+      "timestamp_ms": 3532,
+      "diff_value": 761.4692817408377,
+      "is_keyframe": true,
+      "reason": "差异值 761.47 >= 阈值 500.00",
+      "image_filename": "frame_0007_key.png",
+      "vlm_response": "这张视频截图显示了一个游戏界面，画面中没有真人人物或动物。游戏地图显示在一个虚拟环境中，地图上有标记和任务指示。地图上的绿色区域代表可探索的区域，蓝色和黄色线条表示边界和地形特征。地图右上角显示当前任务进度为29/30。"
+    },
+    {
+      "frame_idx": 8,
+      "timestamp_ms": 4032,
+      "diff_value": 1844.5883661240184,
+      "is_keyframe": true,
+      "reason": "差异值 1844.59 >= 阈值 500.00",
+      "image_filename": "frame_0008_key.png",
+      "vlm_response": "这张视频截图显示了一个游戏界面，画面中没有真人人物或动物。游戏地图显示在一个虚拟环境中，有一个标记为“第12层 第3间”的区域，其中有一个任务目标。地图上有路径和地形标记，显示一个任务任务“如果你是萌新刚好做到这里的任务”正在进行中。"
+    },
+    {
+      "frame_idx": 9,
+      "timestamp_ms": 4532,
+      "diff_value": 33.6003064327007,
+      "is_keyframe": false,
+      "reason": "差异值 33.60 < 阈值 500.00",
+      "image_filename": "frame_0009_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_ms": 5032,
+      "diff_value": 78.53467222949389,
+      "is_keyframe": false,
+      "reason": "差异值 78.53 < 阈值 500.00",
+      "image_filename": "frame_0010_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 11,
+      "timestamp_ms": 5532,
+      "diff_value": 6872.873665535013,
+      "is_keyframe": true,
+      "reason": "差异值 6872.87 >= 阈值 500.00",
+      "image_filename": "frame_0011_key.png",
+      "vlm_response": "这张视频截图中，一个卡通风格的女性角色站在一条石板路上，周围是树木和石墙，背景中有燃烧的火把。角色穿着粉色和白色相间的服饰，背后有两只小鹿。场景设定在一个类似古代石砌建筑的小巷中，环境昏暗，但有火把提供光源，营造出神秘的氛围。"
+    },
+    {
+      "frame_idx": 12,
+      "timestamp_ms": 6032,
+      "diff_value": 1765.6401460923867,
+      "is_keyframe": true,
+      "reason": "差异值 1765.64 >= 阈值 500.00",
+      "image_filename": "frame_0012_key.png",
+      "vlm_response": "这张视频截图中主要展示了一位粉发女性角色，她正站在一条石板路上，周围是石墙和树木，背景有燃烧的火把。角色似乎处于游戏场景中，可能正在探索或移动。画面左下角有中文文字，提示玩家寻找一位“大佬”来帮助。"
+    },
+    {
+      "frame_idx": 13,
+      "timestamp_ms": 6532,
+      "diff_value": 1307.6734838568937,
+      "is_keyframe": true,
+      "reason": "差异值 1307.67 >= 阈值 500.00",
+      "image_filename": "frame_0013_key.png",
+      "vlm_response": "这张视频截图中主要展示了一个游戏场景，画面中有一个卡通风格的女性角色，她有着粉红色的双马尾和装饰性的服装，站在一条石板路上。角色周围是石墙和树木，背景中有燃烧的火把，营造出一种古朴的氛围。场景似乎是在一个室外庭院中，角色面向镜头，似乎在等待或寻找什么。画面下方有一行中文文字，提示玩家寻找一位“大佬”来帮助。"
+    },
+    {
+      "frame_idx": 14,
+      "timestamp_ms": 7032,
+      "diff_value": 1141.7746850458116,
+      "is_keyframe": true,
+      "reason": "差异值 1141.77 >= 阈值 500.00",
+      "image_filename": "frame_0014_key.png",
+      "vlm_response": "这张视频截图中主要展示了一位粉发女性角色，她正站在一条石板路上，周围是石墙和绿植。角色穿着粉色和白色的服饰，手持一朵花，似乎在向前走。场景设定在一个类似古代石墙小巷的室外环境中，背景有火焰在燃烧的火把。画面底部有一行中文文字，提示玩家寻找一位“大佬”来帮助。"
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_ms": 7532,
+      "diff_value": 1297.8580814381544,
+      "is_keyframe": true,
+      "reason": "差异值 1297.86 >= 阈值 500.00",
+      "image_filename": "frame_0015_key.png",
+      "vlm_response": "这张视频截图中主要展示了一个游戏场景，画面中有一个卡通风格的女性角色，她有着粉色的双马尾和白色耳朵，身穿红色和蓝色相间的服装，手持一把剑。角色站在一条石板路上，周围是石墙和绿色植物，两旁有燃烧的火把提供光源。场景环境看起来像是一个古风庭院，角色似乎在向前走，准备进行某种行动。"
+    },
+    {
+      "frame_idx": 16,
+      "timestamp_ms": 8032,
+      "diff_value": 1730.6958595795156,
+      "is_keyframe": true,
+      "reason": "差异值 1730.70 >= 阈值 500.00",
+      "image_filename": "frame_0016_key.png",
+      "vlm_response": "这张视频截图中主要展示了一个动画风格的游戏场景。画面中有一个粉发女孩，身穿粉色和蓝色相间的服装，站在石板路上，背后是石墙和树木。她似乎正在向前行走，周围有火焰在燃烧的火炬。场景环境看起来像是一个森林或花园，光线柔和，给人一种宁静的感觉。画面左下角显示了一些游戏界面元素，包括等级和技能图标。"
+    },
+    {
+      "frame_idx": 17,
+      "timestamp_ms": 8532,
+      "diff_value": 1065.290865646815,
+      "is_keyframe": true,
+      "reason": "差异值 1065.29 >= 阈值 500.00",
+      "image_filename": "frame_0017_key.png",
+      "vlm_response": "这张视频截图中主要展示了一个游戏场景，画面中有一个穿着粉色服饰的女性角色，她站在石桥上，背景是绿意盎然的自然环境。角色手持一个蓝色光球，似乎正在进行某种活动。场景中还有燃烧的火把，增添了神秘的氛围。"
+    },
+    {
+      "frame_idx": 18,
+      "timestamp_ms": 9032,
+      "diff_value": 1415.9446273723822,
+      "is_keyframe": true,
+      "reason": "差异值 1415.94 >= 阈值 500.00",
+      "image_filename": "frame_0018_key.png",
+      "vlm_response": "这张视频截图中主要展示了一个角色，她有着粉色的双马尾发型，身穿带有装饰的服装，站在石板路上。角色位于一个类似古代石砌建筑的环境中，周围有树木和火焰照亮。场景中没有其他显著活动，角色似乎处于静止状态。"
+    },
+    {
+      "frame_idx": 19,
+      "timestamp_ms": 9532,
+      "diff_value": 1655.5263075370856,
+      "is_keyframe": true,
+      "reason": "差异值 1655.53 >= 阈值 500.00",
+      "image_filename": "frame_0019_key.png",
+      "vlm_response": "这张视频截图中主要展示了一个游戏场景，画面中的角色是一个拥有粉色双马尾辫的女性角色，她穿着带有翅膀的服装，站在一条石板路上。场景设定在一个类似古代东方风格的庭院中，周围有石墙和灯笼，背景是绿色的植物和远处的山景。角色似乎处于静止状态，可能准备进行某种动作或游戏内事件。"
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_ms": 10032,
+      "diff_value": 3327.7877297393106,
+      "is_keyframe": true,
+      "reason": "差异值 3327.79 >= 阈值 500.00",
+      "image_filename": "frame_0020_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 21,
+      "timestamp_ms": 10532,
+      "diff_value": 3375.5809030050173,
+      "is_keyframe": true,
+      "reason": "差异值 3375.58 >= 阈值 500.00",
+      "image_filename": "frame_0021_key.png",
+      "vlm_response": "这张视频截图中，一个女性角色站在石板路上，背对镜头，面向前方。她穿着带有翅膀的服装，脚上穿着长靴，头上戴着装饰物。在她前方，有一个发光的、类似机械的怪物，似乎在移动。场景设定在一个森林中，周围有石墙和绿色植被。画面左下角显示角色的等级为9级，底部有中文文字。"
+    },
+    {
+      "frame_idx": 22,
+      "timestamp_ms": 11032,
+      "diff_value": 5088.649282831588,
+      "is_keyframe": true,
+      "reason": "差异值 5088.65 >= 阈值 500.00",
+      "image_filename": "frame_0022_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 23,
+      "timestamp_ms": 11532,
+      "diff_value": 3915.3904613874347,
+      "is_keyframe": true,
+      "reason": "差异值 3915.39 >= 阈值 500.00",
+      "image_filename": "frame_0023_key.png",
+      "vlm_response": "这张视频截图展示了一个游戏场景，画面中有一名手持武器的角色，正在向前方的一个发光装置靠近。环境看起来像是一个神秘的森林，背景中有发光的岩石和植物。角色等级显示为Lv.9，界面下方显示了一些操作按钮和状态信息。"
+    },
+    {
+      "frame_idx": 24,
+      "timestamp_ms": 12032,
+      "diff_value": 3741.2822487183685,
+      "is_keyframe": true,
+      "reason": "差异值 3741.28 >= 阈值 500.00",
+      "image_filename": "frame_0024_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_ms": 12532,
+      "diff_value": 3833.1495504063046,
+      "is_keyframe": true,
+      "reason": "差异值 3833.15 >= 阈值 500.00",
+      "image_filename": "frame_0025_key.png",
+      "vlm_response": "这张视频截图展示了一个游戏场景，画面中有一个穿着粉色服装、手持武器的女性角色，正在草地上奔跑。角色处于移动状态，似乎在探索或执行任务。周围的环境是一个神秘的森林，有发光的岩石和树木，营造出奇幻的氛围。屏幕左下角显示角色的等级为90级，右下角有一个“启动它”的按钮，提示玩家可以执行某个任务或功能。"
+    },
+    {
+      "frame_idx": 26,
+      "timestamp_ms": 13032,
+      "diff_value": 2873.1777991383074,
+      "is_keyframe": true,
+      "reason": "差异值 2873.18 >= 阈值 500.00",
+      "image_filename": "frame_0026_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 27,
+      "timestamp_ms": 13532,
+      "diff_value": 3903.019111992801,
+      "is_keyframe": true,
+      "reason": "差异值 3903.02 >= 阈值 500.00",
+      "image_filename": "frame_0027_key.png",
+      "vlm_response": "这张视频截图显示了一个游戏场景，画面中有一个穿着粉色服装、带有兔耳朵的角色，站在一个蓝色的平台上。角色背后是一个发光的石柱，周围是绿色的草地和树木，环境看起来像是一个森林或自然景观。角色等级显示为90级，等级进度条接近满级，同时可以看到一些游戏界面元素，如技能图标和地图指示。"
+    },
+    {
+      "frame_idx": 28,
+      "timestamp_ms": 14032,
+      "diff_value": 2175.9369137216404,
+      "is_keyframe": true,
+      "reason": "差异值 2175.94 >= 阈值 500.00",
+      "image_filename": "frame_0028_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 29,
+      "timestamp_ms": 14532,
+      "diff_value": 1766.3725833060646,
+      "is_keyframe": true,
+      "reason": "差异值 1766.37 >= 阈值 500.00",
+      "image_filename": "frame_0029_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_ms": 15032,
+      "diff_value": 6805.089012052792,
+      "is_keyframe": true,
+      "reason": "差异值 6805.09 >= 阈值 500.00",
+      "image_filename": "frame_0030_key.png",
+      "vlm_response": "这张视频截图显示了一个游戏场景，画面中有一个穿着粉色服装的游戏角色，正在向前奔跑。角色头顶显示“挑战开始”，表明游戏进入了挑战模式。背景是一个绿色的草地，环境看起来像是在户外。画面中央的文字提示“消灭5只魔物”，说明角色正在进行消灭怪物的任务。"
+    },
+    {
+      "frame_idx": 31,
+      "timestamp_ms": 15532,
+      "diff_value": 2537.9147834178666,
+      "is_keyframe": true,
+      "reason": "差异值 2537.91 >= 阈值 500.00",
+      "image_filename": "frame_0031_key.png",
+      "vlm_response": "这张视频截图中，主要对象是一个穿着粉色服装、戴着粉色帽子的卡通风格女性角色，她正在草地上行走。角色前方有一个巨大的敌人，看起来像是由多个方块组成的敌人。角色正在使用某种技能攻击敌人，屏幕上方显示“消灭5只魔物”。环境看起来像是一个绿色的户外场景，背景有树木和草地。画面底部有中文文字，显示“第一波和第二波的独眼小宝”。"
+    },
+    {
+      "frame_idx": 32,
+      "timestamp_ms": 16032,
+      "diff_value": 2561.3272046793195,
+      "is_keyframe": true,
+      "reason": "差异值 2561.33 >= 阈值 500.00",
+      "image_filename": "frame_0032_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 33,
+      "timestamp_ms": 16532,
+      "diff_value": 2691.4929390952225,
+      "is_keyframe": true,
+      "reason": "差异值 2691.49 >= 阈值 500.00",
+      "image_filename": "frame_0033_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 34,
+      "timestamp_ms": 17032,
+      "diff_value": 8985.178010471203,
+      "is_keyframe": true,
+      "reason": "差异值 8985.18 >= 阈值 500.00",
+      "image_filename": "frame_0034_key.png",
+      "vlm_response": "这张视频截图显示了一个游戏场景，画面中央有一个发光的角色，周围有炫彩的特效和能量波纹。左上角显示角色的生命值为2704，并提示“消灭5只魔物”。画面底部有中文文字，描述“一波和二波的独眼小宝”，可能表示角色正在进行战斗。场景为室外草地，背景有火焰和光芒效果。"
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_ms": 17532,
+      "diff_value": 10643.55708033377,
+      "is_keyframe": true,
+      "reason": "差异值 10643.56 >= 阈值 500.00",
+      "image_filename": "frame_0035_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 36,
+      "timestamp_ms": 18032,
+      "diff_value": 9857.90272039976,
+      "is_keyframe": true,
+      "reason": "差异值 9857.90 >= 阈值 500.00",
+      "image_filename": "frame_0036_key.png",
+      "vlm_response": "这张视频截图显示了一个游戏场景，画面中有一名角色正在与巨大的敌人战斗。角色周围有光芒闪烁，显示出正在施放技能或攻击。场景为室外，敌人看起来十分强大，占据了画面的主要部分。角色状态为战斗中的进攻姿态，而敌人状态为防御姿态。"
+    },
+    {
+      "frame_idx": 37,
+      "timestamp_ms": 18532,
+      "diff_value": 9119.652773232985,
+      "is_keyframe": true,
+      "reason": "差异值 9119.65 >= 阈值 500.00",
+      "image_filename": "frame_0037_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 38,
+      "timestamp_ms": 19032,
+      "diff_value": 6605.372917348385,
+      "is_keyframe": true,
+      "reason": "差异值 6605.37 >= 阈值 500.00",
+      "image_filename": "frame_0038_key.png",
+      "vlm_response": "这张视频截图显示了一个游戏场景，画面中有一名角色正在与一只巨大的敌人战斗。角色处于俯冲状态，正面对抗巨大的岩石怪物，敌人似乎在准备再次攻击。场景设定在户外，背景有树木和水域，环境充满动态光影效果。"
+    },
+    {
+      "frame_idx": 39,
+      "timestamp_ms": 19532,
+      "diff_value": 7332.66976848822,
+      "is_keyframe": true,
+      "reason": "差异值 7332.67 >= 阈值 500.00",
+      "image_filename": "frame_0039_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_ms": 20047,
+      "diff_value": 5523.276840982221,
+      "is_keyframe": true,
+      "reason": "差异值 5523.28 >= 阈值 500.00",
+      "image_filename": "frame_0040_key.png",
+      "vlm_response": "这张视频截图显示了一个游戏场景，画面中有一位手持弓箭的女性角色，正在与多个敌人进行战斗。她位于屏幕左侧，背对观众，弓箭正准备射击。敌人位于屏幕中央，被箭矢击中后散开，显示出受到攻击的状态。场景环境看起来像是一个神秘的洞穴，背景中有发光的石柱和植物。弓箭角色的等级为97，敌人显示为“遗迹猎者”，等级为2474。"
+    },
+    {
+      "frame_idx": 41,
+      "timestamp_ms": 20532,
+      "diff_value": 3524.2588163312607,
+      "is_keyframe": true,
+      "reason": "差异值 3524.26 >= 阈值 500.00",
+      "image_filename": "frame_0041_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 42,
+      "timestamp_ms": 21032,
+      "diff_value": 2880.672885648451,
+      "is_keyframe": true,
+      "reason": "差异值 2880.67 >= 阈值 500.00",
+      "image_filename": "frame_0042_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 43,
+      "timestamp_ms": 21532,
+      "diff_value": 1629.4074430082896,
+      "is_keyframe": true,
+      "reason": "差异值 1629.41 >= 阈值 500.00",
+      "image_filename": "frame_0043_key.png",
+      "vlm_response": "这张视频截图展示了一场激烈的战斗场景。画面中，一名持剑角色正在与多个敌人交战，她正使用剑攻击前方的一个敌人，同时周围有多个敌人正在移动。场景设定在一片神秘的森林中，背景有发光的植物和漂浮的岛屿。战斗动作激烈，角色血量条显示她处于危险中，同时屏幕上有技能冷却指示。"
+    },
+    {
+      "frame_idx": 44,
+      "timestamp_ms": 22032,
+      "diff_value": 0.4799250790794066,
+      "is_keyframe": false,
+      "reason": "差异值 0.48 < 阈值 500.00",
+      "image_filename": "frame_0044_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_ms": 22532,
+      "diff_value": 1.6604698407504364,
+      "is_keyframe": false,
+      "reason": "差异值 1.66 < 阈值 500.00",
+      "image_filename": "frame_0045_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 46,
+      "timestamp_ms": 23047,
+      "diff_value": 1.8802782095331587,
+      "is_keyframe": false,
+      "reason": "差异值 1.88 < 阈值 500.00",
+      "image_filename": "frame_0046_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 47,
+      "timestamp_ms": 23547,
+      "diff_value": 2.3785091486692846,
+      "is_keyframe": false,
+      "reason": "差异值 2.38 < 阈值 500.00",
+      "image_filename": "frame_0047_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 48,
+      "timestamp_ms": 24047,
+      "diff_value": 2.385457569808028,
+      "is_keyframe": false,
+      "reason": "差异值 2.39 < 阈值 500.00",
+      "image_filename": "frame_0048_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 49,
+      "timestamp_ms": 24563,
+      "diff_value": 10263.17357588896,
+      "is_keyframe": true,
+      "reason": "差异值 10263.17 >= 阈值 500.00",
+      "image_filename": "frame_0049_key.png",
+      "vlm_response": "这张视频截图显示了一个《Minecraft》游戏场景。画面中可以看到玩家正站在一座由石头和木头建造的房屋外，房屋旁边有一只猫。玩家的健康值和饥饿值显示在屏幕底部，目前健康值为75，饥饿值为19。玩家手持一把剑，站在一条通向湖边的路径上，周围是绿色的草地和湖泊，远处可以看到山丘和树木。画面中没有其他玩家或动态变化。"
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_ms": 25063,
+      "diff_value": 1186.7990121891362,
+      "is_keyframe": true,
+      "reason": "差异值 1186.80 >= 阈值 500.00",
+      "image_filename": "frame_0050_key.png",
+      "vlm_response": "这张视频截图来自一个《Minecraft》游戏，画面显示玩家正站在一座石墙小屋外，面向一片水域。玩家的健康值和饥饿值显示在屏幕底部，目前健康值满格，饥饿值较低，手中持有一把剑和一块食物。小屋的木门敞开，外面是绿色的草地和一条通往水域的小路。天空晴朗，有几朵白云，远处可以看到山丘和树木。"
+    },
+    {
+      "frame_idx": 51,
+      "timestamp_ms": 25563,
+      "diff_value": 4330.8142060018545,
+      "is_keyframe": true,
+      "reason": "差异值 4330.81 >= 阈值 500.00",
+      "image_filename": "frame_0051_key.png",
+      "vlm_response": "这张视频截图显示的是《Minecraft》游戏中的一个场景。玩家正站在一栋石制小屋外，手持食物在喂食笼中的生物。场景为室外，周围有草地和水体，天空晴朗。玩家的健康和饥饿值显示在屏幕底部，同时可以看到物品栏和手中的食物。"
+    },
+    {
+      "frame_idx": 52,
+      "timestamp_ms": 26063,
+      "diff_value": 6449.841176510689,
+      "is_keyframe": true,
+      "reason": "差异值 6449.84 >= 阈值 500.00",
+      "image_filename": "frame_0052_key.png",
+      "vlm_response": "这张视频截图来自一个《Minecraft》游戏，显示一个玩家角色手持斧头，面对站在石墙前的另一名玩家。玩家角色血量为68，斧头为19，火把燃烧，显示室内环境。窗外可以看到雪地，表明室外环境寒冷。目前没有显著的动作变化，玩家似乎在互动或对话。"
+    }
+  ],
+  "summary": "视频开始于一个游戏角色在森林中探索，面对一个神秘发光装置。随后画面切换至游戏地图界面，展示了任务地点和进度信息。角色继续在古风庭院中行走，并最终触发了一场战斗任务，需要消灭多只魔物。战斗过程激烈，角色与强大的敌人进行了多轮交锋。视频结尾突然切换至《Minecraft》游戏场景，玩家在小屋外进行喂养等日常活动。整体来看，视频核心内容是一名玩家在奇幻游戏世界中接受挑战、进行战斗的过程，但结尾部分意外转入另一款游戏的休闲片段，可能是一次直播或视频剪辑中的场景切换。"
+}

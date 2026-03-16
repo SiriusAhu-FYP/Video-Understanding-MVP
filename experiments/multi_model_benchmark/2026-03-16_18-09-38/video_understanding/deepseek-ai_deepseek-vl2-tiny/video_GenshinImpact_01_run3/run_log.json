@@ -1,0 +1,488 @@
+{
+  "video": "video_GenshinImpact_01.mp4",
+  "model": "deepseek-ai/deepseek-vl2-tiny",
+  "config": {
+    "screenshot_interval_ms": 500,
+    "max_size": 512,
+    "recording_duration_s": 26,
+    "algorithm": "mse",
+    "diff_threshold": 500.0
+  },
+  "stats": {
+    "total_sampled": 52,
+    "total_keyframes": 44,
+    "total_dropped": 9,
+    "duration_s": 26.0
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_ms": 31,
+      "diff_value": null,
+      "is_keyframe": true,
+      "reason": "首帧，自动标记为关键帧",
+      "image_filename": "frame_0000_key.png",
+      "vlm_response": "画面展示了一个游戏地图，地图上有多个标记点，其中一些标记点旁边有蓝色图标。地图上标注了“璃月有一处地方”的文字，表示这是游戏中的一个地点。地图背景是海洋和陆地，地形复杂，有山脉、河流和湖泊。地图右上角显示当前等级为第12层第3间，并且有资源数量（186/200）。"
+    },
+    {
+      "frame_idx": 1,
+      "timestamp_ms": 531,
+      "diff_value": 3051.2971732520723,
+      "is_keyframe": true,
+      "reason": "差异值 3051.30 >= 阈值 500.00",
+      "image_filename": "frame_0001_key.png",
+      "vlm_response": "画面展示了一个游戏地图，地图上有多个标记点，包括“沉玉谷·上谷”、“沉玉谷·南陵”、“碧水原”等。地图上还有一些蓝色的小图标，可能代表玩家当前的位置或任务目标。地图右上角显示“第12层第3间”，表示玩家当前处于第12层第3间关卡。地图下方有一行黄色文字“璃月有一处地方”，提示玩家当前所在位置。整体画面色彩丰富，地形多样，包括水域、山脉和森林等。"
+    },
+    {
+      "frame_idx": 2,
+      "timestamp_ms": 1014,
+      "diff_value": 3220.858495582461,
+      "is_keyframe": true,
+      "reason": "差异值 3220.86 >= 阈值 500.00",
+      "image_filename": "frame_0002_key.png",
+      "vlm_response": "画面展示了一个游戏地图，地图上有多个标记点，其中一些标记点旁边有蓝色图标，表示玩家可以互动或探索的地点。地图上还有文字“璃月有一处地方”，提示玩家当前所在的位置。地图背景是绿色和蓝色的混合，代表陆地和水域。右上角显示“第12层第3间”，表明这是游戏中的某个关卡或区域。"
+    },
+    {
+      "frame_idx": 3,
+      "timestamp_ms": 1531,
+      "diff_value": 3951.3959781986255,
+      "is_keyframe": true,
+      "reason": "差异值 3951.40 >= 阈值 500.00",
+      "image_filename": "frame_0003_key.png",
+      "vlm_response": "画面展示了一个游戏地图，其中有一个蓝色的小船漂浮在水面上，周围是绿色和黄色的地形。地图上方显示了一些游戏界面元素，包括数字“5”和“186/200”，以及“第12层第3间”的字样。画面底部有一行黄色文字“宝箱很丰富”。"
+    },
+    {
+      "frame_idx": 4,
+      "timestamp_ms": 2031,
+      "diff_value": 23.66820735165794,
+      "is_keyframe": false,
+      "reason": "差异值 23.67 < 阈值 500.00",
+      "image_filename": "frame_0004_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_ms": 2531,
+      "diff_value": 2401.1723419775303,
+      "is_keyframe": true,
+      "reason": "差异值 2401.17 >= 阈值 500.00",
+      "image_filename": "frame_0005_key.png",
+      "vlm_response": "画面展示了一个游戏地图，其中有一个标记点位于中心偏右的位置，标记点周围有绿色植被和黄色地形。地图左下角显示了一个小岛，岛上有一些建筑或设施。右下角显示“宝箱很丰富”的文字，提示玩家附近可能有宝箱。整体画面色彩鲜艳，具有卡通风格。"
+    },
+    {
+      "frame_idx": 6,
+      "timestamp_ms": 3031,
+      "diff_value": 600.0789890788612,
+      "is_keyframe": true,
+      "reason": "差异值 600.08 >= 阈值 500.00",
+      "image_filename": "frame_0006_key.png",
+      "vlm_response": "画面中展示了一个游戏场景，主角似乎正在探索一个岛屿。岛屿上有一些地形特征，包括山脉、湖泊和植被。屏幕右上角显示了一些游戏界面元素，如“标记（点）”和“总标记29/300”，表明玩家可能正在进行任务或探索。画面底部有一行文字：“如果你是萌新刚好做到这里的任务”，这可能是提示玩家完成某个特定任务。"
+    },
+    {
+      "frame_idx": 7,
+      "timestamp_ms": 3531,
+      "diff_value": 2372.2998149132854,
+      "is_keyframe": true,
+      "reason": "差异值 2372.30 >= 阈值 500.00",
+      "image_filename": "frame_0007_key.png",
+      "vlm_response": "画面展示了一个游戏场景，其中有一个角色站在一个地形复杂的区域，背景是海洋和山脉。角色似乎正在执行任务，屏幕底部有一行文字提示：“如果你是萌新刚好做到这里的任务”。右上角显示了一些游戏数据，包括等级、任务进度和金币数量。"
+    },
+    {
+      "frame_idx": 8,
+      "timestamp_ms": 4031,
+      "diff_value": 31.79098324334642,
+      "is_keyframe": false,
+      "reason": "差异值 31.79 < 阈值 500.00",
+      "image_filename": "frame_0008_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 9,
+      "timestamp_ms": 4531,
+      "diff_value": 77.26248227530542,
+      "is_keyframe": false,
+      "reason": "差异值 77.26 < 阈值 500.00",
+      "image_filename": "frame_0009_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_ms": 5031,
+      "diff_value": 6895.159646665031,
+      "is_keyframe": true,
+      "reason": "差异值 6895.16 >= 阈值 500.00",
+      "image_filename": "frame_0010_key.png",
+      "vlm_response": "画面中有一位女性角色站在石墙之间，她穿着带有装饰的服装，背后有双角，头发呈粉红色并编成辫子。她面前是一个石制拱门，两侧点燃了火把，周围是绿色的植被。画面底部有一行文字：“如果你是萌新刚好做到这里的任务”。"
+    },
+    {
+      "frame_idx": 11,
+      "timestamp_ms": 5531,
+      "diff_value": 1621.423620200698,
+      "is_keyframe": true,
+      "reason": "差异值 1621.42 >= 阈值 500.00",
+      "image_filename": "frame_0011_key.png",
+      "vlm_response": "画面中有一位穿着粉色服装的女性角色，她正站在一条石板路上，背对着镜头。她的头发扎成双马尾，并装饰有蓝色饰品。她身后是一个石墙拱门，两侧点燃了火把，周围绿植茂盛。画面底部有一行黄色文字：“最好找一位大佬来帮你”。"
+    },
+    {
+      "frame_idx": 12,
+      "timestamp_ms": 6031,
+      "diff_value": 1269.737181978076,
+      "is_keyframe": true,
+      "reason": "差异值 1269.74 >= 阈值 500.00",
+      "image_filename": "frame_0012_key.png",
+      "vlm_response": "画面中有一位穿着粉色服装的女性角色，她正从石墙之间走向一个明亮的户外场景。她的头发是粉色的，并且扎成了两个辫子，头上戴着装饰物。石墙两侧点燃了火把，照亮了周围的环境。画面底部有一行文字：“最好找一位大佬来帮你”。"
+    },
+    {
+      "frame_idx": 13,
+      "timestamp_ms": 6531,
+      "diff_value": 1197.9221408704188,
+      "is_keyframe": true,
+      "reason": "差异值 1197.92 >= 阈值 500.00",
+      "image_filename": "frame_0013_key.png",
+      "vlm_response": "画面中有一位穿着粉色服装的女性角色，她背对着镜头，正走向一个石制拱门。拱门两侧各有一个燃烧的火盆，周围是茂密的绿色植被。画面底部有一行黄色文字：“最好找一位大佬来帮你”。"
+    },
+    {
+      "frame_idx": 14,
+      "timestamp_ms": 7031,
+      "diff_value": 1192.6231866273997,
+      "is_keyframe": true,
+      "reason": "差异值 1192.62 >= 阈值 500.00",
+      "image_filename": "frame_0014_key.png",
+      "vlm_response": "画面中有一位粉色头发的女性角色，她背对着镜头，正走向一个石拱门。拱门两侧有燃烧的火盆，周围是绿色的植被和石墙。画面底部有一行黄色文字：“最好找一位大佬来帮你”。"
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_ms": 7531,
+      "diff_value": 1777.4549451897906,
+      "is_keyframe": true,
+      "reason": "差异值 1777.45 >= 阈值 500.00",
+      "image_filename": "frame_0015_key.png",
+      "vlm_response": "画面中有一位穿着粉色服装的女性角色，她的头发编成双马尾，背对镜头，似乎正在走向一个石制拱门。拱门两侧有燃烧的火把，周围是绿色的植被和远处的山丘。画面底部有一行文字：“因为里面的东西”。"
+    },
+    {
+      "frame_idx": 16,
+      "timestamp_ms": 8031,
+      "diff_value": 1039.8471960896597,
+      "is_keyframe": true,
+      "reason": "差异值 1039.85 >= 阈值 500.00",
+      "image_filename": "frame_0016_key.png",
+      "vlm_response": "画面中有一位粉红色长发的女性角色，她背对着镜头，正走向一个石砌的拱门。拱门两侧有燃烧的火盆，周围是绿色的植被和远处的山景。画面底部有一行文字：“因为里面的东西”。"
+    },
+    {
+      "frame_idx": 17,
+      "timestamp_ms": 8531,
+      "diff_value": 1447.0287191181283,
+      "is_keyframe": true,
+      "reason": "差异值 1447.03 >= 阈值 500.00",
+      "image_filename": "frame_0017_key.png",
+      "vlm_response": "画面中有一位粉红色长发的女性角色，她背对着镜头，正走向一个石制拱门。拱门两侧各有一盏燃烧的火盆，周围是绿色的植被和远处的山景。画面底部显示文字“因为里面的东西”，表明她可能正在寻找某个重要物品或目标。"
+    },
+    {
+      "frame_idx": 18,
+      "timestamp_ms": 9031,
+      "diff_value": 1716.2845154341187,
+      "is_keyframe": true,
+      "reason": "差异值 1716.28 >= 阈值 500.00",
+      "image_filename": "frame_0018_key.png",
+      "vlm_response": "画面中有一位粉红色长发的女性角色，她背对着镜头，站在一个石拱门下。她的头发编成了两条辫子，并装饰有蓝色和白色的饰品。她身后是一个充满绿色植被和火焰的户外场景，远处可以看到山丘和天空。屏幕底部有一行文字：“不是你所能敌的”。"
+    },
+    {
+      "frame_idx": 19,
+      "timestamp_ms": 9531,
+      "diff_value": 2996.879151668848,
+      "is_keyframe": true,
+      "reason": "差异值 2996.88 >= 阈值 500.00",
+      "image_filename": "frame_0019_key.png",
+      "vlm_response": "画面中有一个粉红色头发的小角色，似乎正在与一个紫色盾牌状物体互动。背景是一个充满绿色植被和石墙的户外场景，远处有发光的晶体状物体漂浮在空中。屏幕底部有一行文字：“不是你所能敌的”。"
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_ms": 10031,
+      "diff_value": 3384.08436784195,
+      "is_keyframe": true,
+      "reason": "差异值 3384.08 >= 阈值 500.00",
+      "image_filename": "frame_0020_key.png",
+      "vlm_response": "画面中有一位穿着粉色服装的女性角色，她正朝前方奔跑，背景是一个充满奇幻元素的场景，有发光的晶体和神秘的建筑结构。屏幕底部有一行文字：“不是你所能敌的”。"
+    },
+    {
+      "frame_idx": 21,
+      "timestamp_ms": 10531,
+      "diff_value": 5033.989240769524,
+      "is_keyframe": true,
+      "reason": "差异值 5033.99 >= 阈值 500.00",
+      "image_filename": "frame_0021_key.png",
+      "vlm_response": "画面中有一位女性角色，她穿着白色和粉色的服装，正在快速移动。她周围的环境是一个充满绿色植被和发光晶体的地方，背景中有一个巨大的发光球体悬浮在空中。屏幕底部显示“来到前面的装置”，提示玩家需要前往某个位置。"
+    },
+    {
+      "frame_idx": 22,
+      "timestamp_ms": 11031,
+      "diff_value": 4375.558857916121,
+      "is_keyframe": true,
+      "reason": "差异值 4375.56 >= 阈值 500.00",
+      "image_filename": "frame_0022_key.png",
+      "vlm_response": "画面中展示了一个充满幻想色彩的场景，背景是茂密的绿色植物，前景有发光的橙色物体。画面中心有一个角色，似乎正在与一个巨大的发光装置互动。画面底部有一行文字：“来到前面的装置”。"
+    },
+    {
+      "frame_idx": 23,
+      "timestamp_ms": 11531,
+      "diff_value": 3975.8005221967715,
+      "is_keyframe": true,
+      "reason": "差异值 3975.80 >= 阈值 500.00",
+      "image_filename": "frame_0023_key.png",
+      "vlm_response": "画面中有一位穿着红色裙子的女性角色，她正快速奔跑，手中似乎握着某种武器。背景是一个充满奇幻元素的场景，有发光的灯笼、巨大的岩石以及绿色的植被。画面底部有一行文字：“来到前面的装置”。"
+    },
+    {
+      "frame_idx": 24,
+      "timestamp_ms": 12031,
+      "diff_value": 3856.1880999127397,
+      "is_keyframe": true,
+      "reason": "差异值 3856.19 >= 阈值 500.00",
+      "image_filename": "frame_0024_key.png",
+      "vlm_response": "画面中有一位穿着粉色服装的女性角色，她正快速奔跑，背景是一个充满绿色植被和发光晶体的地方。她前方有一个黑色的雕像，周围散落着一些发光的晶体。屏幕底部显示“启动它”的提示，表明她可能正在执行某个任务或触发某个事件。"
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_ms": 12531,
+      "diff_value": 2493.520269210842,
+      "is_keyframe": true,
+      "reason": "差异值 2493.52 >= 阈值 500.00",
+      "image_filename": "frame_0025_key.png",
+      "vlm_response": "画面中有一位穿着粉色服装的女性角色，她正站在草地上，背景是一个充满绿色植被和橙色光芒的森林场景。她的姿态显示她可能正在移动或准备进行某种动作。屏幕底部显示“启动它”的提示，表明她可能正在执行某个任务或触发某个事件。"
+    },
+    {
+      "frame_idx": 26,
+      "timestamp_ms": 13031,
+      "diff_value": 4061.3658019060863,
+      "is_keyframe": true,
+      "reason": "差异值 4061.37 >= 阈值 500.00",
+      "image_filename": "frame_0026_key.png",
+      "vlm_response": "画面中有一个粉发角色站在蓝色岩石上，背景是绿色的草地和橙色的发光晶体。角色似乎正在移动，周围环境看起来像是一个奇幻的户外场景。屏幕底部显示角色的等级为 Lv.90，并且有生命值条和技能图标。"
+    },
+    {
+      "frame_idx": 27,
+      "timestamp_ms": 13531,
+      "diff_value": 2346.418718640925,
+      "is_keyframe": true,
+      "reason": "差异值 2346.42 >= 阈值 500.00",
+      "image_filename": "frame_0027_key.png",
+      "vlm_response": "画面中有一位女性角色站在一个石制祭坛前，她穿着粉色和白色的服装，手持弓箭，似乎准备进行某种仪式或战斗。背景是一个充满绿色植被和蓝色水域的户外场景，远处有橙色的光芒，可能是火山喷发或魔法效果。屏幕底部显示角色等级为 Lv.90，生命值为 100% 和能量值 100%。右上角有几个图标，可能代表游戏中的功能或状态。"
+    },
+    {
+      "frame_idx": 28,
+      "timestamp_ms": 14031,
+      "diff_value": 1910.8852735056719,
+      "is_keyframe": true,
+      "reason": "差异值 1910.89 >= 阈值 500.00",
+      "image_filename": "frame_0028_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 29,
+      "timestamp_ms": 14531,
+      "diff_value": 6672.653637311845,
+      "is_keyframe": true,
+      "reason": "差异值 6672.65 >= 阈值 500.00",
+      "image_filename": "frame_0029_key.png",
+      "vlm_response": "画面中有一位穿着粉色服装的女性角色，她正挥舞着一把发光的武器，似乎准备进行战斗。她身后有一个蓝色的水池，水池旁边有一个石制结构。屏幕上方显示“消灭5只魔物”，下方有“守护轻策密藏不被破坏”的字样，表明她正在执行一个任务。屏幕底部显示“挑战开始”，提示玩家当前处于一个挑战模式。"
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_ms": 15031,
+      "diff_value": 2700.837718490947,
+      "is_keyframe": true,
+      "reason": "差异值 2700.84 >= 阈值 500.00",
+      "image_filename": "frame_0030_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 31,
+      "timestamp_ms": 15531,
+      "diff_value": 2510.17511146106,
+      "is_keyframe": true,
+      "reason": "差异值 2510.18 >= 阈值 500.00",
+      "image_filename": "frame_0031_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 32,
+      "timestamp_ms": 16031,
+      "diff_value": 2741.713282613438,
+      "is_keyframe": true,
+      "reason": "差异值 2741.71 >= 阈值 500.00",
+      "image_filename": "frame_0032_key.png",
+      "vlm_response": "画面中有一个角色站在草地上，背景中有绿色的山丘和橙黄色的发光物体。角色前方有一个巨大的生物，似乎正在攻击。屏幕上方显示“消灭5只魔物”，并提示“守护轻策密 藏不被破坏”。屏幕底部有一行字幕：“第一波和第二波的独眼小宝”。"
+    },
+    {
+      "frame_idx": 33,
+      "timestamp_ms": 16531,
+      "diff_value": 8419.598353307701,
+      "is_keyframe": true,
+      "reason": "差异值 8419.60 >= 阈值 500.00",
+      "image_filename": "frame_0033_key.png",
+      "vlm_response": "画面中有一个身穿白色长裙的女性角色，她正站在一片绿色的草地上，周围有紫色和橙色的光芒环绕。她的上方显示“2704 绽放潮汐”，下方显示“消灭5只魔物 守护轻策态 戴不被破坏”。屏幕底部有一行字幕：“第一波和第二波的独眼小宝”。"
+    },
+    {
+      "frame_idx": 34,
+      "timestamp_ms": 17031,
+      "diff_value": 10177.5590811791,
+      "is_keyframe": true,
+      "reason": "差异值 10177.56 >= 阈值 500.00",
+      "image_filename": "frame_0034_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_ms": 17531,
+      "diff_value": 7073.976354575698,
+      "is_keyframe": true,
+      "reason": "差异值 7073.98 >= 阈值 500.00",
+      "image_filename": "frame_0035_key.png",
+      "vlm_response": "画面中可以看到一个巨大的生物，其腿部占据了画面的主要部分，腿部周围有火焰效果。一个较小的角色站在生物的前方，似乎正在与它互动。屏幕底部显示了一些数值和文字提示，包括“超激化”、“619”和“你可能还可以应对”。这些元素表明这是一个游戏场景，角色可能正在进行战斗或任务。"
+    },
+    {
+      "frame_idx": 36,
+      "timestamp_ms": 18031,
+      "diff_value": 7285.400857602531,
+      "is_keyframe": true,
+      "reason": "差异值 7285.40 >= 阈值 500.00",
+      "image_filename": "frame_0036_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 37,
+      "timestamp_ms": 18546,
+      "diff_value": 6245.105257417103,
+      "is_keyframe": true,
+      "reason": "差异值 6245.11 >= 阈值 500.00",
+      "image_filename": "frame_0037_key.png",
+      "vlm_response": "画面中有一个身穿蓝色服装的角色，似乎正在与一个巨大的生物战斗。这个生物看起来像是一个巨大的岩石生物，正在释放能量攻击。角色周围有蓝色的光效，显示他正在使用某种技能或攻击。背景是一个绿色的自然景观，可能是森林或草地。屏幕底部显示了一些游戏界面元素，比如技能图标和生命值条。"
+    },
+    {
+      "frame_idx": 38,
+      "timestamp_ms": 19046,
+      "diff_value": 6576.641005058355,
+      "is_keyframe": true,
+      "reason": "差异值 6576.64 >= 阈值 500.00",
+      "image_filename": "frame_0038_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 39,
+      "timestamp_ms": 19531,
+      "diff_value": 5849.735223740183,
+      "is_keyframe": true,
+      "reason": "差异值 5849.74 >= 阈值 500.00",
+      "image_filename": "frame_0039_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_ms": 20046,
+      "diff_value": 3868.919710542103,
+      "is_keyframe": true,
+      "reason": "差异值 3868.92 >= 阈值 500.00",
+      "image_filename": "frame_0040_key.png",
+      "vlm_response": "画面中有一位女性角色，她穿着黑色和红色的服装，手持一把发光的武器，正面对一个巨大的生物。这个生物看起来像是一只巨大的蜘蛛状生物，身上有发光的眼睛和触须，正在释放能量攻击。屏幕上方显示了“Lv.97 猎者”的字样，表示这是游戏中的角色等级和职业。屏幕中央显示数字“6525”，可能是伤害值。背景是一个充满绿色植被和岩石的森林场景，整体氛围紧张刺激。"
+    },
+    {
+      "frame_idx": 41,
+      "timestamp_ms": 20546,
+      "diff_value": 3237.423120841514,
+      "is_keyframe": true,
+      "reason": "差异值 3237.42 >= 阈值 500.00",
+      "image_filename": "frame_0041_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 42,
+      "timestamp_ms": 21046,
+      "diff_value": 1949.6025152023342,
+      "is_keyframe": true,
+      "reason": "差异值 1949.60 >= 阈值 500.00",
+      "image_filename": "frame_0042_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 43,
+      "timestamp_ms": 21546,
+      "diff_value": 0.4860026041666667,
+      "is_keyframe": false,
+      "reason": "差异值 0.49 < 阈值 500.00",
+      "image_filename": "frame_0043_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 44,
+      "timestamp_ms": 22046,
+      "diff_value": 1.5930563508944153,
+      "is_keyframe": false,
+      "reason": "差异值 1.59 < 阈值 500.00",
+      "image_filename": "frame_0044_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_ms": 22531,
+      "diff_value": 1.8779296875,
+      "is_keyframe": false,
+      "reason": "差异值 1.88 < 阈值 500.00",
+      "image_filename": "frame_0045_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 46,
+      "timestamp_ms": 23046,
+      "diff_value": 2.31826052574171,
+      "is_keyframe": false,
+      "reason": "差异值 2.32 < 阈值 500.00",
+      "image_filename": "frame_0046_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 47,
+      "timestamp_ms": 23546,
+      "diff_value": 4.470563372600349,
+      "is_keyframe": false,
+      "reason": "差异值 4.47 < 阈值 500.00",
+      "image_filename": "frame_0047_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 48,
+      "timestamp_ms": 24062,
+      "diff_value": 10066.165091895724,
+      "is_keyframe": true,
+      "reason": "差异值 10066.17 >= 阈值 500.00",
+      "image_filename": "frame_0048_key.png",
+      "vlm_response": "画面中可以看到一个角色站在水边，旁边有一只动物。背景是一个带有蓝色墙壁和木质屋顶的小屋，周围是绿色的草地和树木。天空晴朗，有白云漂浮。屏幕底部显示了角色的生命值、饥饿值、食物数量等状态信息。"
+    },
+    {
+      "frame_idx": 49,
+      "timestamp_ms": 24562,
+      "diff_value": 2871.499715382308,
+      "is_keyframe": true,
+      "reason": "差异值 2871.50 >= 阈值 500.00",
+      "image_filename": "frame_0049_key.png",
+      "vlm_response": "画面展示了一个《Minecraft》游戏场景，玩家站在一个木质房屋前，房屋外墙由石块砌成，窗户上点燃着蜡烛。房屋旁边有一条小路通向远处的水域，周围有绿色的植被。屏幕底部显示了玩家的生命值、饥饿值、食物数量等状态信息。"
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_ms": 25062,
+      "diff_value": 6281.4329648642015,
+      "is_keyframe": true,
+      "reason": "差异值 6281.43 >= 阈值 500.00",
+      "image_filename": "frame_0050_key.png",
+      "vlm_response": "画面中显示的是一个视频游戏场景，主角站在一扇木门前，门上有一些破损。屏幕底部显示玩家状态栏，包括生命值、饥饿值、食物数量等。背景是蓝色的石墙，整体环境看起来像是某种建筑内部。"
+    },
+    {
+      "frame_idx": 51,
+      "timestamp_ms": 25562,
+      "diff_value": 1692.8819569426266,
+      "is_keyframe": true,
+      "reason": "差异值 1692.88 >= 阈值 500.00",
+      "image_filename": "frame_0051_key.png",
+      "vlm_response": "画面中有一个角色站在房间中央，他穿着棕色衣服，双手抱胸，看起来正在思考或等待什么。房间的墙壁由灰色石块构成，左侧有一个火把挂在墙上，右侧有一扇门。屏幕底部显示了一些游戏界面元素，包括生命值、饥饿值、食物数量等。"
+    }
+  ],
+  "summary": "视频开始于游戏《原神》中璃月地区的一张地图界面，展示了“第12层第3间”的挑战地点，并提示该区域宝箱丰富。随后画面跟随一位粉色头发的女性角色，她穿过石拱门进入一个充满发光晶体的秘境，并提示新手玩家最好寻求帮助，因为内部的敌人较为强大。角色最终启动装置，开启了“守护轻策密藏”的挑战，与多波魔物（包括“独眼小宝”和Lv.97的“猎者”等强大敌人）展开战斗。视频结尾突然切换至《Minecraft》的游戏场景，显示角色在木屋前的平静状态。整体来看，视频核心内容是一位玩家在《原神》中进行高难度秘境挑战的探索与战斗过程，并穿插了其他游戏的画面。"
+}
