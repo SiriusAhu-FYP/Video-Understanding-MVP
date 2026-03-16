@@ -704,7 +704,7 @@ def generate_final_report(
     model_sizes = {
         "Qwen/Qwen3.5-2B": "2B", "Qwen/Qwen3.5-0.8B": "0.8B",
         "Qwen/Qwen3-VL-2B-Instruct": "2B", "OpenGVLab/InternVL2_5-2B": "2B",
-        "google/gemma-3-4b-it": "4B",
+        "microsoft/Phi-3.5-vision-instruct": "4.2B",
         "mistralai/Ministral-3-3B-Instruct-2512": "3B",
         "deepseek-ai/deepseek-vl2-tiny": "~3B",
         "HuggingFaceTB/SmolVLM2-2.2B-Instruct": "2.2B",

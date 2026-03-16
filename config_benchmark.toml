@@ -8,7 +8,7 @@ list = [
     "Qwen/Qwen3.5-0.8B",
     "Qwen/Qwen3-VL-2B-Instruct",
     "OpenGVLab/InternVL2_5-2B",
-    "google/gemma-3-4b-it",
+    "microsoft/Phi-3.5-vision-instruct",
     "mistralai/Ministral-3-3B-Instruct-2512",
     "deepseek-ai/deepseek-vl2-tiny",
     "HuggingFaceTB/SmolVLM2-2.2B-Instruct",

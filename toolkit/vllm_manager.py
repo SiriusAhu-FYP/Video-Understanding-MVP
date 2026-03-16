@@ -59,7 +59,7 @@ MODEL_SPECIFIC_ARGS: dict[str, dict] = {
     "OpenGVLab/InternVL2_5-2B": {
         "max-model-len": 4096,
     },
-    "google/gemma-3-4b-it": {},
+    "microsoft/Phi-3.5-vision-instruct": {},
     "mistralai/Ministral-3-3B-Instruct-2512": {
         "tokenizer_mode": "mistral",
         "config_format": "mistral",

@@ -27,7 +27,7 @@ _KNOWN_VLM_PREFIXES = {
     "opengvlab/internvl",
     "deepseek-ai/deepseek-vl",
     "mistralai/ministral",
-    "google/gemma-3",
+    "microsoft/phi-3",
     "huggingfacetb/smolvlm",
 }
 
