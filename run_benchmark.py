@@ -106,63 +106,80 @@ def update_meta(session_dir: Path, **kwargs: object) -> None:
 
 
 def preflight_health_check(base_url: str, model_id: str) -> bool:
-    """发送最小请求验证模型能正常响应。"""
-    from openai import OpenAI
+    """发送最小请求验证模型能正常响应（带重试）。"""
+    import httpx
 
-    client = OpenAI(base_url=base_url, api_key="EMPTY")
-    try:
-        resp = client.chat.completions.create(
-            model=model_id,
-            messages=[{"role": "user", "content": "Hi"}],
-            max_tokens=8,
-            temperature=0.0,
-        )
-        if resp.choices and resp.choices[0].message.content:
-            lg.info("健康检查通过: '{}'", resp.choices[0].message.content[:60])
-            return True
-        lg.warning("健康检查: 空响应")
-        return False
-    except Exception as e:
-        lg.error("健康检查失败: {}", e)
-        return False
+    url = f"{base_url}/chat/completions"
+    payload = {
+        "model": model_id,
+        "messages": [{"role": "user", "content": "Hi"}],
+        "max_tokens": 8,
+        "temperature": 0.0,
+    }
+
+    for attempt in range(3):
+        try:
+            if attempt > 0:
+                time.sleep(10)
+                lg.info("健康检查重试 ({}/3) ...", attempt + 1)
+            with httpx.Client(timeout=60.0) as client:
+                resp = client.post(url, json=payload)
+                resp.raise_for_status()
+                data = resp.json()
+                content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
+                if content and len(content) > 1:
+                    lg.info("健康检查通过: '{}'", content[:60])
+                    return True
+                lg.warning("健康检查: 空响应")
+        except Exception as e:
+            lg.warning("健康检查尝试 {}/3 失败: {}", attempt + 1, str(e)[:120])
+    return False
 
 
 def preflight_vision_check(base_url: str, model_id: str) -> bool:
-    """发送一张图片验证视觉功能正常。"""
-    from openai import OpenAI
+    """发送一张图片验证视觉功能正常（带重试）。"""
+    import httpx
     from toolkit.common import load_images
 
-    client = OpenAI(base_url=base_url, api_key="EMPTY")
     images = load_images()
     if not images:
         lg.warning("无测试图片，跳过视觉检查")
         return True
 
     fname, b64, mime, _ = images[0]
-    try:
-        resp = client.chat.completions.create(
-            model=model_id,
-            messages=[{
-                "role": "user",
-                "content": [
-                    {"type": "text", "text": "Describe this image briefly."},
-                    {"type": "image_url", "image_url": {
-                        "url": f"data:{mime};base64,{b64}",
-                    }},
-                ],
-            }],
-            max_tokens=64,
-            temperature=0.0,
-        )
-        text = resp.choices[0].message.content if resp.choices else ""
-        if text and len(text) > 5:
-            lg.info("视觉检查通过: '{}'", text[:80])
-            return True
-        lg.warning("视觉检查: 响应过短 '{}'", text)
-        return False
-    except Exception as e:
-        lg.error("视觉检查失败: {}", e)
-        return False
+    url = f"{base_url}/chat/completions"
+    payload = {
+        "model": model_id,
+        "messages": [{
+            "role": "user",
+            "content": [
+                {"type": "text", "text": "Describe this image briefly."},
+                {"type": "image_url", "image_url": {
+                    "url": f"data:{mime};base64,{b64}",
+                }},
+            ],
+        }],
+        "max_tokens": 64,
+        "temperature": 0.0,
+    }
+
+    for attempt in range(3):
+        try:
+            if attempt > 0:
+                time.sleep(10)
+                lg.info("视觉检查重试 ({}/3) ...", attempt + 1)
+            with httpx.Client(timeout=120.0) as client:
+                resp = client.post(url, json=payload)
+                resp.raise_for_status()
+                data = resp.json()
+                text = data.get("choices", [{}])[0].get("message", {}).get("content", "")
+                if text and len(text) > 5:
+                    lg.info("视觉检查通过: '{}'", text[:80])
+                    return True
+                lg.warning("视觉检查: 响应过短 '{}'", text)
+        except Exception as e:
+            lg.warning("视觉检查尝试 {}/3 失败: {}", attempt + 1, str(e)[:120])
+    return False
 
 
 def probe_gpu_memory(
@@ -173,17 +190,21 @@ def probe_gpu_memory(
 ) -> float | None:
     """探测模型所需的最小 gpu_memory_utilization。
 
-    从 0.3 开始递增，直到 vLLM 成功启动。
+    从 0.35 开始递增，使用 enforce-eager 跳过 CUDA graph 编译以加速探测。
     返回成功的值，或 None 表示全部失败。
     """
-    for util in [0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6]:
+    for util in [0.35, 0.40, 0.45, 0.50, 0.55, 0.60]:
         lg.info("  尝试 gpu_memory_utilization={:.2f} ...", util)
         proc = None
         try:
-            proc = start_vllm(model_id, gpu_memory_utilization=util)
+            proc = start_vllm(
+                model_id,
+                extra_args={"enforce-eager": True},
+                gpu_memory_utilization=util,
+            )
             detected = wait_for_vllm_ready(
                 base_url=base_url,
-                timeout_s=min(startup_timeout, 180),
+                timeout_s=min(startup_timeout, 120),
                 poll_interval_s=poll_interval,
             )
             if detected:
@@ -247,6 +268,7 @@ def run_preflight(
                 poll_interval_s=poll_interval,
             )
             lg.info("vLLM 已就绪: {}", detected)
+            time.sleep(5)
 
             ok_text = preflight_health_check(base_url, detected)
             ok_vision = preflight_vision_check(base_url, detected)

@@ -1,0 +1,288 @@
+2026-03-16 12:17:08.260 | INFO    | ======================================================================
+2026-03-16 12:17:08.261 | INFO    | 多模型基准测试启动
+2026-03-16 12:17:08.261 | INFO    | 会话目录: E:\FYP-PROJECT\core\Video-Understanding-MVP\experiments\multi_model_benchmark\2026-03-16_12-17-08
+2026-03-16 12:17:08.261 | INFO    | 模型列表 (8): ['Qwen/Qwen3.5-2B', 'Qwen/Qwen3.5-0.8B', 'Qwen/Qwen3-VL-2B-Instruct', 'OpenGVLab/InternVL2_5-2B', 'microsoft/Phi-3.5-vision-instruct', 'mistralai/Ministral-3-3B-Instruct-2512', 'deepseek-ai/deepseek-vl2-tiny', 'HuggingFaceTB/SmolVLM2-2.2B-Instruct']
+2026-03-16 12:17:08.261 | INFO    | ======================================================================
+2026-03-16 12:17:08.261 | INFO    | ======================================================================
+2026-03-16 12:17:08.261 | INFO    | Phase 0: 预飞行模型验证
+2026-03-16 12:17:08.261 | INFO    | ======================================================================
+2026-03-16 12:17:08.261 | INFO    | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-03-16 12:17:08.261 | INFO    | [预飞行 1/8] Qwen/Qwen3.5-2B
+2026-03-16 12:17:10.430 | INFO    | 已创建 vLLM 启动脚本: /home/playerAhu/vLLM_server/run_Qwen_Qwen3.5-2B.sh
+2026-03-16 12:17:10.430 | INFO    | 正在启动 vLLM 服务: Qwen/Qwen3.5-2B ...
+2026-03-16 12:17:10.433 | INFO    | vLLM 进程已启动 (PID: 30596)
+2026-03-16 12:17:10.434 | INFO    | 等待 vLLM 就绪 ...
+2026-03-16 12:17:18.303 | DEBUG   | vLLM 尚未就绪 (8s / 300s): Connection error.
+2026-03-16 12:17:40.889 | DEBUG   | vLLM 尚未就绪 (30s / 300s): Connection error.
+2026-03-16 12:18:03.530 | DEBUG   | vLLM 尚未就绪 (53s / 300s): Connection error.
+2026-03-16 12:18:26.019 | DEBUG   | vLLM 尚未就绪 (76s / 300s): Connection error.
+2026-03-16 12:18:48.552 | DEBUG   | vLLM 尚未就绪 (98s / 300s): Connection error.
+2026-03-16 12:19:11.172 | DEBUG   | vLLM 尚未就绪 (121s / 300s): Connection error.
+2026-03-16 12:19:33.801 | DEBUG   | vLLM 尚未就绪 (143s / 300s): Connection error.
+2026-03-16 12:19:56.303 | DEBUG   | vLLM 尚未就绪 (166s / 300s): Connection error.
+2026-03-16 12:20:18.823 | DEBUG   | vLLM 尚未就绪 (188s / 300s): Connection error.
+2026-03-16 12:20:41.414 | DEBUG   | vLLM 尚未就绪 (211s / 300s): Connection error.
+2026-03-16 12:21:03.770 | DEBUG   | vLLM 尚未就绪 (233s / 300s): Connection error.
+2026-03-16 12:21:26.146 | DEBUG   | vLLM 尚未就绪 (256s / 300s): Connection error.
+2026-03-16 12:21:48.585 | DEBUG   | vLLM 尚未就绪 (278s / 300s): Connection error.
+2026-03-16 12:22:04.775 | INFO    | 自动检测到模型: Qwen/Qwen3.5-0.8B
+2026-03-16 12:22:04.776 | INFO    | vLLM 已就绪: Qwen/Qwen3.5-0.8B
+2026-03-16 12:22:17.306 | WARNING | 健康检查尝试 1/3 失败: Server disconnected without sending a response.
+2026-03-16 12:22:27.307 | INFO    | 健康检查重试 (2/3) ...
+2026-03-16 12:22:29.508 | WARNING | 健康检查尝试 2/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:22:39.509 | INFO    | 健康检查重试 (3/3) ...
+2026-03-16 12:22:41.699 | WARNING | 健康检查尝试 3/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:22:41.707 | DEBUG   | 已加载图片: Arknights_01.png (3155.5 KB)
+2026-03-16 12:22:41.711 | DEBUG   | 已加载图片: Cyberpunk-2077_01.png (1414.6 KB)
+2026-03-16 12:22:41.714 | DEBUG   | 已加载图片: Genshin-Impact_01.png (933.2 KB)
+2026-03-16 12:22:41.720 | DEBUG   | 已加载图片: Minecraft_01.png (2343.7 KB)
+2026-03-16 12:22:41.722 | DEBUG   | 已加载图片: P5R_01.png (760.5 KB)
+2026-03-16 12:22:41.724 | DEBUG   | 已加载图片: SuperMarioBros_01.png (553.4 KB)
+2026-03-16 12:22:41.724 | INFO    | 共加载 6 张图片
+2026-03-16 12:22:44.002 | WARNING | 视觉检查尝试 1/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:22:54.003 | INFO    | 视觉检查重试 (2/3) ...
+2026-03-16 12:22:56.202 | WARNING | 视觉检查尝试 2/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:23:06.202 | INFO    | 视觉检查重试 (3/3) ...
+2026-03-16 12:23:08.394 | WARNING | 视觉检查尝试 3/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:23:08.394 | WARNING | [未通过] Qwen/Qwen3.5-2B - 文本和视觉检查失败
+2026-03-16 12:23:08.394 | INFO    | 停止 vLLM ...
+2026-03-16 12:23:08.395 | INFO    | 尝试通过 WSL 终止所有 vLLM 进程 ...
+2026-03-16 12:23:10.471 | INFO    | 已发送终止信号
+2026-03-16 12:23:15.471 | INFO    | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-03-16 12:23:15.471 | INFO    | [预飞行 2/8] Qwen/Qwen3.5-0.8B
+2026-03-16 12:23:17.627 | INFO    | 已创建 vLLM 启动脚本: /home/playerAhu/vLLM_server/run_Qwen_Qwen3.5-0.8B.sh
+2026-03-16 12:23:17.627 | INFO    | 正在启动 vLLM 服务: Qwen/Qwen3.5-0.8B ...
+2026-03-16 12:23:17.631 | INFO    | vLLM 进程已启动 (PID: 90752)
+2026-03-16 12:23:17.631 | INFO    | 等待 vLLM 就绪 ...
+2026-03-16 12:23:25.169 | DEBUG   | vLLM 尚未就绪 (8s / 300s): Connection error.
+2026-03-16 12:23:47.665 | DEBUG   | vLLM 尚未就绪 (30s / 300s): Connection error.
+2026-03-16 12:24:10.161 | DEBUG   | vLLM 尚未就绪 (53s / 300s): Connection error.
+2026-03-16 12:24:27.336 | INFO    | 自动检测到模型: Qwen/Qwen3.5-0.8B
+2026-03-16 12:24:27.336 | INFO    | vLLM 已就绪: Qwen/Qwen3.5-0.8B
+2026-03-16 12:24:32.698 | WARNING | 健康检查尝试 1/3 失败: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-03-16 12:24:42.699 | INFO    | 健康检查重试 (2/3) ...
+2026-03-16 12:24:44.887 | WARNING | 健康检查尝试 2/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:24:54.888 | INFO    | 健康检查重试 (3/3) ...
+2026-03-16 12:24:57.056 | WARNING | 健康检查尝试 3/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:24:57.065 | DEBUG   | 已加载图片: Arknights_01.png (3155.5 KB)
+2026-03-16 12:24:57.069 | DEBUG   | 已加载图片: Cyberpunk-2077_01.png (1414.6 KB)
+2026-03-16 12:24:57.072 | DEBUG   | 已加载图片: Genshin-Impact_01.png (933.2 KB)
+2026-03-16 12:24:57.078 | DEBUG   | 已加载图片: Minecraft_01.png (2343.7 KB)
+2026-03-16 12:24:57.080 | DEBUG   | 已加载图片: P5R_01.png (760.5 KB)
+2026-03-16 12:24:57.082 | DEBUG   | 已加载图片: SuperMarioBros_01.png (553.4 KB)
+2026-03-16 12:24:57.082 | INFO    | 共加载 6 张图片
+2026-03-16 12:24:59.271 | WARNING | 视觉检查尝试 1/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:25:09.272 | INFO    | 视觉检查重试 (2/3) ...
+2026-03-16 12:25:11.483 | WARNING | 视觉检查尝试 2/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:25:21.484 | INFO    | 视觉检查重试 (3/3) ...
+2026-03-16 12:25:23.691 | WARNING | 视觉检查尝试 3/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:25:23.691 | WARNING | [未通过] Qwen/Qwen3.5-0.8B - 文本和视觉检查失败
+2026-03-16 12:25:23.691 | INFO    | 停止 vLLM ...
+2026-03-16 12:25:23.691 | INFO    | 尝试通过 WSL 终止所有 vLLM 进程 ...
+2026-03-16 12:25:25.774 | INFO    | 已发送终止信号
+2026-03-16 12:25:30.775 | INFO    | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-03-16 12:25:30.775 | INFO    | [预飞行 3/8] Qwen/Qwen3-VL-2B-Instruct
+2026-03-16 12:25:32.952 | INFO    | 已创建 vLLM 启动脚本: /home/playerAhu/vLLM_server/run_Qwen_Qwen3-VL-2B-Instruct.sh
+2026-03-16 12:25:32.952 | INFO    | 正在启动 vLLM 服务: Qwen/Qwen3-VL-2B-Instruct ...
+2026-03-16 12:25:32.956 | INFO    | vLLM 进程已启动 (PID: 87888)
+2026-03-16 12:25:32.956 | INFO    | 等待 vLLM 就绪 ...
+2026-03-16 12:25:40.550 | DEBUG   | vLLM 尚未就绪 (8s / 300s): Connection error.
+2026-03-16 12:26:02.942 | DEBUG   | vLLM 尚未就绪 (30s / 300s): Connection error.
+2026-03-16 12:26:25.564 | DEBUG   | vLLM 尚未就绪 (53s / 300s): Connection error.
+2026-03-16 12:26:48.257 | DEBUG   | vLLM 尚未就绪 (75s / 300s): Connection error.
+2026-03-16 12:27:10.869 | DEBUG   | vLLM 尚未就绪 (98s / 300s): Connection error.
+2026-03-16 12:27:33.277 | DEBUG   | vLLM 尚未就绪 (120s / 300s): Connection error.
+2026-03-16 12:27:55.774 | DEBUG   | vLLM 尚未就绪 (143s / 300s): Connection error.
+2026-03-16 12:28:18.454 | DEBUG   | vLLM 尚未就绪 (166s / 300s): Connection error.
+2026-03-16 12:28:40.846 | DEBUG   | vLLM 尚未就绪 (188s / 300s): Connection error.
+2026-03-16 12:29:03.350 | DEBUG   | vLLM 尚未就绪 (210s / 300s): Connection error.
+2026-03-16 12:29:26.041 | DEBUG   | vLLM 尚未就绪 (233s / 300s): Connection error.
+2026-03-16 12:29:48.554 | DEBUG   | vLLM 尚未就绪 (256s / 300s): Connection error.
+2026-03-16 12:30:11.013 | DEBUG   | vLLM 尚未就绪 (278s / 300s): Connection error.
+2026-03-16 12:30:33.585 | DEBUG   | vLLM 尚未就绪 (301s / 300s): Connection error.
+2026-03-16 12:30:48.661 | ERROR   | [未通过] Qwen/Qwen3-VL-2B-Instruct - vLLM 在 300s 内未就绪: Connection error.
+2026-03-16 12:30:48.661 | INFO    | 停止 vLLM ...
+2026-03-16 12:30:48.662 | INFO    | 尝试通过 WSL 终止所有 vLLM 进程 ...
+2026-03-16 12:30:50.733 | INFO    | 已发送终止信号
+2026-03-16 12:30:55.733 | INFO    | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-03-16 12:30:55.733 | INFO    | [预飞行 4/8] OpenGVLab/InternVL2_5-2B
+2026-03-16 12:30:57.891 | INFO    | 已创建 vLLM 启动脚本: /home/playerAhu/vLLM_server/run_OpenGVLab_InternVL2_5-2B.sh
+2026-03-16 12:30:57.891 | INFO    | 正在启动 vLLM 服务: OpenGVLab/InternVL2_5-2B ...
+2026-03-16 12:30:57.895 | INFO    | vLLM 进程已启动 (PID: 78196)
+2026-03-16 12:30:57.895 | INFO    | 等待 vLLM 就绪 ...
+2026-03-16 12:31:05.285 | DEBUG   | vLLM 尚未就绪 (7s / 300s): Connection error.
+2026-03-16 12:31:27.899 | DEBUG   | vLLM 尚未就绪 (30s / 300s): Connection error.
+2026-03-16 12:31:50.449 | DEBUG   | vLLM 尚未就绪 (53s / 300s): Connection error.
+2026-03-16 12:32:12.940 | DEBUG   | vLLM 尚未就绪 (75s / 300s): Connection error.
+2026-03-16 12:32:35.442 | DEBUG   | vLLM 尚未就绪 (98s / 300s): Connection error.
+2026-03-16 12:32:57.832 | DEBUG   | vLLM 尚未就绪 (120s / 300s): Connection error.
+2026-03-16 12:33:20.503 | DEBUG   | vLLM 尚未就绪 (143s / 300s): Connection error.
+2026-03-16 12:33:43.107 | DEBUG   | vLLM 尚未就绪 (165s / 300s): Connection error.
+2026-03-16 12:34:05.648 | DEBUG   | vLLM 尚未就绪 (188s / 300s): Connection error.
+2026-03-16 12:34:28.143 | DEBUG   | vLLM 尚未就绪 (210s / 300s): Connection error.
+2026-03-16 12:34:50.692 | DEBUG   | vLLM 尚未就绪 (233s / 300s): Connection error.
+2026-03-16 12:35:12.572 | INFO    | 自动检测到模型: Qwen/Qwen3.5-0.8B
+2026-03-16 12:35:12.572 | INFO    | vLLM 已就绪: Qwen/Qwen3.5-0.8B
+2026-03-16 12:35:19.789 | WARNING | 健康检查尝试 1/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:35:29.790 | INFO    | 健康检查重试 (2/3) ...
+2026-03-16 12:35:31.984 | WARNING | 健康检查尝试 2/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:35:41.985 | INFO    | 健康检查重试 (3/3) ...
+2026-03-16 12:35:44.183 | WARNING | 健康检查尝试 3/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:35:44.191 | DEBUG   | 已加载图片: Arknights_01.png (3155.5 KB)
+2026-03-16 12:35:44.196 | DEBUG   | 已加载图片: Cyberpunk-2077_01.png (1414.6 KB)
+2026-03-16 12:35:44.198 | DEBUG   | 已加载图片: Genshin-Impact_01.png (933.2 KB)
+2026-03-16 12:35:44.205 | DEBUG   | 已加载图片: Minecraft_01.png (2343.7 KB)
+2026-03-16 12:35:44.207 | DEBUG   | 已加载图片: P5R_01.png (760.5 KB)
+2026-03-16 12:35:44.209 | DEBUG   | 已加载图片: SuperMarioBros_01.png (553.4 KB)
+2026-03-16 12:35:44.209 | INFO    | 共加载 6 张图片
+2026-03-16 12:35:46.422 | WARNING | 视觉检查尝试 1/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:35:56.423 | INFO    | 视觉检查重试 (2/3) ...
+2026-03-16 12:35:58.654 | WARNING | 视觉检查尝试 2/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:36:08.655 | INFO    | 视觉检查重试 (3/3) ...
+2026-03-16 12:36:10.864 | WARNING | 视觉检查尝试 3/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:36:10.864 | WARNING | [未通过] OpenGVLab/InternVL2_5-2B - 文本和视觉检查失败
+2026-03-16 12:36:10.864 | INFO    | 停止 vLLM ...
+2026-03-16 12:36:10.864 | INFO    | 尝试通过 WSL 终止所有 vLLM 进程 ...
+2026-03-16 12:36:12.942 | INFO    | 已发送终止信号
+2026-03-16 12:36:17.942 | INFO    | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-03-16 12:36:17.942 | INFO    | [预飞行 5/8] microsoft/Phi-3.5-vision-instruct
+2026-03-16 12:36:20.126 | INFO    | 已创建 vLLM 启动脚本: /home/playerAhu/vLLM_server/run_microsoft_Phi-3.5-vision-instruct.sh
+2026-03-16 12:36:20.126 | INFO    | 正在启动 vLLM 服务: microsoft/Phi-3.5-vision-instruct ...
+2026-03-16 12:36:20.130 | INFO    | vLLM 进程已启动 (PID: 53612)
+2026-03-16 12:36:20.130 | INFO    | 等待 vLLM 就绪 ...
+2026-03-16 12:36:27.683 | DEBUG   | vLLM 尚未就绪 (8s / 300s): Connection error.
+2026-03-16 12:36:50.363 | DEBUG   | vLLM 尚未就绪 (30s / 300s): Connection error.
+2026-03-16 12:37:12.974 | DEBUG   | vLLM 尚未就绪 (53s / 300s): Connection error.
+2026-03-16 12:37:35.552 | DEBUG   | vLLM 尚未就绪 (75s / 300s): Connection error.
+2026-03-16 12:37:53.724 | INFO    | 自动检测到模型: Qwen/Qwen3.5-2B
+2026-03-16 12:37:53.724 | INFO    | vLLM 已就绪: Qwen/Qwen3.5-2B
+2026-03-16 12:38:00.945 | WARNING | 健康检查尝试 1/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:38:10.945 | INFO    | 健康检查重试 (2/3) ...
+2026-03-16 12:38:13.150 | WARNING | 健康检查尝试 2/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:38:23.151 | INFO    | 健康检查重试 (3/3) ...
+2026-03-16 12:38:25.351 | WARNING | 健康检查尝试 3/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:38:25.361 | DEBUG   | 已加载图片: Arknights_01.png (3155.5 KB)
+2026-03-16 12:38:25.365 | DEBUG   | 已加载图片: Cyberpunk-2077_01.png (1414.6 KB)
+2026-03-16 12:38:25.369 | DEBUG   | 已加载图片: Genshin-Impact_01.png (933.2 KB)
+2026-03-16 12:38:25.375 | DEBUG   | 已加载图片: Minecraft_01.png (2343.7 KB)
+2026-03-16 12:38:25.378 | DEBUG   | 已加载图片: P5R_01.png (760.5 KB)
+2026-03-16 12:38:25.380 | DEBUG   | 已加载图片: SuperMarioBros_01.png (553.4 KB)
+2026-03-16 12:38:25.380 | INFO    | 共加载 6 张图片
+2026-03-16 12:38:27.594 | WARNING | 视觉检查尝试 1/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:38:37.595 | INFO    | 视觉检查重试 (2/3) ...
+2026-03-16 12:38:39.817 | WARNING | 视觉检查尝试 2/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:38:49.818 | INFO    | 视觉检查重试 (3/3) ...
+2026-03-16 12:38:52.050 | WARNING | 视觉检查尝试 3/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:38:52.051 | WARNING | [未通过] microsoft/Phi-3.5-vision-instruct - 文本和视觉检查失败
+2026-03-16 12:38:52.051 | INFO    | 停止 vLLM ...
+2026-03-16 12:38:52.051 | INFO    | 尝试通过 WSL 终止所有 vLLM 进程 ...
+2026-03-16 12:38:54.134 | INFO    | 已发送终止信号
+2026-03-16 12:38:59.135 | INFO    | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-03-16 12:38:59.135 | INFO    | [预飞行 6/8] mistralai/Ministral-3-3B-Instruct-2512
+2026-03-16 12:39:01.309 | INFO    | 已创建 vLLM 启动脚本: /home/playerAhu/vLLM_server/run_mistralai_Ministral-3-3B-Instruct-2512.sh
+2026-03-16 12:39:01.310 | INFO    | 正在启动 vLLM 服务: mistralai/Ministral-3-3B-Instruct-2512 ...
+2026-03-16 12:39:01.313 | INFO    | vLLM 进程已启动 (PID: 84500)
+2026-03-16 12:39:01.313 | INFO    | 等待 vLLM 就绪 ...
+2026-03-16 12:39:08.840 | DEBUG   | vLLM 尚未就绪 (8s / 300s): Connection error.
+2026-03-16 12:39:31.297 | DEBUG   | vLLM 尚未就绪 (30s / 300s): Connection error.
+2026-03-16 12:39:53.908 | DEBUG   | vLLM 尚未就绪 (53s / 300s): Connection error.
+2026-03-16 12:40:16.287 | DEBUG   | vLLM 尚未就绪 (75s / 300s): Connection error.
+2026-03-16 12:40:38.823 | DEBUG   | vLLM 尚未就绪 (98s / 300s): Connection error.
+2026-03-16 12:41:01.436 | DEBUG   | vLLM 尚未就绪 (120s / 300s): Connection error.
+2026-03-16 12:41:23.961 | DEBUG   | vLLM 尚未就绪 (143s / 300s): Connection error.
+2026-03-16 12:41:46.559 | DEBUG   | vLLM 尚未就绪 (165s / 300s): Connection error.
+2026-03-16 12:42:02.770 | INFO    | 自动检测到模型: Qwen/Qwen3.5-0.8B
+2026-03-16 12:42:02.770 | INFO    | vLLM 已就绪: Qwen/Qwen3.5-0.8B
+2026-03-16 12:42:09.973 | WARNING | 健康检查尝试 1/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:42:19.974 | INFO    | 健康检查重试 (2/3) ...
+2026-03-16 12:42:22.179 | WARNING | 健康检查尝试 2/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:42:32.180 | INFO    | 健康检查重试 (3/3) ...
+2026-03-16 12:42:34.390 | WARNING | 健康检查尝试 3/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:42:34.399 | DEBUG   | 已加载图片: Arknights_01.png (3155.5 KB)
+2026-03-16 12:42:34.404 | DEBUG   | 已加载图片: Cyberpunk-2077_01.png (1414.6 KB)
+2026-03-16 12:42:34.407 | DEBUG   | 已加载图片: Genshin-Impact_01.png (933.2 KB)
+2026-03-16 12:42:34.413 | DEBUG   | 已加载图片: Minecraft_01.png (2343.7 KB)
+2026-03-16 12:42:34.415 | DEBUG   | 已加载图片: P5R_01.png (760.5 KB)
+2026-03-16 12:42:34.416 | DEBUG   | 已加载图片: SuperMarioBros_01.png (553.4 KB)
+2026-03-16 12:42:34.417 | INFO    | 共加载 6 张图片
+2026-03-16 12:42:36.646 | WARNING | 视觉检查尝试 1/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:42:46.650 | INFO    | 视觉检查重试 (2/3) ...
+2026-03-16 12:42:48.844 | WARNING | 视觉检查尝试 2/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:42:58.845 | INFO    | 视觉检查重试 (3/3) ...
+2026-03-16 12:43:01.063 | WARNING | 视觉检查尝试 3/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:43:01.063 | WARNING | [未通过] mistralai/Ministral-3-3B-Instruct-2512 - 文本和视觉检查失败
+2026-03-16 12:43:01.063 | INFO    | 停止 vLLM ...
+2026-03-16 12:43:01.063 | INFO    | 尝试通过 WSL 终止所有 vLLM 进程 ...
+2026-03-16 12:43:03.154 | INFO    | 已发送终止信号
+2026-03-16 12:43:08.155 | INFO    | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-03-16 12:43:08.155 | INFO    | [预飞行 7/8] deepseek-ai/deepseek-vl2-tiny
+2026-03-16 12:43:10.308 | INFO    | 已创建 vLLM 启动脚本: /home/playerAhu/vLLM_server/run_deepseek-ai_deepseek-vl2-tiny.sh
+2026-03-16 12:43:10.309 | INFO    | 正在启动 vLLM 服务: deepseek-ai/deepseek-vl2-tiny ...
+2026-03-16 12:43:10.312 | INFO    | vLLM 进程已启动 (PID: 23420)
+2026-03-16 12:43:10.312 | INFO    | 等待 vLLM 就绪 ...
+2026-03-16 12:43:17.780 | DEBUG   | vLLM 尚未就绪 (7s / 300s): Connection error.
+2026-03-16 12:43:40.235 | DEBUG   | vLLM 尚未就绪 (30s / 300s): Connection error.
+2026-03-16 12:44:02.777 | DEBUG   | vLLM 尚未就绪 (52s / 300s): Connection error.
+2026-03-16 12:44:25.310 | DEBUG   | vLLM 尚未就绪 (75s / 300s): Connection error.
+2026-03-16 12:44:47.758 | DEBUG   | vLLM 尚未就绪 (97s / 300s): Connection error.
+2026-03-16 12:45:10.345 | DEBUG   | vLLM 尚未就绪 (120s / 300s): Connection error.
+2026-03-16 12:45:32.964 | DEBUG   | vLLM 尚未就绪 (143s / 300s): Connection error.
+2026-03-16 12:45:48.160 | INFO    | 自动检测到模型: OpenGVLab/InternVL2_5-2B
+2026-03-16 12:45:48.160 | INFO    | vLLM 已就绪: OpenGVLab/InternVL2_5-2B
+2026-03-16 12:45:55.364 | WARNING | 健康检查尝试 1/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:46:05.365 | INFO    | 健康检查重试 (2/3) ...
+2026-03-16 12:46:07.552 | WARNING | 健康检查尝试 2/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:46:17.553 | INFO    | 健康检查重试 (3/3) ...
+2026-03-16 12:46:19.763 | WARNING | 健康检查尝试 3/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:46:19.772 | DEBUG   | 已加载图片: Arknights_01.png (3155.5 KB)
+2026-03-16 12:46:19.776 | DEBUG   | 已加载图片: Cyberpunk-2077_01.png (1414.6 KB)
+2026-03-16 12:46:19.779 | DEBUG   | 已加载图片: Genshin-Impact_01.png (933.2 KB)
+2026-03-16 12:46:19.785 | DEBUG   | 已加载图片: Minecraft_01.png (2343.7 KB)
+2026-03-16 12:46:19.787 | DEBUG   | 已加载图片: P5R_01.png (760.5 KB)
+2026-03-16 12:46:19.789 | DEBUG   | 已加载图片: SuperMarioBros_01.png (553.4 KB)
+2026-03-16 12:46:19.789 | INFO    | 共加载 6 张图片
+2026-03-16 12:46:22.007 | WARNING | 视觉检查尝试 1/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:46:32.008 | INFO    | 视觉检查重试 (2/3) ...
+2026-03-16 12:46:34.210 | WARNING | 视觉检查尝试 2/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:46:44.211 | INFO    | 视觉检查重试 (3/3) ...
+2026-03-16 12:46:46.423 | WARNING | 视觉检查尝试 3/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:46:46.423 | WARNING | [未通过] deepseek-ai/deepseek-vl2-tiny - 文本和视觉检查失败
+2026-03-16 12:46:46.423 | INFO    | 停止 vLLM ...
+2026-03-16 12:46:46.423 | INFO    | 尝试通过 WSL 终止所有 vLLM 进程 ...
+2026-03-16 12:46:48.500 | INFO    | 已发送终止信号
+2026-03-16 12:46:53.501 | INFO    | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-03-16 12:46:53.501 | INFO    | [预飞行 8/8] HuggingFaceTB/SmolVLM2-2.2B-Instruct
+2026-03-16 12:46:55.675 | INFO    | 已创建 vLLM 启动脚本: /home/playerAhu/vLLM_server/run_HuggingFaceTB_SmolVLM2-2.2B-Instruct.sh
+2026-03-16 12:46:55.675 | INFO    | 正在启动 vLLM 服务: HuggingFaceTB/SmolVLM2-2.2B-Instruct ...
+2026-03-16 12:46:55.678 | INFO    | vLLM 进程已启动 (PID: 77700)
+2026-03-16 12:46:55.678 | INFO    | 等待 vLLM 就绪 ...
+2026-03-16 12:47:03.284 | DEBUG   | vLLM 尚未就绪 (8s / 300s): Connection error.
+2026-03-16 12:47:25.839 | DEBUG   | vLLM 尚未就绪 (30s / 300s): Connection error.
+2026-03-16 12:47:48.431 | DEBUG   | vLLM 尚未就绪 (53s / 300s): Connection error.
+2026-03-16 12:48:09.989 | INFO    | 自动检测到模型: OpenGVLab/InternVL2_5-2B
+2026-03-16 12:48:09.989 | INFO    | vLLM 已就绪: OpenGVLab/InternVL2_5-2B
+2026-03-16 12:48:17.188 | WARNING | 健康检查尝试 1/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:48:27.188 | INFO    | 健康检查重试 (2/3) ...
+2026-03-16 12:48:29.402 | WARNING | 健康检查尝试 2/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:48:39.403 | INFO    | 健康检查重试 (3/3) ...
+2026-03-16 12:48:41.633 | WARNING | 健康检查尝试 3/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:48:41.642 | DEBUG   | 已加载图片: Arknights_01.png (3155.5 KB)
+2026-03-16 12:48:41.647 | DEBUG   | 已加载图片: Cyberpunk-2077_01.png (1414.6 KB)
+2026-03-16 12:48:41.650 | DEBUG   | 已加载图片: Genshin-Impact_01.png (933.2 KB)
+2026-03-16 12:48:41.657 | DEBUG   | 已加载图片: Minecraft_01.png (2343.7 KB)
+2026-03-16 12:48:41.658 | DEBUG   | 已加载图片: P5R_01.png (760.5 KB)
+2026-03-16 12:48:41.660 | DEBUG   | 已加载图片: SuperMarioBros_01.png (553.4 KB)
+2026-03-16 12:48:41.660 | INFO    | 共加载 6 张图片
+2026-03-16 12:48:43.881 | WARNING | 视觉检查尝试 1/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:48:53.882 | INFO    | 视觉检查重试 (2/3) ...
+2026-03-16 12:48:56.104 | WARNING | 视觉检查尝试 2/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:49:06.105 | INFO    | 视觉检查重试 (3/3) ...
+2026-03-16 12:49:08.334 | WARNING | 视觉检查尝试 3/3 失败: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-16 12:49:08.334 | WARNING | [未通过] HuggingFaceTB/SmolVLM2-2.2B-Instruct - 文本和视觉检查失败
+2026-03-16 12:49:08.334 | INFO    | 停止 vLLM ...
+2026-03-16 12:49:08.334 | INFO    | 尝试通过 WSL 终止所有 vLLM 进程 ...
+2026-03-16 12:49:10.415 | INFO    | 已发送终止信号
+2026-03-16 12:49:15.416 | INFO    | 预飞行完成: 0/8 个模型通过
+2026-03-16 12:49:15.416 | WARNING | 失败模型: ['Qwen/Qwen3.5-2B', 'Qwen/Qwen3.5-0.8B', 'Qwen/Qwen3-VL-2B-Instruct', 'OpenGVLab/InternVL2_5-2B', 'microsoft/Phi-3.5-vision-instruct', 'mistralai/Ministral-3-3B-Instruct-2512', 'deepseek-ai/deepseek-vl2-tiny', 'HuggingFaceTB/SmolVLM2-2.2B-Instruct']
+2026-03-16 12:49:15.416 | ERROR   | 预飞行后无可用模型，中止
+2026-03-16 12:49:15.417 | INFO    | 事件报告已生成

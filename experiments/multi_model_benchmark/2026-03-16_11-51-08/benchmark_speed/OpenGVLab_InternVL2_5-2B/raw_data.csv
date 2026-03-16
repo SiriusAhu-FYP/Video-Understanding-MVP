@@ -1,0 +1,8 @@
+model,scenario_id,scenario_name,image_name,run_idx,ttft_s,throughput_tps,total_time_s,output_tokens,vram_mb,response_preview
+OpenGVLab/InternVL2_5-2B,short_desc,短文本描述,Arknights_01.png,1,0.1725,91.86,0.3467,16,12089,这是一款名为《明日方舟》的策略类手机游戏的游戏界面截图。
+OpenGVLab/InternVL2_5-2B,short_desc,短文本描述,Arknights_01.png,2,0.1483,105.74,0.2996,16,12108,这是一款名为《明日方舟》的策略类手机游戏的游戏界面截图。
+OpenGVLab/InternVL2_5-2B,short_desc,短文本描述,Arknights_01.png,3,0.1549,109.46,0.301,16,12090,这是一款名为《明日方舟》的策略类手机游戏的游戏界面截图。
+OpenGVLab/InternVL2_5-2B,short_desc,短文本描述,Cyberpunk-2077_01.png,1,0.1623,75.91,0.3863,17,12108,游戏角色驾驶赛车在城市街道上行驶，屏幕显示游戏内信息。
+OpenGVLab/InternVL2_5-2B,short_desc,短文本描述,Cyberpunk-2077_01.png,2,0.1392,81.35,0.3482,17,12108,游戏角色驾驶赛车在城市街道上行驶，屏幕显示游戏内信息。
+OpenGVLab/InternVL2_5-2B,short_desc,短文本描述,Cyberpunk-2077_01.png,3,0.1388,103.82,0.3026,17,12108,游戏角色驾驶赛车在城市街道上行驶，屏幕显示游戏内信息。
+OpenGVLab/InternVL2_5-2B,short_desc,短文本描述,Genshin-Impact_01.png,1,0.1017,96.01,0.3413,23,12068,游戏截图中，一只巨大的蓝色龙在草地上盘旋，几名角色正在与它战斗。

@@ -16,8 +16,8 @@ list = [
 
 [vllm]
 base_url = "http://localhost:8000/v1"
-gpu_memory_utilization = 0.7
-max_model_len = 4096
+gpu_memory_utilization = 0.5
+max_model_len = 8192
 startup_timeout_s = 300
 poll_interval_s = 15
 

@@ -1,0 +1,36 @@
+{
+  "git_hash": "da9fa46fcccf",
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4080 SUPER",
+    "memory_total_mb": 16376,
+    "memory_free_mb": 13694,
+    "memory_used_mb": 2352
+  },
+  "python_version": "3.12.11 (main, Jun 12 2025, 12:44:17) [MSC v.1943 64 bit (AMD64)]",
+  "start_time": "2026-03-16T11:48:48.486266",
+  "models": [
+    "Qwen/Qwen3.5-2B",
+    "Qwen/Qwen3.5-0.8B",
+    "Qwen/Qwen3-VL-2B-Instruct",
+    "OpenGVLab/InternVL2_5-2B",
+    "microsoft/Phi-3.5-vision-instruct",
+    "mistralai/Ministral-3-3B-Instruct-2512",
+    "deepseek-ai/deepseek-vl2-tiny",
+    "HuggingFaceTB/SmolVLM2-2.2B-Instruct"
+  ],
+  "end_time": "2026-03-16T13:17:13.906299",
+  "completed_models": [],
+  "failed_models": [
+    "mistralai/Ministral-3-3B-Instruct-2512"
+  ],
+  "gpu_util_map": {
+    "Qwen/Qwen3.5-2B": 0.55,
+    "Qwen/Qwen3.5-0.8B": 0.3,
+    "Qwen/Qwen3-VL-2B-Instruct": 0.4,
+    "OpenGVLab/InternVL2_5-2B": 0.5,
+    "microsoft/Phi-3.5-vision-instruct": 0.3,
+    "mistralai/Ministral-3-3B-Instruct-2512": 0.3,
+    "deepseek-ai/deepseek-vl2-tiny": 0.3,
+    "HuggingFaceTB/SmolVLM2-2.2B-Instruct": 0.45
+  }
+}
