@@ -59,9 +59,7 @@ MODEL_SPECIFIC_ARGS: dict[str, dict] = {
     "OpenGVLab/InternVL2_5-2B": {
         "max-model-len": 4096,
     },
-    "Zero-Point-AI/MARTHA-2B": {
-        "max-model-len": 4096,
-    },
+    "google/gemma-3-4b-it": {},
     "mistralai/Ministral-3-3B-Instruct-2512": {
         "tokenizer_mode": "mistral",
         "config_format": "mistral",
@@ -72,9 +70,7 @@ MODEL_SPECIFIC_ARGS: dict[str, dict] = {
         "hf-overrides": '\'{"architectures": ["DeepseekVLV2ForCausalLM"]}\'',
         "max-model-len": 4096,
     },
-    "vikhyatk/moondream2": {
-        "max-model-len": 2048,
-    },
+    "HuggingFaceTB/SmolVLM2-2.2B-Instruct": {},
 }
 
 
@@ -139,7 +135,11 @@ def _kill_all_vllm() -> None:
         pass
 
 
-def start_vllm(model_id: str, extra_args: dict | None = None) -> subprocess.Popen:
+def start_vllm(
+    model_id: str,
+    extra_args: dict | None = None,
+    gpu_memory_utilization: float | None = None,
+) -> subprocess.Popen:
     """Start vLLM service in WSL for the given model.
 
     Kills any existing vLLM processes first to ensure a clean port.
@@ -147,7 +147,10 @@ def start_vllm(model_id: str, extra_args: dict | None = None) -> subprocess.Pope
     Returns the Popen handle for the background process.
     """
     _kill_all_vllm()
-    script_path = create_launch_script(model_id, extra_args)
+    merged_extra = dict(extra_args or {})
+    if gpu_memory_utilization is not None:
+        merged_extra["gpu-memory-utilization"] = gpu_memory_utilization
+    script_path = create_launch_script(model_id, merged_extra if merged_extra else None)
 
     lg.info("正在启动 vLLM 服务: {} ...", model_id)
     proc = subprocess.Popen(
