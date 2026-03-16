@@ -1,0 +1,497 @@
+{
+  "video": "video_GenshinImpact_01.mp4",
+  "model": "Qwen/Qwen3.5-0.8B",
+  "config": {
+    "screenshot_interval_ms": 500,
+    "max_size": 512,
+    "recording_duration_s": 26,
+    "algorithm": "mse",
+    "diff_threshold": 500.0
+  },
+  "stats": {
+    "total_sampled": 53,
+    "total_keyframes": 44,
+    "total_dropped": 19,
+    "duration_s": 26.0
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_ms": 16,
+      "diff_value": null,
+      "is_keyframe": true,
+      "reason": "首帧，自动标记为关键帧",
+      "image_filename": "frame_0000_key.png",
+      "vlm_response": "画面显示的是一个游戏地图界面，包含多个地点标记和文字信息。地图上有多个蓝色标记点，标注了如“玉谷·南陵”、“明月”等地点。右上角显示游戏状态信息，如“第12层 第3间”等。底部有文字“璃月有一处地方”。"
+    },
+    {
+      "frame_idx": 1,
+      "timestamp_ms": 516,
+      "diff_value": 3124.5262086878274,
+      "is_keyframe": true,
+      "reason": "差异值 3124.53 >= 阈值 500.00",
+      "image_filename": "frame_0001_key.png",
+      "vlm_response": "画面显示的是游戏《原神》中的地图界面，没有人物或动物。地图上有多个地点标记，如“玉玉谷·上谷”、“明冠山地”、“苦风高地”等，以及“璃月有一处地方”的文字提示。"
+    },
+    {
+      "frame_idx": 2,
+      "timestamp_ms": 1016,
+      "diff_value": 3187.71258385144,
+      "is_keyframe": true,
+      "reason": "差异值 3187.71 >= 阈值 500.00",
+      "image_filename": "frame_0002_key.png",
+      "vlm_response": "画面显示的是游戏《原神》中的地图界面，主要对象为游戏内的地图区域和界面元素。场景环境为游戏内的地图界面，没有人物或动物。地图上有多个标记点，其中一些标记点周围有蓝色圆圈，可能表示重要地点或任务点。"
+    },
+    {
+      "frame_idx": 3,
+      "timestamp_ms": 1516,
+      "diff_value": 3886.626145287958,
+      "is_keyframe": true,
+      "reason": "差异值 3886.63 >= 阈值 500.00",
+      "image_filename": "frame_0003_key.png",
+      "vlm_response": "主要对象：游戏地图界面，显示有岛屿、山脉、河流等地理元素。\n动作与状态：地图显示有蓝色标记点，可能表示游戏内的特定位置或事件。\n场景环境：游戏地图界面，显示在户外或虚拟环境中。\n显著变化：地图上有多个标记点，可能表示不同的位置或事件。"
+    },
+    {
+      "frame_idx": 4,
+      "timestamp_ms": 2016,
+      "diff_value": 121.56928992146597,
+      "is_keyframe": false,
+      "reason": "差异值 121.57 < 阈值 500.00",
+      "image_filename": "frame_0004_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_ms": 2531,
+      "diff_value": 2495.8859467032066,
+      "is_keyframe": true,
+      "reason": "差异值 2495.89 >= 阈值 500.00",
+      "image_filename": "frame_0005_key.png",
+      "vlm_response": "画面显示的是《原神》游戏中的地图界面，右侧有“标记（点）”按钮和标记图标，下方有“宝箱很丰富”的文字提示。地图中央有一个蓝色标记点，周围有黄色和白色的高亮路径。"
+    },
+    {
+      "frame_idx": 6,
+      "timestamp_ms": 3016,
+      "diff_value": 253.8279000327225,
+      "is_keyframe": false,
+      "reason": "差异值 253.83 < 阈值 500.00",
+      "image_filename": "frame_0006_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 7,
+      "timestamp_ms": 3531,
+      "diff_value": 2606.7659010962043,
+      "is_keyframe": true,
+      "reason": "差异值 2606.77 >= 阈值 500.00",
+      "image_filename": "frame_0007_key.png",
+      "vlm_response": "画面中显示的是一个游戏地图界面，主要对象为游戏内的地图区域，包含地形、水域和路径。场景环境为游戏内的地图界面，没有人物或动物。地图上有多个蓝色和黄色的标记点，以及一条黄色的路径。"
+    },
+    {
+      "frame_idx": 8,
+      "timestamp_ms": 4031,
+      "diff_value": 30.71464605148342,
+      "is_keyframe": false,
+      "reason": "差异值 30.71 < 阈值 500.00",
+      "image_filename": "frame_0008_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 9,
+      "timestamp_ms": 4531,
+      "diff_value": 76.7715627726876,
+      "is_keyframe": false,
+      "reason": "差异值 76.77 < 阈值 500.00",
+      "image_filename": "frame_0009_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_ms": 5031,
+      "diff_value": 6905.17496489147,
+      "is_keyframe": true,
+      "reason": "差异值 6905.17 >= 阈值 500.00",
+      "image_filename": "frame_0010_key.png",
+      "vlm_response": "主要对象：粉色长发、戴角、身穿白色与黑色服装的动漫风格女性角色站在石墙之间。场景环境：石墙、火把、绿色植物、夜空。显著变化：角色处于静止状态，画面中无动态变化。"
+    },
+    {
+      "frame_idx": 11,
+      "timestamp_ms": 5531,
+      "diff_value": 1546.7022575125436,
+      "is_keyframe": true,
+      "reason": "差异值 1546.70 >= 阈值 500.00",
+      "image_filename": "frame_0011_key.png",
+      "vlm_response": "画面中，一位粉色双马尾、头戴白色角饰的动漫风格女性角色正背对镜头，沿着石砌拱门向前行走。她身后是茂密的绿色藤蔓和灯笼，两侧是石墙和火把，营造出夜晚的奇幻氛围。屏幕下方显示中文文字“最好找一位大佬来帮你”，表明当前场景可能为游戏内的对话或提示界面。"
+    },
+    {
+      "frame_idx": 12,
+      "timestamp_ms": 6031,
+      "diff_value": 1295.583234484075,
+      "is_keyframe": true,
+      "reason": "差异值 1295.58 >= 阈值 500.00",
+      "image_filename": "frame_0012_key.png",
+      "vlm_response": "画面中，一位粉色双角、手持法杖的精灵角色正走在石砌拱门下的石板路上。角色表情开心，似乎在享受旅途。两侧是燃烧的火炬和绿植，营造出奇幻冒险的氛围。底部有文字提示“最好找一位大佬来帮你”，暗示这是一个需要帮助的场景。"
+    },
+    {
+      "frame_idx": 13,
+      "timestamp_ms": 6531,
+      "diff_value": 1159.2661277677792,
+      "is_keyframe": true,
+      "reason": "差异值 1159.27 >= 阈值 500.00",
+      "image_filename": "frame_0013_key.png",
+      "vlm_response": "画面中，一位粉色双马尾、头戴白色装饰的动漫风格女性角色正站在石拱门下，面向前方。她身后是幽暗的石墙和绿植，两侧各有一盏燃烧的灯笼。底部有黄色字幕“最好找一位大佬来帮你”。场景为户外石拱桥或门洞，环境幽静，氛围神秘。"
+    },
+    {
+      "frame_idx": 14,
+      "timestamp_ms": 7031,
+      "diff_value": 1217.0025751936082,
+      "is_keyframe": true,
+      "reason": "差异值 1217.00 >= 阈值 500.00",
+      "image_filename": "frame_0014_key.png",
+      "vlm_response": "主要对象：粉色双马尾、身穿白色连衣裙的动漫风格女性角色站在石拱门下。场景环境：石砌拱门、两侧有火把和石灯笼、绿色植物、蓝色水面。显著变化：角色正站在石拱门下，背景是通往远处的绿色山谷，画面整体氛围宁静。"
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_ms": 7516,
+      "diff_value": 1817.3419604875655,
+      "is_keyframe": true,
+      "reason": "差异值 1817.34 >= 阈值 500.00",
+      "image_filename": "frame_0015_key.png",
+      "vlm_response": "主要对象：粉色双马尾角色、石墙、火把、石灯笼、绿色植物。\n\n动作与状态：角色背对镜头站在石拱门下，周围有飞舞的蝴蝶，火把和灯笼在夜间发光，环境是夜晚的户外场景。\n\n场景环境：石拱门、石墙、火把、石灯笼、绿色植物，整体是夜晚的户外场景。\n\n显著变化：空中有蝴蝶飞舞，角色处于静止状态，没有明显动态变化。"
+    },
+    {
+      "frame_idx": 16,
+      "timestamp_ms": 8031,
+      "diff_value": 1362.0816051756108,
+      "is_keyframe": true,
+      "reason": "差异值 1362.08 >= 阈值 500.00",
+      "image_filename": "frame_0016_key.png",
+      "vlm_response": "画面中是一个粉色双马尾、头戴角饰的动漫风格女性角色，正站在一条石砌拱门通道内。她周围有飘落的羽毛状物体，两侧石墙上各有一个燃烧的火炬。场景为户外石拱门通道，环境幽静，有绿色植物和石墙。角色处于静止状态，没有明显动作。"
+    },
+    {
+      "frame_idx": 17,
+      "timestamp_ms": 8516,
+      "diff_value": 1416.0294979821117,
+      "is_keyframe": true,
+      "reason": "差异值 1416.03 >= 阈值 500.00",
+      "image_filename": "frame_0017_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 18,
+      "timestamp_ms": 9016,
+      "diff_value": 1764.5497041339443,
+      "is_keyframe": true,
+      "reason": "差异值 1764.55 >= 阈值 500.00",
+      "image_filename": "frame_0018_key.png",
+      "vlm_response": "画面中是一个粉色双马尾角色的背影，她站在石墙之间，身后是通往明亮森林的通道。角色周围有藤蔓和火把，环境是夜晚的户外场景。角色处于静止状态，没有明显动作。"
+    },
+    {
+      "frame_idx": 19,
+      "timestamp_ms": 9531,
+      "diff_value": 2850.2722751690662,
+      "is_keyframe": true,
+      "reason": "差异值 2850.27 >= 阈值 500.00",
+      "image_filename": "frame_0019_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_ms": 10031,
+      "diff_value": 3298.1230519878927,
+      "is_keyframe": true,
+      "reason": "差异值 3298.12 >= 阈值 500.00",
+      "image_filename": "frame_0020_key.png",
+      "vlm_response": "画面中，一个粉色头发、背对镜头的角色正走在一条石板路上，周围有发光的橙色晶体和漂浮的发光生物。左侧是深色的石墙，右侧是绿色的植被。屏幕下方显示着游戏内的文字“Lv.57 不是你所能敌的”。"
+    },
+    {
+      "frame_idx": 21,
+      "timestamp_ms": 10531,
+      "diff_value": 4583.360810018543,
+      "is_keyframe": true,
+      "reason": "差异值 4583.36 >= 阈值 500.00",
+      "image_filename": "frame_0021_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 22,
+      "timestamp_ms": 11031,
+      "diff_value": 4560.9761142697425,
+      "is_keyframe": true,
+      "reason": "差异值 4560.98 >= 阈值 500.00",
+      "image_filename": "frame_0022_key.png",
+      "vlm_response": "画面中，一名粉色头发的角色正奔跑向画面中央的发光装置，该装置呈圆形，表面有发光的纹路。角色身后有一个较小的、类似生物或机械的物体。场景为户外，背景是绿色的草地和远处的树木，天空呈蓝绿色调。"
+    },
+    {
+      "frame_idx": 23,
+      "timestamp_ms": 11531,
+      "diff_value": 3376.690533649651,
+      "is_keyframe": true,
+      "reason": "差异值 3376.69 >= 阈值 500.00",
+      "image_filename": "frame_0023_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 24,
+      "timestamp_ms": 12031,
+      "diff_value": 3629.1834113901614,
+      "is_keyframe": true,
+      "reason": "差异值 3629.18 >= 阈值 500.00",
+      "image_filename": "frame_0024_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_ms": 12531,
+      "diff_value": 2345.1036945762435,
+      "is_keyframe": true,
+      "reason": "差异值 2345.10 >= 阈值 500.00",
+      "image_filename": "frame_0025_key.png",
+      "vlm_response": "画面中显示一个角色在绿色草地上，背景是奇幻风格的洞穴场景，有发光的晶体和石柱。角色正在奔跑，屏幕下方显示其等级为Lv.90，并提示“启动它”。"
+    },
+    {
+      "frame_idx": 26,
+      "timestamp_ms": 13031,
+      "diff_value": 3830.358221190554,
+      "is_keyframe": true,
+      "reason": "差异值 3830.36 >= 阈值 500.00",
+      "image_filename": "frame_0026_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 27,
+      "timestamp_ms": 13531,
+      "diff_value": 2817.463770042539,
+      "is_keyframe": true,
+      "reason": "差异值 2817.46 >= 阈值 500.00",
+      "image_filename": "frame_0027_key.png",
+      "vlm_response": "画面中显示的是《原神》游戏中的角色“伊莉雅”站在一个黑色石像旁，石像顶部有橙色装饰。角色背对镜头，面向前方，周围有绿色植被和岩石。屏幕右侧显示“启动”按钮，底部有角色等级和状态栏。场景为户外自然环境，有发光晶体和蓝色水面。"
+    },
+    {
+      "frame_idx": 28,
+      "timestamp_ms": 14031,
+      "diff_value": 2083.5864896924086,
+      "is_keyframe": true,
+      "reason": "差异值 2083.59 >= 阈值 500.00",
+      "image_filename": "frame_0028_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 29,
+      "timestamp_ms": 14531,
+      "diff_value": 6507.3339502890485,
+      "is_keyframe": true,
+      "reason": "差异值 6507.33 >= 阈值 500.00",
+      "image_filename": "frame_0029_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_ms": 15031,
+      "diff_value": 2905.3258838487127,
+      "is_keyframe": true,
+      "reason": "差异值 2905.33 >= 阈值 500.00",
+      "image_filename": "frame_0030_key.png",
+      "vlm_response": "画面中显示一名粉色头发、手持武器的角色在绿色草地上，前方有一只巨大的橙色怪物。屏幕中央有蓝色提示文字“消灭5只魔物”，下方有字幕“第一波和第二波的独眼小宝”。场景为游戏内的野外环境，角色处于战斗状态。"
+    },
+    {
+      "frame_idx": 31,
+      "timestamp_ms": 15531,
+      "diff_value": 2384.1389701270723,
+      "is_keyframe": true,
+      "reason": "差异值 2384.14 >= 阈值 500.00",
+      "image_filename": "frame_0031_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 32,
+      "timestamp_ms": 16031,
+      "diff_value": 2955.299165575916,
+      "is_keyframe": true,
+      "reason": "差异值 2955.30 >= 阈值 500.00",
+      "image_filename": "frame_0032_key.png",
+      "vlm_response": "画面中显示一个蓝色角色在绿色草地上，面对一个巨大的棕色怪物。怪物头顶有血条，周围有火焰特效。屏幕中央显示“消灭5只魔物”的文字提示。底部有中文文字“第一波和第二波的独眼小宝”。"
+    },
+    {
+      "frame_idx": 33,
+      "timestamp_ms": 16531,
+      "diff_value": 7855.867374972731,
+      "is_keyframe": true,
+      "reason": "差异值 7855.87 >= 阈值 500.00",
+      "image_filename": "frame_0033_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 34,
+      "timestamp_ms": 17031,
+      "diff_value": 9496.24363104003,
+      "is_keyframe": true,
+      "reason": "差异值 9496.24 >= 阈值 500.00",
+      "image_filename": "frame_0034_key.png",
+      "vlm_response": "画面中显示一名角色正在与怪物战斗，角色使用技能攻击怪物，怪物受到攻击后发出紫色光效。战斗区域周围有绿色和蓝色特效，显示伤害数值。场景为户外岩石环境，右上角显示游戏界面元素。"
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_ms": 17531,
+      "diff_value": 8157.589545497927,
+      "is_keyframe": true,
+      "reason": "差异值 8157.59 >= 阈值 500.00",
+      "image_filename": "frame_0035_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 36,
+      "timestamp_ms": 18031,
+      "diff_value": 12556.74276696117,
+      "is_keyframe": true,
+      "reason": "差异值 12556.74 >= 阈值 500.00",
+      "image_filename": "frame_0036_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 37,
+      "timestamp_ms": 18531,
+      "diff_value": 5287.70634100949,
+      "is_keyframe": true,
+      "reason": "差异值 5287.71 >= 阈值 500.00",
+      "image_filename": "frame_0037_key.png",
+      "vlm_response": "画面中显示一名角色在蓝色水域中，周围有蓝色光效和漂浮物，背景是绿色草地和天空。屏幕上方有战斗提示文字“+46 敌人再次来袭（3/3）”，下方有黄色字幕“你可能还可以应对”。角色似乎正在攻击或防御，周围有能量粒子特效。"
+    },
+    {
+      "frame_idx": 38,
+      "timestamp_ms": 19031,
+      "diff_value": 7513.98579808846,
+      "is_keyframe": true,
+      "reason": "差异值 7513.99 >= 阈值 500.00",
+      "image_filename": "frame_0038_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 39,
+      "timestamp_ms": 19531,
+      "diff_value": 6888.405164362456,
+      "is_keyframe": true,
+      "reason": "差异值 6888.41 >= 阈值 500.00",
+      "image_filename": "frame_0039_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_ms": 20031,
+      "diff_value": 3439.2309681091842,
+      "is_keyframe": true,
+      "reason": "差异值 3439.23 >= 阈值 500.00",
+      "image_filename": "frame_0040_key.png",
+      "vlm_response": "画面中主要角色为红发女性角色，身穿黑色与红色相间的战斗服装，手持武器，处于战斗状态。她正面对一个名为“遗迹猎者”的敌人，该敌人有红色光环和火焰特效。战斗场景中可见大量伤害数值“6525”从角色身上落下，周围还有蓝色光效和岩石等环境元素。场景为户外洞穴或地下空间，光线昏暗，有岩石和植被。"
+    },
+    {
+      "frame_idx": 41,
+      "timestamp_ms": 20531,
+      "diff_value": 3342.284540998582,
+      "is_keyframe": true,
+      "reason": "差异值 3342.28 >= 阈值 500.00",
+      "image_filename": "frame_0041_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 42,
+      "timestamp_ms": 21031,
+      "diff_value": 2749.093468790903,
+      "is_keyframe": true,
+      "reason": "差异值 2749.09 >= 阈值 500.00",
+      "image_filename": "frame_0042_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 43,
+      "timestamp_ms": 21531,
+      "diff_value": 0.5678054782940664,
+      "is_keyframe": false,
+      "reason": "差异值 0.57 < 阈值 500.00",
+      "image_filename": "frame_0043_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 44,
+      "timestamp_ms": 22031,
+      "diff_value": 1.1497821907722514,
+      "is_keyframe": false,
+      "reason": "差异值 1.15 < 阈值 500.00",
+      "image_filename": "frame_0044_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_ms": 22531,
+      "diff_value": 1.8912300256326353,
+      "is_keyframe": false,
+      "reason": "差异值 1.89 < 阈值 500.00",
+      "image_filename": "frame_0045_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 46,
+      "timestamp_ms": 23031,
+      "diff_value": 1.9759148669284468,
+      "is_keyframe": false,
+      "reason": "差异值 1.98 < 阈值 500.00",
+      "image_filename": "frame_0046_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 47,
+      "timestamp_ms": 23531,
+      "diff_value": 4.5495081397251305,
+      "is_keyframe": false,
+      "reason": "差异值 4.55 < 阈值 500.00",
+      "image_filename": "frame_0047_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 48,
+      "timestamp_ms": 24062,
+      "diff_value": 10368.361227571444,
+      "is_keyframe": true,
+      "reason": "差异值 10368.36 >= 阈值 500.00",
+      "image_filename": "frame_0048_key.png",
+      "vlm_response": "主要对象：玩家视角中的房屋、草地、河流、远处的岛屿和天空。\n动作与状态：玩家站在房屋旁，面向河流方向，房屋屋顶和墙壁清晰可见。\n场景环境：这是一个典型的Minecraft游戏场景，位于一个有河流、草地和岛屿的开放世界。\n显著变化：画面中未显示明显的动态变化，主要呈现静态的静态场景。"
+    },
+    {
+      "frame_idx": 49,
+      "timestamp_ms": 24547,
+      "diff_value": 3400.7757195544286,
+      "is_keyframe": true,
+      "reason": "差异值 3400.78 >= 阈值 500.00",
+      "image_filename": "frame_0049_key.png",
+      "vlm_response": "主要对象：玩家视角的Minecraft游戏画面，显示一个木房子、草地、水域和远处的树木。\n\n动作与状态：玩家站在木房子旁，面向水面，屏幕下方显示游戏界面，包括生命值、饥饿度和物品栏。\n\n场景环境：这是一个典型的Minecraft游戏场景，位于户外，有草地、水域、木房子和远处的树木。\n\n显著变化：画面中未显示明显的动态变化，主要呈现静态的Minecraft游戏场景。"
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_ms": 25047,
+      "diff_value": 6329.00059991274,
+      "is_keyframe": true,
+      "reason": "差异值 6329.00 >= 阈值 500.00",
+      "image_filename": "frame_0050_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 51,
+      "timestamp_ms": 25547,
+      "diff_value": 1689.9291745064354,
+      "is_keyframe": true,
+      "reason": "差异值 1689.93 >= 阈值 500.00",
+      "image_filename": "frame_0051_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 52,
+      "timestamp_ms": 26047,
+      "diff_value": 5963.677857084424,
+      "is_keyframe": true,
+      "reason": "差异值 5963.68 >= 阈值 500.00",
+      "image_filename": "frame_0052_key.png",
+      "vlm_response": null
+    }
+  ],
+  "summary": "视频首先展示了《原神》游戏中的地图界面，玩家似乎在璃月地区进行地点标记与路线规划。随后镜头转向一位粉色头发的女性角色，她在夜晚的石拱门通道中探索，并出现“最好找一位大佬来帮你”的提示，暗示挑战难度。紧接着，角色进入战斗场景，面对高等级怪物并完成多波次消灭任务，过程中展示了激烈的战斗画面。视频整体呈现了从地图导航、角色探索到应对高难度战斗的游戏进程，核心内容是玩家在开放世界中接受挑战并寻求协作的冒险体验。"
+}

@@ -1,0 +1,488 @@
+{
+  "video": "video_GenshinImpact_01.mp4",
+  "model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+  "config": {
+    "screenshot_interval_ms": 500,
+    "max_size": 512,
+    "recording_duration_s": 26,
+    "algorithm": "mse",
+    "diff_threshold": 500.0
+  },
+  "stats": {
+    "total_sampled": 52,
+    "total_keyframes": 44,
+    "total_dropped": 27,
+    "duration_s": 26.0
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_ms": 0,
+      "diff_value": null,
+      "is_keyframe": true,
+      "reason": "首帧，自动标记为关键帧",
+      "image_filename": "frame_0000_key.png",
+      "vlm_response": " In the video, a character is seen running through a vibrant, fantastical environment. The character, dressed in a white and pink outfit, is equipped with a sword and shield, suggesting readiness for combat. The environment is lush and colorful, with a variety of flora and fauna adding to the richness of the scene. The character is moving towards the right side of the screen, indicating a forward motion. The game interface is visible, displaying various icons and a health bar, which suggests that the character is in a video game. The overall atmosphere is one of adventure and exploration, with the character seemingly embarking on a journey through this enchanting landscape."
+    },
+    {
+      "frame_idx": 1,
+      "timestamp_ms": 531,
+      "diff_value": 7315.942040598291,
+      "is_keyframe": true,
+      "reason": "差异值 7315.94 >= 阈值 500.00",
+      "image_filename": "frame_0001_key.png",
+      "vlm_response": " 这张地图展示了一个游戏中的地图，包括河流、湖泊和山脉。地图上有若干的标记，用于指示游戏玩家的位置和路线。地图的背景是蓝色的，表示河流和湖泊。地图的顶部有一个按钮，用于查看游戏的情况。"
+    },
+    {
+      "frame_idx": 2,
+      "timestamp_ms": 1014,
+      "diff_value": 3193.252357043521,
+      "is_keyframe": true,
+      "reason": "差异值 3193.25 >= 阈值 500.00",
+      "image_filename": "frame_0002_key.png",
+      "vlm_response": " 这张图片是一个游戏地图，显示了一个游戏中的地图，包括城市、河流、山脉和湖泊。游戏地图的背景是蓝色的，地图上有蓝色的河流和湖泊，还有一些蓝色的山脉。游戏地图上有一些地图标签，用于标记游戏中的地点。游戏地图的顶部有一个游戏按钮，用于查看游戏的情况。游戏地图的左下角有一个游戏按钮，用于查看游戏的情况。游戏地图的右下角有一个游戏按钮，用于查看游戏的情况。游戏地图的右上角有一个游戏按钮，用于查看游戏的情况。游戏地图的左上角有一个游戏按钮，用于查看游戏的情况。游戏地图的左下角有一个游戏按钮，用于查看游戏的情况。游戏地图的右下角有一个游戏按钮，用于查看游戏的情况。游戏地图的右上角有一个"
+    },
+    {
+      "frame_idx": 3,
+      "timestamp_ms": 1514,
+      "diff_value": 4052.4716149241926,
+      "is_keyframe": true,
+      "reason": "差异值 4052.47 >= 阈值 500.00",
+      "image_filename": "frame_0003_key.png",
+      "vlm_response": " 画面中有人物、动物或关键物体，如河流、沙滩、水池等，场景发生在河流中，地图上有河流、沙滩、水池等地点，地图上有河流、沙滩、水池等地点，地图上有河流、沙滩、水池等地点，地图上有河流、沙滩、水池等地点，地图上有河流、沙滩、水池等地点，地图上有河流、沙滩、水池等地点，地图上有河流、沙滩、水池等地点，地图上有河流、沙滩、水池等地点，地图上有河流、沙滩、水池等地点，地图上有河流、沙滩、水池等地点，地图上有河流、沙滩、水池等地点，地图上有河流、沙滩、水池等地点，地图上有河流、沙滩、水池等地点，地图上有河流、沙滩、水池等地点，地图上有河流、沙滩、水池"
+    },
+    {
+      "frame_idx": 4,
+      "timestamp_ms": 2014,
+      "diff_value": 3502.5027166503055,
+      "is_keyframe": true,
+      "reason": "差异值 3502.50 >= 阈值 500.00",
+      "image_filename": "frame_0004_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_ms": 2514,
+      "diff_value": 2353.8828295429757,
+      "is_keyframe": true,
+      "reason": "差异值 2353.88 >= 阈值 500.00",
+      "image_filename": "frame_0005_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 6,
+      "timestamp_ms": 3031,
+      "diff_value": 267.9231123200262,
+      "is_keyframe": false,
+      "reason": "差异值 267.92 < 阈值 500.00",
+      "image_filename": "frame_0006_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 7,
+      "timestamp_ms": 3514,
+      "diff_value": 2586.1378401777924,
+      "is_keyframe": true,
+      "reason": "差异值 2586.14 >= 阈值 500.00",
+      "image_filename": "frame_0007_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 8,
+      "timestamp_ms": 4031,
+      "diff_value": 31.711310741164922,
+      "is_keyframe": false,
+      "reason": "差异值 31.71 < 阈值 500.00",
+      "image_filename": "frame_0008_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 9,
+      "timestamp_ms": 4514,
+      "diff_value": 75.97433668739093,
+      "is_keyframe": false,
+      "reason": "差异值 75.97 < 阈值 500.00",
+      "image_filename": "frame_0009_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_ms": 5014,
+      "diff_value": 6897.936903495855,
+      "is_keyframe": true,
+      "reason": "差异值 6897.94 >= 阈值 500.00",
+      "image_filename": "frame_0010_key.png",
+      "vlm_response": " In the image, a character with pink hair and a horned headpiece is standing in a lush, green environment. The character is dressed in a white and pink outfit, adorned with various accessories and a pair of boots. The character is positioned in the center of the image, facing the viewer. The background features a stone archway with torches on either side, creating a sense of depth and mystery. The overall atmosphere of the image is one of adventure and exploration."
+    },
+    {
+      "frame_idx": 11,
+      "timestamp_ms": 5514,
+      "diff_value": 872.8670971722295,
+      "is_keyframe": true,
+      "reason": "差异值 872.87 >= 阈值 500.00",
+      "image_filename": "frame_0011_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 12,
+      "timestamp_ms": 6014,
+      "diff_value": 1670.2307243946334,
+      "is_keyframe": true,
+      "reason": "差异值 1670.23 >= 阈值 500.00",
+      "image_filename": "frame_0012_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 13,
+      "timestamp_ms": 6531,
+      "diff_value": 1013.2060512789049,
+      "is_keyframe": true,
+      "reason": "差异值 1013.21 >= 阈值 500.00",
+      "image_filename": "frame_0013_key.png",
+      "vlm_response": " In the image, a female character with pink hair and a black outfit is seen walking through a stone archway. The archway is surrounded by lush greenery and torches are lit on either side, casting a warm glow. The character appears to be in a forested area, possibly a game or a video game. The text in the image reads \"女孩路上有一条鲜花\" which translates to \"A girl's path has a blooming flower.\" This suggests that the character is on a journey or quest, and there is a special or significant element (the blooming flower) that she is encountering."
+    },
+    {
+      "frame_idx": 14,
+      "timestamp_ms": 7031,
+      "diff_value": 1218.0588596204188,
+      "is_keyframe": true,
+      "reason": "差异值 1218.06 >= 阈值 500.00",
+      "image_filename": "frame_0014_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_ms": 7531,
+      "diff_value": 1443.0832276668848,
+      "is_keyframe": true,
+      "reason": "差异值 1443.08 >= 阈值 500.00",
+      "image_filename": "frame_0015_key.png",
+      "vlm_response": " In the image, a character with pink hair and horns is seen walking through a stone archway. The archway is adorned with two torches on either side, casting a warm glow on the surroundings. The character is dressed in a white and pink outfit, and they carry a green leaf in their hand. The background reveals a lush, green landscape with trees and a river, suggesting a serene and natural setting. The text at the bottom of the image reads \"爱情的路一定会终尾\" which translates to \"The path of love always ends in a beautiful place.\" This suggests a theme of love and beauty in the image."
+    },
+    {
+      "frame_idx": 16,
+      "timestamp_ms": 8031,
+      "diff_value": 1387.609225021815,
+      "is_keyframe": true,
+      "reason": "差异值 1387.61 >= 阈值 500.00",
+      "image_filename": "frame_0016_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 17,
+      "timestamp_ms": 8531,
+      "diff_value": 1321.187649978185,
+      "is_keyframe": true,
+      "reason": "差异值 1321.19 >= 阈值 500.00",
+      "image_filename": "frame_0017_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 18,
+      "timestamp_ms": 9031,
+      "diff_value": 1626.6138129908377,
+      "is_keyframe": true,
+      "reason": "差异值 1626.61 >= 阈值 500.00",
+      "image_filename": "frame_0018_key.png",
+      "vlm_response": " In the image, a character with pink hair and horns is seen walking through a stone archway. The archway is adorned with vines and flowers, creating a natural and serene atmosphere. The character is equipped with a blue and white outfit, complemented by a pair of boots. The background reveals a lush green landscape with trees and a river, adding to the overall tranquility of the scene. The character's journey through the archway suggests a quest or adventure, as indicated by the text \"Lv.9 我们的路途将开始\" which translates to \"Level 9, our journey has begun.\""
+    },
+    {
+      "frame_idx": 19,
+      "timestamp_ms": 9531,
+      "diff_value": 2330.902466459424,
+      "is_keyframe": true,
+      "reason": "差异值 2330.90 >= 阈值 500.00",
+      "image_filename": "frame_0019_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_ms": 10031,
+      "diff_value": 3061.356491328534,
+      "is_keyframe": true,
+      "reason": "差异值 3061.36 >= 阈值 500.00",
+      "image_filename": "frame_0020_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 21,
+      "timestamp_ms": 10531,
+      "diff_value": 3666.5453769224478,
+      "is_keyframe": true,
+      "reason": "差异值 3666.55 >= 阈值 500.00",
+      "image_filename": "frame_0021_key.png",
+      "vlm_response": " In the video, a character is seen navigating through a vibrant, fantasy-themed environment. The character is equipped with a bow and is in the midst of an action sequence, indicated by the presence of a glowing orb in the background. The character's health bar is visible, showing a full health status. The game interface includes various icons and a mini-map, suggesting that the player is in a multiplayer mode, as indicated by the presence of other players' avatars on the mini-map."
+    },
+    {
+      "frame_idx": 22,
+      "timestamp_ms": 11031,
+      "diff_value": 5012.81458606021,
+      "is_keyframe": true,
+      "reason": "差异值 5012.81 >= 阈值 500.00",
+      "image_filename": "frame_0022_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 23,
+      "timestamp_ms": 11531,
+      "diff_value": 3506.647827361475,
+      "is_keyframe": true,
+      "reason": "差异值 3506.65 >= 阈值 500.00",
+      "image_filename": "frame_0023_key.png",
+      "vlm_response": " 画面中有一个人物，身穿红色和白色的衣服，正在运动，与一个大的灯光相刺，这些灯光可能是魔法的形式。场景中还有一些树木和其他物品，可能是玩家的道具或背包中的物品。"
+    },
+    {
+      "frame_idx": 24,
+      "timestamp_ms": 12031,
+      "diff_value": 3440.8147462641796,
+      "is_keyframe": true,
+      "reason": "差异值 3440.81 >= 阈值 500.00",
+      "image_filename": "frame_0024_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_ms": 12531,
+      "diff_value": 3839.36267452007,
+      "is_keyframe": true,
+      "reason": "差异值 3839.36 >= 阈值 500.00",
+      "image_filename": "frame_0025_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 26,
+      "timestamp_ms": 13031,
+      "diff_value": 3185.6216953670373,
+      "is_keyframe": true,
+      "reason": "差异值 3185.62 >= 阈值 500.00",
+      "image_filename": "frame_0026_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 27,
+      "timestamp_ms": 13531,
+      "diff_value": 4045.6092079788395,
+      "is_keyframe": true,
+      "reason": "差异值 4045.61 >= 阈值 500.00",
+      "image_filename": "frame_0027_key.png",
+      "vlm_response": " In the video game, a character with pink hair and a blue outfit is standing on a rocky platform. The character is holding a weapon and appears to be in a combat stance. The environment around the character is a lush, green landscape with a lava-like structure in the background. The character's health bar is visible at the bottom of the screen, indicating that they are in a state of combat."
+    },
+    {
+      "frame_idx": 28,
+      "timestamp_ms": 14031,
+      "diff_value": 2351.4359985138526,
+      "is_keyframe": true,
+      "reason": "差异值 2351.44 >= 阈值 500.00",
+      "image_filename": "frame_0028_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 29,
+      "timestamp_ms": 14531,
+      "diff_value": 5290.3717464959645,
+      "is_keyframe": true,
+      "reason": "差异值 5290.37 >= 阈值 500.00",
+      "image_filename": "frame_0029_key.png",
+      "vlm_response": " In the video game, a female character with pink hair and cat ears is running across a grassy field. She is wearing a brown outfit with a white collar and has a yellow belt. The game interface shows her health bar at 90 and her level at 5. There are also icons for a compass, a heart, and a shield on the screen."
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_ms": 15031,
+      "diff_value": 3838.1769793711824,
+      "is_keyframe": true,
+      "reason": "差异值 3838.18 >= 阈值 500.00",
+      "image_filename": "frame_0030_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 31,
+      "timestamp_ms": 15531,
+      "diff_value": 4645.3435267370205,
+      "is_keyframe": true,
+      "reason": "差异值 4645.34 >= 阈值 500.00",
+      "image_filename": "frame_0031_key.png",
+      "vlm_response": " 画面中有一个人物，他有一条火焰，他的右手拿着一把武器，另一只手拿着一个火焰的刀。在画面的右上角有一个人物，他有一条火焰，他的右手拿着一个火焰的武器。在画面的右下角有一个人物，他有一条火焰，他的右手拿着一个火焰的刀。在画面的左下角有一个人物，他有一条火焰，他的右手拿着一个火焰的武器。在画面的左上角有一个人物，他有一条火焰，他的右手拿着一个火焰的武器。在画面的右上角有一个人物，他有一条火焰，他的右手拿着一个火焰的武器。在画面的右下角有一个人物，他有一条火焰，他的右手拿着一个火焰的刀。在画面的左上角有一个人物，他有一条火焰，他的右手拿着一个火焰的武器。在画面的左下角有一个人物，他有一条火焰，他的右手拿着一个火焰的武器。在"
+    },
+    {
+      "frame_idx": 32,
+      "timestamp_ms": 16031,
+      "diff_value": 4963.608911431064,
+      "is_keyframe": true,
+      "reason": "差异值 4963.61 >= 阈值 500.00",
+      "image_filename": "frame_0032_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 33,
+      "timestamp_ms": 16531,
+      "diff_value": 4557.94554258017,
+      "is_keyframe": true,
+      "reason": "差异值 4557.95 >= 阈值 500.00",
+      "image_filename": "frame_0033_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 34,
+      "timestamp_ms": 17031,
+      "diff_value": 8677.153698666558,
+      "is_keyframe": true,
+      "reason": "差异值 8677.15 >= 阈值 500.00",
+      "image_filename": "frame_0034_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_ms": 17531,
+      "diff_value": 8363.015529559338,
+      "is_keyframe": true,
+      "reason": "差异值 8363.02 >= 阈值 500.00",
+      "image_filename": "frame_0035_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 36,
+      "timestamp_ms": 18031,
+      "diff_value": 10390.117197725785,
+      "is_keyframe": true,
+      "reason": "差异值 10390.12 >= 阈值 500.00",
+      "image_filename": "frame_0036_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 37,
+      "timestamp_ms": 18531,
+      "diff_value": 5222.374841500327,
+      "is_keyframe": true,
+      "reason": "差异值 5222.37 >= 阈值 500.00",
+      "image_filename": "frame_0037_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 38,
+      "timestamp_ms": 19031,
+      "diff_value": 9961.480255712806,
+      "is_keyframe": true,
+      "reason": "差异值 9961.48 >= 阈值 500.00",
+      "image_filename": "frame_0038_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 39,
+      "timestamp_ms": 19531,
+      "diff_value": 6484.226581247273,
+      "is_keyframe": true,
+      "reason": "差异值 6484.23 >= 阈值 500.00",
+      "image_filename": "frame_0039_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_ms": 20031,
+      "diff_value": 4563.432209860384,
+      "is_keyframe": true,
+      "reason": "差异值 4563.43 >= 阈值 500.00",
+      "image_filename": "frame_0040_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 41,
+      "timestamp_ms": 20531,
+      "diff_value": 4080.9151140515924,
+      "is_keyframe": true,
+      "reason": "差异值 4080.92 >= 阈值 500.00",
+      "image_filename": "frame_0041_key.png",
+      "vlm_response": " 画面中有一个人物，身穿红色和蓝色的衣服，正在打击其他人物。在画面中，有一些火焰和其他物体，这些物体可能是战斗中的敌人或装备。画面的背景是一片深蓝色的森林，有一些树木和地面。在画面的顶部，有一个按钮，用于暂停或播放游戏。"
+    },
+    {
+      "frame_idx": 42,
+      "timestamp_ms": 21031,
+      "diff_value": 3688.42006844459,
+      "is_keyframe": true,
+      "reason": "差异值 3688.42 >= 阈值 500.00",
+      "image_filename": "frame_0042_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 43,
+      "timestamp_ms": 21531,
+      "diff_value": 1.6589819889834205,
+      "is_keyframe": false,
+      "reason": "差异值 1.66 < 阈值 500.00",
+      "image_filename": "frame_0043_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 44,
+      "timestamp_ms": 22031,
+      "diff_value": 2.2032511180191974,
+      "is_keyframe": false,
+      "reason": "差异值 2.20 < 阈值 500.00",
+      "image_filename": "frame_0044_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_ms": 22531,
+      "diff_value": 2.930069262652705,
+      "is_keyframe": false,
+      "reason": "差异值 2.93 < 阈值 500.00",
+      "image_filename": "frame_0045_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 46,
+      "timestamp_ms": 23031,
+      "diff_value": 3.011130767342932,
+      "is_keyframe": false,
+      "reason": "差异值 3.01 < 阈值 500.00",
+      "image_filename": "frame_0046_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 47,
+      "timestamp_ms": 23531,
+      "diff_value": 5.566915834969459,
+      "is_keyframe": false,
+      "reason": "差异值 5.57 < 阈值 500.00",
+      "image_filename": "frame_0047_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 48,
+      "timestamp_ms": 24031,
+      "diff_value": 10090.66333817354,
+      "is_keyframe": true,
+      "reason": "差异值 10090.66 >= 阈值 500.00",
+      "image_filename": "frame_0048_key.png",
+      "vlm_response": " In the game Minecraft, a large, pixelated zombie is standing in front of a house made of stone and wood. The zombie is wearing a helmet and has a green tint to its skin. The house has a door and a window, and there is a path leading up to it. The sky is blue with some clouds, and there is a body of water in the background."
+    },
+    {
+      "frame_idx": 49,
+      "timestamp_ms": 24546,
+      "diff_value": 2548.5423688372603,
+      "is_keyframe": true,
+      "reason": "差异值 2548.54 >= 阈值 500.00",
+      "image_filename": "frame_0049_key.png",
+      "vlm_response": " In the video, a player is exploring a Minecraft world. The player's perspective is from the first-person viewpoint, showing the view from the top of a house. The house has a blue stone wall and a wooden roof. The player's inventory is visible at the bottom of the screen, showing a variety of items including a diamond sword, a diamond pickaxe, and a stack of coal. The player is standing on a dirt path that leads to a wooden dock extending into a body of water. The sky is blue with some clouds, and the landscape is green with trees and grass."
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_ms": 25046,
+      "diff_value": 4147.483429114856,
+      "is_keyframe": true,
+      "reason": "差异值 4147.48 >= 阈值 500.00",
+      "image_filename": "frame_0050_key.png",
+      "vlm_response": " 位于游戏中的一个家庭房间，游戏中的人物和动物在游戏中进行行为。在游戏中，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在游戏中进行行为，一个人在"
+    },
+    {
+      "frame_idx": 51,
+      "timestamp_ms": 25546,
+      "diff_value": 6973.699820367037,
+      "is_keyframe": true,
+      "reason": "差异值 6973.70 >= 阈值 500.00",
+      "image_filename": "frame_0051_key.png",
+      "vlm_response": null
+    }
+  ],
+  "summary": "视频展示了一段角色扮演游戏的冒险旅程。主角是一位粉色头发、身着白粉色服装的角色，她最初在充满生机的奇幻环境中奔跑探索，随后穿过石拱门，踏上了一条被鲜花和自然景观点缀的道路。视频中段，角色进入战斗状态，使用武器与敌人交战，场景中出现了火焰和魔法效果。最后，视频画面切换到了《我的世界》风格的像素化场景，出现了僵尸和房屋，并以玩家在游戏世界中的探索和物品收集作为结尾。整体上，视频主题是关于在丰富多彩的游戏世界中展开的探索与战斗冒险。"
+}

@@ -27,8 +27,8 @@ _KNOWN_VLM_PREFIXES = {
     "opengvlab/internvl",
     "deepseek-ai/deepseek-vl",
     "mistralai/ministral",
-    "vikhyatk/moondream",
-    "zero-point-ai/martha",
+    "microsoft/phi-3",
+    "huggingfacetb/smolvlm",
 }
 
 

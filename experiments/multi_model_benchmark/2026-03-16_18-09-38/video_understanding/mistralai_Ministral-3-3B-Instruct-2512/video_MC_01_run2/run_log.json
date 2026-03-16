@@ -1,0 +1,506 @@
+{
+  "video": "video_MC_01.mp4",
+  "model": "mistralai/Ministral-3-3B-Instruct-2512",
+  "config": {
+    "screenshot_interval_ms": 500,
+    "max_size": 512,
+    "recording_duration_s": 27,
+    "algorithm": "mse",
+    "diff_threshold": 500.0
+  },
+  "stats": {
+    "total_sampled": 54,
+    "total_keyframes": 33,
+    "total_dropped": 23,
+    "duration_s": 27.0
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_ms": 47,
+      "diff_value": null,
+      "is_keyframe": true,
+      "reason": "首帧，自动标记为关键帧",
+      "image_filename": "frame_0000_key.png",
+      "vlm_response": "这张截图展示的是《Minecraft》中的一个开放世界场景，主要是游戏玩家在室外环境中建造与探索的画面。游戏界面底部显示了玩家的装备栏，包括矿石、食物和工具，如铁器、木材、石头等，以及部分熟食和炼金相关物品。场景中可见玩家建造的简易木屋和石墙结构，周围有水域和绿色植被，远处有开阔的天空和山丘景观。玩家的健康和饱腹度指示器显示为满，表明当前状态稳定。"
+    },
+    {
+      "frame_idx": 1,
+      "timestamp_ms": 547,
+      "diff_value": 3005.755963337151,
+      "is_keyframe": true,
+      "reason": "差异值 3005.76 >= 阈值 500.00",
+      "image_filename": "frame_0001_key.png",
+      "vlm_response": "这张截图展示的是《Minecraft》中的一个户外场景。主要关键物体包括一个建造的木质房屋，附近有蓝色的石材墙壁和木质门窗，以及一个屋顶的烛台发出的光源。在户外，有一片水域边缘，周围种植着绿色植被，地面铺设有草坪和砂石路面。\n\n在游戏界面下方的工具栏中显示了各种矿物和建筑材料的图标，包括木材、石头、铁、宝石等，表明玩家可能正在准备或使用这些资源。背景展现了一个开阔的湖泊和远处的森林，天气晴朗，环境呈现出典型的生态平衡景观。"
+    },
+    {
+      "frame_idx": 2,
+      "timestamp_ms": 1047,
+      "diff_value": 5296.767390652269,
+      "is_keyframe": true,
+      "reason": "差异值 5296.77 >= 阈值 500.00",
+      "image_filename": "frame_0002_key.png",
+      "vlm_response": "这张截图来自《Minecraft》游戏，展示的是一个简易的村庄建筑场景。主要关键物体包括木质窗框的房屋、一根带有火源的木柱以及周围的石砖墙和植被。在游戏界面底部的工具栏中显示了玩家手持的物品和储藏库中的物品清单，如木材、石头、红石等，显示玩家正在进行建筑或采集活动。\n\n场景是一个半室外的建筑环境，房屋结构简单，位于绿色植被和石质地面之间，天空部分可见，说明是白天。游戏界面底部的红石和其他材料的数量显示，玩家正在进行资源管理和可能的建筑或装饰活动的准备。"
+    },
+    {
+      "frame_idx": 3,
+      "timestamp_ms": 1563,
+      "diff_value": 4143.4729919966185,
+      "is_keyframe": true,
+      "reason": "差异值 4143.47 >= 阈值 500.00",
+      "image_filename": "frame_0003_key.png",
+      "vlm_response": "这张截图展示的是《Minecraft》中的一个地下室场景。画面中心有一个玩家实体，正在面向一个石制的门，周围环境暗淡，可能处于夜间或封闭空间。周围布置有木质家具、灯源（如煤炭灯），地面铺设有石板和石砖，右侧墙壁覆盖着石块装饰，整体呈现出一个简陋但功能性的基地或仓库设计。游戏界面底部的物品栏显示了部分装备和资源，如木材、石头、食物等，暗示玩家正在进行基础建造或探索活动。"
+    },
+    {
+      "frame_idx": 4,
+      "timestamp_ms": 2047,
+      "diff_value": 1612.6924935918412,
+      "is_keyframe": true,
+      "reason": "差异值 1612.69 >= 阈值 500.00",
+      "image_filename": "frame_0004_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_ms": 2547,
+      "diff_value": 5563.554810209424,
+      "is_keyframe": true,
+      "reason": "差异值 5563.55 >= 阈值 500.00",
+      "image_filename": "frame_0005_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 6,
+      "timestamp_ms": 3047,
+      "diff_value": 32.44219704406632,
+      "is_keyframe": false,
+      "reason": "差异值 32.44 < 阈值 500.00",
+      "image_filename": "frame_0006_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 7,
+      "timestamp_ms": 3547,
+      "diff_value": 2.285601071662304,
+      "is_keyframe": false,
+      "reason": "差异值 2.29 < 阈值 500.00",
+      "image_filename": "frame_0007_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 8,
+      "timestamp_ms": 4063,
+      "diff_value": 5386.855197766688,
+      "is_keyframe": true,
+      "reason": "差异值 5386.86 >= 阈值 500.00",
+      "image_filename": "frame_0008_key.png",
+      "vlm_response": "这张截图展示的是《Minecraft》中的一个室内场景，主要人物是一个玩家角色，身着简单的棕色服装，站在一个宽敞的房间中央，面向前方。房间内部装饰简洁，地面铺设有石板，墙壁和地面部分有石头砌成的装饰，左侧有木制的储物柜和一些放置的木制家具。玩家界面底部显示了各种游戏状态，包括健康、饥饿、经验条以及各类资源和装备的剩余量。"
+    },
+    {
+      "frame_idx": 9,
+      "timestamp_ms": 4547,
+      "diff_value": 1688.230119369001,
+      "is_keyframe": true,
+      "reason": "差异值 1688.23 >= 阈值 500.00",
+      "image_filename": "frame_0009_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_ms": 5063,
+      "diff_value": 865.4570073898342,
+      "is_keyframe": true,
+      "reason": "差异值 865.46 >= 阈值 500.00",
+      "image_filename": "frame_0010_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 11,
+      "timestamp_ms": 5547,
+      "diff_value": 541.7314640597731,
+      "is_keyframe": true,
+      "reason": "差异值 541.73 >= 阈值 500.00",
+      "image_filename": "frame_0011_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 12,
+      "timestamp_ms": 6047,
+      "diff_value": 1684.618075439027,
+      "is_keyframe": true,
+      "reason": "差异值 1684.62 >= 阈值 500.00",
+      "image_filename": "frame_0012_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 13,
+      "timestamp_ms": 6547,
+      "diff_value": 1453.4832245991493,
+      "is_keyframe": true,
+      "reason": "差异值 1453.48 >= 阈值 500.00",
+      "image_filename": "frame_0013_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 14,
+      "timestamp_ms": 7063,
+      "diff_value": 2947.4797682837043,
+      "is_keyframe": true,
+      "reason": "差异值 2947.48 >= 阈值 500.00",
+      "image_filename": "frame_0014_key.png",
+      "vlm_response": "这张图片是《Minecraft》中的一个虚拟建筑场景截图。主要显示了一座复杂的多层建筑结构，包含多种颜色的砖块和装饰，如红色、蓝色、黄色、灰色等，呈现出现代化的建筑风格，部分建筑有“HOTEL”标识。场景呈现出室外的城市或旅游景区环境，底部的地面和路径则采用了多彩的图案铺设，给人一种艺术化的视觉效果。没有明显的人物或动物活动，但可以推测可能是游戏中用户自建或设计的展示区域。"
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_ms": 7563,
+      "diff_value": 2488.9719540794067,
+      "is_keyframe": true,
+      "reason": "差异值 2488.97 >= 阈值 500.00",
+      "image_filename": "frame_0015_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 16,
+      "timestamp_ms": 8047,
+      "diff_value": 3846.611454243019,
+      "is_keyframe": true,
+      "reason": "差异值 3846.61 >= 阈值 500.00",
+      "image_filename": "frame_0016_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 17,
+      "timestamp_ms": 8563,
+      "diff_value": 2339.428867732875,
+      "is_keyframe": true,
+      "reason": "差异值 2339.43 >= 阈值 500.00",
+      "image_filename": "frame_0017_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 18,
+      "timestamp_ms": 9063,
+      "diff_value": 3130.1327375109076,
+      "is_keyframe": true,
+      "reason": "差异值 3130.13 >= 阈值 500.00",
+      "image_filename": "frame_0018_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 19,
+      "timestamp_ms": 9563,
+      "diff_value": 2591.5214059773125,
+      "is_keyframe": true,
+      "reason": "差异值 2591.52 >= 阈值 500.00",
+      "image_filename": "frame_0019_key.png",
+      "vlm_response": "这张截图来自《Minecraft》游戏，主要显示一个生存模式下的场景。中心人物是一名身着粗糙皮衣的玩家，站立在一个简易的石制建筑结构上，表现出警觉或观察的状态。环境为室外，周围有两个高大的黑色石柱，地面覆盖着绿色的草地和沙石路径，暗示可能位于一个开阔但稍微阴暗的地带。该场景可能暗示玩家正在进行探索或防御准备。"
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_ms": 10047,
+      "diff_value": 3008.6884066863004,
+      "is_keyframe": true,
+      "reason": "差异值 3008.69 >= 阈值 500.00",
+      "image_filename": "frame_0020_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 21,
+      "timestamp_ms": 10563,
+      "diff_value": 928.2822009980366,
+      "is_keyframe": true,
+      "reason": "差异值 928.28 >= 阈值 500.00",
+      "image_filename": "frame_0021_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 22,
+      "timestamp_ms": 11047,
+      "diff_value": 3742.1812350021814,
+      "is_keyframe": true,
+      "reason": "差异值 3742.18 >= 阈值 500.00",
+      "image_filename": "frame_0022_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 23,
+      "timestamp_ms": 11563,
+      "diff_value": 4211.323237074607,
+      "is_keyframe": true,
+      "reason": "差异值 4211.32 >= 阈值 500.00",
+      "image_filename": "frame_0023_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 24,
+      "timestamp_ms": 12063,
+      "diff_value": 4291.795743346423,
+      "is_keyframe": true,
+      "reason": "差异值 4291.80 >= 阈值 500.00",
+      "image_filename": "frame_0024_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_ms": 12547,
+      "diff_value": 4419.750940772251,
+      "is_keyframe": true,
+      "reason": "差异值 4419.75 >= 阈值 500.00",
+      "image_filename": "frame_0025_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 26,
+      "timestamp_ms": 13063,
+      "diff_value": 6174.858969377182,
+      "is_keyframe": true,
+      "reason": "差异值 6174.86 >= 阈值 500.00",
+      "image_filename": "frame_0026_key.png",
+      "vlm_response": "这张视频截图显示的是一个模糊且简化的蓝色背景场景，主要集中在左侧边缘的部分。在左侧的垂直条带中，可以观察到一排类似于小型矩形或条纹的图案，这些图案可能代表的是某种信息或数据的显示，类似于屏幕的静态显示或分割线。\n\n由于图像的模糊性，无法明确识别具体的人物或物体，但可以推测这可能是某种技术或界面的截取，如数据流、进度条或界面元素的展示。场景看起来是室内设备的显示屏幕截图，可能是一个技术或系统的界面展示部分信息。"
+    },
+    {
+      "frame_idx": 27,
+      "timestamp_ms": 13563,
+      "diff_value": 7560.296832392561,
+      "is_keyframe": true,
+      "reason": "差异值 7560.30 >= 阈值 500.00",
+      "image_filename": "frame_0027_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 28,
+      "timestamp_ms": 14078,
+      "diff_value": 1677.0195551101658,
+      "is_keyframe": true,
+      "reason": "差异值 1677.02 >= 阈值 500.00",
+      "image_filename": "frame_0028_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 29,
+      "timestamp_ms": 14563,
+      "diff_value": 3709.266974803665,
+      "is_keyframe": true,
+      "reason": "差异值 3709.27 >= 阈值 500.00",
+      "image_filename": "frame_0029_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_ms": 15078,
+      "diff_value": 2277.3539638552575,
+      "is_keyframe": true,
+      "reason": "差异值 2277.35 >= 阈值 500.00",
+      "image_filename": "frame_0030_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 31,
+      "timestamp_ms": 15563,
+      "diff_value": 3598.100098508399,
+      "is_keyframe": true,
+      "reason": "差异值 3598.10 >= 阈值 500.00",
+      "image_filename": "frame_0031_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 32,
+      "timestamp_ms": 16063,
+      "diff_value": 4336.392453711278,
+      "is_keyframe": true,
+      "reason": "差异值 4336.39 >= 阈值 500.00",
+      "image_filename": "frame_0032_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 33,
+      "timestamp_ms": 16563,
+      "diff_value": 3746.0599554837477,
+      "is_keyframe": true,
+      "reason": "差异值 3746.06 >= 阈值 500.00",
+      "image_filename": "frame_0033_key.png",
+      "vlm_response": "这张视频截图展示了一个高度装饰的、几何复杂的室内空间顶部结构，类似于天花板设计。中心呈现出一个对称且富有装饰性的星形图案，由多种材质（如金属、玻璃和可能的光线投射）构成，整体呈现出璀璨的光效。从底部的视角可以观察到两侧黑色轮廓，可能是人类的身影，暗示观察者位于室内特殊设计的观景区域。该设计可能是用于展示艺术、科技或节日装饰的特殊建筑或展览场景。"
+    },
+    {
+      "frame_idx": 34,
+      "timestamp_ms": 17063,
+      "diff_value": 27.257037044611693,
+      "is_keyframe": false,
+      "reason": "差异值 27.26 < 阈值 500.00",
+      "image_filename": "frame_0034_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_ms": 17547,
+      "diff_value": 88.62056882635252,
+      "is_keyframe": false,
+      "reason": "差异值 88.62 < 阈值 500.00",
+      "image_filename": "frame_0035_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 36,
+      "timestamp_ms": 18063,
+      "diff_value": 157.98501070298866,
+      "is_keyframe": false,
+      "reason": "差异值 157.99 < 阈值 500.00",
+      "image_filename": "frame_0036_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 37,
+      "timestamp_ms": 18563,
+      "diff_value": 293.8560788885253,
+      "is_keyframe": false,
+      "reason": "差异值 293.86 < 阈值 500.00",
+      "image_filename": "frame_0037_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 38,
+      "timestamp_ms": 19063,
+      "diff_value": 323.1458060645724,
+      "is_keyframe": false,
+      "reason": "差异值 323.15 < 阈值 500.00",
+      "image_filename": "frame_0038_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 39,
+      "timestamp_ms": 19563,
+      "diff_value": 339.908068485493,
+      "is_keyframe": false,
+      "reason": "差异值 339.91 < 阈值 500.00",
+      "image_filename": "frame_0039_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_ms": 20063,
+      "diff_value": 1291.6074593695462,
+      "is_keyframe": true,
+      "reason": "差异值 1291.61 >= 阈值 500.00",
+      "image_filename": "frame_0040_key.png",
+      "vlm_response": "这张视频截图中展示了一种高科技或虚幻的机械生物体，类似于巨型蝙蝠或昆虫的设计，呈现出复杂的结构。其前端显示出强烈的光线辐射，可能代表能量输出或激活状态，同时尾部附近有明显的火焰或热能排放，暗示着高能反应或动力系统活跃。场景呈现出一种模糊的、深空或高科技环境，可能是虚拟或科幻背景下的特殊效果展示。整体来看，该机械生物体正处于高速运动或能量释放的动态状态。"
+    },
+    {
+      "frame_idx": 41,
+      "timestamp_ms": 20563,
+      "diff_value": 156.6665388443499,
+      "is_keyframe": false,
+      "reason": "差异值 156.67 < 阈值 500.00",
+      "image_filename": "frame_0041_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 42,
+      "timestamp_ms": 21063,
+      "diff_value": 128.60369628054102,
+      "is_keyframe": false,
+      "reason": "差异值 128.60 < 阈值 500.00",
+      "image_filename": "frame_0042_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 43,
+      "timestamp_ms": 21563,
+      "diff_value": 163.11378231348166,
+      "is_keyframe": false,
+      "reason": "差异值 163.11 < 阈值 500.00",
+      "image_filename": "frame_0043_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 44,
+      "timestamp_ms": 22063,
+      "diff_value": 175.70630862783594,
+      "is_keyframe": false,
+      "reason": "差异值 175.71 < 阈值 500.00",
+      "image_filename": "frame_0044_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_ms": 22563,
+      "diff_value": 120.62904770669721,
+      "is_keyframe": false,
+      "reason": "差异值 120.63 < 阈值 500.00",
+      "image_filename": "frame_0045_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 46,
+      "timestamp_ms": 23063,
+      "diff_value": 134.10139888743456,
+      "is_keyframe": false,
+      "reason": "差异值 134.10 < 阈值 500.00",
+      "image_filename": "frame_0046_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 47,
+      "timestamp_ms": 23563,
+      "diff_value": 130.24503367691972,
+      "is_keyframe": false,
+      "reason": "差异值 130.25 < 阈值 500.00",
+      "image_filename": "frame_0047_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 48,
+      "timestamp_ms": 24063,
+      "diff_value": 154.4468361420157,
+      "is_keyframe": false,
+      "reason": "差异值 154.45 < 阈值 500.00",
+      "image_filename": "frame_0048_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 49,
+      "timestamp_ms": 24563,
+      "diff_value": 147.84906399978186,
+      "is_keyframe": false,
+      "reason": "差异值 147.85 < 阈值 500.00",
+      "image_filename": "frame_0049_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_ms": 25063,
+      "diff_value": 147.84906399978186,
+      "is_keyframe": false,
+      "reason": "差异值 147.85 < 阈值 500.00",
+      "image_filename": "frame_0050_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 51,
+      "timestamp_ms": 25563,
+      "diff_value": 147.84906399978186,
+      "is_keyframe": false,
+      "reason": "差异值 147.85 < 阈值 500.00",
+      "image_filename": "frame_0051_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 52,
+      "timestamp_ms": 26063,
+      "diff_value": 147.84906399978186,
+      "is_keyframe": false,
+      "reason": "差异值 147.85 < 阈值 500.00",
+      "image_filename": "frame_0052_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 53,
+      "timestamp_ms": 26578,
+      "diff_value": 147.84906399978186,
+      "is_keyframe": false,
+      "reason": "差异值 147.85 < 阈值 500.00",
+      "image_filename": "frame_0053_skip.png",
+      "vlm_response": null
+    }
+  ],
+  "summary": "这段视频展示了《Minecraft》游戏中一段从建造生存到探索展示的进程。视频开头，玩家在白天于户外环境中收集资源，建造了简易的木屋和村庄建筑，并进入地下室进行活动，核心是基础的生存与建造。随后，画面转向一个玩家自建的、装饰华丽的现代化酒店建筑群，表明重点从生存转向了创造与展示。视频后半部分出现了风格迥异的高科技场景和机械生物，暗示内容可能扩展至模组或特殊设计下的探索与冒险。整体而言，视频主题围绕《Minecraft》游戏的核心玩法，即从资源采集、基地建造到创造性构建和多元世界探索的完整体验。"
+}

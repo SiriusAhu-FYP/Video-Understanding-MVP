@@ -1,0 +1,497 @@
+{
+  "video": "video_GenshinImpact_01.mp4",
+  "model": "mistralai/Ministral-3-3B-Instruct-2512",
+  "config": {
+    "screenshot_interval_ms": 500,
+    "max_size": 512,
+    "recording_duration_s": 26,
+    "algorithm": "mse",
+    "diff_threshold": 500.0
+  },
+  "stats": {
+    "total_sampled": 53,
+    "total_keyframes": 44,
+    "total_dropped": 34,
+    "duration_s": 26.0
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_ms": 46,
+      "diff_value": null,
+      "is_keyframe": true,
+      "reason": "首帧，自动标记为关键帧",
+      "image_filename": "frame_0000_key.png",
+      "vlm_response": "这张截图展示的是一款地图游戏的屏幕界面，主要展示的是一个分布式地理区域的地图。地图上标记了多个地点标志，包括山脉、高地、洞穴以及特定的地标（如“明月山地”标记为第3层区域），这些标记附有相应的名称和可能的难度或区域编号。\n\n在界面顶部，显示了游戏进度条、当前等级和经验值（186/200），以及当前所处的层级（第12层，第3区）。游戏界面右侧底部文字“鸢月有处地方”暗示了游戏可能的主题或区域名称，暗示着需要探索的地理或故事背景。没有直接的人物或动物，但游戏设计强调探索与挑战的环境。"
+    },
+    {
+      "frame_idx": 1,
+      "timestamp_ms": 531,
+      "diff_value": 2967.625327225131,
+      "is_keyframe": true,
+      "reason": "差异值 2967.63 >= 阈值 500.00",
+      "image_filename": "frame_0001_key.png",
+      "vlm_response": "这张截图展示的是一款地图类游戏的屏幕截图，主要是一个地理探索区域的地图界面。地图上标记了不同的地点名称，如“沉玉谷上谷”、“明宵山地”和“琴水源”，并显示了地形分布，包括山脉、河流和森林区域。游戏界面上方显示了当前的进度与任务状态，如“第12层第3区域”，以及玩家的生命值和其他相关数值（186/200）。游戏正在引导玩家在特定地图区域内完成探索或挑战任务。"
+    },
+    {
+      "frame_idx": 2,
+      "timestamp_ms": 1031,
+      "diff_value": 3187.708841214005,
+      "is_keyframe": true,
+      "reason": "差异值 3187.71 >= 阈值 500.00",
+      "image_filename": "frame_0002_key.png",
+      "vlm_response": "这张截图展示的是一款地图类游戏的屏幕截图，主要展示的是一个分布式地理区域的详细地图。地图上布满了多个标记点，这些标记点大多以蓝色和黄色的符号标注，分布在森林、水域以及山地之间，显示了不同的地点和可能的任务位置。在右上角的界面显示了游戏进度和当前任务的编号（第12阶段第3个任务），以及玩家的当前生存指标（如186/200）。游戏界面提示“璃月有处地方”，暗示可能需要前往特定地点完成任务。"
+    },
+    {
+      "frame_idx": 3,
+      "timestamp_ms": 1531,
+      "diff_value": 3886.6218947698517,
+      "is_keyframe": true,
+      "reason": "差异值 3886.62 >= 阈值 500.00",
+      "image_filename": "frame_0003_key.png",
+      "vlm_response": "这张截图展示的是一款游戏地图视图，主要显示的是一个地形复杂的岛屿区域。地图上标示了不同的高度和地貌，包括山脉、丘陵以及部分水域，中心区域有明显的高地和洞穴结构。游戏界面上方的数字“186/200”和“第12层 第3回合”表明这是一个多回合的地图探索或战斗场景，玩家可能正在进行地图探索或战斗准备阶段。环境呈现出外景地形，且有特定的地图标记和进度条，暗示游戏中可能涉及到地图探索与战斗的交互。"
+    },
+    {
+      "frame_idx": 4,
+      "timestamp_ms": 2046,
+      "diff_value": 121.56918425501745,
+      "is_keyframe": false,
+      "reason": "差异值 121.57 < 阈值 500.00",
+      "image_filename": "frame_0004_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_ms": 2531,
+      "diff_value": 2492.9402439190662,
+      "is_keyframe": true,
+      "reason": "差异值 2492.94 >= 阈值 500.00",
+      "image_filename": "frame_0005_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 6,
+      "timestamp_ms": 3031,
+      "diff_value": 253.88791857547994,
+      "is_keyframe": false,
+      "reason": "差异值 253.89 < 阈值 500.00",
+      "image_filename": "frame_0006_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 7,
+      "timestamp_ms": 3531,
+      "diff_value": 2602.382775005454,
+      "is_keyframe": true,
+      "reason": "差异值 2602.38 >= 阈值 500.00",
+      "image_filename": "frame_0007_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 8,
+      "timestamp_ms": 4031,
+      "diff_value": 30.892942844677137,
+      "is_keyframe": false,
+      "reason": "差异值 30.89 < 阈值 500.00",
+      "image_filename": "frame_0008_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 9,
+      "timestamp_ms": 4531,
+      "diff_value": 77.61662167321117,
+      "is_keyframe": false,
+      "reason": "差异值 77.62 < 阈值 500.00",
+      "image_filename": "frame_0009_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_ms": 5031,
+      "diff_value": 6911.092741055846,
+      "is_keyframe": true,
+      "reason": "差异值 6911.09 >= 阈值 500.00",
+      "image_filename": "frame_0010_key.png",
+      "vlm_response": "这张视频截图展示的是一个外景式游戏画面，主要人物是一位长发少女，她身穿类似农耕或野外生存装备，配备有鹿角装饰，手持两个小型动物玩具。她站在一个石质、带有古朴树木和灯火装饰的开阔地带，似乎处于一个任务提示区域，周围环境充满自然元素，如岩石、树木和点缀的火把。\n\n画面中显示的文字提示（若翻译为“如果你是新手，你应该做好完成这里的任务”）暗示游戏正在引导玩家进入一个新的任务区域。整体场景给人一种乡村或森林村庄的氛围，适合角色进行探索或完成特定任务。"
+    },
+    {
+      "frame_idx": 11,
+      "timestamp_ms": 5531,
+      "diff_value": 1515.1303685373036,
+      "is_keyframe": true,
+      "reason": "差异值 1515.13 >= 阈值 500.00",
+      "image_filename": "frame_0011_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 12,
+      "timestamp_ms": 6046,
+      "diff_value": 1470.127963773451,
+      "is_keyframe": true,
+      "reason": "差异值 1470.13 >= 阈值 500.00",
+      "image_filename": "frame_0012_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 13,
+      "timestamp_ms": 6531,
+      "diff_value": 1073.5135457569809,
+      "is_keyframe": true,
+      "reason": "差异值 1073.51 >= 阈值 500.00",
+      "image_filename": "frame_0013_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 14,
+      "timestamp_ms": 7031,
+      "diff_value": 1230.9081928992146,
+      "is_keyframe": true,
+      "reason": "差异值 1230.91 >= 阈值 500.00",
+      "image_filename": "frame_0014_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_ms": 7531,
+      "diff_value": 1785.864276559773,
+      "is_keyframe": true,
+      "reason": "差异值 1785.86 >= 阈值 500.00",
+      "image_filename": "frame_0015_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 16,
+      "timestamp_ms": 8031,
+      "diff_value": 1444.0881275223603,
+      "is_keyframe": true,
+      "reason": "差异值 1444.09 >= 阈值 500.00",
+      "image_filename": "frame_0016_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 17,
+      "timestamp_ms": 8531,
+      "diff_value": 1368.7025284958552,
+      "is_keyframe": true,
+      "reason": "差异值 1368.70 >= 阈值 500.00",
+      "image_filename": "frame_0017_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 18,
+      "timestamp_ms": 9031,
+      "diff_value": 1798.2830582597078,
+      "is_keyframe": true,
+      "reason": "差异值 1798.28 >= 阈值 500.00",
+      "image_filename": "frame_0018_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 19,
+      "timestamp_ms": 9531,
+      "diff_value": 2753.171379049411,
+      "is_keyframe": true,
+      "reason": "差异值 2753.17 >= 阈值 500.00",
+      "image_filename": "frame_0019_key.png",
+      "vlm_response": "这张视频截图展示的是一个外景游戏画面，中心人物是一个设计为兽人形象的角色，坐姿稍微弯曲，表情显得有些沮丧或困惑。周围环境是一个开阔的水域边缘，两侧有石质建筑和植被，背景处有闪耀的蓝色光芒和悬浮的火焰物体，暗示可能存在某种魔法或能量活动。\n\n在屏幕底部的对话框中显示了中文提示文字，提示角色可能面临的挑战或能力不足。游戏界面的右侧小图标显示了角色的当前状态和可能的操作选项，如攻击、使用物品等。"
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_ms": 10031,
+      "diff_value": 3356.8427717332024,
+      "is_keyframe": true,
+      "reason": "差异值 3356.84 >= 阈值 500.00",
+      "image_filename": "frame_0020_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 21,
+      "timestamp_ms": 10531,
+      "diff_value": 3967.292046725022,
+      "is_keyframe": true,
+      "reason": "差异值 3967.29 >= 阈值 500.00",
+      "image_filename": "frame_0021_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 22,
+      "timestamp_ms": 11031,
+      "diff_value": 4593.401733611475,
+      "is_keyframe": true,
+      "reason": "差异值 4593.40 >= 阈值 500.00",
+      "image_filename": "frame_0022_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 23,
+      "timestamp_ms": 11531,
+      "diff_value": 3300.3670716077663,
+      "is_keyframe": true,
+      "reason": "差异值 3300.37 >= 阈值 500.00",
+      "image_filename": "frame_0023_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 24,
+      "timestamp_ms": 12031,
+      "diff_value": 3384.478515625,
+      "is_keyframe": true,
+      "reason": "差异值 3384.48 >= 阈值 500.00",
+      "image_filename": "frame_0024_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_ms": 12531,
+      "diff_value": 2628.550196675938,
+      "is_keyframe": true,
+      "reason": "差异值 2628.55 >= 阈值 500.00",
+      "image_filename": "frame_0025_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 26,
+      "timestamp_ms": 13031,
+      "diff_value": 3674.4051950398125,
+      "is_keyframe": true,
+      "reason": "差异值 3674.41 >= 阈值 500.00",
+      "image_filename": "frame_0026_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 27,
+      "timestamp_ms": 13531,
+      "diff_value": 3126.8845662221856,
+      "is_keyframe": true,
+      "reason": "差异值 3126.88 >= 阈值 500.00",
+      "image_filename": "frame_0027_key.png",
+      "vlm_response": "这张视频截图展示的是一款游戏场景，主要人物是一位设计为可爱宠物化角色，身着轻便装备，站立在一个高台或柱子前方。角色似乎准备或正在与周围环境互动，面前有一个启动按钮（启动按钮文字为“启动”），提示可能需要触发某个事件或任务。\n\n场景外观呈现出外观类似于地下或山洞的环境，背景有火焰和岩石结构，周围环境充满了蓝色和黄色的光影，显示出一个充满魔法或奇幻元素的开放区域。游戏界面底部显示了游戏进度条和相关的游戏状态信息，如经验值和等级。"
+    },
+    {
+      "frame_idx": 28,
+      "timestamp_ms": 14031,
+      "diff_value": 2066.050058627836,
+      "is_keyframe": true,
+      "reason": "差异值 2066.05 >= 阈值 500.00",
+      "image_filename": "frame_0028_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 29,
+      "timestamp_ms": 14531,
+      "diff_value": 6376.126315717714,
+      "is_keyframe": true,
+      "reason": "差异值 6376.13 >= 阈值 500.00",
+      "image_filename": "frame_0029_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_ms": 15031,
+      "diff_value": 3093.170767206588,
+      "is_keyframe": true,
+      "reason": "差异值 3093.17 >= 阈值 500.00",
+      "image_filename": "frame_0030_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 31,
+      "timestamp_ms": 15531,
+      "diff_value": 2333.8596153059557,
+      "is_keyframe": true,
+      "reason": "差异值 2333.86 >= 阈值 500.00",
+      "image_filename": "frame_0031_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 32,
+      "timestamp_ms": 16031,
+      "diff_value": 3073.822611597404,
+      "is_keyframe": true,
+      "reason": "差异值 3073.82 >= 阈值 500.00",
+      "image_filename": "frame_0032_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 33,
+      "timestamp_ms": 16546,
+      "diff_value": 7843.196771378709,
+      "is_keyframe": true,
+      "reason": "差异值 7843.20 >= 阈值 500.00",
+      "image_filename": "frame_0033_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 34,
+      "timestamp_ms": 17046,
+      "diff_value": 10256.142204883836,
+      "is_keyframe": true,
+      "reason": "差异值 10256.14 >= 阈值 500.00",
+      "image_filename": "frame_0034_key.png",
+      "vlm_response": "这张视频截图展示的是一款游戏的战斗场景，主要涉及两个机械化角色。左侧的机器人正在进行某种强化或升级操作，右侧的机器人则处于激烈的攻击状态，周围充满了火焰和能量弹射的效果。场景呈现出充满电光火花的战斗环境，显示出高度动态的战斗氛围，数值“19185”可能代表当前的攻击力或能量值。\n\n在底部的UI界面中，显示了玩家当前的能力值“5.2”，以及一条鼓励性的文字提示“即使你可能还无法应对”。"
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_ms": 17531,
+      "diff_value": 6214.303866028577,
+      "is_keyframe": true,
+      "reason": "差异值 6214.30 >= 阈值 500.00",
+      "image_filename": "frame_0035_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 36,
+      "timestamp_ms": 18046,
+      "diff_value": 10879.401961987347,
+      "is_keyframe": true,
+      "reason": "差异值 10879.40 >= 阈值 500.00",
+      "image_filename": "frame_0036_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 37,
+      "timestamp_ms": 18546,
+      "diff_value": 4949.77507021706,
+      "is_keyframe": true,
+      "reason": "差异值 4949.78 >= 阈值 500.00",
+      "image_filename": "frame_0037_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 38,
+      "timestamp_ms": 19046,
+      "diff_value": 8417.158966650306,
+      "is_keyframe": true,
+      "reason": "差异值 8417.16 >= 阈值 500.00",
+      "image_filename": "frame_0038_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 39,
+      "timestamp_ms": 19546,
+      "diff_value": 6482.385556419066,
+      "is_keyframe": true,
+      "reason": "差异值 6482.39 >= 阈值 500.00",
+      "image_filename": "frame_0039_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_ms": 20046,
+      "diff_value": 3513.2639224067407,
+      "is_keyframe": true,
+      "reason": "差异值 3513.26 >= 阈值 500.00",
+      "image_filename": "frame_0040_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 41,
+      "timestamp_ms": 20546,
+      "diff_value": 3328.7288667102966,
+      "is_keyframe": true,
+      "reason": "差异值 3328.73 >= 阈值 500.00",
+      "image_filename": "frame_0041_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 42,
+      "timestamp_ms": 21046,
+      "diff_value": 2834.5305444208116,
+      "is_keyframe": true,
+      "reason": "差异值 2834.53 >= 阈值 500.00",
+      "image_filename": "frame_0042_key.png",
+      "vlm_response": "这张截图展示的是一款动作类游戏的画面，主要人物是一位穿着红色长袍和头饰的角色，正在操控强大的火焰能量技能。角色左手持有武器，向前发射出蓝色的能量束，同时周围有多个黄色能量球在空中爆发出火焰攻击。场景呈现出一个充满动感的外部环境，背景呈现出深绿色的森林或山区，并有部分闪烁的星辉和火花效果，暗示着战斗中的高能量爆发。游戏界面显示对手的位置和剩余生命值，同时有即时的攻击反馈和动态的能量碰撞效果。"
+    },
+    {
+      "frame_idx": 43,
+      "timestamp_ms": 21546,
+      "diff_value": 1.6895230011998255,
+      "is_keyframe": false,
+      "reason": "差异值 1.69 < 阈值 500.00",
+      "image_filename": "frame_0043_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 44,
+      "timestamp_ms": 22046,
+      "diff_value": 2.2175467659249564,
+      "is_keyframe": false,
+      "reason": "差异值 2.22 < 阈值 500.00",
+      "image_filename": "frame_0044_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_ms": 22546,
+      "diff_value": 2.922899282831588,
+      "is_keyframe": false,
+      "reason": "差异值 2.92 < 阈值 500.00",
+      "image_filename": "frame_0045_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 46,
+      "timestamp_ms": 23046,
+      "diff_value": 3.0004226657940665,
+      "is_keyframe": false,
+      "reason": "差异值 3.00 < 阈值 500.00",
+      "image_filename": "frame_0046_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 47,
+      "timestamp_ms": 23546,
+      "diff_value": 5.552874127399651,
+      "is_keyframe": false,
+      "reason": "差异值 5.55 < 阈值 500.00",
+      "image_filename": "frame_0047_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 48,
+      "timestamp_ms": 24077,
+      "diff_value": 9375.834224680955,
+      "is_keyframe": true,
+      "reason": "差异值 9375.83 >= 阈值 500.00",
+      "image_filename": "frame_0048_key.png",
+      "vlm_response": "这张截图展示的是《Minecraft》中的一个户外场景，主要关注的是一个简易的木屋建筑。户外环境包含一个湖泊，周围有绿色植被和开阔的草地，屋旁的墙壁和门窗采用了混合的木材和石块材质。在玩家的界面下方显示的工具栏中，部分物品如红石、木材、石头等已被收集，并显示了相关的储存量和装备状态。屋内的灯光通过燃烧的煤块提供照明，暗示玩家可能正在进行基础建造或探索活动。"
+    },
+    {
+      "frame_idx": 49,
+      "timestamp_ms": 24561,
+      "diff_value": 2604.306932059882,
+      "is_keyframe": true,
+      "reason": "差异值 2604.31 >= 阈值 500.00",
+      "image_filename": "frame_0049_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_ms": 25061,
+      "diff_value": 6181.757152936845,
+      "is_keyframe": true,
+      "reason": "差异值 6181.76 >= 阈值 500.00",
+      "image_filename": "frame_0050_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 51,
+      "timestamp_ms": 25561,
+      "diff_value": 1934.8274313508944,
+      "is_keyframe": true,
+      "reason": "差异值 1934.83 >= 阈值 500.00",
+      "image_filename": "frame_0051_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 52,
+      "timestamp_ms": 26061,
+      "diff_value": 6025.165373104821,
+      "is_keyframe": true,
+      "reason": "差异值 6025.17 >= 阈值 500.00",
+      "image_filename": "frame_0052_key.png",
+      "vlm_response": null
+    }
+  ],
+  "summary": "视频开始于一个地图探索界面，玩家在“璃月”或类似区域进行多层级的任务导航与地形熟悉。随后，画面转向角色在自然村庄环境中接受任务引导，并遭遇挑战，角色表现出困惑与能力不足。视频中段，角色在奇幻洞穴中准备启动机关，并很快进入激烈的战斗场景，展示了机械化角色与火焰魔法师的高能量对抗。最后，画面切换至《Minecraft》中的平静建造时刻，玩家在湖边木屋进行建造与收集。整体视频主题围绕从探索引导、遭遇挑战到激烈战斗，最终归于创造性建设的游戏进程循环，展现了游戏内容从策略规划到动作体验的多样性。"
+}

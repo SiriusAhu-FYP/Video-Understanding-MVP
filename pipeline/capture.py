@@ -165,6 +165,9 @@ def compute_diff(
     method: str = "mse",
 ) -> float:
     """根据配置的算法计算帧差异值。"""
+    if frame_a.shape != frame_b.shape:
+        h, w = frame_a.shape[:2]
+        frame_b = cv2.resize(frame_b, (w, h))
     if method == "mse":
         return compute_mse(frame_a, frame_b)
     elif method == "ssim":

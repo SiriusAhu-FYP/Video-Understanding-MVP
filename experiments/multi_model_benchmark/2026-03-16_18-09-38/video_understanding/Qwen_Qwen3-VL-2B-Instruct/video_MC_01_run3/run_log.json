@@ -1,0 +1,515 @@
+{
+  "video": "video_MC_01.mp4",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "config": {
+    "screenshot_interval_ms": 500,
+    "max_size": 512,
+    "recording_duration_s": 27,
+    "algorithm": "mse",
+    "diff_threshold": 500.0
+  },
+  "stats": {
+    "total_sampled": 55,
+    "total_keyframes": 31,
+    "total_dropped": 4,
+    "duration_s": 27.0
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_ms": 46,
+      "diff_value": null,
+      "is_keyframe": true,
+      "reason": "首帧，自动标记为关键帧",
+      "image_filename": "frame_0000_key.png",
+      "vlm_response": "在《我的世界》的像素风格画面中，一个穿着白色盔甲、红色眼睛的玩家角色站在一条通往村庄的小路上。村庄由蓝色的石块和木头搭建的房屋构成，旁边是一片水域和远处的山丘。画面下方显示了玩家的健康条、生命值和物品栏。"
+    },
+    {
+      "frame_idx": 1,
+      "timestamp_ms": 546,
+      "diff_value": 2946.886473331152,
+      "is_keyframe": true,
+      "reason": "差异值 2946.89 >= 阈值 500.00",
+      "image_filename": "frame_0001_key.png",
+      "vlm_response": "这是一张《我的世界》游戏的截图，视角位于玩家的视角。画面右侧是一座由石块和木头建造的房屋，墙上挂着两盏火把。房屋前是一条通往湖边的小路，路旁有绿色的草丛。远处是广阔的湖泊和连绵的山丘，天空晴朗，有白云。"
+    },
+    {
+      "frame_idx": 2,
+      "timestamp_ms": 1046,
+      "diff_value": 5428.0566184691315,
+      "is_keyframe": true,
+      "reason": "差异值 5428.06 >= 阈值 500.00",
+      "image_filename": "frame_0002_key.png",
+      "vlm_response": "这是一张《我的世界》游戏的截图，画面中显示了玩家视角下的一个像素风格的建筑。建筑外墙由蓝色的方块构成，窗户是棕色的木制格栅，墙上挂着一盏点燃的火把。建筑旁有绿色的草丛和沙地，远处可以看到水域和另一座小屋。画面右下角有玩家的物品栏和生命值等UI元素。"
+    },
+    {
+      "frame_idx": 3,
+      "timestamp_ms": 1546,
+      "diff_value": 3952.6377174683685,
+      "is_keyframe": true,
+      "reason": "差异值 3952.64 >= 阈值 500.00",
+      "image_filename": "frame_0003_key.png",
+      "vlm_response": "在《我的世界》的室内场景中，一个玩家角色站在由石块和木板搭建的房间内，旁边有一个发光的火把。玩家角色的视角正对着房间的墙壁和窗户，画面下方显示了玩家的健康值、生命值和物品栏。"
+    },
+    {
+      "frame_idx": 4,
+      "timestamp_ms": 2046,
+      "diff_value": 5944.5821658895065,
+      "is_keyframe": true,
+      "reason": "差异值 5944.58 >= 阈值 500.00",
+      "image_filename": "frame_0004_key.png",
+      "vlm_response": "这是一个《我的世界》游戏的交易界面截图。玩家的背包里有64个绿色的方块（可能是某种资源或物品），正在与一个方块进行交易。界面显示了玩家的物品栏，其中包含各种工具和材料。背景是游戏中的一个地下洞穴或建筑内部。"
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_ms": 2531,
+      "diff_value": 105.48003585842059,
+      "is_keyframe": false,
+      "reason": "差异值 105.48 < 阈值 500.00",
+      "image_filename": "frame_0005_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 6,
+      "timestamp_ms": 3046,
+      "diff_value": 105.26842004799302,
+      "is_keyframe": false,
+      "reason": "差异值 105.27 < 阈值 500.00",
+      "image_filename": "frame_0006_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 7,
+      "timestamp_ms": 3546,
+      "diff_value": 105.31251363438045,
+      "is_keyframe": false,
+      "reason": "差异值 105.31 < 阈值 500.00",
+      "image_filename": "frame_0007_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 8,
+      "timestamp_ms": 4046,
+      "diff_value": 5549.390268801811,
+      "is_keyframe": true,
+      "reason": "差异值 5549.39 >= 阈值 500.00",
+      "image_filename": "frame_0008_key.png",
+      "vlm_response": "这是一张《我的世界》游戏的截图，画面中一个玩家角色站在一个由灰色石块和木板搭建的室内空间里。角色身穿棕色衣物，头戴棕色帽子，正面对着镜头。角色的左前方有一支燃烧的火把，右后方有一个窗户，窗外是雪地。画面下方是游戏的用户界面，显示了角色的生命值、饥饿值和物品栏。"
+    },
+    {
+      "frame_idx": 9,
+      "timestamp_ms": 4546,
+      "diff_value": 2501.7533659876744,
+      "is_keyframe": true,
+      "reason": "差异值 2501.75 >= 阈值 500.00",
+      "image_filename": "frame_0009_key.png",
+      "vlm_response": "画面中央是一个由像素构成的、具有对称星形结构的建筑或装置，其核心部分呈方形，向外延伸出六个尖锐的臂状结构，每个臂上都带有发光的细节。整个结构在深色、带有烟雾感的背景中显得格外突出，呈现出一种未来感或科幻风格的视觉效果。"
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_ms": 5046,
+      "diff_value": 3062.2532466868456,
+      "is_keyframe": true,
+      "reason": "差异值 3062.25 >= 阈值 500.00",
+      "image_filename": "frame_0010_key.png",
+      "vlm_response": "这是一张从低角度仰视拍摄的室内场景，画面中是建筑的天花板或高处结构。天花板由多层白色方块构成，上面有数条发光的装饰带，发出温暖的橙黄色光芒，形成类似灯带的图案。在画面的右下角，可以看到一个蓝色的方块状物体，可能是某种建筑结构或装饰。整个场景光线较暗，但天花板的灯光非常突出，营造出一种现代、科技感十足的氛围。"
+    },
+    {
+      "frame_idx": 11,
+      "timestamp_ms": 5546,
+      "diff_value": 4606.328189763307,
+      "is_keyframe": true,
+      "reason": "差异值 4606.33 >= 阈值 500.00",
+      "image_filename": "frame_0011_key.png",
+      "vlm_response": "画面展示了一个巨大的、由多边形结构组成的发光装置，它从一个类似建筑的基座向上延伸，发出强烈的白光。整个装置在黑暗的天空背景下显得格外醒目，其结构复杂，呈现出一种对称的星形或十字形。"
+    },
+    {
+      "frame_idx": 12,
+      "timestamp_ms": 6046,
+      "diff_value": 0.0,
+      "is_keyframe": false,
+      "reason": "差异值 0.00 < 阈值 500.00",
+      "image_filename": "frame_0012_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 13,
+      "timestamp_ms": 6546,
+      "diff_value": 0.0,
+      "is_keyframe": false,
+      "reason": "差异值 0.00 < 阈值 500.00",
+      "image_filename": "frame_0013_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 14,
+      "timestamp_ms": 7046,
+      "diff_value": 0.0,
+      "is_keyframe": false,
+      "reason": "差异值 0.00 < 阈值 500.00",
+      "image_filename": "frame_0014_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_ms": 7546,
+      "diff_value": 0.0,
+      "is_keyframe": false,
+      "reason": "差异值 0.00 < 阈值 500.00",
+      "image_filename": "frame_0015_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 16,
+      "timestamp_ms": 8046,
+      "diff_value": 0.0,
+      "is_keyframe": false,
+      "reason": "差异值 0.00 < 阈值 500.00",
+      "image_filename": "frame_0016_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 17,
+      "timestamp_ms": 8546,
+      "diff_value": 0.0,
+      "is_keyframe": false,
+      "reason": "差异值 0.00 < 阈值 500.00",
+      "image_filename": "frame_0017_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 18,
+      "timestamp_ms": 9046,
+      "diff_value": 2.3080824607329844,
+      "is_keyframe": false,
+      "reason": "差异值 2.31 < 阈值 500.00",
+      "image_filename": "frame_0018_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 19,
+      "timestamp_ms": 9562,
+      "diff_value": 5.651726794284468,
+      "is_keyframe": false,
+      "reason": "差异值 5.65 < 阈值 500.00",
+      "image_filename": "frame_0019_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_ms": 10046,
+      "diff_value": 5.651726794284468,
+      "is_keyframe": false,
+      "reason": "差异值 5.65 < 阈值 500.00",
+      "image_filename": "frame_0020_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 21,
+      "timestamp_ms": 10546,
+      "diff_value": 5.651726794284468,
+      "is_keyframe": false,
+      "reason": "差异值 5.65 < 阈值 500.00",
+      "image_filename": "frame_0021_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 22,
+      "timestamp_ms": 11046,
+      "diff_value": 5.651726794284468,
+      "is_keyframe": false,
+      "reason": "差异值 5.65 < 阈值 500.00",
+      "image_filename": "frame_0022_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 23,
+      "timestamp_ms": 11546,
+      "diff_value": 5.651726794284468,
+      "is_keyframe": false,
+      "reason": "差异值 5.65 < 阈值 500.00",
+      "image_filename": "frame_0023_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 24,
+      "timestamp_ms": 12046,
+      "diff_value": 5.651726794284468,
+      "is_keyframe": false,
+      "reason": "差异值 5.65 < 阈值 500.00",
+      "image_filename": "frame_0024_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_ms": 12546,
+      "diff_value": 5.651726794284468,
+      "is_keyframe": false,
+      "reason": "差异值 5.65 < 阈值 500.00",
+      "image_filename": "frame_0025_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 26,
+      "timestamp_ms": 13046,
+      "diff_value": 5.651726794284468,
+      "is_keyframe": false,
+      "reason": "差异值 5.65 < 阈值 500.00",
+      "image_filename": "frame_0026_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 27,
+      "timestamp_ms": 13546,
+      "diff_value": 66.2502437145506,
+      "is_keyframe": false,
+      "reason": "差异值 66.25 < 阈值 500.00",
+      "image_filename": "frame_0027_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 28,
+      "timestamp_ms": 14046,
+      "diff_value": 80.44883869164485,
+      "is_keyframe": false,
+      "reason": "差异值 80.45 < 阈值 500.00",
+      "image_filename": "frame_0028_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 29,
+      "timestamp_ms": 14546,
+      "diff_value": 88.83316290357766,
+      "is_keyframe": false,
+      "reason": "差异值 88.83 < 阈值 500.00",
+      "image_filename": "frame_0029_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_ms": 15046,
+      "diff_value": 8406.781464741493,
+      "is_keyframe": true,
+      "reason": "差异值 8406.78 >= 阈值 500.00",
+      "image_filename": "frame_0030_key.png",
+      "vlm_response": "这是一张《我的世界》游戏的截图，视角为第一人称。画面中，玩家角色站在一座由方块构成的木屋旁，屋前是一条通往湖边的小路。湖面平静，远处是连绵的山丘和天空中的云朵。玩家角色的视角正对着湖边，似乎正准备或正在走向湖边。"
+    },
+    {
+      "frame_idx": 31,
+      "timestamp_ms": 15546,
+      "diff_value": 3449.6551916312173,
+      "is_keyframe": true,
+      "reason": "差异值 3449.66 >= 阈值 500.00",
+      "image_filename": "frame_0031_key.png",
+      "vlm_response": "这是一张《我的世界》游戏的截图，视角位于玩家角色的视角。画面中，玩家正站在一座由石块和木头建造的房屋前，旁边是一条通往湖边的小路。远处是开阔的水域和连绵的山丘，天空晴朗。画面下方是玩家的用户界面，显示了生命值、饥饿值、物品栏和快捷栏。"
+    },
+    {
+      "frame_idx": 32,
+      "timestamp_ms": 16046,
+      "diff_value": 6969.334485438481,
+      "is_keyframe": true,
+      "reason": "差异值 6969.33 >= 阈值 500.00",
+      "image_filename": "frame_0032_key.png",
+      "vlm_response": "这是一张《我的世界》游戏的视频截图，视角位于玩家的视角内。画面中，玩家正站在一个由木板和石块构成的建筑内部，透过木板的缝隙可以看到外面的水体和绿色植物。玩家的界面显示其生命值为68，手持工具，似乎正在探索或准备进行下一步操作。"
+    },
+    {
+      "frame_idx": 33,
+      "timestamp_ms": 16546,
+      "diff_value": 1873.0957712969023,
+      "is_keyframe": true,
+      "reason": "差异值 1873.10 >= 阈值 500.00",
+      "image_filename": "frame_0033_key.png",
+      "vlm_response": "这是一张《我的世界》游戏的视频截图，视角位于玩家角色的视角内。画面中央是一个穿着棕色衣服的玩家角色，正站在一个由石块和木板搭建的室内空间里。角色的前方有一个石制的台子，台子上放着一个发光的火把。背景是石墙和木门，右侧有一个窗户，窗外可以看到一些树木。画面下方是玩家的健康条、饥饿条和物品栏。"
+    },
+    {
+      "frame_idx": 34,
+      "timestamp_ms": 17046,
+      "diff_value": 5797.210083646924,
+      "is_keyframe": true,
+      "reason": "差异值 5797.21 >= 阈值 500.00",
+      "image_filename": "frame_0034_key.png",
+      "vlm_response": "这是一个《我的世界》游戏的交易界面截图，玩家正在与另一名玩家进行物品交换。界面显示玩家拥有64个绿色的物品（可能是某种资源或道具），正在将一个棕色的物品（可能是方块或工具）进行交易。背景是游戏内的一个室内环境，可以看到一些石块墙壁和远处的树木。"
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_ms": 17546,
+      "diff_value": 140.23784324552793,
+      "is_keyframe": false,
+      "reason": "差异值 140.24 < 阈值 500.00",
+      "image_filename": "frame_0035_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 36,
+      "timestamp_ms": 18062,
+      "diff_value": 140.1002280350131,
+      "is_keyframe": false,
+      "reason": "差异值 140.10 < 阈值 500.00",
+      "image_filename": "frame_0036_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 37,
+      "timestamp_ms": 18546,
+      "diff_value": 5594.907120896051,
+      "is_keyframe": true,
+      "reason": "差异值 5594.91 >= 阈值 500.00",
+      "image_filename": "frame_0037_key.png",
+      "vlm_response": "这是一张《我的世界》游戏的截图，画面中心是一个玩家角色，他正站在一个由石块和木板搭建的室内结构中。角色的视角是第一人称，可以看到游戏界面的血条、物品栏和数字。背景中有一个窗户，窗外可以看到绿色的植物和远处的自然景观。"
+    },
+    {
+      "frame_idx": 38,
+      "timestamp_ms": 19046,
+      "diff_value": 1574.6527681200917,
+      "is_keyframe": true,
+      "reason": "差异值 1574.65 >= 阈值 500.00",
+      "image_filename": "frame_0038_key.png",
+      "vlm_response": "这是一张《我的世界》游戏的截图，画面中一个玩家角色站在一个由石块和木板搭建的室内空间里。角色的视角前方有一个木制的架子，上面放着一个火把。角色的右前方有一个窗户，窗外是雪景。画面下方是玩家的物品栏，显示了当前的健康值、饥饿值和经验值。"
+    },
+    {
+      "frame_idx": 39,
+      "timestamp_ms": 19546,
+      "diff_value": 5242.370768229167,
+      "is_keyframe": true,
+      "reason": "差异值 5242.37 >= 阈值 500.00",
+      "image_filename": "frame_0039_key.png",
+      "vlm_response": "画面为纯黑色，没有显示任何人物、动物或物体，场景处于完全黑暗状态。"
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_ms": 20062,
+      "diff_value": 3112.099735493019,
+      "is_keyframe": true,
+      "reason": "差异值 3112.10 >= 阈值 500.00",
+      "image_filename": "frame_0040_key.png",
+      "vlm_response": "画面中央是一个由像素构成的、呈八角星形的复杂结构，其中心为一个发光的方块，向外辐射出八个尖锐的臂状结构，每个臂上都带有发光的尖端。整个结构在深色、带有漩涡纹理的背景中显得格外突出，呈现出一种科幻或数字艺术的风格。"
+    },
+    {
+      "frame_idx": 41,
+      "timestamp_ms": 20562,
+      "diff_value": 366.03927042430195,
+      "is_keyframe": false,
+      "reason": "差异值 366.04 < 阈值 500.00",
+      "image_filename": "frame_0041_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 42,
+      "timestamp_ms": 21062,
+      "diff_value": 1600.5462631571772,
+      "is_keyframe": true,
+      "reason": "差异值 1600.55 >= 阈值 500.00",
+      "image_filename": "frame_0042_key.png",
+      "vlm_response": "在夜晚的像素化天空下，一个角色正从高处向下看，上方有一个巨大的、发光的、类似飞行器的结构正在下降。"
+    },
+    {
+      "frame_idx": 43,
+      "timestamp_ms": 21562,
+      "diff_value": 905.8912896760471,
+      "is_keyframe": true,
+      "reason": "差异值 905.89 >= 阈值 500.00",
+      "image_filename": "frame_0043_key.png",
+      "vlm_response": "画面中央是一个由发光线条构成的、类似星形或十字形的复杂结构，它在深色、带有漩涡纹理的背景中显得格外突出。该结构由多个发光的臂状部分组成，中心区域有密集的光点，整体呈现出一种科技感和未来感。"
+    },
+    {
+      "frame_idx": 44,
+      "timestamp_ms": 22046,
+      "diff_value": 3035.1835835242146,
+      "is_keyframe": true,
+      "reason": "差异值 3035.18 >= 阈值 500.00",
+      "image_filename": "frame_0044_key.png",
+      "vlm_response": "这是一张《我的世界》（Minecraft）游戏内的截图，画面中显示了由方块构成的建筑结构。在画面的上半部分，有多个黑色的方块，可能是由石英或岩浆构成的，它们悬挂在空中。在画面的左上角，可以看到一个红色的方块，上面有“TNT”字样，这表明该区域可能是一个由炸药构成的危险区域。在画面的右下角，有一个白色的方块，上面有“TNT”字样，这可能是一个TNT的容器或放置点。整个场景的背景是绿色的草地，这表明该场景可能是在一个开放的、有植被的环境中。"
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_ms": 22546,
+      "diff_value": 2306.089144988002,
+      "is_keyframe": true,
+      "reason": "差异值 2306.09 >= 阈值 500.00",
+      "image_filename": "frame_0045_key.png",
+      "vlm_response": "这是一张像素风格的视频截图，画面中似乎是一个由方块构成的室内场景，可能来自游戏《我的世界》。画面右侧有多个黑色的方块，可能是矿石或某种结构。背景中可以看到带有“THE TNT”字样的红色横幅，以及蓝黄相间的图案墙壁。整个场景看起来像是一个由方块搭建的建筑或房间。"
+    },
+    {
+      "frame_idx": 46,
+      "timestamp_ms": 23046,
+      "diff_value": 3860.0162163912523,
+      "is_keyframe": true,
+      "reason": "差异值 3860.02 >= 阈值 500.00",
+      "image_filename": "frame_0046_key.png",
+      "vlm_response": "这是一张在夜空中拍摄的未来风格建筑的俯视图，该建筑结构对称，顶部有发光的垂直灯带，底部有环形的光带，整体被云层环绕。建筑的倒影在下方的水面上清晰可见，营造出一种对称的视觉效果。"
+    },
+    {
+      "frame_idx": 47,
+      "timestamp_ms": 23562,
+      "diff_value": 2284.21469718041,
+      "is_keyframe": true,
+      "reason": "差异值 2284.21 >= 阈值 500.00",
+      "image_filename": "frame_0047_key.png",
+      "vlm_response": "这是一张从低角度仰视拍摄的视频截图，画面中心是一个由方块构成的巨大、发光的建筑结构，看起来像一个风车或某种复杂的机械装置。该结构由白色、灰色和红色的方块组成，顶部有蓝色的发光装饰，整体在夜空中显得非常醒目。"
+    },
+    {
+      "frame_idx": 48,
+      "timestamp_ms": 24062,
+      "diff_value": 2252.697749645506,
+      "is_keyframe": true,
+      "reason": "差异值 2252.70 >= 阈值 500.00",
+      "image_filename": "frame_0048_key.png",
+      "vlm_response": "这是一张从高处俯瞰的视频截图，展示了一个由方块构成的、类似地下隧道或巨大建筑的结构。画面中心是一个由红蓝方块组成的复杂几何图案，周围是灰色和红色的方块墙壁，顶部有发光的方块。整个场景呈现出一种对称的、类似迷宫或地下城的结构，光线从上方和四周的方块中透出，营造出一种神秘而深邃的氛围。"
+    },
+    {
+      "frame_idx": 49,
+      "timestamp_ms": 24546,
+      "diff_value": 3206.414766374891,
+      "is_keyframe": true,
+      "reason": "差异值 3206.41 >= 阈值 500.00",
+      "image_filename": "frame_0049_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_ms": 25062,
+      "diff_value": 3648.150959860384,
+      "is_keyframe": true,
+      "reason": "差异值 3648.15 >= 阈值 500.00",
+      "image_filename": "frame_0050_key.png",
+      "vlm_response": "在夜晚的像素化场景中，一个穿着棕色盔甲的角色站在一个由石块和铁栅栏构成的高台上，台前有几支燃烧的火把提供照明。背景是三个巨大的黑色柱状物，地面是绿色的方块，整体环境看起来像是一个游戏中的地下洞穴或神殿。"
+    },
+    {
+      "frame_idx": 51,
+      "timestamp_ms": 25546,
+      "diff_value": 3064.481525414485,
+      "is_keyframe": true,
+      "reason": "差异值 3064.48 >= 阈值 500.00",
+      "image_filename": "frame_0051_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 52,
+      "timestamp_ms": 26062,
+      "diff_value": 4351.340082351658,
+      "is_keyframe": true,
+      "reason": "差异值 4351.34 >= 阈值 500.00",
+      "image_filename": "frame_0052_key.png",
+      "vlm_response": "这是一张《我的世界》游戏的截图，画面中显示了一个由方块构成的室内场景，可能是一个地下设施或建筑。场景中有多个方块构成的柱子和墙壁，墙壁上镶嵌着发光的方块，发出绿色的光。在画面的右侧，有一个由方块组成的、类似人形的生物，其身体由绿色、白色和黑色的方块组成。该生物的头部是黑色的，身体是绿色的，其手臂和腿部是白色的。在画面的左下角，可以看到一些由方块组成的设备和工具。"
+    },
+    {
+      "frame_idx": 53,
+      "timestamp_ms": 26562,
+      "diff_value": 3536.4010808655103,
+      "is_keyframe": true,
+      "reason": "差异值 3536.40 >= 阈值 500.00",
+      "image_filename": "frame_0053_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 54,
+      "timestamp_ms": 27046,
+      "diff_value": 4680.238005153796,
+      "is_keyframe": true,
+      "reason": "差异值 4680.24 >= 阈值 500.00",
+      "image_filename": "frame_0054_key.png",
+      "vlm_response": null
+    }
+  ],
+  "summary": "视频开始于《我的世界》中玩家在村庄附近的探索与室内活动，随后画面切换至一系列具有科幻感的发光星形结构，暗示场景或维度发生变化。中后段玩家返回游戏世界进行交易与建筑内活动，但很快被黑暗打断，再次出现更复杂的发光结构与高空飞行器，最终场景转向含有TNT的危险区域及夜晚下的巨大地下建筑。整体视频主题展现了从日常生存探索到超现实、高科技或危险场景的跳跃，可能意在对比游戏的不同模式或讲述一段遭遇未知科技/威胁的冒险。"
+}

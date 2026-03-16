@@ -1,0 +1,497 @@
+{
+  "video": "video_GenshinImpact_01.mp4",
+  "model": "microsoft/Phi-3.5-vision-instruct",
+  "config": {
+    "screenshot_interval_ms": 500,
+    "max_size": 512,
+    "recording_duration_s": 26,
+    "algorithm": "mse",
+    "diff_threshold": 500.0
+  },
+  "stats": {
+    "total_sampled": 53,
+    "total_keyframes": 44,
+    "total_dropped": 35,
+    "duration_s": 26.0
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_ms": 14,
+      "diff_value": null,
+      "is_keyframe": true,
+      "reason": "首帧，自动标记为关键帧",
+      "image_filename": "frame_0000_key.png",
+      "vlm_response": " 画面显示了一个室内的地图，包含多个地点标记和一些文字，可能是游戏或概念图。主要对象是地图上的标记和文字，它们表示不同的地点或事件。没有明显的动作或状态，因为这是一张静态的截图。场景环境是室内，可能是游戏界面或一个教育资源。没有显著的变化，因为这是一张静态的截图。"
+    },
+    {
+      "frame_idx": 1,
+      "timestamp_ms": 514,
+      "diff_value": 3124.526195053447,
+      "is_keyframe": true,
+      "reason": "差异值 3124.53 >= 阈值 500.00",
+      "image_filename": "frame_0001_key.png",
+      "vlm_response": " 这是一幅游戏界面，显示了一个地图，包含了一个半圆形的地图上的一个地点，即“圆圈”。地图上有一些标记和数字，如“186/200”和“5”，可能是游戏中的指示或指南。地图上还有一些小的标记和文字，可能是游戏中的信息或指示。整个场景看起来是室内的，游戏界面的设计呈现出一种室内游戏的氛围。"
+    },
+    {
+      "frame_idx": 2,
+      "timestamp_ms": 1014,
+      "diff_value": 3196.5503074552794,
+      "is_keyframe": true,
+      "reason": "差异值 3196.55 >= 阈值 500.00",
+      "image_filename": "frame_0002_key.png",
+      "vlm_response": " 画面显示了一个地图，包含多个标记和数字，可能是一个游戏或概念图。主要对象是标记和数字，它们可能表示游戏中的地点、资源或目标。场景环境看起来是一个室内的屏幕，因为它有一个边框和纸质感。显著变化是标记和数字的位置和数量，这可能表示游戏中的进展或玩家的动作。"
+    },
+    {
+      "frame_idx": 3,
+      "timestamp_ms": 1514,
+      "diff_value": 3886.6202995473386,
+      "is_keyframe": true,
+      "reason": "差异值 3886.62 >= 阈值 500.00",
+      "image_filename": "frame_0003_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 4,
+      "timestamp_ms": 2031,
+      "diff_value": 121.56976030759162,
+      "is_keyframe": false,
+      "reason": "差异值 121.57 < 阈值 500.00",
+      "image_filename": "frame_0004_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_ms": 2514,
+      "diff_value": 2492.9378596067845,
+      "is_keyframe": true,
+      "reason": "差异值 2492.94 >= 阈值 500.00",
+      "image_filename": "frame_0005_key.png",
+      "vlm_response": " 在这张截图中，主要的对象是一个带有绿色和黄色地图的图表，它显示了一个地理区域的地形和水域。地图上有一个小圆形的标记，可能表示一个特定的地点。场景环境看起来是室内，因为有一个窗户边界可以看到。没有明显的动作或状态，但图表上的变化可能表示时间的流逝或地理变化。"
+    },
+    {
+      "frame_idx": 6,
+      "timestamp_ms": 3014,
+      "diff_value": 253.88794584424085,
+      "is_keyframe": false,
+      "reason": "差异值 253.89 < 阈值 500.00",
+      "image_filename": "frame_0006_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 7,
+      "timestamp_ms": 3514,
+      "diff_value": 2610.2428470631544,
+      "is_keyframe": true,
+      "reason": "差异值 2610.24 >= 阈值 500.00",
+      "image_filename": "frame_0007_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 8,
+      "timestamp_ms": 4014,
+      "diff_value": 30.892942844677137,
+      "is_keyframe": false,
+      "reason": "差异值 30.89 < 阈值 500.00",
+      "image_filename": "frame_0008_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 9,
+      "timestamp_ms": 4514,
+      "diff_value": 77.61662167321117,
+      "is_keyframe": false,
+      "reason": "差异值 77.62 < 阈值 500.00",
+      "image_filename": "frame_0009_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_ms": 5014,
+      "diff_value": 6911.092741055846,
+      "is_keyframe": true,
+      "reason": "差异值 6911.09 >= 阈值 500.00",
+      "image_filename": "frame_0010_key.png",
+      "vlm_response": " 在这张截图中，主要对象是一个精细设计的动物角色，它站在一个环境中，具有精细的脸部和身体特征。动作上，角色看起来是凝视或准备攻击的动作。场景是一个室外的森林环境，有着温暖的灯光和绿色的树木。显著变化可能是角色的动作，它的动态表现出一种准备攻击的动态。"
+    },
+    {
+      "frame_idx": 11,
+      "timestamp_ms": 5514,
+      "diff_value": 1515.1303685373036,
+      "is_keyframe": true,
+      "reason": "差异值 1515.13 >= 阈值 500.00",
+      "image_filename": "frame_0011_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 12,
+      "timestamp_ms": 6014,
+      "diff_value": 1470.127963773451,
+      "is_keyframe": true,
+      "reason": "差异值 1470.13 >= 阈值 500.00",
+      "image_filename": "frame_0012_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 13,
+      "timestamp_ms": 6514,
+      "diff_value": 1073.5135457569809,
+      "is_keyframe": true,
+      "reason": "差异值 1073.51 >= 阈值 500.00",
+      "image_filename": "frame_0013_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 14,
+      "timestamp_ms": 7031,
+      "diff_value": 1230.9081928992146,
+      "is_keyframe": true,
+      "reason": "差异值 1230.91 >= 阈值 500.00",
+      "image_filename": "frame_0014_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_ms": 7514,
+      "diff_value": 1785.864276559773,
+      "is_keyframe": true,
+      "reason": "差异值 1785.86 >= 阈值 500.00",
+      "image_filename": "frame_0015_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 16,
+      "timestamp_ms": 8014,
+      "diff_value": 1444.0881275223603,
+      "is_keyframe": true,
+      "reason": "差异值 1444.09 >= 阈值 500.00",
+      "image_filename": "frame_0016_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 17,
+      "timestamp_ms": 8514,
+      "diff_value": 1368.7025284958552,
+      "is_keyframe": true,
+      "reason": "差异值 1368.70 >= 阈值 500.00",
+      "image_filename": "frame_0017_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 18,
+      "timestamp_ms": 9014,
+      "diff_value": 1798.2830582597078,
+      "is_keyframe": true,
+      "reason": "差异值 1798.28 >= 阈值 500.00",
+      "image_filename": "frame_0018_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 19,
+      "timestamp_ms": 9514,
+      "diff_value": 2753.171379049411,
+      "is_keyframe": true,
+      "reason": "差异值 2753.17 >= 阈值 500.00",
+      "image_filename": "frame_0019_key.png",
+      "vlm_response": " 在这张截图中，主要的对象是一个精细设计的角色，她呈现出一种快乐和娱乐的气质。她正在坐落在一个宁静的小溪边，周围是繁茂的植物和石墙。她的动作是坐着，她的状态看起来是非常放松和自在的。场景环境是一个宁静的小溪边，具体环境是一个宁静的小溪边，充满了自然的美景。显著变化是角色的动作和状态，她的动作是坐着，她的状态是非常放松和自在的。"
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_ms": 10014,
+      "diff_value": 3356.8427717332024,
+      "is_keyframe": true,
+      "reason": "差异值 3356.84 >= 阈值 500.00",
+      "image_filename": "frame_0020_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 21,
+      "timestamp_ms": 10531,
+      "diff_value": 3967.292046725022,
+      "is_keyframe": true,
+      "reason": "差异值 3967.29 >= 阈值 500.00",
+      "image_filename": "frame_0021_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 22,
+      "timestamp_ms": 11031,
+      "diff_value": 4593.401733611475,
+      "is_keyframe": true,
+      "reason": "差异值 4593.40 >= 阈值 500.00",
+      "image_filename": "frame_0022_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 23,
+      "timestamp_ms": 11531,
+      "diff_value": 3300.3670716077663,
+      "is_keyframe": true,
+      "reason": "差异值 3300.37 >= 阈值 500.00",
+      "image_filename": "frame_0023_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 24,
+      "timestamp_ms": 12031,
+      "diff_value": 3384.478515625,
+      "is_keyframe": true,
+      "reason": "差异值 3384.48 >= 阈值 500.00",
+      "image_filename": "frame_0024_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_ms": 12531,
+      "diff_value": 2628.550196675938,
+      "is_keyframe": true,
+      "reason": "差异值 2628.55 >= 阈值 500.00",
+      "image_filename": "frame_0025_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 26,
+      "timestamp_ms": 13031,
+      "diff_value": 3674.4051950398125,
+      "is_keyframe": true,
+      "reason": "差异值 3674.41 >= 阈值 500.00",
+      "image_filename": "frame_0026_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 27,
+      "timestamp_ms": 13531,
+      "diff_value": 3126.8845662221856,
+      "is_keyframe": true,
+      "reason": "差异值 3126.88 >= 阈值 500.00",
+      "image_filename": "frame_0027_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 28,
+      "timestamp_ms": 14031,
+      "diff_value": 2066.050058627836,
+      "is_keyframe": true,
+      "reason": "差异值 2066.05 >= 阈值 500.00",
+      "image_filename": "frame_0028_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 29,
+      "timestamp_ms": 14531,
+      "diff_value": 6376.126315717714,
+      "is_keyframe": true,
+      "reason": "差异值 6376.13 >= 阈值 500.00",
+      "image_filename": "frame_0029_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_ms": 15031,
+      "diff_value": 3093.170767206588,
+      "is_keyframe": true,
+      "reason": "差异值 3093.17 >= 阈值 500.00",
+      "image_filename": "frame_0030_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 31,
+      "timestamp_ms": 15531,
+      "diff_value": 2333.8596153059557,
+      "is_keyframe": true,
+      "reason": "差异值 2333.86 >= 阈值 500.00",
+      "image_filename": "frame_0031_key.png",
+      "vlm_response": " 在这张截图中，主要对象是一个女性角色，她正在使用一种能够投射火弹的武器。她正在与一个大型机器人对抗，机器人位于她前方。场景发生在一个室外的环境中，具体环境看起来像是一个草地和树木的地方。显著变化是女性角色正在使用武器，并且她的健康状态显示为 50%，表明她正在受到伤害。"
+    },
+    {
+      "frame_idx": 32,
+      "timestamp_ms": 16031,
+      "diff_value": 3073.822611597404,
+      "is_keyframe": true,
+      "reason": "差异值 3073.82 >= 阈值 500.00",
+      "image_filename": "frame_0032_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 33,
+      "timestamp_ms": 16531,
+      "diff_value": 7843.196771378709,
+      "is_keyframe": true,
+      "reason": "差异值 7843.20 >= 阈值 500.00",
+      "image_filename": "frame_0033_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 34,
+      "timestamp_ms": 17031,
+      "diff_value": 10256.142204883836,
+      "is_keyframe": true,
+      "reason": "差异值 10256.14 >= 阈值 500.00",
+      "image_filename": "frame_0034_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_ms": 17531,
+      "diff_value": 6214.303866028577,
+      "is_keyframe": true,
+      "reason": "差异值 6214.30 >= 阈值 500.00",
+      "image_filename": "frame_0035_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 36,
+      "timestamp_ms": 18031,
+      "diff_value": 10884.343300065446,
+      "is_keyframe": true,
+      "reason": "差异值 10884.34 >= 阈值 500.00",
+      "image_filename": "frame_0036_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 37,
+      "timestamp_ms": 18531,
+      "diff_value": 4949.772162685427,
+      "is_keyframe": true,
+      "reason": "差异值 4949.77 >= 阈值 500.00",
+      "image_filename": "frame_0037_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 38,
+      "timestamp_ms": 19031,
+      "diff_value": 8421.939371318716,
+      "is_keyframe": true,
+      "reason": "差异值 8421.94 >= 阈值 500.00",
+      "image_filename": "frame_0038_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 39,
+      "timestamp_ms": 19546,
+      "diff_value": 6482.385556419066,
+      "is_keyframe": true,
+      "reason": "差异值 6482.39 >= 阈值 500.00",
+      "image_filename": "frame_0039_key.png",
+      "vlm_response": " 在这张截图中，主要对象是一个女性角色，她在战斗中使用强大的能力。她正在与一个强大的怪物对抗，她的动作是使用强烈的火焰和冲击力。场景发生在一个室外的奇幻世界，具体环境是一个充满火焰和冲击力的战场。显著变化是角色正在使用一种特殊能力，她的身体发出强烈的火焰，这可能是对抗怪物的最后一刻的决定。"
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_ms": 20031,
+      "diff_value": 3464.288667102967,
+      "is_keyframe": true,
+      "reason": "差异值 3464.29 >= 阈值 500.00",
+      "image_filename": "frame_0040_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 41,
+      "timestamp_ms": 20531,
+      "diff_value": 3342.299097404014,
+      "is_keyframe": true,
+      "reason": "差异值 3342.30 >= 阈值 500.00",
+      "image_filename": "frame_0041_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 42,
+      "timestamp_ms": 21031,
+      "diff_value": 2749.0949941372164,
+      "is_keyframe": true,
+      "reason": "差异值 2749.09 >= 阈值 500.00",
+      "image_filename": "frame_0042_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 43,
+      "timestamp_ms": 21531,
+      "diff_value": 0.567771392342932,
+      "is_keyframe": false,
+      "reason": "差异值 0.57 < 阈值 500.00",
+      "image_filename": "frame_0043_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 44,
+      "timestamp_ms": 22031,
+      "diff_value": 1.1497821907722514,
+      "is_keyframe": false,
+      "reason": "差异值 1.15 < 阈值 500.00",
+      "image_filename": "frame_0044_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_ms": 22531,
+      "diff_value": 1.8910902732329844,
+      "is_keyframe": false,
+      "reason": "差异值 1.89 < 阈值 500.00",
+      "image_filename": "frame_0045_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 46,
+      "timestamp_ms": 23031,
+      "diff_value": 1.9758126090750436,
+      "is_keyframe": false,
+      "reason": "差异值 1.98 < 阈值 500.00",
+      "image_filename": "frame_0046_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 47,
+      "timestamp_ms": 23531,
+      "diff_value": 4.549453602203316,
+      "is_keyframe": false,
+      "reason": "差异值 4.55 < 阈值 500.00",
+      "image_filename": "frame_0047_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 48,
+      "timestamp_ms": 24046,
+      "diff_value": 9385.820517015707,
+      "is_keyframe": true,
+      "reason": "差异值 9385.82 >= 阈值 500.00",
+      "image_filename": "frame_0048_key.png",
+      "vlm_response": " 这是一幅游戏场景，主要的对象是一个玩家头部，玩家的头部被透明覆盖。玩家的头部显示了一个红色的盲目灯和一个红色的盲目灯。场景是一个室外的环境，玩家看到的是一个水面和一座建筑。玩家的屏幕上有一个带有多个数字和符号的简单数字和符号的界面，包括一个红色的盲目灯和一个红色的盲目灯。"
+    },
+    {
+      "frame_idx": 49,
+      "timestamp_ms": 24546,
+      "diff_value": 2604.2890233011562,
+      "is_keyframe": true,
+      "reason": "差异值 2604.29 >= 阈值 500.00",
+      "image_filename": "frame_0049_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_ms": 25046,
+      "diff_value": 6181.750802724149,
+      "is_keyframe": true,
+      "reason": "差异值 6181.75 >= 阈值 500.00",
+      "image_filename": "frame_0050_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 51,
+      "timestamp_ms": 25546,
+      "diff_value": 1934.8145298183902,
+      "is_keyframe": true,
+      "reason": "差异值 1934.81 >= 阈值 500.00",
+      "image_filename": "frame_0051_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 52,
+      "timestamp_ms": 26046,
+      "diff_value": 6025.170664948735,
+      "is_keyframe": true,
+      "reason": "差异值 6025.17 >= 阈值 500.00",
+      "image_filename": "frame_0052_key.png",
+      "vlm_response": null
+    }
+  ],
+  "summary": "视频以展示一张室内地图或游戏界面开始，界面中包含地点标记和数字，可能用于指示任务或目标。随后画面转向一个室外森林场景，一个精细设计的动物角色出现，呈现出准备攻击的姿态。紧接着，场景切换至一个宁静的小溪边，同一角色以放松的状态坐着，享受自然环境。视频的高潮部分是一场激烈的战斗：女性角色在户外使用火焰武器与大型机器人和怪物对抗，她的健康状态下降，最终释放出强大的火焰能力。整体来看，视频通过从静态界面到动态角色、从宁静自然到激烈战斗的转变，展现了一个可能基于游戏的奇幻冒险主题，核心内容围绕角色的探索、放松与战斗展开。"
+}

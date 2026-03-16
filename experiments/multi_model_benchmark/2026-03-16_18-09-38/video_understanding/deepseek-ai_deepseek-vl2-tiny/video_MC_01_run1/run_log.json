@@ -1,0 +1,515 @@
+{
+  "video": "video_MC_01.mp4",
+  "model": "deepseek-ai/deepseek-vl2-tiny",
+  "config": {
+    "screenshot_interval_ms": 500,
+    "max_size": 512,
+    "recording_duration_s": 27,
+    "algorithm": "mse",
+    "diff_threshold": 500.0
+  },
+  "stats": {
+    "total_sampled": 55,
+    "total_keyframes": 33,
+    "total_dropped": 3,
+    "duration_s": 27.0
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_ms": 46,
+      "diff_value": null,
+      "is_keyframe": true,
+      "reason": "首帧，自动标记为关键帧",
+      "image_filename": "frame_0000_key.png",
+      "vlm_response": "画面中有一个穿着盔甲的角色站在左侧，右侧是一个带有茅草屋顶的小屋。角色前方有一条土路通向远处的水域。屏幕底部显示了一些物品栏，其中包含剑、铁镐、钻石等物品。天空晴朗，有少量云朵。"
+    },
+    {
+      "frame_idx": 1,
+      "timestamp_ms": 546,
+      "diff_value": 3008.7831162058246,
+      "is_keyframe": true,
+      "reason": "差异值 3008.78 >= 阈值 500.00",
+      "image_filename": "frame_0001_key.png",
+      "vlm_response": "画面展示了一个《Minecraft》游戏中的场景，玩家站在一座木屋前，周围是绿色的草地和蓝色的水域。玩家手持火把，屏幕底部显示生命值、食物值、工具数量等信息。远处可以看到一些树木和山丘，天空晴朗，云朵稀疏。"
+    },
+    {
+      "frame_idx": 2,
+      "timestamp_ms": 1046,
+      "diff_value": 5298.969295375218,
+      "is_keyframe": true,
+      "reason": "差异值 5298.97 >= 阈值 500.00",
+      "image_filename": "frame_0002_key.png",
+      "vlm_response": "这张图片展示了一个《Minecraft》游戏中的场景。画面中可以看到一个玩家角色站在一个蓝色方块墙壁前，墙上有一个木制窗户，窗户内似乎有铁栅栏。角色手持一把剑，旁边有一个火把。地面上有一些绿色的植物，远处可以看到另一座建筑。屏幕底部显示了玩家的生命值、饥饿值、食物数量等状态信息。"
+    },
+    {
+      "frame_idx": 3,
+      "timestamp_ms": 1546,
+      "diff_value": 4136.996632308028,
+      "is_keyframe": true,
+      "reason": "差异值 4137.00 >= 阈值 500.00",
+      "image_filename": "frame_0003_key.png",
+      "vlm_response": "画面中有一个角色站在房间中央，手持一把剑，周围是石墙和木制家具。屏幕底部显示了一个玩家的界面，包括生命值、饥饿值、食物数量等。"
+    },
+    {
+      "frame_idx": 4,
+      "timestamp_ms": 2046,
+      "diff_value": 1612.480591459424,
+      "is_keyframe": true,
+      "reason": "差异值 1612.48 >= 阈值 500.00",
+      "image_filename": "frame_0004_key.png",
+      "vlm_response": "画面中有一个角色站在房间中央，他穿着棕色的衣服，双手交叉放在胸前，表情严肃。房间的墙壁由灰色石块构成，窗户透进自然光，可以看到外面的绿色植物。屏幕底部显示了一个玩家的界面，包括生命值、饥饿值、食物数量等。"
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_ms": 2546,
+      "diff_value": 5566.0754049411,
+      "is_keyframe": true,
+      "reason": "差异值 5566.08 >= 阈值 500.00",
+      "image_filename": "frame_0005_key.png",
+      "vlm_response": "画面中显示的是一个游戏界面，背景是一个石质建筑内部。屏幕中央是一个物品栏，其中包含各种方块和工具。左上角显示玩家当前拥有64个泥土，并且有一个“交易”按钮。右上角显示玩家处于新手阶段，并且有四个空槽位。物品栏中可以看到一些方块和工具，例如钻石、铁锭、木棍、草、石头、以及一些其他物品。屏幕底部显示玩家的生命值和其他状态信息。"
+    },
+    {
+      "frame_idx": 6,
+      "timestamp_ms": 3046,
+      "diff_value": 0.6257601167102966,
+      "is_keyframe": false,
+      "reason": "差异值 0.63 < 阈值 500.00",
+      "image_filename": "frame_0006_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 7,
+      "timestamp_ms": 3546,
+      "diff_value": 0.5245163203534031,
+      "is_keyframe": false,
+      "reason": "差异值 0.52 < 阈值 500.00",
+      "image_filename": "frame_0007_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 8,
+      "timestamp_ms": 4046,
+      "diff_value": 5474.373307632526,
+      "is_keyframe": true,
+      "reason": "差异值 5474.37 >= 阈值 500.00",
+      "image_filename": "frame_0008_key.png",
+      "vlm_response": "画面中有一个角色站在房间中央，他穿着棕色的衣服，双手交叉放在胸前，表情平静。房间的墙壁由灰色石块构成，左侧有一扇木门，右侧有一个窗户，可以看到外面的景象。屏幕底部显示了一些游戏界面元素，包括生命值、饥饿值、食物数量等。"
+    },
+    {
+      "frame_idx": 9,
+      "timestamp_ms": 4546,
+      "diff_value": 1723.8681811054755,
+      "is_keyframe": true,
+      "reason": "差异值 1723.87 >= 阈值 500.00",
+      "image_filename": "frame_0009_key.png",
+      "vlm_response": "画面中显示的是一个《Minecraft》游戏场景，主角是一个玩家角色，站在一个由石块和木板搭建的房间里。房间内有一个窗户，窗外可以看到一些树木。房间的左侧有一个木制架子，上面放置了一些物品，包括一个黄色的灯笼。房间的地面由石块铺成，墙壁由灰色石块构成。屏幕底部显示了玩家的生命值、饥饿值、食物数量以及一些其他物品栏。"
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_ms": 5046,
+      "diff_value": 861.445508494219,
+      "is_keyframe": true,
+      "reason": "差异值 861.45 >= 阈值 500.00",
+      "image_filename": "frame_0010_key.png",
+      "vlm_response": "画面中展示了一个对称的几何结构，中心是一个复杂的图案，周围有多个向外延伸的尖状物体。背景是深色的，可能代表夜晚或黑暗的环境。没有明显的人物或动物，场景看起来像是一个虚拟或数字化的环境。"
+    },
+    {
+      "frame_idx": 11,
+      "timestamp_ms": 5546,
+      "diff_value": 541.751249250109,
+      "is_keyframe": true,
+      "reason": "差异值 541.75 >= 阈值 500.00",
+      "image_filename": "frame_0011_key.png",
+      "vlm_response": "画面中展示了一个对称的几何图案，中心是一个复杂的星形结构，周围有多个延伸的尖状物体。背景是深色的，可能是夜晚或室内环境。没有人物或动物，场景显得非常静谧。"
+    },
+    {
+      "frame_idx": 12,
+      "timestamp_ms": 6062,
+      "diff_value": 1684.0800372218587,
+      "is_keyframe": true,
+      "reason": "差异值 1684.08 >= 阈值 500.00",
+      "image_filename": "frame_0012_key.png",
+      "vlm_response": "画面中有一个身穿棕色衣服的像素化人物，站在一个类似阳台的地方，双手放在栏杆上，目光向上看。背景是昏暗的天空，有乌云，远处可以看到一个发光的物体。"
+    },
+    {
+      "frame_idx": 13,
+      "timestamp_ms": 6546,
+      "diff_value": 1456.172759530432,
+      "is_keyframe": true,
+      "reason": "差异值 1456.17 >= 阈值 500.00",
+      "image_filename": "frame_0013_key.png",
+      "vlm_response": "画面中可以看到一个巨大的、类似星形的建筑结构，位于一个黑暗的、充满云层的天空中。前景中有一个橙色的物体，可能是某种设备或装置。整个场景给人一种科幻或未来主义的感觉。"
+    },
+    {
+      "frame_idx": 14,
+      "timestamp_ms": 7046,
+      "diff_value": 2898.037344568063,
+      "is_keyframe": true,
+      "reason": "差异值 2898.04 >= 阈值 500.00",
+      "image_filename": "frame_0014_key.png",
+      "vlm_response": "画面中展示了一个由方块构成的复杂场景，其中包含多个悬浮的黑色方块、透明的红色方块以及带有蓝色和黄色图案的方块地面。场景中似乎没有人物，但可以看到一些漂浮的方块和地面上的方块。整体环境看起来像是某种虚拟世界或游戏中的场景。"
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_ms": 7546,
+      "diff_value": 2392.4603546302355,
+      "is_keyframe": true,
+      "reason": "差异值 2392.46 >= 阈值 500.00",
+      "image_filename": "frame_0015_key.png",
+      "vlm_response": "画面中展示了一个由方块构成的虚拟世界，其中可以看到一些人物和动物。场景中有一个透明的玻璃结构，上面写着“TNT TNT TNT”，周围悬挂着多个黑色方块，这些方块看起来像是某种方块或装置。背景中还有一些彩色的方块墙，以及一些绿色的地面。整体环境看起来像是一个虚拟的、由方块构成的建筑或空间。"
+    },
+    {
+      "frame_idx": 16,
+      "timestamp_ms": 8046,
+      "diff_value": 3918.6551285722076,
+      "is_keyframe": true,
+      "reason": "差异值 3918.66 >= 阈值 500.00",
+      "image_filename": "frame_0016_key.png",
+      "vlm_response": "画面中展示了一艘大型船只，船体上装饰着许多灯光，显得非常醒目。船的前方有一个高耸的塔状结构，上面有垂直排列的灯光。船的两侧各有一个类似螺旋桨的装置，正在旋转。背景是昏暗的天空，云层密布，给人一种夜晚的感觉。船体下方似乎有一些建筑或设施，隐约可见。"
+    },
+    {
+      "frame_idx": 17,
+      "timestamp_ms": 8546,
+      "diff_value": 2339.5445622682155,
+      "is_keyframe": true,
+      "reason": "差异值 2339.54 >= 阈值 500.00",
+      "image_filename": "frame_0017_key.png",
+      "vlm_response": "画面中展示了一个由方块构成的复杂结构，类似于一个巨大的机械装置。中心部分是一个高耸的塔状结构，上面装饰着许多发光的方块，周围有多个向外延伸的臂状结构。这些臂状结构上也有发光的方块，整体呈现出一种科幻风格。背景中可以看到一些模糊的建筑物轮廓，似乎是在一个城市环境中。"
+    },
+    {
+      "frame_idx": 18,
+      "timestamp_ms": 9046,
+      "diff_value": 3033.729158145179,
+      "is_keyframe": true,
+      "reason": "差异值 3033.73 >= 阈值 500.00",
+      "image_filename": "frame_0018_key.png",
+      "vlm_response": "画面展示了一个复杂的建筑结构，中心是一个发光的红色方块，四周是灰色的墙壁和蓝色的地板。画面中似乎没有人物或动物，场景看起来像是一个虚拟世界中的建筑内部。"
+    },
+    {
+      "frame_idx": 19,
+      "timestamp_ms": 9546,
+      "diff_value": 2213.4112282531632,
+      "is_keyframe": true,
+      "reason": "差异值 2213.41 >= 阈值 500.00",
+      "image_filename": "frame_0019_key.png",
+      "vlm_response": "画面展示了一个由方块构成的复杂室内场景，中心是一个发光的橙色方块，周围有多个带有文字和图案的方块。左侧和右侧各有一组蓝色和绿色的方块，上面有复杂的图案。场景整体呈现出一种对称的布局，四周的墙壁和地板由不同颜色的方块构成，形成一种立体感。"
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_ms": 10046,
+      "diff_value": 2549.064933736911,
+      "is_keyframe": true,
+      "reason": "差异值 2549.06 >= 阈值 500.00",
+      "image_filename": "frame_0020_key.png",
+      "vlm_response": "画面中有一个角色站在一个金属笼子内，背景是黑暗的、高大的黑色柱状结构，地面覆盖着绿色的方块状纹理。角色看起来像是被关押在笼子中，双手交叉放在胸前，表情严肃。"
+    },
+    {
+      "frame_idx": 21,
+      "timestamp_ms": 10577,
+      "diff_value": 976.8465995855148,
+      "is_keyframe": true,
+      "reason": "差异值 976.85 >= 阈值 500.00",
+      "image_filename": "frame_0021_key.png",
+      "vlm_response": "画面中有一个角色站在一个由方块构成的地面上，地面上有火焰。背景中有三座高大的黑色柱状物体，整个场景看起来像是某种地下或黑暗环境。"
+    },
+    {
+      "frame_idx": 22,
+      "timestamp_ms": 11062,
+      "diff_value": 3685.3017629253927,
+      "is_keyframe": true,
+      "reason": "差异值 3685.30 >= 阈值 500.00",
+      "image_filename": "frame_0022_key.png",
+      "vlm_response": "画面展示了一个由方块构成的复杂结构，其中包含多个方块和物品。左侧有一个绿色方块，似乎悬浮在空中，而右侧则有一些堆叠的方块，上面放置了一些物品。背景中可以看到一些发光的方块和墙壁上的红色条纹。整体环境看起来像是一个虚拟的方块世界，可能是游戏中的场景。"
+    },
+    {
+      "frame_idx": 23,
+      "timestamp_ms": 11546,
+      "diff_value": 4213.345885484839,
+      "is_keyframe": true,
+      "reason": "差异值 4213.35 >= 阈值 500.00",
+      "image_filename": "frame_0023_key.png",
+      "vlm_response": "画面展示了一个由方块构成的复杂结构，中心是一个发光的橙色方块，周围环绕着白色和黑色的方块。场景似乎是一个封闭的空间，四周有发光的方块墙壁，顶部悬挂着一些绿色和黑色的方块。整体环境看起来像是某种虚拟世界或游戏场景。"
+    },
+    {
+      "frame_idx": 24,
+      "timestamp_ms": 12046,
+      "diff_value": 4236.994672365838,
+      "is_keyframe": true,
+      "reason": "差异值 4236.99 >= 阈值 500.00",
+      "image_filename": "frame_0024_key.png",
+      "vlm_response": "画面中可以看到一个由方块构成的复杂建筑结构，整体呈现出一种未来科技风格。画面中央有一个身穿盔甲的角色，似乎正在操作某种设备。左右两侧有类似传送带的装置，上面有红色和白色的线条，可能用于运输物品。背景中隐约可见一些雾气，增加了场景的神秘感。"
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_ms": 12546,
+      "diff_value": 4413.5432925665355,
+      "is_keyframe": true,
+      "reason": "差异值 4413.54 >= 阈值 500.00",
+      "image_filename": "frame_0025_key.png",
+      "vlm_response": "画面展示了一个由方块构成的复杂建筑内部，中心位置有一个巨大的黑色方块，周围是白色和红色的方块结构。顶部有绿色的植物，整体环境显得非常现代且科技感十足。"
+    },
+    {
+      "frame_idx": 26,
+      "timestamp_ms": 13046,
+      "diff_value": 6155.44891879363,
+      "is_keyframe": true,
+      "reason": "差异值 6155.45 >= 阈值 500.00",
+      "image_filename": "frame_0026_key.png",
+      "vlm_response": "画面中可以看到一个蓝色背景，左侧有一列深色的物体，可能是书架或柜子。中间部分有一条水平线，似乎是一个屏幕或显示器，上面显示着一些像素化的图案。右侧边缘隐约可见一个黑色的物体，可能是门框或墙壁。整体画面较为简洁，没有明显的动态变化。"
+    },
+    {
+      "frame_idx": 27,
+      "timestamp_ms": 13546,
+      "diff_value": 7560.296832392561,
+      "is_keyframe": true,
+      "reason": "差异值 7560.30 >= 阈值 500.00",
+      "image_filename": "frame_0027_key.png",
+      "vlm_response": "画面中展示了一个由方块构成的房间，房间内有一张床，床上铺着深色的床单，床旁边有一个木制床头板。房间的墙壁和地板由深色方块构成，整体色调偏暗。房间的右侧有一面镜子，镜子的反射显示出房间的一部分，包括床和床头板。房间的灯光来自天花板上的灯具，发出柔和的光线。"
+    },
+    {
+      "frame_idx": 28,
+      "timestamp_ms": 14046,
+      "diff_value": 1677.0195551101658,
+      "is_keyframe": true,
+      "reason": "差异值 1677.02 >= 阈值 500.00",
+      "image_filename": "frame_0028_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 29,
+      "timestamp_ms": 14546,
+      "diff_value": 3709.266974803665,
+      "is_keyframe": true,
+      "reason": "差异值 3709.27 >= 阈值 500.00",
+      "image_filename": "frame_0029_key.png",
+      "vlm_response": "画面展示了一个室内场景，有几个人物和动物。他们似乎正在进行某种活动，其中一些人坐在长椅上，另一些人站立或走动。背景中可以看到一些装饰物和结构，整体环境显得较为现代。"
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_ms": 15046,
+      "diff_value": 2277.3539638552575,
+      "is_keyframe": true,
+      "reason": "差异值 2277.35 >= 阈值 500.00",
+      "image_filename": "frame_0030_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 31,
+      "timestamp_ms": 15546,
+      "diff_value": 3598.100098508399,
+      "is_keyframe": true,
+      "reason": "差异值 3598.10 >= 阈值 500.00",
+      "image_filename": "frame_0031_key.png",
+      "vlm_response": "画面中可以看到一个由红色方块构成的建筑结构，中间是一个发光的橙色方块，周围有一些白色和黑色的方块。画面左侧和右侧各有一个类似门框的结构，门框内似乎有更多复杂的方块设计。整体场景看起来像是某种电子设备或装置，可能涉及科技或游戏元素。"
+    },
+    {
+      "frame_idx": 32,
+      "timestamp_ms": 16046,
+      "diff_value": 4336.392453711278,
+      "is_keyframe": true,
+      "reason": "差异值 4336.39 >= 阈值 500.00",
+      "image_filename": "frame_0032_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 33,
+      "timestamp_ms": 16562,
+      "diff_value": 3746.0599554837477,
+      "is_keyframe": true,
+      "reason": "差异值 3746.06 >= 阈值 500.00",
+      "image_filename": "frame_0033_key.png",
+      "vlm_response": "画面中展示了一个对称的几何图案，中心是一个复杂的星形结构，周围环绕着多个尖塔状的物体。这些尖塔上装饰着灯光，营造出一种神秘而庄严的氛围。背景是深色的天空，似乎是在夜晚。画面下方隐约可见一些建筑物的轮廓，暗示这是一个城市环境。"
+    },
+    {
+      "frame_idx": 34,
+      "timestamp_ms": 17046,
+      "diff_value": 27.257037044611693,
+      "is_keyframe": false,
+      "reason": "差异值 27.26 < 阈值 500.00",
+      "image_filename": "frame_0034_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_ms": 17546,
+      "diff_value": 88.62056882635252,
+      "is_keyframe": false,
+      "reason": "差异值 88.62 < 阈值 500.00",
+      "image_filename": "frame_0035_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 36,
+      "timestamp_ms": 18046,
+      "diff_value": 157.98501070298866,
+      "is_keyframe": false,
+      "reason": "差异值 157.99 < 阈值 500.00",
+      "image_filename": "frame_0036_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 37,
+      "timestamp_ms": 18577,
+      "diff_value": 293.8560788885253,
+      "is_keyframe": false,
+      "reason": "差异值 293.86 < 阈值 500.00",
+      "image_filename": "frame_0037_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 38,
+      "timestamp_ms": 19062,
+      "diff_value": 323.1458060645724,
+      "is_keyframe": false,
+      "reason": "差异值 323.15 < 阈值 500.00",
+      "image_filename": "frame_0038_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 39,
+      "timestamp_ms": 19562,
+      "diff_value": 339.908068485493,
+      "is_keyframe": false,
+      "reason": "差异值 339.91 < 阈值 500.00",
+      "image_filename": "frame_0039_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_ms": 20077,
+      "diff_value": 1291.6074593695462,
+      "is_keyframe": true,
+      "reason": "差异值 1291.61 >= 阈值 500.00",
+      "image_filename": "frame_0040_key.png",
+      "vlm_response": "画面中展示了一个巨大的、复杂的机械装置，其中心是一个发光的核心，周围有多个向外延伸的臂状结构，每个臂末端似乎都有类似灯光的装置。下方有一个火山口，喷出明亮的熔岩，与上方机械装置形成鲜明对比。整个场景充满了科幻和神秘感，背景是黑暗的天空，增强了画面的戏剧性。"
+    },
+    {
+      "frame_idx": 41,
+      "timestamp_ms": 20562,
+      "diff_value": 156.6665388443499,
+      "is_keyframe": false,
+      "reason": "差异值 156.67 < 阈值 500.00",
+      "image_filename": "frame_0041_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 42,
+      "timestamp_ms": 21062,
+      "diff_value": 128.60369628054102,
+      "is_keyframe": false,
+      "reason": "差异值 128.60 < 阈值 500.00",
+      "image_filename": "frame_0042_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 43,
+      "timestamp_ms": 21562,
+      "diff_value": 163.11378231348166,
+      "is_keyframe": false,
+      "reason": "差异值 163.11 < 阈值 500.00",
+      "image_filename": "frame_0043_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 44,
+      "timestamp_ms": 22046,
+      "diff_value": 175.70630862783594,
+      "is_keyframe": false,
+      "reason": "差异值 175.71 < 阈值 500.00",
+      "image_filename": "frame_0044_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_ms": 22562,
+      "diff_value": 120.62904770669721,
+      "is_keyframe": false,
+      "reason": "差异值 120.63 < 阈值 500.00",
+      "image_filename": "frame_0045_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 46,
+      "timestamp_ms": 23062,
+      "diff_value": 134.10139888743456,
+      "is_keyframe": false,
+      "reason": "差异值 134.10 < 阈值 500.00",
+      "image_filename": "frame_0046_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 47,
+      "timestamp_ms": 23562,
+      "diff_value": 130.24503367691972,
+      "is_keyframe": false,
+      "reason": "差异值 130.25 < 阈值 500.00",
+      "image_filename": "frame_0047_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 48,
+      "timestamp_ms": 24062,
+      "diff_value": 154.4468361420157,
+      "is_keyframe": false,
+      "reason": "差异值 154.45 < 阈值 500.00",
+      "image_filename": "frame_0048_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 49,
+      "timestamp_ms": 24562,
+      "diff_value": 147.84906399978186,
+      "is_keyframe": false,
+      "reason": "差异值 147.85 < 阈值 500.00",
+      "image_filename": "frame_0049_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_ms": 25046,
+      "diff_value": 147.84906399978186,
+      "is_keyframe": false,
+      "reason": "差异值 147.85 < 阈值 500.00",
+      "image_filename": "frame_0050_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 51,
+      "timestamp_ms": 25546,
+      "diff_value": 147.84906399978186,
+      "is_keyframe": false,
+      "reason": "差异值 147.85 < 阈值 500.00",
+      "image_filename": "frame_0051_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 52,
+      "timestamp_ms": 26046,
+      "diff_value": 147.84906399978186,
+      "is_keyframe": false,
+      "reason": "差异值 147.85 < 阈值 500.00",
+      "image_filename": "frame_0052_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 53,
+      "timestamp_ms": 26562,
+      "diff_value": 147.84906399978186,
+      "is_keyframe": false,
+      "reason": "差异值 147.85 < 阈值 500.00",
+      "image_filename": "frame_0053_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 54,
+      "timestamp_ms": 27046,
+      "diff_value": 147.84906399978186,
+      "is_keyframe": false,
+      "reason": "差异值 147.85 < 阈值 500.00",
+      "image_filename": "frame_0054_skip.png",
+      "vlm_response": null
+    }
+  ],
+  "summary": "视频以玩家在《Minecraft》中的日常活动开始，在白天探索小屋和周围环境。随后，画面转向一系列复杂、科幻风格的几何结构与建筑，暗示玩家进入或遭遇了一个神秘的高科技维度或地点。关键转折点出现在角色被关在笼中以及身处火焰地面等场景，表明可能面临了某种挑战或威胁。整体来看，视频主题围绕从平静的生存探索突然过渡到充满未知与危机的异世界体验，展现了游戏中的冒险与场景切换。"
+}

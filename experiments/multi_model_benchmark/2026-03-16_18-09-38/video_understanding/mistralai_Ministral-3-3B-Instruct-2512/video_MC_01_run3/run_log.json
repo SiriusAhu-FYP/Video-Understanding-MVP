@@ -1,0 +1,515 @@
+{
+  "video": "video_MC_01.mp4",
+  "model": "mistralai/Ministral-3-3B-Instruct-2512",
+  "config": {
+    "screenshot_interval_ms": 500,
+    "max_size": 512,
+    "recording_duration_s": 27,
+    "algorithm": "mse",
+    "diff_threshold": 500.0
+  },
+  "stats": {
+    "total_sampled": 55,
+    "total_keyframes": 33,
+    "total_dropped": 24,
+    "duration_s": 27.0
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_ms": 30,
+      "diff_value": null,
+      "is_keyframe": true,
+      "reason": "首帧，自动标记为关键帧",
+      "image_filename": "frame_0000_key.png",
+      "vlm_response": "这张截图来自《迷你世界》游戏，展示的是一个外景环境的建筑设计场景。主要关键物体包括由各种方块构成的建筑结构，如多层的石墙、木质屋顶和石质基座，以及一条通向水域的石板路径，两侧种植有草和植被。游戏界面底部的物品栏显示了玩家手持的工具和收集的资源，如石头、木材、植物等，以及部分生物的心形图标，暗示可能有动物或生物相关的活动或交互。场景整体呈现出一个简洁的村庄或基地外围的设计，水域在远处，天空开阔，营造出一个宁静的乡村氛围。"
+    },
+    {
+      "frame_idx": 1,
+      "timestamp_ms": 530,
+      "diff_value": 2857.828600499018,
+      "is_keyframe": true,
+      "reason": "差异值 2857.83 >= 阈值 500.00",
+      "image_filename": "frame_0001_key.png",
+      "vlm_response": "这张截图展示的是《Minecraft》中的一个外景环境画面。主要关键物体包括一座建造的木质房屋，附近有蓝色石头堆砌的墙壁，以及一个小型的水域和周围的植被。房屋内部的门窗处有火把点亮，显示出室内温暖的光线外泄。\n\n在场景中，房屋周边的草地和水域边缘有简单的花园布局，包括一些种植的植物和小路。游戏界面底部的工具栏显示了当前使用的工具和资源堆栈，包括木材、石头、铁材等，说明玩家可能正在进行建筑或修补活动。背景的天空和远处的山丘展现了开阔的自然景观。"
+    },
+    {
+      "frame_idx": 2,
+      "timestamp_ms": 1046,
+      "diff_value": 5142.475175201789,
+      "is_keyframe": true,
+      "reason": "差异值 5142.48 >= 阈值 500.00",
+      "image_filename": "frame_0002_key.png",
+      "vlm_response": "这张截图来自《迷因斯通》游戏，显示的是一个室外建筑结合内部的场景。主要关键物体包括一座建筑的外墙，木制窗户，以及周边的草地和植被。游戏界面底部的物品栏显示了玩家手持的工具和部分资源，如木材、石头、食物和装备，显示玩家当前的装备和储存状态。\n\n玩家的视角似乎集中在建筑的窗户附近，可能正在进行建造或探索活动。场景中，周围的植被和建筑的墙面结合，营造出一个简易但有特色的村庄或基地环境，背景天空呈现出部分云彩，暗示这是一个白天的场景。界面的红色心形图标显示玩家的健康和饱腹度，为游戏中的生存元素提供了实时反馈。"
+    },
+    {
+      "frame_idx": 3,
+      "timestamp_ms": 1546,
+      "diff_value": 4805.186521733202,
+      "is_keyframe": true,
+      "reason": "差异值 4805.19 >= 阈值 500.00",
+      "image_filename": "frame_0003_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 4,
+      "timestamp_ms": 2046,
+      "diff_value": 1610.024383385144,
+      "is_keyframe": true,
+      "reason": "差异值 1610.02 >= 阈值 500.00",
+      "image_filename": "frame_0004_key.png",
+      "vlm_response": "这张截图来自《迷因地图》游戏，主要人物是一个皮肤为“皮革装束”的玩家角色。角色正静止站立，手持工具，面向前方，似乎在观察或等待下一步操作。场景是一个简约的室内建筑空间，由木质和石材构成，门窗设计简洁，周围环境暗淡，暗示可能处于夜间或阴暗环境。游戏界面底部显示了玩家的健康、饱腹度、心情和当前装备及储存物品的详细状态。"
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_ms": 2546,
+      "diff_value": 5565.40617330661,
+      "is_keyframe": true,
+      "reason": "差异值 5565.41 >= 阈值 500.00",
+      "image_filename": "frame_0005_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 6,
+      "timestamp_ms": 3046,
+      "diff_value": 15.175254622054974,
+      "is_keyframe": false,
+      "reason": "差异值 15.18 < 阈值 500.00",
+      "image_filename": "frame_0006_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 7,
+      "timestamp_ms": 3546,
+      "diff_value": 15.068886002945026,
+      "is_keyframe": false,
+      "reason": "差异值 15.07 < 阈值 500.00",
+      "image_filename": "frame_0007_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 8,
+      "timestamp_ms": 4062,
+      "diff_value": 5452.3281795375215,
+      "is_keyframe": true,
+      "reason": "差异值 5452.33 >= 阈值 500.00",
+      "image_filename": "frame_0008_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 9,
+      "timestamp_ms": 4546,
+      "diff_value": 1629.0462784958552,
+      "is_keyframe": true,
+      "reason": "差异值 1629.05 >= 阈值 500.00",
+      "image_filename": "frame_0009_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_ms": 5046,
+      "diff_value": 993.3931609947643,
+      "is_keyframe": true,
+      "reason": "差异值 993.39 >= 阈值 500.00",
+      "image_filename": "frame_0010_key.png",
+      "vlm_response": "这张截图展示的是一个复杂的光学或光学仪器的结构模拟图，类似于星际望远镜或太空望远镜的光学组件布局。中心是一个对称的光学系统，由多个反射镜和透镜组成，呈现出精密的几何排列，用于聚焦和传导光线。\n\n从图中可以推测，这些部件可能用于高精度的光学观测，包括星体、太空中的物体或其他天文观测任务。环绕的辐射状光线效果暗示了光线经过反射后的路径，展示了仪器的光学性能和对称性设计。整体环境呈现出一种高科技、精密且专业的技术构造场景。"
+    },
+    {
+      "frame_idx": 11,
+      "timestamp_ms": 5546,
+      "diff_value": 626.3395812881763,
+      "is_keyframe": true,
+      "reason": "差异值 626.34 >= 阈值 500.00",
+      "image_filename": "frame_0011_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 12,
+      "timestamp_ms": 6046,
+      "diff_value": 1665.7238526668848,
+      "is_keyframe": true,
+      "reason": "差异值 1665.72 >= 阈值 500.00",
+      "image_filename": "frame_0012_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 13,
+      "timestamp_ms": 6546,
+      "diff_value": 1464.263579842932,
+      "is_keyframe": true,
+      "reason": "差异值 1464.26 >= 阈值 500.00",
+      "image_filename": "frame_0013_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 14,
+      "timestamp_ms": 7046,
+      "diff_value": 2885.83616076298,
+      "is_keyframe": true,
+      "reason": "差异值 2885.84 >= 阈值 500.00",
+      "image_filename": "frame_0014_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_ms": 7577,
+      "diff_value": 2477.25631271815,
+      "is_keyframe": true,
+      "reason": "差异值 2477.26 >= 阈值 500.00",
+      "image_filename": "frame_0015_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 16,
+      "timestamp_ms": 8046,
+      "diff_value": 3774.8469557837043,
+      "is_keyframe": true,
+      "reason": "差异值 3774.85 >= 阈值 500.00",
+      "image_filename": "frame_0016_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 17,
+      "timestamp_ms": 8546,
+      "diff_value": 2336.1474507117146,
+      "is_keyframe": true,
+      "reason": "差异值 2336.15 >= 阈值 500.00",
+      "image_filename": "frame_0017_key.png",
+      "vlm_response": "这张图片展示的是一款类似于《Minecraft》的游戏截图，主要展示了一个宏大的建筑结构，类似于高层建筑或塔楼的顶部设计。该建筑由多种方块材质组成，包括石材、金属、灯光装饰以及一些特殊颜色的装饰元素，呈现出复杂的几何和立体结构。\n\n从视角上看，建筑的顶部设计呈现出对称的排列，并包含多个通风或透光的窗洞，周围环境暗淡且充满光影效果，暗示夜间或深度内部空间。整体场景呈现出室内或半室内的建筑内部视角，没有明显的外部自然环境。没有明显的动态变化，但光影和建筑的复杂设计给人一种高科技或现代化建筑的印象。"
+    },
+    {
+      "frame_idx": 18,
+      "timestamp_ms": 9030,
+      "diff_value": 3200.3222264261562,
+      "is_keyframe": true,
+      "reason": "差异值 3200.32 >= 阈值 500.00",
+      "image_filename": "frame_0018_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 19,
+      "timestamp_ms": 9546,
+      "diff_value": 1916.7814136125655,
+      "is_keyframe": true,
+      "reason": "差异值 1916.78 >= 阈值 500.00",
+      "image_filename": "frame_0019_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_ms": 10046,
+      "diff_value": 1920.8082682291667,
+      "is_keyframe": true,
+      "reason": "差异值 1920.81 >= 阈值 500.00",
+      "image_filename": "frame_0020_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 21,
+      "timestamp_ms": 10577,
+      "diff_value": 988.3296878408595,
+      "is_keyframe": true,
+      "reason": "差异值 988.33 >= 阈值 500.00",
+      "image_filename": "frame_0021_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 22,
+      "timestamp_ms": 11046,
+      "diff_value": 3605.3761009762216,
+      "is_keyframe": true,
+      "reason": "差异值 3605.38 >= 阈值 500.00",
+      "image_filename": "frame_0022_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 23,
+      "timestamp_ms": 11577,
+      "diff_value": 4162.492328956697,
+      "is_keyframe": true,
+      "reason": "差异值 4162.49 >= 阈值 500.00",
+      "image_filename": "frame_0023_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 24,
+      "timestamp_ms": 12046,
+      "diff_value": 3959.203314177029,
+      "is_keyframe": true,
+      "reason": "差异值 3959.20 >= 阈值 500.00",
+      "image_filename": "frame_0024_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_ms": 12546,
+      "diff_value": 4467.030276846095,
+      "is_keyframe": true,
+      "reason": "差异值 4467.03 >= 阈值 500.00",
+      "image_filename": "frame_0025_key.png",
+      "vlm_response": "这张截图展示的是一款类似《迷你世界》的游戏中的虚拟建筑场景，主要以室内建筑结构为主。场景中没有人物或动物，但有多个设计精巧的建筑区域，包括地下室和地上多层建筑，配备了灯光、窗户和装饰性的石材与木质结构。地面布置有棋盘式的铺砌，部分区域有红色和灰色的座椅，以及一些堆放的装饰性石块。整体环境呈现出一个复杂且高度建造的仿真室内空间，可能是一个游戏中的地下城或大型建筑模拟区域。"
+    },
+    {
+      "frame_idx": 26,
+      "timestamp_ms": 13046,
+      "diff_value": 6524.0768246209645,
+      "is_keyframe": true,
+      "reason": "差异值 6524.08 >= 阈值 500.00",
+      "image_filename": "frame_0026_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 27,
+      "timestamp_ms": 13577,
+      "diff_value": 4195.8389694453535,
+      "is_keyframe": true,
+      "reason": "差异值 4195.84 >= 阈值 500.00",
+      "image_filename": "frame_0027_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 28,
+      "timestamp_ms": 14046,
+      "diff_value": 3628.9119679183027,
+      "is_keyframe": true,
+      "reason": "差异值 3628.91 >= 阈值 500.00",
+      "image_filename": "frame_0028_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 29,
+      "timestamp_ms": 14546,
+      "diff_value": 3664.8321335078535,
+      "is_keyframe": true,
+      "reason": "差异值 3664.83 >= 阈值 500.00",
+      "image_filename": "frame_0029_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_ms": 15046,
+      "diff_value": 3488.8045545647906,
+      "is_keyframe": true,
+      "reason": "差异值 3488.80 >= 阈值 500.00",
+      "image_filename": "frame_0030_key.png",
+      "vlm_response": "这张图片展示的是一片由多层建筑组成的虚拟城市街道视角，类似于游戏《迷你世界》中的建筑景观。从顶部俯视，可以看到高密度的建筑结构，包括多个楼层的房屋、商业建筑和道路网络，部分建筑顶部装饰有灯光和标志性广告牌。场景呈现出室外城市环境，建筑物之间的交错和高度变化形成了复杂的立体空间结构，整体呈现出一个高度人工化且富于艺术感的设计。没有明显的人物或动物活动，但可以观察到建筑物的多样化和复杂的地理构造。"
+    },
+    {
+      "frame_idx": 31,
+      "timestamp_ms": 15546,
+      "diff_value": 7418.720684377727,
+      "is_keyframe": true,
+      "reason": "差异值 7418.72 >= 阈值 500.00",
+      "image_filename": "frame_0031_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 32,
+      "timestamp_ms": 16046,
+      "diff_value": 4161.640655677356,
+      "is_keyframe": true,
+      "reason": "差异值 4161.64 >= 阈值 500.00",
+      "image_filename": "frame_0032_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 33,
+      "timestamp_ms": 16546,
+      "diff_value": 3886.668094868019,
+      "is_keyframe": true,
+      "reason": "差异值 3886.67 >= 阈值 500.00",
+      "image_filename": "frame_0033_key.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 34,
+      "timestamp_ms": 17046,
+      "diff_value": 26.95887359565881,
+      "is_keyframe": false,
+      "reason": "差异值 26.96 < 阈值 500.00",
+      "image_filename": "frame_0034_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_ms": 17546,
+      "diff_value": 87.43634789485166,
+      "is_keyframe": false,
+      "reason": "差异值 87.44 < 阈值 500.00",
+      "image_filename": "frame_0035_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 36,
+      "timestamp_ms": 18046,
+      "diff_value": 156.82160435754798,
+      "is_keyframe": false,
+      "reason": "差异值 156.82 < 阈值 500.00",
+      "image_filename": "frame_0036_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 37,
+      "timestamp_ms": 18546,
+      "diff_value": 294.0612558627836,
+      "is_keyframe": false,
+      "reason": "差异值 294.06 < 阈值 500.00",
+      "image_filename": "frame_0037_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 38,
+      "timestamp_ms": 19046,
+      "diff_value": 321.3899875927138,
+      "is_keyframe": false,
+      "reason": "差异值 321.39 < 阈值 500.00",
+      "image_filename": "frame_0038_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 39,
+      "timestamp_ms": 19546,
+      "diff_value": 339.79811402432375,
+      "is_keyframe": false,
+      "reason": "差异值 339.80 < 阈值 500.00",
+      "image_filename": "frame_0039_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_ms": 20062,
+      "diff_value": 1361.1073894933463,
+      "is_keyframe": true,
+      "reason": "差异值 1361.11 >= 阈值 500.00",
+      "image_filename": "frame_0040_key.png",
+      "vlm_response": "这张视频截图展示了一种高科技或虚拟场景，主要焦点是一具类似人类头部的机械或虚拟实体，其面部结构呈现出复杂的电子或光学装置。该实体似乎处于某种高能或能量释放状态，光线从其正下方向上方聚集并形成强烈的光柱，暗示可能进行着某种能量转换或发射过程。\n\n场景呈现出一种模糊的、科幻化的雾气环境，暗示可能是在虚拟空间或实验室内进行高技术操作。该实体周围的装置和光线效果表明，可能涉及到先进的能源技术或实验性科技设备。"
+    },
+    {
+      "frame_idx": 41,
+      "timestamp_ms": 20546,
+      "diff_value": 168.60672993019196,
+      "is_keyframe": false,
+      "reason": "差异值 168.61 < 阈值 500.00",
+      "image_filename": "frame_0041_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 42,
+      "timestamp_ms": 21062,
+      "diff_value": 132.48563277159687,
+      "is_keyframe": false,
+      "reason": "差异值 132.49 < 阈值 500.00",
+      "image_filename": "frame_0042_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 43,
+      "timestamp_ms": 21562,
+      "diff_value": 177.6888617337478,
+      "is_keyframe": false,
+      "reason": "差异值 177.69 < 阈值 500.00",
+      "image_filename": "frame_0043_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 44,
+      "timestamp_ms": 22046,
+      "diff_value": 182.92461721476877,
+      "is_keyframe": false,
+      "reason": "差异值 182.92 < 阈值 500.00",
+      "image_filename": "frame_0044_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_ms": 22562,
+      "diff_value": 138.0007873854712,
+      "is_keyframe": false,
+      "reason": "差异值 138.00 < 阈值 500.00",
+      "image_filename": "frame_0045_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 46,
+      "timestamp_ms": 23046,
+      "diff_value": 137.26005194698953,
+      "is_keyframe": false,
+      "reason": "差异值 137.26 < 阈值 500.00",
+      "image_filename": "frame_0046_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 47,
+      "timestamp_ms": 23577,
+      "diff_value": 127.38068042375654,
+      "is_keyframe": false,
+      "reason": "差异值 127.38 < 阈值 500.00",
+      "image_filename": "frame_0047_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 48,
+      "timestamp_ms": 24062,
+      "diff_value": 145.3942943526396,
+      "is_keyframe": false,
+      "reason": "差异值 145.39 < 阈值 500.00",
+      "image_filename": "frame_0048_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 49,
+      "timestamp_ms": 24546,
+      "diff_value": 150.4595161158377,
+      "is_keyframe": false,
+      "reason": "差异值 150.46 < 阈值 500.00",
+      "image_filename": "frame_0049_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_ms": 25062,
+      "diff_value": 150.4595161158377,
+      "is_keyframe": false,
+      "reason": "差异值 150.46 < 阈值 500.00",
+      "image_filename": "frame_0050_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 51,
+      "timestamp_ms": 25562,
+      "diff_value": 150.4595161158377,
+      "is_keyframe": false,
+      "reason": "差异值 150.46 < 阈值 500.00",
+      "image_filename": "frame_0051_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 52,
+      "timestamp_ms": 26062,
+      "diff_value": 150.4595161158377,
+      "is_keyframe": false,
+      "reason": "差异值 150.46 < 阈值 500.00",
+      "image_filename": "frame_0052_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 53,
+      "timestamp_ms": 26546,
+      "diff_value": 150.4595161158377,
+      "is_keyframe": false,
+      "reason": "差异值 150.46 < 阈值 500.00",
+      "image_filename": "frame_0053_skip.png",
+      "vlm_response": null
+    },
+    {
+      "frame_idx": 54,
+      "timestamp_ms": 27062,
+      "diff_value": 150.4595161158377,
+      "is_keyframe": false,
+      "reason": "差异值 150.46 < 阈值 500.00",
+      "image_filename": "frame_0054_skip.png",
+      "vlm_response": null
+    }
+  ],
+  "summary": "视频开始于一个宁静的《迷你世界》乡村基地建造场景，玩家在户外进行建筑活动。随后视角转向室内和更复杂的建筑结构，包括高层塔楼和精心设计的室内空间。视频中段出现一个关键转折，画面突然切换为一个精密的天文望远镜光学系统模拟图，引入了高科技主题。最后，视频展现了一个高度发达的虚拟城市俯视图，并以一个处于能量释放状态的科幻机械头部实体作为结束。整体上，视频的核心内容是从基础的沙盒游戏建造，逐步过渡到展现复杂建筑、高科技仪器与未来科幻想象的视觉旅程。"
+}
