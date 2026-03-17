@@ -2,6 +2,7 @@
     "id": "03_GenshinImpact",
     "type": "image",
     "game": "GenshinImpact",
+    "image_file": "03_GenshinImpact.png",
     "requirement": {
         "id": "R03",
         "name": "Quest / Text / Instruction Understanding",
@@ -15,7 +16,6 @@
         "assistant usefulness",
         "uncertainty control"
     ],
-    "image_file": "03_GenshinImpact.png",
     "task_definition": {
         "scene_summary": "The screenshot shows a Genshin Impact quest scene where the player needs to reach a destination within a time limit. The quest text is visible on the left, including a directional hint indicating that the destination is lower and 44 meters away.",
         "evaluation_intent": "The tested model should identify the current quest goal, use visible text and directional hints to infer the next action, and avoid unsupported guesses."

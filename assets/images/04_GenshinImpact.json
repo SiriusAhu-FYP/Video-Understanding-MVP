@@ -2,6 +2,7 @@
     "id": "04_GenshinImpact",
     "type": "image",
     "game": "GenshinImpact",
+    "image_file": "04_GenshinImpact.png",
     "requirement": {
         "id": "R04",
         "name": "Exploration / Interaction Object Detection",
@@ -15,7 +16,6 @@
         "priority awareness",
         "hallucination control"
     ],
-    "image_file": "04_GenshinImpact.png",
     "task_definition": {
         "scene_summary": "The screenshot shows the player in an outdoor area. A chest is visible on the right side near the player, and a dropped item is visible on the ground in front of the player. These are the main nearby exploration targets intended for evaluation.",
         "evaluation_intent": "The tested model should detect the visible nearby chest and dropped item, identify them as relevant exploration or interaction targets, and avoid relying on game-specific distant objects."
