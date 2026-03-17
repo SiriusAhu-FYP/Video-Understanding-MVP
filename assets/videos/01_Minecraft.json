@@ -1,0 +1,114 @@
+{
+    "id": "01_Minecraft",
+    "type": "video",
+    "game": "Minecraft",
+    "video_file": "01_Minecraft.mp4",
+    "requirement": {
+        "id": "V01",
+        "name": "Combat Sequence Understanding",
+        "goal": "Test whether the model can understand a short combat sequence, track how danger changes over time, and correctly identify the final outcome."
+    },
+    "focus": [
+        "event sequence understanding",
+        "danger escalation",
+        "outcome understanding",
+        "causal reasoning",
+        "assistant usefulness",
+        "hallucination control"
+    ],
+    "task_definition": {
+        "scene_summary": "The clip shows the player in a cave while a zombie approaches and attacks. The player's situation worsens over time, and the clip ends with the player's death.",
+        "evaluation_intent": "The tested model should understand the sequence of events, identify the zombie as the main threat, describe how the danger escalates, and correctly explain the final outcome without unsupported guesses."
+    },
+    "prompts": {
+        "A_description": "Please describe what happens in this video clip. Your answer should: (1) identify the main threat or important event, (2) explain how the situation changes over time, (3) describe what happens at the end, and (4) avoid unsupported guesses.",
+        "B_assistant": "You are a game assistant. Based only on this video: (1) what is happening to the player? (2) how does the danger change during the clip? (3) why does the final outcome happen? (4) what should the player have paid attention to? (5) what cannot be determined from the clip alone?"
+    },
+    "reference_answer": {
+        "minimum_expected_points": [
+            "The main threat is a zombie.",
+            "The zombie approaches and attacks the player during the clip.",
+            "The player's situation becomes more dangerous over time.",
+            "The clip ends with the player's death.",
+            "The final death is caused by the zombie."
+        ],
+        "good_additional_points": [
+            "The player appears to be in a cave or underground environment.",
+            "The player is already in a weak or dangerous state before the end.",
+            "The player is not effectively defending against the zombie for part of the clip.",
+            "The clip shows a transition from threat awareness to direct combat failure."
+        ],
+        "uncertain_points": [
+            "It cannot be fully determined what the player's exact plan was at the start of the clip.",
+            "It cannot be determined whether there were additional unseen enemies elsewhere in the cave.",
+            "Fine-grained reasoning about every inventory decision should not be overclaimed unless clearly visible."
+        ],
+        "example_strict_answer": "The video shows the player in a cave while a zombie approaches and becomes the main threat. Over the course of the clip, the danger increases because the zombie gets closer and continues attacking while the player remains in a weak situation. By the end of the clip, the player dies, and the death screen indicates that the zombie caused the final outcome. A useful assistant should note that the player failed to stabilize the situation before the zombie closed in. However, the clip alone does not fully reveal whether there were other enemies elsewhere or exactly what the player intended to do at the beginning."
+    },
+    "scoring": {
+        "scale": {
+            "min": 0,
+            "max": 2,
+            "total_max": 10
+        },
+        "dimensions": [
+            {
+                "name": "event_sequence_understanding",
+                "description": "Whether the model correctly understands the main sequence of events from beginning to end.",
+                "criteria": {
+                    "2": "Clearly describes the zombie encounter, the progression of danger, and the final death in correct sequence.",
+                    "1": "Partially describes the sequence but misses or confuses some steps.",
+                    "0": "Fails to understand the sequence or describes it incorrectly."
+                }
+            },
+            {
+                "name": "key_change_recognition",
+                "description": "Whether the model identifies the important change in situation over time.",
+                "criteria": {
+                    "2": "Clearly states that the situation worsens and danger escalates during the clip.",
+                    "1": "Mentions change vaguely but does not explain it clearly.",
+                    "0": "Fails to identify the important change over time."
+                }
+            },
+            {
+                "name": "outcome_understanding",
+                "description": "Whether the model correctly identifies and explains the final outcome.",
+                "criteria": {
+                    "2": "Correctly states that the player dies and attributes the death to the zombie.",
+                    "1": "Gets the ending partly right but incomplete or vague.",
+                    "0": "Misidentifies or misses the final outcome."
+                }
+            },
+            {
+                "name": "assistant_value",
+                "description": "Whether the answer provides useful and grounded assistant-style insight.",
+                "criteria": {
+                    "2": "Provides relevant and actionable explanation of what went wrong or what the player should have noticed.",
+                    "1": "Provides somewhat useful but generic advice.",
+                    "0": "Provides little or no useful assistant value."
+                }
+            },
+            {
+                "name": "hallucination_control",
+                "description": "Whether the model avoids unsupported claims and over-interpretation.",
+                "criteria": {
+                    "2": "Stays grounded and avoids inventing unseen events or intentions.",
+                    "1": "Mostly grounded but somewhat speculative.",
+                    "0": "Invents unsupported events, enemies, or causes."
+                }
+            }
+        ],
+        "hard_penalties": [
+            "Failing to identify the zombie as the main threat.",
+            "Missing that the player dies at the end.",
+            "Claiming a different cause of death without support.",
+            "Inventing major events that do not occur in the clip."
+        ]
+    },
+    "grading_prompt_for_judge_model": "You are grading the response of a tested vision-language model on a game video understanding task. Score the response strictly using the provided rubric. Focus on whether the model understands the sequence of events, the change in situation over time, and the final outcome. Penalize unsupported guesses. Return JSON with per-dimension scores, total score, strengths, weaknesses, missing key points, and hallucinations.",
+    "metadata": {
+        "notes": "This sample focuses on sequence understanding rather than frame-by-frame UI reading.",
+        "duration_seconds": 11.7,
+        "version": "v1"
+    }
+}
