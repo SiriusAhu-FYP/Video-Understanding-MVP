@@ -1,0 +1,3 @@
+[submodule "ahu_paimon_toolkit"]
+	path = ahu_paimon_toolkit
+	url = https://github.com/SiriusAhu-FYP/ahu_paimon_toolkit
