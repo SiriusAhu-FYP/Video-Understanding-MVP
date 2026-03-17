@@ -6,15 +6,8 @@ from pathlib import Path
 
 import pytest
 
-from pipeline.config import (
-    AlgorithmConfig,
-    CaptureConfig,
-    EnvSecrets,
-    LLMConfig,
-    LogConfig,
-    QueueConfig,
-    Settings,
-    get_settings,
+from ahu_paimon_toolkit.config import (
+    ToolkitSettings as Settings,
     setup_logging,
 )
 

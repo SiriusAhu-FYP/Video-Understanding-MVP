@@ -8,8 +8,8 @@ import time
 import httpx
 import pytest
 
-from pipeline.models import KeyFrame
-from pipeline.vlm import VLMClient, load_vlm_prompt
+from ahu_paimon_toolkit.models import KeyFrame
+from ahu_paimon_toolkit.vlm.client import AsyncVLMClient as VLMClient
 
 
 def _make_keyframe(frame_id: int = 0) -> KeyFrame:

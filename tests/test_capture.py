@@ -14,15 +14,13 @@ import cv2
 import numpy as np
 import pytest
 
-from pipeline.capture import (
+from ahu_paimon_toolkit.capture import (
     WindowNotFoundError,
-    _resize_frame,
     compute_diff,
-    compute_mse,
-    compute_ssim,
     find_window,
     frame_to_base64,
 )
+from ahu_paimon_toolkit.capture.frame_diff import compute_mse, compute_ssim
 
 
 # ── 帧差计算测试 ──────────────────────────────────────────────────

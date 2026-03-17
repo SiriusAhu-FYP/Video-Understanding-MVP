@@ -209,7 +209,7 @@ def wait_for_ready(
     poll_interval_s: float = 15.0,
 ) -> str:
     """Poll vLLM until it's ready and return the detected model ID."""
-    from toolkit.common import wait_for_vllm_ready
+    from ahu_paimon_toolkit.vlm.model_utils import wait_for_vllm_ready
 
     if base_url is None:
         base_url = get_vllm_base_url()

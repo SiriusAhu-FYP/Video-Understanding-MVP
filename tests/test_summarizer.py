@@ -7,8 +7,8 @@ import json
 import httpx
 import pytest
 
-from pipeline.models import FrameDescription
-from pipeline.summarizer import Summarizer, _build_frame_text, load_deepseek_prompt
+from ahu_paimon_toolkit.models import FrameDescription
+from ahu_paimon_toolkit.pipeline.summarizer import Summarizer
 
 
 def _make_descriptions(count: int = 3) -> list[FrameDescription]:
