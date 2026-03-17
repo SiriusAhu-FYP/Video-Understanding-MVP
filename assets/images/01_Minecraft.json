@@ -1,0 +1,115 @@
+{
+    "id": "01_Minecraft",
+    "type": "image",
+    "game": "Minecraft",
+    "image_file": "01_Minecraft.png",
+    "requirement": {
+        "id": "R01",
+        "name": "Combat HUD Reading + Tactical Suggestion",
+        "goal": "Test whether the model can understand the current combat situation, read visible HUD information, assess danger, and provide useful tactical advice."
+    },
+    "focus": [
+        "main threat recognition",
+        "combat situation understanding",
+        "visible HUD reading",
+        "danger assessment",
+        "assistant usefulness",
+        "uncertainty control"
+    ],
+    "task_definition": {
+        "scene_summary": "The player is in a cave and facing an approaching zombie at close range. The visible HUD shows the player's current health, hunger, level, held item, and hotbar resources.",
+        "evaluation_intent": "The tested model should identify the threat, summarize the player's state from visible UI, judge that the situation is dangerous, and avoid unsupported guesses."
+    },
+    "prompts": {
+        "A_description": "Please describe the current situation in this game screenshot. Your answer should: (1) identify the main threat or important target, (2) summarize the player's current state using visible UI information, (3) describe the immediate situation shown on screen, and (4) avoid guessing anything that is not supported by the image.",
+        "B_assistant": "You are a game assistant. Based only on this screenshot: (1) what is the most important thing the player should pay attention to right now? (2) is the current situation safe, neutral, or dangerous? (3) what visible evidence supports your judgment? (4) what cannot be determined from this screenshot alone?"
+    },
+    "reference_answer": {
+        "minimum_expected_points": [
+            "The player is in a cave.",
+            "A zombie in front is the main visible threat.",
+            "The player is holding a sword.",
+            "The player's health is low.",
+            "The player's hunger is not full.",
+            "The player's experience level is 3.",
+            "The hotbar shows usable tools, blocks, and food/resources.",
+            "The current situation is dangerous or unfavorable to the player."
+        ],
+        "good_additional_points": [
+            "There is visible lighting from torches.",
+            "The player appears to be in a close-range encounter.",
+            "The cave may contain additional danger due to darkness and multiple paths."
+        ],
+        "uncertain_points": [
+            "It cannot be determined whether there are more enemies nearby.",
+            "It cannot be determined what the full cave layout looks like beyond the visible area.",
+            "It cannot be determined what the player's full inventory contains beyond the visible hotbar."
+        ],
+        "example_strict_answer": "The player is in a cave and is facing a zombie approaching from the front. The player is holding a sword and appears to be in immediate combat or about to enter melee combat. The visible HUD shows that the player's health is low, hunger is not full, and experience level is 3. The hotbar contains usable tools, blocks, and food/resources. The situation is dangerous and unfavorable because the enemy is close, the player has low health, and the cave environment may contain additional hidden threats. It cannot be determined from this screenshot alone whether there are more enemies nearby."
+    },
+    "scoring": {
+        "scale": {
+            "min": 0,
+            "max": 2,
+            "total_max": 10
+        },
+        "dimensions": [
+            {
+                "name": "core_understanding",
+                "description": "Whether the model correctly identifies the core situation and the main threat.",
+                "criteria": {
+                    "2": "Clearly identifies the zombie as the main threat and recognizes the combat situation.",
+                    "1": "Mentions danger or enemy but is vague or incomplete.",
+                    "0": "Misses the threat or misidentifies the situation."
+                }
+            },
+            {
+                "name": "key_information_coverage",
+                "description": "Whether the model covers the important visible HUD information.",
+                "criteria": {
+                    "2": "Correctly mentions most key UI points, including low health and other visible status/resource information.",
+                    "1": "Mentions some UI information but misses important parts.",
+                    "0": "Misses most key UI information or reads it incorrectly."
+                }
+            },
+            {
+                "name": "task_completion",
+                "description": "Whether the answer fulfills both the description and assistant-style judgment needs.",
+                "criteria": {
+                    "2": "Answers the requested questions directly and completely.",
+                    "1": "Partially answers the task.",
+                    "0": "Fails to answer the task in a useful way."
+                }
+            },
+            {
+                "name": "assistant_value",
+                "description": "Whether the answer provides useful and actionable game-assistant guidance.",
+                "criteria": {
+                    "2": "Provides clear, relevant, and actionable advice based on the screenshot.",
+                    "1": "Advice is somewhat useful but generic.",
+                    "0": "Advice is missing, irrelevant, or unhelpful."
+                }
+            },
+            {
+                "name": "hallucination_control",
+                "description": "Whether the model avoids unsupported claims and handles uncertainty properly.",
+                "criteria": {
+                    "2": "Avoids guessing and explicitly distinguishes visible facts from uncertainty.",
+                    "1": "Mostly grounded but does not clearly state uncertainty.",
+                    "0": "Makes unsupported claims or obvious hallucinations."
+                }
+            }
+        ],
+        "hard_penalties": [
+            "Saying the situation is safe.",
+            "Failing to identify the zombie as the main visible threat.",
+            "Ignoring the player's low health.",
+            "Inventing additional enemies, items, or events not supported by the image."
+        ]
+    },
+    "grading_prompt_for_judge_model": "You are grading the response of a tested vision-language model on a game screenshot understanding task. Score the response strictly using the provided rubric. Penalize unsupported guesses. Return JSON with per-dimension scores, total score, strengths, weaknesses, missing key points, and hallucinations.",
+    "metadata": {
+        "notes": "Do not require reading the minimap for this sample.",
+        "version": "v1"
+    }
+}

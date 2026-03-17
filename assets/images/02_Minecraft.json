@@ -1,0 +1,115 @@
+{
+    "id": "02_Minecraft",
+    "type": "image",
+    "game": "Minecraft",
+    "image_file": "02_Minecraft.png",
+    "requirement": {
+        "id": "R02",
+        "name": "Inventory / Equipment / Resource Reading",
+        "goal": "Test whether the model can correctly read the highlighted inventory item and understand the player's overall visible resource situation."
+    },
+    "focus": [
+        "highlighted item reading",
+        "inventory understanding",
+        "resource category recognition",
+        "equipment understanding",
+        "assistant usefulness",
+        "uncertainty control"
+    ],
+    "task_definition": {
+        "scene_summary": "The screenshot shows the player's inventory screen in Minecraft. The cursor is hovering over an Iron Sword, and the tooltip displays its name and combat attributes. The visible inventory and hotbar also show tools, blocks, food, lighting, and mining-related materials.",
+        "evaluation_intent": "The tested model should correctly identify the highlighted item, summarize the visible inventory situation, and provide grounded assistance without overclaiming unseen details."
+    },
+    "prompts": {
+        "A_description": "Please describe the currently highlighted item and summarize the player's visible inventory situation. Your answer should: (1) identify the highlighted item, (2) mention the key visible information shown in the tooltip, (3) summarize the main types of visible resources in the inventory and hotbar, and (4) avoid unsupported guesses.",
+        "B_assistant": "You are a game assistant. Based only on this inventory screenshot: (1) what is the highlighted item? (2) what kinds of useful resources does the player visibly have? (3) what does the player seem to have enough of, and what might be lacking? (4) what should the player pay attention to next?"
+    },
+    "reference_answer": {
+        "minimum_expected_points": [
+            "The highlighted item is an Iron Sword.",
+            "The tooltip shows combat-related stats for the sword.",
+            "The visible inventory contains tools, blocks/materials, and food/supplies.",
+            "The player has at least some mining-related resources such as redstone, coal, or iron ore.",
+            "The player has visible utility items such as torches.",
+            "The answer should describe the overall inventory as survival/mining-oriented rather than only focusing on the tooltip."
+        ],
+        "good_additional_points": [
+            "The tooltip includes 6 Attack Damage and 1.6 Attack Speed.",
+            "The hotbar includes a sword, pickaxe, and axe.",
+            "Visible food includes rotten flesh and bread.",
+            "The inventory suggests the player is in a cave exploration or mining context."
+        ],
+        "uncertain_points": [
+            "The full inventory outside the visible slots cannot be determined.",
+            "The exact future intention of the player cannot be determined from this screenshot alone.",
+            "The durability of items should not be overclaimed unless clearly visible.",
+            "The precise usefulness of each item should not be overstated beyond what is visible."
+        ],
+        "example_strict_answer": "The highlighted item is an Iron Sword. Its tooltip shows combat-related information, including 6 Attack Damage and 1.6 Attack Speed. The visible inventory and hotbar show a survival-oriented resource setup with tools, blocks, mining materials, food, and torches. The player appears to have useful mining resources and basic supplies, including weapons, tools, bread, rotten flesh, and building materials. A useful assistant should note that the player has the essentials for cave exploration, but should still pay attention to supply balance and survival readiness. However, the full inventory and the player's exact plan cannot be determined from this screenshot alone."
+    },
+    "scoring": {
+        "scale": {
+            "min": 0,
+            "max": 2,
+            "total_max": 10
+        },
+        "dimensions": [
+            {
+                "name": "core_understanding",
+                "description": "Whether the model correctly identifies the highlighted item and the overall purpose of the scene.",
+                "criteria": {
+                    "2": "Correctly identifies the Iron Sword and recognizes that this is an inventory/resource-reading scene.",
+                    "1": "Partially correct but vague or incomplete.",
+                    "0": "Misidentifies the highlighted item or misunderstands the scene."
+                }
+            },
+            {
+                "name": "key_information_coverage",
+                "description": "Whether the model covers the important visible tooltip and inventory information.",
+                "criteria": {
+                    "2": "Correctly mentions the highlighted item and summarizes the visible categories of resources and tools.",
+                    "1": "Mentions some key information but misses important parts.",
+                    "0": "Misses most key visible information or reads it incorrectly."
+                }
+            },
+            {
+                "name": "task_completion",
+                "description": "Whether the answer fulfills both the item-reading and inventory-summary task.",
+                "criteria": {
+                    "2": "Clearly answers both the highlighted-item part and the overall inventory situation part.",
+                    "1": "Only partially completes the task.",
+                    "0": "Fails to complete the intended task."
+                }
+            },
+            {
+                "name": "assistant_value",
+                "description": "Whether the answer provides useful and grounded inventory-related assistance.",
+                "criteria": {
+                    "2": "Provides relevant and actionable resource-awareness or preparation advice.",
+                    "1": "Provides somewhat useful but generic advice.",
+                    "0": "Provides little or no useful assistance."
+                }
+            },
+            {
+                "name": "hallucination_control",
+                "description": "Whether the model avoids unsupported claims.",
+                "criteria": {
+                    "2": "Stays grounded, avoids overclaiming unseen details, and handles uncertainty properly.",
+                    "1": "Mostly grounded but somewhat imprecise.",
+                    "0": "Invents unseen items, stats, intentions, or other unsupported details."
+                }
+            }
+        ],
+        "hard_penalties": [
+            "Misidentifying the highlighted item.",
+            "Ignoring the tooltip entirely.",
+            "Only talking about the tooltip and failing to summarize the inventory situation.",
+            "Inventing items or inventory contents that are not visible."
+        ]
+    },
+    "grading_prompt_for_judge_model": "You are grading the response of a tested vision-language model on a game screenshot understanding task. Score the response strictly using the provided rubric. Penalize unsupported guesses. Return JSON with per-dimension scores, total score, strengths, weaknesses, missing key points, and hallucinations.",
+    "metadata": {
+        "notes": "This sample focuses on highlighted-item reading plus overall inventory understanding. Exact counting of every slot is not required.",
+        "version": "v1"
+    }
+}

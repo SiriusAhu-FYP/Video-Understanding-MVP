@@ -1,0 +1,114 @@
+{
+    "id": "02_GenshinImpact",
+    "type": "video",
+    "game": "GenshinImpact",
+    "video_file": "02_GenshinImpact.mp4",
+    "requirement": {
+        "id": "V02",
+        "name": "Task Progression / Combat Outcome Sequence",
+        "goal": "Test whether the model can understand a short game video as an event sequence, including the initial task state, the combat progression, and the final completion outcome."
+    },
+    "focus": [
+        "task progression understanding",
+        "event sequence understanding",
+        "combat sequence understanding",
+        "state change recognition",
+        "outcome understanding",
+        "assistant usefulness",
+        "hallucination control"
+    ],
+    "task_definition": {
+        "scene_summary": "The clip shows a Genshin Impact task sequence. At the beginning, the player is under a mission to defeat all opponents. During the clip, the player engages enemies in combat, and by the end the mission progress reaches completion and reward text appears.",
+        "evaluation_intent": "The tested model should understand what the player is trying to do, describe the main events in sequence, identify the key change from incomplete to complete task status, and avoid unsupported guesses about fine-grained game details."
+    },
+    "prompts": {
+        "A_description": "Please describe what happens in this video clip. Your answer should: (1) identify the player's initial task or situation, (2) summarize the important events during the clip, (3) describe the final change or outcome, and (4) avoid unsupported guesses.",
+        "B_assistant": "You are a game assistant. Based only on this video: (1) what is the player trying to do? (2) how does the task progress during the clip? (3) what important change happens by the end? (4) what evidence from the video supports your judgment? (5) what cannot be determined from the clip alone?"
+    },
+    "reference_answer": {
+        "minimum_expected_points": [
+            "At the start, the player has a task to defeat opponents.",
+            "The task is initially incomplete.",
+            "The player engages in combat during the clip.",
+            "The task progresses during the fight.",
+            "By the end of the clip, the task is completed.",
+            "The ending shows a completion state such as 2/2 and a reward or gain notification."
+        ],
+        "good_additional_points": [
+            "The clip shows a transition from task setup to active combat to completion.",
+            "The situation at the end is different from the beginning because the enemies have been defeated and the mission objective is fulfilled.",
+            "The player makes clear progress toward the objective rather than wandering or exploring aimlessly."
+        ],
+        "uncertain_points": [
+            "The exact names of every skill or attack used cannot be required unless clearly visible.",
+            "The exact identity of every enemy should not be overclaimed unless clearly supported.",
+            "The precise reasoning behind each player action cannot be fully determined from the clip alone."
+        ],
+        "example_strict_answer": "The video begins with the player under a mission to defeat opponents, and the task is not yet complete. During the clip, the player enters combat and attacks the enemies. Over time, the mission state progresses as the enemies are defeated. By the end of the clip, the task is completed, as shown by the final completion state and reward text. This is a task-completion combat sequence rather than simple movement or exploration. However, the clip alone does not fully determine the exact names of every skill or the detailed intention behind each action."
+    },
+    "scoring": {
+        "scale": {
+            "min": 0,
+            "max": 2,
+            "total_max": 10
+        },
+        "dimensions": [
+            {
+                "name": "event_sequence_understanding",
+                "description": "Whether the model correctly understands the major sequence of events from beginning to end.",
+                "criteria": {
+                    "2": "Clearly identifies the initial task state, the combat progression, and the ending completion in the correct sequence.",
+                    "1": "Partially describes the sequence but misses or confuses some important steps.",
+                    "0": "Fails to understand the overall event sequence or describes it incorrectly."
+                }
+            },
+            {
+                "name": "key_change_recognition",
+                "description": "Whether the model identifies the important state change during the clip.",
+                "criteria": {
+                    "2": "Clearly states that the task changes from incomplete to completed.",
+                    "1": "Mentions some change but does not explain it clearly.",
+                    "0": "Fails to identify the important state change."
+                }
+            },
+            {
+                "name": "outcome_understanding",
+                "description": "Whether the model correctly identifies the final outcome and its meaning.",
+                "criteria": {
+                    "2": "Correctly states that the task is completed and recognizes the completion or reward state at the end.",
+                    "1": "Gets the final outcome partly right but vague or incomplete.",
+                    "0": "Misidentifies or misses the final outcome."
+                }
+            },
+            {
+                "name": "assistant_value",
+                "description": "Whether the answer provides useful and grounded assistant-style interpretation.",
+                "criteria": {
+                    "2": "Provides relevant and helpful explanation of what the player is doing and how the task progresses.",
+                    "1": "Provides somewhat useful but generic interpretation.",
+                    "0": "Provides little or no useful assistant value."
+                }
+            },
+            {
+                "name": "hallucination_control",
+                "description": "Whether the model avoids unsupported claims and over-interpretation.",
+                "criteria": {
+                    "2": "Stays grounded and avoids inventing unsupported mechanics, identities, or events.",
+                    "1": "Mostly grounded but somewhat speculative.",
+                    "0": "Invents unsupported events, enemy identities, or detailed causes not visible in the clip."
+                }
+            }
+        ],
+        "hard_penalties": [
+            "Failing to identify that the task involves defeating opponents.",
+            "Missing that the task progresses and is completed by the end.",
+            "Claiming the clip is mainly about exploration rather than combat task progression.",
+            "Inventing major events that do not occur in the clip."
+        ]
+    },
+    "grading_prompt_for_judge_model": "You are grading the response of a tested vision-language model on a game video understanding task. Score the response strictly using the provided rubric. Focus on whether the model understands the initial task state, the progression of events, and the final completion outcome. Penalize unsupported guesses. Return JSON with per-dimension scores, total score, strengths, weaknesses, missing key points, and hallucinations.",
+    "metadata": {
+        "notes": "This sample focuses on sequence understanding through task progression and combat outcome, not on precise route description or detailed skill naming.",
+        "version": "v1"
+    }
+}

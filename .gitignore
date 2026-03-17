@@ -16,7 +16,7 @@ wheels/
 /logs/
 
 # Video assets (too large for git)
-assets/videos/
+# assets/videos/
 
 # Temporary Files
 tmp/
