@@ -23,12 +23,17 @@ poll_interval_s = 15
 
 [benchmark_speed]
 enabled = true
-runs = 3
+runs = 5
 warmup = 1
 scenarios = ["short_desc", "detailed_desc", "object_detection", "action_analysis", "ui_recognition"]
 images = "all"
 
+[benchmark_quality]
+enabled = true
+runs = 5
+judge_delay_s = 1.0
+
 [video_understanding]
 enabled = true
-runs = 3
+runs = 5
 videos = "all"

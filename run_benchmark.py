@@ -29,15 +29,13 @@ import tomllib
 from loguru import logger as lg
 
 PROJECT_ROOT = Path(__file__).resolve().parent
+ASSETS_IMAGES_DIR = PROJECT_ROOT / "assets" / "images"
 
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from toolkit.common import (
-    get_gpu_info,
-    model_short_name,
-    wait_for_vllm_ready,
-)
-from toolkit.vllm_manager import (
+from ahu_paimon_toolkit.utils.gpu import get_gpu_info
+from ahu_paimon_toolkit.vlm.model_utils import model_short_name, wait_for_vllm_ready
+from scripts.vllm_manager import (
     create_launch_script,
     get_vllm_base_url,
     start_vllm,
@@ -139,9 +137,9 @@ def preflight_health_check(base_url: str, model_id: str) -> bool:
 def preflight_vision_check(base_url: str, model_id: str) -> bool:
     """发送一张图片验证视觉功能正常（带重试）。"""
     import httpx
-    from toolkit.common import load_images
+    from ahu_paimon_toolkit.utils.image import load_images
 
-    images = load_images()
+    images = load_images(ASSETS_IMAGES_DIR)
     if not images:
         lg.warning("无测试图片，跳过视觉检查")
         return True
@@ -292,7 +290,7 @@ def run_preflight(
 
         except Exception as e:
             error_msg = str(e)
-            from toolkit.vllm_manager import read_vllm_log
+            from scripts.vllm_manager import read_vllm_log
             stderr_snippet = read_vllm_log(tail=40)
 
             incidents.append({
@@ -371,6 +369,53 @@ def run_video_understanding_for_model(
         return True
     except Exception:
         lg.exception("video_understanding 执行失败")
+        return False
+
+
+def run_benchmark_quality_for_model(
+    base_url: str, output_dir: Path, config: dict, model_id: str,
+) -> bool:
+    bq_cfg = config.get("benchmark_quality", {})
+    if not bq_cfg.get("enabled", True):
+        lg.info("benchmark_quality 已禁用，跳过")
+        return True
+
+    try:
+        from experiments.benchmark_quality.benchmark import (
+            load_asset_jsons,
+            run_benchmark_quality,
+        )
+        from ahu_paimon_toolkit.evaluation.judge import LLMJudge
+        import os
+        from dotenv import load_dotenv
+
+        load_dotenv(PROJECT_ROOT / ".env")
+        api_key = os.getenv("DEEPSEEK_API_KEY", "")
+        api_base = os.getenv("DEEPSEEK_API_BASE_URL", "https://api.deepseek.com")
+
+        if not api_key:
+            lg.warning("DEEPSEEK_API_KEY 未设置，跳过 benchmark_quality")
+            return False
+
+        judge = LLMJudge(api_key=api_key, api_base_url=api_base)
+        assets = load_asset_jsons(ASSETS_IMAGES_DIR)
+        runs = bq_cfg.get("runs", 5)
+
+        scores = asyncio.run(
+            run_benchmark_quality(
+                vlm_base_url=base_url,
+                vlm_model=model_id,
+                judge=judge,
+                assets=assets,
+                output_dir=output_dir,
+                runs=runs,
+                judge_delay_s=bq_cfg.get("judge_delay_s", 1.0),
+            )
+        )
+        lg.info("benchmark_quality 完成: {} 条评分", len(scores))
+        return True
+    except Exception:
+        lg.exception("benchmark_quality 执行失败")
         return False
 
 
@@ -546,7 +591,7 @@ def generate_charts(
     session_dir: Path, models: list[str],
     gpu_util_map: dict[str, float] | None = None,
 ) -> None:
-    from toolkit.visualization import (
+    from ahu_paimon_toolkit.utils.visualization import (
         plot_gpu_memory_comparison,
         plot_metric_ranking,
         plot_scenario_comparison,
@@ -1047,6 +1092,7 @@ def main() -> None:
         help="覆盖配置中的模型列表",
     )
     parser.add_argument("--skip-speed", action="store_true")
+    parser.add_argument("--skip-quality", action="store_true")
     parser.add_argument("--skip-video", action="store_true")
     parser.add_argument(
         "--skip-preflight", action="store_true",
@@ -1066,6 +1112,8 @@ def main() -> None:
     config = load_config(config_path)
     if args.skip_speed:
         config.setdefault("benchmark_speed", {})["enabled"] = False
+    if args.skip_quality:
+        config.setdefault("benchmark_quality", {})["enabled"] = False
     if args.skip_video:
         config.setdefault("video_understanding", {})["enabled"] = False
 
@@ -1122,8 +1170,10 @@ def main() -> None:
 
     # ── Phase 1: 实验 ──
     speed_dir = session_dir / "benchmark_speed"
+    quality_dir = session_dir / "benchmark_quality"
     video_dir = session_dir / "video_understanding"
     speed_dir.mkdir(parents=True, exist_ok=True)
+    quality_dir.mkdir(parents=True, exist_ok=True)
     video_dir.mkdir(parents=True, exist_ok=True)
 
     completed_models: list[str] = []
@@ -1150,6 +1200,10 @@ def main() -> None:
             if config.get("benchmark_speed", {}).get("enabled", True):
                 lg.info("── 运行 benchmark_speed ──")
                 run_benchmark_speed_for_model(base_url, speed_dir, config)
+
+            if config.get("benchmark_quality", {}).get("enabled", True):
+                lg.info("── 运行 benchmark_quality ──")
+                run_benchmark_quality_for_model(base_url, quality_dir, config, detected)
 
             if config.get("video_understanding", {}).get("enabled", True):
                 lg.info("── 运行 video_understanding ──")

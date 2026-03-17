@@ -32,13 +32,8 @@ _REPORTS_DIR = _EXPERIMENT_DIR / "reports"
 
 sys.path.insert(0, str(_PROJECT_ROOT))
 
-from toolkit.common import (
-    ASSETS_VIDEOS_DIR,
-    detect_model_from_url as detect_model,
-    model_short_name,
-)
-
-from pipeline.capture import (
+from ahu_paimon_toolkit.vlm.model_utils import detect_model_from_url as detect_model, model_short_name
+from ahu_paimon_toolkit.capture import (
     WindowNotFoundError,
     capture_window,
     compute_diff,
@@ -46,16 +41,18 @@ from pipeline.capture import (
     frame_to_base64,
     run_capture_loop,
 )
-from pipeline.config import Settings, get_settings, setup_logging
-from pipeline.models import (
+from ahu_paimon_toolkit.config import ToolkitSettings as Settings, setup_logging
+from ahu_paimon_toolkit.models import (
     FrameDescription,
     FrameRecord,
     KeyFrame,
     PipelineResult,
 )
-from pipeline.queue_manager import KeyFrameQueue
-from pipeline.summarizer import Summarizer
-from pipeline.vlm import VLMClient
+from ahu_paimon_toolkit.pipeline.queue_manager import KeyFrameQueue
+from ahu_paimon_toolkit.pipeline.summarizer import Summarizer
+from ahu_paimon_toolkit.vlm.client import AsyncVLMClient as VLMClient
+
+ASSETS_VIDEOS_DIR = _PROJECT_ROOT / "assets" / "videos"
 
 _VIDEOS_DIR = ASSETS_VIDEOS_DIR
 
@@ -92,8 +89,10 @@ def _kill_all_players() -> None:
 
 def launch_player(video_path: Path) -> subprocess.Popen:
     """启动播放器播放视频，返回进程句柄用于后续清理。"""
-    secrets = get_settings().secrets
-    player_exe = secrets.player_exe_path
+    import os
+    from dotenv import load_dotenv
+    load_dotenv(_PROJECT_ROOT / ".env")
+    player_exe = os.getenv("PLAYER_EXE_PATH", "")
     if not player_exe:
         raise RuntimeError(
             "PLAYER_EXE_PATH 未在 .env 中配置，无法启动播放器"
@@ -383,8 +382,7 @@ async def run_experiment(
     Returns:
         {video_name: [PipelineResult per run]}
     """
-    cfg = get_settings()
-    effective_url = base_url or cfg.llm.vllm_base_url
+    effective_url = base_url or "http://localhost:8000/v1"
 
     # 自动检测模型
     model_id = detect_model(effective_url)

@@ -27,15 +27,11 @@ _REPORTS_DIR = _EXPERIMENT_DIR / "reports"
 
 sys.path.insert(0, str(_PROJECT_ROOT))
 
-from toolkit.common import (
-    ASSETS_IMAGES_DIR,
-    detect_model,
-    encode_image,
-    get_gpu_memory_mb,
-    get_image_mime,
-    load_images as _load_images_full,
-    model_short_name,
-)
+from ahu_paimon_toolkit.utils.image import encode_image, get_image_mime, load_images as _load_images_full
+from ahu_paimon_toolkit.utils.gpu import get_gpu_memory_mb
+from ahu_paimon_toolkit.vlm.model_utils import detect_model, model_short_name
+
+ASSETS_IMAGES_DIR = _PROJECT_ROOT / "assets" / "images"
 
 
 # ── 场景定义 ──────────────────────────────────────────────────────
