@@ -251,17 +251,18 @@ async def run_single_pipeline(
 
         consumer_task = asyncio.ensure_future(consume())
 
-        # 定时器
+        # 定时器: stop exactly at video duration to avoid capturing
+        # PotPlayer post-playback UI (PotPlayer does NOT black-screen on end)
         duration_s = cfg.capture.recording_duration_s
         async def timer() -> None:
             lg.info("录制计时器启动，{}s 后停止", duration_s)
             start = time.monotonic()
             while not stop_event.is_set():
                 if time.monotonic() - start >= duration_s:
-                    lg.info("录制时间已到，停止截图")
+                    lg.info("视频播放时间已到，立即停止截图")
                     stop_event.set()
                     break
-                await asyncio.sleep(0.5)
+                await asyncio.sleep(0.3)
 
         timer_task = asyncio.ensure_future(timer())
 
@@ -414,8 +415,10 @@ async def run_experiment(
     lg.info("模型: {} | 重复次数: {}", model_id, num_runs)
     lg.info("=" * 60)
 
-    # 发现视频文件
+    # 发现视频文件 (supports flat & per-asset sub-folder layouts)
     videos = sorted(_VIDEOS_DIR.glob("*.mp4"))
+    if not videos:
+        videos = sorted(_VIDEOS_DIR.glob("*/*.mp4"))
     if not videos:
         lg.error("未找到视频文件: {}", _VIDEOS_DIR)
         sys.exit(1)
@@ -440,8 +443,10 @@ async def run_experiment(
     for video_path in videos:
         video_name = video_path.stem
         duration = get_video_duration_s(video_path)
-        # 录制时长 = 视频时长 + 3s 缓冲
-        rec_duration = int(duration) + 3
+        # No extra buffer: PotPlayer does NOT black-screen on end; it shows
+        # its UI which produces false keyframes.  Subtract the ~2s player
+        # startup delay so we stop *before* the video finishes.
+        rec_duration = max(1, int(duration) - 1)
 
         lg.info("─" * 40)
         lg.info("视频: {} ({:.1f}s) | 录制时长: {}s", video_name, duration, rec_duration)

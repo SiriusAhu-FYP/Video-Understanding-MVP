@@ -357,9 +357,9 @@ def _get_experiment_cfg(config: dict, experiment_name: str) -> dict:
 
 
 def _is_experiment_enabled(config: dict, experiment_name: str) -> bool:
-    """Check if an experiment is in the ``experiments.run`` list."""
-    run_list = config.get("experiments", {}).get("run", [])
-    return experiment_name in run_list
+    """Check if an experiment is enabled via its ``enabled`` field."""
+    exp_cfg = config.get("experiments", {}).get(experiment_name, {})
+    return exp_cfg.get("enabled", False)
 
 
 def run_benchmark_speed_for_model(
@@ -1096,16 +1096,17 @@ def main() -> None:
 
     config = load_config(config_path)
 
-    run_list: list[str] = config.get("experiments", {}).get("run", [
-        "benchmark_speed", "benchmark_quality", "video_understanding",
-    ])
+    all_experiments = ["benchmark_speed", "benchmark_quality", "video_understanding"]
+    run_list: list[str] = [
+        name for name in all_experiments
+        if _is_experiment_enabled(config, name)
+    ]
     if args.skip_speed and "benchmark_speed" in run_list:
         run_list.remove("benchmark_speed")
     if args.skip_quality and "benchmark_quality" in run_list:
         run_list.remove("benchmark_quality")
     if args.skip_video and "video_understanding" in run_list:
         run_list.remove("video_understanding")
-    config.setdefault("experiments", {})["run"] = run_list
 
     models = args.models or config.get("models", {}).get("list", [])
     if not models:

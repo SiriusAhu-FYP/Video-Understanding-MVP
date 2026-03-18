@@ -32,22 +32,17 @@ retry_delay_s = 10
 
 [preflight.gpu_probe]
 enabled = true
-candidates = [0.45, 0.50, 0.55, 0.60]
+candidates = [0.45]  # 0.00 - 1.00
 timeout_s = 120
 enforce_eager = true
 
 # ── Experiments ──────────────────────────────────────────────────
-
-[experiments]
-# Master list of which experiments to run (order matters).
-# Comment out or remove entries to skip them entirely.
-run = [
-    "benchmark_speed",
-    "benchmark_quality",
-    "video_understanding",
-]
+#
+# Each experiment has its own section with an `enabled` field.
+# Set `enabled = false` to skip an experiment.
 
 [experiments.benchmark_speed]
+enabled = true
 runs = 5
 warmup = 1
 scenarios = [
@@ -59,10 +54,12 @@ scenarios = [
 ]
 
 [experiments.benchmark_quality]
+enabled = true
 runs = 5
 judge_delay_s = 1.0
 
 [experiments.video_understanding]
+enabled = true
 runs = 5
 
 # ── Report Generation ────────────────────────────────────────────

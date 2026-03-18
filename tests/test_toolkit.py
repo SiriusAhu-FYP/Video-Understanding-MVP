@@ -33,7 +33,13 @@ class TestAssetJSONLoading:
 
     def _load_all_jsons(self, directory: Path) -> list[dict]:
         jsons = []
-        for p in sorted(directory.glob("*.json")):
+        candidates: list[Path] = []
+        for entry in sorted(directory.iterdir()):
+            if entry.is_dir():
+                candidates.extend(sorted(entry.glob("*.json")))
+            elif entry.suffix == ".json":
+                candidates.append(entry)
+        for p in candidates:
             with open(p, encoding="utf-8") as f:
                 data = json.load(f)
             if data:
@@ -50,23 +56,19 @@ class TestAssetJSONLoading:
         assert len(jsons) == 2, f"Expected 2 video JSONs, got {len(jsons)}"
 
     def test_image_json_schema(self):
-        for p in sorted(ASSETS_IMAGES_DIR.glob("*.json")):
-            with open(p, encoding="utf-8") as f:
-                data = json.load(f)
+        for data in self._load_all_jsons(ASSETS_IMAGES_DIR):
             missing = self.REQUIRED_FIELDS - set(data.keys())
-            assert not missing, f"{p.name} missing fields: {missing}"
-            assert "image_file" in data, f"{p.name} missing image_file"
+            filtered_missing = {k for k in missing if not k.startswith("_")}
+            assert not filtered_missing, f"{data['id']} missing fields: {filtered_missing}"
+            assert "image_file" in data, f"{data['id']} missing image_file"
             assert data["type"] == "image"
 
     def test_video_json_schema(self):
-        for p in sorted(ASSETS_VIDEOS_DIR.glob("*.json")):
-            with open(p, encoding="utf-8") as f:
-                data = json.load(f)
-            if not data:
-                continue
+        for data in self._load_all_jsons(ASSETS_VIDEOS_DIR):
             missing = self.REQUIRED_FIELDS - set(data.keys())
-            assert not missing, f"{p.name} missing fields: {missing}"
-            assert "video_file" in data, f"{p.name} missing video_file"
+            filtered_missing = {k for k in missing if not k.startswith("_")}
+            assert not filtered_missing, f"{data['id']} missing fields: {filtered_missing}"
+            assert "video_file" in data, f"{data['id']} missing video_file"
             assert data["type"] == "video"
 
     def test_scoring_dimensions_count(self):
@@ -106,7 +108,7 @@ class TestImageEncoding:
     def test_encode_image(self):
         from ahu_paimon_toolkit.utils.image import encode_image
 
-        images = list(ASSETS_IMAGES_DIR.glob("*.png"))
+        images = list(ASSETS_IMAGES_DIR.glob("*/*.png"))
         assert len(images) > 0
         b64 = encode_image(images[0])
         assert isinstance(b64, str)

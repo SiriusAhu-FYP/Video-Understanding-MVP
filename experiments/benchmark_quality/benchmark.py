@@ -40,9 +40,20 @@ ASSETS_VIDEOS_DIR = _PROJECT_ROOT / "assets" / "videos"
 
 
 def load_asset_jsons(assets_dir: Path) -> list[dict]:
-    """Load all JSON task-description files from an assets directory."""
+    """Load all JSON task-description files from an assets directory.
+
+    Supports both flat layout (``assets_dir/*.json``) and per-asset
+    sub-folder layout (``assets_dir/01_Name/01_Name.json``).
+    """
     jsons = []
-    for p in sorted(assets_dir.glob("*.json")):
+    candidates: list[Path] = []
+    for entry in sorted(assets_dir.iterdir()):
+        if entry.is_dir():
+            candidates.extend(sorted(entry.glob("*.json")))
+        elif entry.suffix == ".json":
+            candidates.append(entry)
+
+    for p in candidates:
         with open(p, encoding="utf-8") as f:
             data = json.load(f)
         if data:
@@ -147,9 +158,12 @@ async def run_benchmark_quality(
             continue
 
         image_file = asset.get("image_file", "")
-        image_path = ASSETS_IMAGES_DIR / image_file
+        json_dir = Path(asset["_json_path"]).parent
+        image_path = json_dir / image_file
         if not image_path.exists():
-            lg.warning("Image not found: {}, skipping", image_path)
+            image_path = ASSETS_IMAGES_DIR / image_file
+        if not image_path.exists():
+            lg.warning("Image not found: {}, skipping", image_file)
             continue
 
         image_b64 = encode_image(image_path)
