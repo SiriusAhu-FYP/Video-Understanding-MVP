@@ -35,12 +35,11 @@ Video-Understanding-MVP/
 │   │   └── run_experiment.py
 │   ├── video_understanding/    #   完整视频理解流水线测试
 │   │   └── run_experiment.py
-│   └── utils/                  #   实验间共享工具
-│       ├── csv_io.py           #     CSV 读写 (init_csv, append_csv, read_csv_dicts)
-│       ├── inference.py        #     通用推理 + RunResult 数据类
-│       ├── logging.py          #     loguru 文件日志设置 (setup_experiment_log)
-│       ├── reporting.py        #     模板驱动报告生成 + DeepSeek 分析
-│       └── vllm_manager.py     #     WSL vLLM 服务管理 (start/stop/probe)
+├── utils/                      # 实验间共享工具（根目录级别）
+│   ├── csv_io.py               #   CSV 读写 (init_csv, append_csv, read_csv_dicts)
+│   ├── logging.py              #   loguru 文件日志设置 (setup_experiment_log)
+│   ├── reporting.py            #   模板驱动报告生成 + DeepSeek 分析
+│   └── vllm_manager.py         #   WSL vLLM 服务管理 (start/stop/probe)
 │
 ├── templates/                  # 报告 Markdown 模板
 │   ├── speed_comparison.md     #   推理速度对比报告模板
@@ -105,7 +104,7 @@ Video-Understanding-MVP/
 ## 6. 报告生成 (Report Generation)
 - 报告模板位于 `templates/` 目录，使用 `{{placeholder}}` 注入数据。
 - `<!-- ANALYSIS -->` 标记的部分由 DeepSeek 自动生成专业分析。
-- 通过 `experiments/utils/reporting.generate_report_from_template()` 完成完整流程：
+- 通过 `utils/reporting.generate_report_from_template()` 完成完整流程：
   加载模板 → 填充数据 → (可选) DeepSeek 分析 → 写入文件。
 
 ## 7. 关于提交
@@ -115,6 +114,6 @@ Video-Understanding-MVP/
 
 ## 其他
 1. 总是使用 `from loguru import logger as lg` 作为日志记录器。
-2. 实验脚本中使用 `experiments.utils.logging.setup_experiment_log()` 设置文件日志。
-3. CSV 操作使用 `experiments.utils.csv_io` 中的工具函数。
+2. 实验脚本中使用 `utils.logging.setup_experiment_log()` 设置文件日志。
+3. CSV 操作使用 `utils.csv_io` 中的工具函数。
 4. 总是及时更新 README.md 以反映项目的最新状态。

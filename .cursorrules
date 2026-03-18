@@ -25,12 +25,11 @@ Video-Understanding-MVP/
 │   ├── benchmark_quality/  #   描述质量评估 (LLM-as-Judge)
 │   ├── gameplay_analysis/  #   游戏画面分析
 │   ├── video_understanding/#   视频理解流水线
-│   └── utils/              #   实验间共享工具
-│       ├── csv_io.py       #     CSV 读写
-│       ├── inference.py    #     通用推理 + RunResult
-│       ├── logging.py      #     loguru 日志设置
-│       ├── reporting.py    #     模板驱动报告生成 + DeepSeek
-│       └── vllm_manager.py #     WSL vLLM 服务管理
+├── utils/                  # 实验间共享工具（根目录级别）
+│   ├── csv_io.py           #   CSV 读写
+│   ├── logging.py          #   loguru 日志设置
+│   ├── reporting.py        #   模板驱动报告生成 + DeepSeek
+│   └── vllm_manager.py     #   WSL vLLM 服务管理
 ├── templates/              # 报告 Markdown 模板
 ├── results/                # 实验结果 (git ignored)
 │   ├── v1/                 #   第一批实验
@@ -46,8 +45,8 @@ Video-Understanding-MVP/
 
 **关键原则:**
 - `experiments/` 只包含实验脚本代码，所有输出（日志、报告、CSV）写入 `results/`。
-- `experiments/utils/` 存放实验间共享但不属于 toolkit 的工具代码。
-- `templates/` 提供报告模板，由 `experiments/utils/reporting.py` 加载并通过 DeepSeek 生成分析。
+- `utils/` 存放实验间共享但不属于 `ahu_paimon_toolkit` 的工具代码。
+- `templates/` 提供报告模板，由 `utils/reporting.py` 加载并通过 DeepSeek 生成分析。
 - `results/` 在 `.gitignore` 中，不提交到版本控制。
 
 # Code Quality & Style
@@ -60,12 +59,12 @@ Video-Understanding-MVP/
 - 报告通过模板驱动生成，模板位于 `templates/` 目录。
 - 模板使用 `{{placeholder}}` 语法注入数据表格和统计信息。
 - 模板中 `<!-- ANALYSIS -->` 标记的部分由 DeepSeek 生成深入分析。
-- 使用 `experiments/utils/reporting.generate_report_from_template()` 完成完整流程。
+- 使用 `utils/reporting.generate_report_from_template()` 完成完整流程。
 
 # Workflow Protocol (工作流规范)
 1. **分步规划 (Plan Mode First):** 永远不要一次性输出几百行跨模块的代码。必须先给出架构设计或当前阶段的开发方案，询问用户确认后再写代码。
 2. **Conventional Commits:** 在完成一个功能模块的代码编写并测试通过后，你必须主动提醒用户进行 Git 提交，并提供基于 Conventional Commits 规范的指令。
-3. **代码复用:** 新增实验脚本时，优先复用 `experiments/utils/` 中的工具。CSV 操作用 `csv_io`，日志设置用 `logging`，报告生成用 `reporting`。
+3. **代码复用:** 新增实验脚本时，优先复用 `utils/` 中的工具。CSV 操作用 `csv_io`，日志设置用 `logging`，报告生成用 `reporting`。
 
 # Output Format
 输出代码块时，请明确标出文件路径。输出终端指令时，确保它们在 PowerShell 中可无缝执行。

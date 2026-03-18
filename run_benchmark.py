@@ -35,8 +35,8 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from ahu_paimon_toolkit.utils.gpu import get_gpu_info
 from ahu_paimon_toolkit.vlm.model_utils import model_short_name, wait_for_vllm_ready
-from experiments.utils.reporting import fill_template, generate_report_from_template, write_report
-from experiments.utils.vllm_manager import (
+from utils.reporting import fill_template, generate_report_from_template, write_report
+from utils.vllm_manager import (
     create_launch_script,
     get_vllm_base_url,
     start_vllm,
@@ -308,7 +308,7 @@ def run_preflight(
 
         except Exception as e:
             error_msg = str(e)
-            from experiments.utils.vllm_manager import read_vllm_log
+            from utils.vllm_manager import read_vllm_log
 
             stderr_snippet = read_vllm_log(tail=40)
 

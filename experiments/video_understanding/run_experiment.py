@@ -33,7 +33,7 @@ _REPORTS_DIR = _EXPERIMENT_DIR / "reports"
 sys.path.insert(0, str(_PROJECT_ROOT))
 
 from ahu_paimon_toolkit.vlm.model_utils import detect_model_from_url as detect_model, model_short_name  # noqa: E501
-from experiments.utils.logging import setup_experiment_log
+from utils.logging import setup_experiment_log
 from ahu_paimon_toolkit.capture import (
     WindowNotFoundError,
     capture_window,

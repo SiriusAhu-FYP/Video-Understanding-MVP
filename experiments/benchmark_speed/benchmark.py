@@ -22,14 +22,15 @@ from openai import OpenAI
 
 _EXPERIMENT_DIR = Path(__file__).resolve().parent
 _PROJECT_ROOT = _EXPERIMENT_DIR.parent.parent
+_REPORTS_DIR = _EXPERIMENT_DIR / "reports"
 
 sys.path.insert(0, str(_PROJECT_ROOT))
 
 from ahu_paimon_toolkit.utils.image import load_images as _load_images_full
 from ahu_paimon_toolkit.utils.gpu import get_gpu_memory_mb
 from ahu_paimon_toolkit.vlm.model_utils import detect_model, model_short_name
-from experiments.utils.csv_io import init_csv as _init_csv, append_csv as _append_csv
-from experiments.utils.logging import setup_experiment_log
+from utils.csv_io import init_csv as _init_csv, append_csv as _append_csv
+from utils.logging import setup_experiment_log
 
 ASSETS_IMAGES_DIR = _PROJECT_ROOT / "assets" / "images"
 

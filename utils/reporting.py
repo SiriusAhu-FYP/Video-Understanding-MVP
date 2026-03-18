@@ -21,7 +21,7 @@ import httpx
 from dotenv import load_dotenv
 from loguru import logger as lg
 
-_PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
 _TEMPLATES_DIR = _PROJECT_ROOT / "templates"
 
 

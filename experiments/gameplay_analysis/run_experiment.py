@@ -39,8 +39,8 @@ sys.path.insert(0, str(_PROJECT_ROOT))
 from ahu_paimon_toolkit.utils.image import encode_image, get_image_mime, load_images
 from ahu_paimon_toolkit.utils.gpu import get_gpu_memory_mb
 from ahu_paimon_toolkit.vlm.model_utils import detect_model, model_short_name
-from experiments.utils.csv_io import init_csv as _init_csv, append_csv as _append_csv
-from experiments.utils.logging import setup_experiment_log
+from utils.csv_io import init_csv as _init_csv, append_csv as _append_csv
+from utils.logging import setup_experiment_log
 
 ASSETS_IMAGES_DIR = _PROJECT_ROOT / "assets" / "images"
 

@@ -18,7 +18,6 @@ list = [
 [vllm]
 base_url = "http://localhost:8000/v1"
 gpu_memory_utilization = 0.7
-max_model_len = 4096
 startup_timeout_s = 300
 poll_interval_s = 15
 
@@ -33,7 +32,6 @@ scenarios = [
     "action_analysis",
     "ui_recognition",
 ]
-images = "all"
 
 [benchmark_quality]
 enabled = true
@@ -43,4 +41,3 @@ judge_delay_s = 1.0
 [video_understanding]
 enabled = true
 runs = 5
-videos = "all"
