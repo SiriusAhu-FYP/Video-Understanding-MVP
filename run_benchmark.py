@@ -21,11 +21,11 @@ import shutil
 import subprocess
 import sys
 import time
+import tomllib
 from datetime import datetime
 from pathlib import Path
 from statistics import mean, stdev
 
-import tomllib
 from loguru import logger as lg
 
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -35,13 +35,13 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from ahu_paimon_toolkit.utils.gpu import get_gpu_info
 from ahu_paimon_toolkit.vlm.model_utils import model_short_name, wait_for_vllm_ready
-from scripts.vllm_manager import (
+from experiments.utils.reporting import fill_template, generate_report_from_template, write_report
+from experiments.utils.vllm_manager import (
     create_launch_script,
     get_vllm_base_url,
     start_vllm,
     stop_vllm,
 )
-
 
 # ── Config & Metadata ────────────────────────────────────────────
 
@@ -55,7 +55,10 @@ def get_git_hash() -> str:
     try:
         result = subprocess.run(
             ["git", "rev-parse", "HEAD"],
-            capture_output=True, text=True, check=True, timeout=5,
+            capture_output=True,
+            text=True,
+            check=True,
+            timeout=5,
             cwd=str(PROJECT_ROOT),
         )
         return result.stdout.strip()[:12]
@@ -64,13 +67,11 @@ def get_git_hash() -> str:
 
 
 def create_session_dir(config: dict) -> Path:
-    ts_format = config.get("general", {}).get(
-        "timestamp_format", "%Y-%m-%d_%H-%M-%S"
-    )
+    general = config.get("general", {})
+    ts_format = general.get("timestamp_format", "%Y-%m-%d_%H-%M-%S")
     timestamp = datetime.now().strftime(ts_format)
-    session_dir = (
-        PROJECT_ROOT / "experiments" / "multi_model_benchmark" / timestamp
-    )
+    output_dir = general.get("output_dir", "results/v3")
+    session_dir = PROJECT_ROOT / output_dir / timestamp
     session_dir.mkdir(parents=True, exist_ok=True)
     return session_dir
 
@@ -85,7 +86,8 @@ def save_meta(session_dir: Path, config: dict, config_path: Path) -> None:
         "models": config.get("models", {}).get("list", []),
     }
     (session_dir / "meta.json").write_text(
-        json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8",
+        json.dumps(meta, ensure_ascii=False, indent=2),
+        encoding="utf-8",
     )
 
 
@@ -96,7 +98,8 @@ def update_meta(session_dir: Path, **kwargs: object) -> None:
     meta = json.loads(meta_path.read_text(encoding="utf-8"))
     meta.update(kwargs)
     meta_path.write_text(
-        json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8",
+        json.dumps(meta, ensure_ascii=False, indent=2),
+        encoding="utf-8",
     )
 
 
@@ -124,7 +127,9 @@ def preflight_health_check(base_url: str, model_id: str) -> bool:
                 resp = client.post(url, json=payload)
                 resp.raise_for_status()
                 data = resp.json()
-                content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
+                content = (
+                    data.get("choices", [{}])[0].get("message", {}).get("content", "")
+                )
                 if content and len(content) > 1:
                     lg.info("健康检查通过: '{}'", content[:60])
                     return True
@@ -137,6 +142,7 @@ def preflight_health_check(base_url: str, model_id: str) -> bool:
 def preflight_vision_check(base_url: str, model_id: str) -> bool:
     """发送一张图片验证视觉功能正常（带重试）。"""
     import httpx
+
     from ahu_paimon_toolkit.utils.image import load_images
 
     images = load_images(ASSETS_IMAGES_DIR)
@@ -148,15 +154,20 @@ def preflight_vision_check(base_url: str, model_id: str) -> bool:
     url = f"{base_url}/chat/completions"
     payload = {
         "model": model_id,
-        "messages": [{
-            "role": "user",
-            "content": [
-                {"type": "text", "text": "Describe this image briefly."},
-                {"type": "image_url", "image_url": {
-                    "url": f"data:{mime};base64,{b64}",
-                }},
-            ],
-        }],
+        "messages": [
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": "Describe this image briefly."},
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:{mime};base64,{b64}",
+                        },
+                    },
+                ],
+            }
+        ],
         "max_tokens": 64,
         "temperature": 0.0,
     }
@@ -170,7 +181,9 @@ def preflight_vision_check(base_url: str, model_id: str) -> bool:
                 resp = client.post(url, json=payload)
                 resp.raise_for_status()
                 data = resp.json()
-                text = data.get("choices", [{}])[0].get("message", {}).get("content", "")
+                text = (
+                    data.get("choices", [{}])[0].get("message", {}).get("content", "")
+                )
                 if text and len(text) > 5:
                     lg.info("视觉检查通过: '{}'", text[:80])
                     return True
@@ -191,7 +204,7 @@ def probe_gpu_memory(
     从 0.35 开始递增，使用 enforce-eager 跳过 CUDA graph 编译以加速探测。
     返回成功的值，或 None 表示全部失败。
     """
-    for util in [0.35, 0.40, 0.45, 0.50, 0.55, 0.60]:
+    for util in [0.45, 0.50, 0.55, 0.60]:
         lg.info("  尝试 gpu_memory_utilization={:.2f} ...", util)
         proc = None
         try:
@@ -241,7 +254,10 @@ def run_preflight(
         if probe_memory:
             lg.info("  开始 GPU 显存探测 ...")
             result = probe_gpu_memory(
-                model_id, base_url, startup_timeout, poll_interval,
+                model_id,
+                base_url,
+                startup_timeout,
+                poll_interval,
             )
             if result is None:
                 incidents.append({
@@ -286,11 +302,14 @@ def run_preflight(
                     "error": f"{'和'.join(failed_parts)}检查失败",
                     "resolution": "从实验中排除",
                 })
-                lg.warning("[未通过] {} - {}检查失败", model_id, "和".join(failed_parts))
+                lg.warning(
+                    "[未通过] {} - {}检查失败", model_id, "和".join(failed_parts)
+                )
 
         except Exception as e:
             error_msg = str(e)
-            from scripts.vllm_manager import read_vllm_log
+            from experiments.utils.vllm_manager import read_vllm_log
+
             stderr_snippet = read_vllm_log(tail=40)
 
             incidents.append({
@@ -314,7 +333,9 @@ def run_preflight(
 
 
 def run_benchmark_speed_for_model(
-    base_url: str, output_dir: Path, config: dict,
+    base_url: str,
+    output_dir: Path,
+    config: dict,
 ) -> bool:
     bs_cfg = config.get("benchmark_speed", {})
     if not bs_cfg.get("enabled", True):
@@ -344,7 +365,9 @@ def run_benchmark_speed_for_model(
 
 
 def run_video_understanding_for_model(
-    output_dir: Path, config: dict, base_url: str | None = None,
+    output_dir: Path,
+    config: dict,
+    base_url: str | None = None,
 ) -> bool:
     vu_cfg = config.get("video_understanding", {})
     if not vu_cfg.get("enabled", True):
@@ -364,7 +387,8 @@ def run_video_understanding_for_model(
         total_runs = sum(len(v) for v in results.values())
         lg.info(
             "video_understanding 完成: {} 个视频, {} 次运行",
-            len(results), total_runs,
+            len(results),
+            total_runs,
         )
         return True
     except Exception:
@@ -373,7 +397,10 @@ def run_video_understanding_for_model(
 
 
 def run_benchmark_quality_for_model(
-    base_url: str, output_dir: Path, config: dict, model_id: str,
+    base_url: str,
+    output_dir: Path,
+    config: dict,
+    model_id: str,
 ) -> bool:
     bq_cfg = config.get("benchmark_quality", {})
     if not bq_cfg.get("enabled", True):
@@ -381,13 +408,15 @@ def run_benchmark_quality_for_model(
         return True
 
     try:
+        import os
+
+        from dotenv import load_dotenv
+
+        from ahu_paimon_toolkit.evaluation.judge import LLMJudge
         from experiments.benchmark_quality.benchmark import (
             load_asset_jsons,
             run_benchmark_quality,
         )
-        from ahu_paimon_toolkit.evaluation.judge import LLMJudge
-        import os
-        from dotenv import load_dotenv
 
         load_dotenv(PROJECT_ROOT / ".env")
         api_key = os.getenv("DEEPSEEK_API_KEY", "")
@@ -455,76 +484,51 @@ def generate_speed_comparison(session_dir: Path, models: list[str]) -> None:
 
     speed_data = _collect_speed_data(speed_dir, models)
 
-    lines = [
-        "# 推理速度基准测试 - 多模型对比报告",
-        f"\n**生成时间**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
-        "",
-        "## 性能总览",
-        "",
-        "| 模型 | 平均TTFT (s) | 平均吞吐量 (tok/s) | 平均总耗时 (s) | 平均Token数 | 运行次数 |",
-        "|------|:---:|:---:|:---:|:---:|:---:|",
-    ]
-
+    speed_rows = []
+    speed_rows.append("| 模型 | 平均TTFT (s) | 平均吞吐量 (tok/s) | 平均总耗时 (s) | 平均Token数 | 运行次数 |")
+    speed_rows.append("|------|:---:|:---:|:---:|:---:|:---:|")
     for model_id in models:
-        short = model_short_name(model_id)
         d = speed_data.get(model_id)
         if not d:
-            lines.append(f"| {model_id} | - | - | - | - | 0 |")
+            speed_rows.append(f"| {model_id} | - | - | - | - | 0 |")
             continue
-        lines.append(
+        speed_rows.append(
             f"| {model_id} | {d['ttft']:.3f}±{d['ttft_std']:.3f} | {d['tps']:.1f}±{d['tps_std']:.1f} "
             f"| {d['total']:.3f} | {d['tokens']:.0f} | {d['runs']} |"
         )
 
-    lines.extend([
-        "",
-        "## 帧率分析",
-        "",
-        "| 模型 | 平均TTFT (s) | 理论最大FPS | 安全FPS (70%) |",
-        "|------|:---:|:---:|:---:|",
-    ])
-
+    fps_rows = []
+    fps_rows.append("| 模型 | 平均TTFT (s) | 理论最大FPS | 安全FPS (70%) |")
+    fps_rows.append("|------|:---:|:---:|:---:|")
     for model_id in models:
         d = speed_data.get(model_id)
         if not d:
             continue
         max_fps = 1.0 / d["ttft"] if d["ttft"] > 0 else 0
-        lines.append(
-            f"| {model_id} | {d['ttft']:.3f} | {max_fps:.1f} | {max_fps * 0.7:.1f} |"
-        )
+        fps_rows.append(f"| {model_id} | {d['ttft']:.3f} | {max_fps:.1f} | {max_fps * 0.7:.1f} |")
 
-    if speed_data:
-        lines.extend(["", "## 分析", ""])
-        fastest = min(speed_data.items(), key=lambda x: x[1]["ttft"])
-        highest_tp = max(speed_data.items(), key=lambda x: x[1]["tps"])
-        lines.extend([
-            f"**延迟最低**: {fastest[0]} (TTFT {fastest[1]['ttft']:.3f}s，理论最大帧率 "
-            f"{1.0/fastest[1]['ttft']:.1f} FPS)",
-            "",
-            f"**吞吐量最高**: {highest_tp[0]} ({highest_tp[1]['tps']:.1f} tok/s)",
-            "",
-            "> 理论最大 FPS = 1 / TTFT。安全帧率取 70% 以预留网络、队列和帧差计算的开销。",
-            "> 实际使用中帧差过滤会显著降低 VLM 负载，因此安全帧率通常足够。",
-        ])
+    data = {
+        "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "speed_table": "\n".join(speed_rows),
+        "fps_table": "\n".join(fps_rows),
+    }
 
-    (speed_dir / "comparison_report.md").write_text(
-        "\n".join(lines), encoding="utf-8",
+    generate_report_from_template(
+        "speed_comparison.md",
+        data,
+        speed_dir / "comparison_report.md",
+        use_deepseek=bool(speed_data),
     )
     lg.info("benchmark_speed 对比报告已生成")
 
 
-def generate_video_comparison(session_dir: Path, models: list[str]) -> None:
-    vu_dir = session_dir / "video_understanding"
-    if not vu_dir.exists():
-        return
-
-    lines = [
-        "# 视频理解 - 多模型对比报告",
-        f"\n**生成时间**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
-        "",
-        "| 模型 | 视频数 | 运行次数 | 平均关键帧 | 平均描述数 | 平均丢弃帧 |",
-        "|------|:---:|:---:|:---:|:---:|:---:|",
-    ]
+def _collect_video_stats(
+    vu_dir: Path, models: list[str],
+) -> tuple[list[str], dict[str, dict]]:
+    """Collect per-model video understanding stats. Returns (table_lines, model_stats)."""
+    rows = []
+    rows.append("| 模型 | 视频数 | 运行次数 | 平均关键帧 | 平均描述数 | 平均丢弃帧 |")
+    rows.append("|------|:---:|:---:|:---:|:---:|:---:|")
 
     model_stats: dict[str, dict] = {}
 
@@ -532,7 +536,7 @@ def generate_video_comparison(session_dir: Path, models: list[str]) -> None:
         short = model_short_name(model_id)
         model_dir = vu_dir / short
         if not model_dir.exists():
-            lines.append(f"| {model_id} | 0 | 0 | - | - | - |")
+            rows.append(f"| {model_id} | 0 | 0 | - | - | - |")
             continue
 
         total_runs = 0
@@ -548,8 +552,7 @@ def generate_video_comparison(session_dir: Path, models: list[str]) -> None:
                     stats = ld.get("stats", {})
                     kf_list.append(stats.get("total_keyframes", 0))
                     desc_list.append(
-                        len([f for f in ld.get("frames", [])
-                             if f.get("vlm_response")])
+                        len([f for f in ld.get("frames", []) if f.get("vlm_response")])
                     )
                     drop_list.append(stats.get("total_dropped", 0))
                     total_runs += 1
@@ -559,36 +562,44 @@ def generate_video_comparison(session_dir: Path, models: list[str]) -> None:
         avg_kf = mean(kf_list) if kf_list else 0
         avg_desc = mean(desc_list) if desc_list else 0
         avg_drop = mean(drop_list) if drop_list else 0
-        lines.append(
+        rows.append(
             f"| {model_id} | - | {total_runs} "
             f"| {avg_kf:.1f} | {avg_desc:.1f} | {avg_drop:.1f} |"
         )
         model_stats[model_id] = {
-            "avg_kf": avg_kf, "avg_desc": avg_desc, "avg_drop": avg_drop,
+            "avg_kf": avg_kf,
+            "avg_desc": avg_desc,
+            "avg_drop": avg_drop,
             "runs": total_runs,
         }
 
-    if model_stats:
-        lines.extend(["", "## 分析", ""])
-        best_desc = max(model_stats.items(), key=lambda x: x[1]["avg_desc"])
-        least_drop = min(model_stats.items(), key=lambda x: x[1]["avg_drop"])
-        lines.extend([
-            f"**描述生成最多**: {best_desc[0]} (平均 {best_desc[1]['avg_desc']:.1f} 个描述/运行)",
-            "",
-            f"**丢帧最少**: {least_drop[0]} (平均 {least_drop[1]['avg_drop']:.1f} 帧丢弃/运行)",
-            "",
-            "> KeyFrameQueue 中超过 expiry_time_ms 的帧会被静默丢弃。",
-            "> 高丢帧率意味着模型推理速度跟不上截图频率，建议降低采集帧率或换用更快的模型。",
-        ])
+    return rows, model_stats
 
-    (vu_dir / "comparison_report.md").write_text(
-        "\n".join(lines), encoding="utf-8",
+
+def generate_video_comparison(session_dir: Path, models: list[str]) -> None:
+    vu_dir = session_dir / "video_understanding"
+    if not vu_dir.exists():
+        return
+
+    rows, model_stats = _collect_video_stats(vu_dir, models)
+
+    data = {
+        "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "video_table": "\n".join(rows),
+    }
+
+    generate_report_from_template(
+        "video_comparison.md",
+        data,
+        vu_dir / "comparison_report.md",
+        use_deepseek=bool(model_stats),
     )
     lg.info("video_understanding 对比报告已生成")
 
 
 def generate_charts(
-    session_dir: Path, models: list[str],
+    session_dir: Path,
+    models: list[str],
     gpu_util_map: dict[str, float] | None = None,
 ) -> None:
     from ahu_paimon_toolkit.utils.visualization import (
@@ -617,16 +628,22 @@ def generate_charts(
     model_vram = [speed_data[m]["vram"] for m in tested_models]
 
     plot_metric_ranking(
-        tested_models, model_ttfts, "TTFT (s)",
+        tested_models,
+        model_ttfts,
+        "TTFT (s)",
         "平均 TTFT 排名（越低越好）",
         charts_dir / "ttft_ranking.png",
-        higher_is_better=False, unit="s",
+        higher_is_better=False,
+        unit="s",
     )
     plot_metric_ranking(
-        tested_models, model_tps, "吞吐量 (tok/s)",
+        tested_models,
+        model_tps,
+        "吞吐量 (tok/s)",
         "平均吞吐量排名（越高越好）",
         charts_dir / "throughput_ranking.png",
-        higher_is_better=True, unit=" tok/s",
+        higher_is_better=True,
+        unit=" tok/s",
     )
 
     scenario_names: list[str] = []
@@ -638,9 +655,7 @@ def generate_charts(
             rows = list(csv.DictReader(f))
         by_scenario: dict[str, list[float]] = {}
         for r in rows:
-            by_scenario.setdefault(r["scenario_id"], []).append(
-                float(r["ttft_s"])
-            )
+            by_scenario.setdefault(r["scenario_id"], []).append(float(r["ttft_s"]))
         if i == 0:
             scenario_names = sorted(by_scenario.keys())
         for sname in scenario_names:
@@ -649,8 +664,11 @@ def generate_charts(
 
     if scenario_names:
         plot_scenario_comparison(
-            scenario_names, tested_models, scenario_matrix,
-            "TTFT (s)", "各场景 TTFT 对比",
+            scenario_names,
+            tested_models,
+            scenario_matrix,
+            "TTFT (s)",
+            "各场景 TTFT 对比",
             charts_dir / "scenario_comparison.png",
         )
 
@@ -659,14 +677,20 @@ def generate_charts(
     for i, m in enumerate(tested_models):
         short = m.split("/")[-1] if "/" in m else m
         table_rows.append([
-            short, f"{model_ttfts[i]:.3f}", f"{model_tps[i]:.1f}",
-            f"{model_totals[i]:.3f}", f"{model_tokens[i]:.0f}",
+            short,
+            f"{model_ttfts[i]:.3f}",
+            f"{model_tps[i]:.1f}",
+            f"{model_totals[i]:.3f}",
+            f"{model_tokens[i]:.0f}",
             str(model_vram[i]),
         ])
     plot_summary_table(
-        headers, table_rows, "推理速度基准测试汇总",
+        headers,
+        table_rows,
+        "推理速度基准测试汇总",
         charts_dir / "summary_table.png",
-        highlight_col=1, highlight_best="min",
+        highlight_col=1,
+        highlight_best="min",
     )
 
     # 视频理解图表
@@ -688,8 +712,7 @@ def generate_charts(
                     stats = ld.get("stats", {})
                     kf_l.append(stats.get("total_keyframes", 0))
                     desc_l.append(
-                        len([f for f in ld.get("frames", [])
-                             if f.get("vlm_response")])
+                        len([f for f in ld.get("frames", []) if f.get("vlm_response")])
                     )
                     drop_l.append(stats.get("total_dropped", 0))
                 except Exception:
@@ -702,7 +725,10 @@ def generate_charts(
 
     if vu_models:
         plot_video_comparison(
-            vu_models, vu_kf, vu_dropped, vu_descs,
+            vu_models,
+            vu_kf,
+            vu_dropped,
+            vu_descs,
             "视频理解多模型对比",
             charts_dir / "video_comparison.png",
         )
@@ -723,112 +749,67 @@ def generate_charts(
 
 
 def generate_final_report(
-    session_dir: Path, config: dict, models: list[str],
+    session_dir: Path,
+    config: dict,
+    models: list[str],
     incidents: list[dict],
     gpu_util_map: dict[str, float] | None = None,
 ) -> None:
-    lines = [
-        "# 多模型综合基准测试报告",
-        f"\n**生成时间**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
-        "",
-        "## 实验目标",
-        "",
-        "本实验旨在系统评估 8 个小型视觉语言模型（VLM, 0.8B-4B 参数）在游戏场景 AI 伴侣应用中的表现。",
-        "评估维度包括：",
-        "",
-        "1. **推理速度**：首Token延迟（TTFT）、吞吐量（tok/s）、理论最大帧率",
-        "2. **视频理解**：实时截图→帧差检测→VLM描述→DeepSeek汇总的完整流水线效果",
-        "3. **资源效率**：各模型最小可用 GPU 显存配置",
-        "",
-    ]
-
     meta_path = session_dir / "meta.json"
+    completed: list[str] = []
+    failed: list[str] = []
+    env_lines: list[str] = []
+
     if meta_path.exists():
         meta = json.loads(meta_path.read_text(encoding="utf-8"))
         gpu = meta.get("gpu", {})
         completed = meta.get("completed_models", [])
         failed = meta.get("failed_models", [])
-        lines.extend([
-            "## 实验环境",
-            "",
+        env_lines = [
             f"- **GPU**: {gpu.get('name', 'N/A')} ({gpu.get('memory_total_mb', 0)} MB)",
             f"- **Python**: {meta.get('python_version', 'N/A').split()[0]}",
             f"- **Git**: {meta.get('git_hash', 'N/A')}",
             f"- **开始时间**: {meta.get('start_time', 'N/A')}",
             f"- **结束时间**: {meta.get('end_time', 'N/A')}",
-            "",
-        ])
-    else:
-        completed, failed = [], []
+        ]
 
-    lines.extend([
-        "## 模型清单",
-        "",
-        "| # | 模型ID | 简称 | 参数量级 | 状态 |",
-        "|---|--------|------|---------|------|",
-    ])
-
-    model_sizes = {
-        "Qwen/Qwen3.5-2B": "2B", "Qwen/Qwen3.5-0.8B": "0.8B",
-        "Qwen/Qwen3-VL-2B-Instruct": "2B", "OpenGVLab/InternVL2_5-2B": "2B",
-        "microsoft/Phi-3.5-vision-instruct": "4.2B",
-        "mistralai/Ministral-3-3B-Instruct-2512": "3B",
-        "deepseek-ai/deepseek-vl2-tiny": "~3B",
-        "HuggingFaceTB/SmolVLM2-2.2B-Instruct": "2.2B",
-    }
-
+    model_table_rows = [
+        "| # | 模型ID | 简称 | 状态 |",
+        "|---|--------|------|------|",
+    ]
     for i, m in enumerate(models, 1):
         short = model_short_name(m)
-        size = model_sizes.get(m, "?")
         if m in completed:
             status = "已完成"
         elif m in failed:
             status = "实验中失败"
         else:
             status = "预飞行排除"
-        lines.append(f"| {i} | {m} | {short} | {size} | {status} |")
+        model_table_rows.append(f"| {i} | {m} | {short} | {status} |")
 
-    # GPU 显存优化结果
+    gpu_rows: list[str] = []
     if gpu_util_map:
-        lines.extend([
-            "",
-            "## GPU 显存优化",
-            "",
-            "通过逐步探测，为每个模型找到了在 RTX 4080 SUPER (16GB) 上可用的最小 "
-            "`gpu_memory_utilization` 值：",
-            "",
-            "| 模型 | 最小 gpu_memory_utilization | 等效分配显存 |",
-            "|------|:---:|:---:|",
-        ])
+        gpu_rows.append("| 模型 | 最小 gpu_memory_utilization | 等效分配显存 |")
+        gpu_rows.append("|------|:---:|:---:|")
         for m, util in gpu_util_map.items():
             alloc_mb = int(16376 * util)
-            lines.append(f"| {m} | {util:.2f} | ~{alloc_mb} MB |")
-        lines.extend([
-            "",
-            "> 更低的 gpu_memory_utilization 意味着模型可与其他任务共享 GPU 资源，"
-            "这对实际部署非常重要。",
-            "",
-        ])
+            gpu_rows.append(f"| {m} | {util:.2f} | ~{alloc_mb} MB |")
 
-    # 图表 + 分析
-    charts_dir = session_dir / "charts"
     speed_dir = session_dir / "benchmark_speed"
     speed_data = _collect_speed_data(speed_dir, completed) if speed_dir.exists() else {}
+    speed_rows: list[str] = []
+    speed_chart_lines: list[str] = []
+    charts_dir = session_dir / "charts"
 
     if speed_data:
-        lines.extend([
-            "## 推理速度测试结果",
-            "",
-            "| 模型 | TTFT (s) | 吞吐量 (tok/s) | 总耗时 (s) | 最大FPS | 安全FPS |",
-            "|------|:---:|:---:|:---:|:---:|:---:|",
-        ])
+        speed_rows.append("| 模型 | TTFT (s) | 吞吐量 (tok/s) | 总耗时 (s) | 最大FPS | 安全FPS |")
+        speed_rows.append("|------|:---:|:---:|:---:|:---:|:---:|")
         for m, d in speed_data.items():
             max_fps = 1.0 / d["ttft"] if d["ttft"] > 0 else 0
-            lines.append(
+            speed_rows.append(
                 f"| {m.split('/')[-1]} | {d['ttft']:.3f} | {d['tps']:.1f} "
                 f"| {d['total']:.3f} | {max_fps:.2f} | {max_fps * 0.7:.2f} |"
             )
-        lines.append("")
 
     if charts_dir.exists():
         for fname, caption in [
@@ -838,120 +819,58 @@ def generate_final_report(
             ("scenario_comparison.png", "各场景 TTFT 对比"),
         ]:
             if (charts_dir / fname).exists():
-                lines.extend([f"### {caption}", "", f"![{caption}](charts/{fname})", ""])
+                speed_chart_lines.extend([f"### {caption}", "", f"![{caption}](charts/{fname})", ""])
 
-    if speed_data:
-        fastest = min(speed_data.items(), key=lambda x: x[1]["ttft"])
-        highest_tp = max(speed_data.items(), key=lambda x: x[1]["tps"])
-        lines.extend([
-            "### 速度测试分析",
-            "",
-            f"在 5 个游戏场景（短描述、详细描述、物体检测、动作分析、UI识别）的测试中，"
-            f"**{fastest[0].split('/')[-1]}** 以 {fastest[1]['ttft']:.3f}s 的 TTFT 取得最低延迟，"
-            f"对应理论最大帧率 {1.0/fastest[1]['ttft']:.1f} FPS。",
-            "",
-            f"吞吐量方面，**{highest_tp[0].split('/')[-1]}** 以 {highest_tp[1]['tps']:.1f} tok/s "
-            f"领先。吞吐量影响单帧描述的生成速度——高吞吐量模型更适合需要详细描述的离线分析场景。",
-            "",
-            "对于实时游戏伴侣应用，TTFT 是关键指标：",
-            "",
-            "- 要达到 1 FPS 实时描述，需要 TTFT < 1s",
-            "- 考虑帧差过滤后实际 VLM 调用频率远低于帧率，多数模型均能满足需求",
-            "- 安全帧率取理论值的 70%，为网络传输和队列调度预留余量",
-            "",
-        ])
-
-    # 视频理解结果
-    vu_cmp = session_dir / "video_understanding" / "comparison_report.md"
-    if vu_cmp.exists():
-        lines.extend([
-            "## 视频理解测试结果",
-            "",
-        ])
+    vu_dir = session_dir / "video_understanding"
+    video_rows: list[str] = []
+    video_chart_lines: list[str] = []
+    if vu_dir.exists():
+        vr, _ = _collect_video_stats(vu_dir, completed)
+        video_rows = vr
         if (charts_dir / "video_comparison.png").exists():
-            lines.extend(["![视频理解对比](charts/video_comparison.png)", ""])
-        lines.extend([
-            f"详细数据见 [comparison_report.md](video_understanding/comparison_report.md)。",
-            "",
-        ])
+            video_chart_lines.append("![视频理解对比](charts/video_comparison.png)")
 
-    if gpu_util_map and (charts_dir / "gpu_memory_comparison.png").exists():
-        lines.extend([
-            "## GPU 资源效率",
-            "",
-            "![GPU 显存对比](charts/gpu_memory_comparison.png)",
-            "",
-        ])
-
-    # 研究问题
-    lines.extend([
-        "## 研究问题回答",
-        "",
-        "### 1. 理论最大帧率是多少？",
-        "",
-    ])
-    if speed_data:
-        fastest = min(speed_data.items(), key=lambda x: x[1]["ttft"])
-        lines.append(
-            f"最快模型 **{fastest[0].split('/')[-1]}** 的理论最大帧率为 "
-            f"{1.0/fastest[1]['ttft']:.1f} FPS（TTFT = {fastest[1]['ttft']:.3f}s）。"
+    incident_lines: list[str] = []
+    for inc in incidents:
+        incident_lines.append(
+            f"- **{inc['model']}**（{inc.get('phase', '未知')}阶段）："
+            f"{inc.get('error', '未知错误')} → {inc.get('resolution', '')}"
         )
-    lines.extend([
-        "",
-        "### 2. 安全的截图采集帧率是多少？",
-        "",
-        "建议取理论最大帧率的 70% 作为安全值，以预留网络传输、队列调度和帧差计算的开销。",
-        "在实际使用中，帧差过滤会大幅降低 VLM 调用频率——仅当画面发生显著变化时才触发推理。",
-        "",
-        "### 3. 未处理的帧如何处理？",
-        "",
-        "KeyFrameQueue 使用过期机制（默认 10 秒），超时的帧被静默丢弃，不阻塞流水线。",
-        "丢帧率高说明模型推理跟不上采集速度，应降低采集帧率或换用更快的模型。",
-        "",
-        "## 应用建议",
-        "",
-    ])
-    if speed_data:
-        fastest = min(speed_data.items(), key=lambda x: x[1]["ttft"])
-        highest_tp = max(speed_data.items(), key=lambda x: x[1]["tps"])
-        lines.extend([
-            f"- **实时伴侣**：优先选择低延迟模型 **{fastest[0].split('/')[-1]}**，"
-            f"采样频率 ~1 帧/2-3s",
-            f"- **离线分析**：使用高吞吐模型 **{highest_tp[0].split('/')[-1]}** 批量处理",
-            "- **资源受限环境**：选择 GPU 显存需求最低的模型，可与游戏进程共享 GPU",
-            "",
-        ])
 
-    if incidents:
-        lines.extend(["## 事件记录", ""])
-        for inc in incidents:
-            lines.append(
-                f"- **{inc['model']}**（{inc.get('phase', '未知')}阶段）："
-                f"{inc.get('error', '未知错误')} → {inc.get('resolution', '')}"
-            )
-        lines.append("")
+    data = {
+        "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "environment": "\n".join(env_lines),
+        "model_table": "\n".join(model_table_rows),
+        "gpu_memory_table": "\n".join(gpu_rows),
+        "speed_results": "\n".join(speed_rows),
+        "speed_charts": "\n".join(speed_chart_lines),
+        "quality_results": "",
+        "video_results": "\n".join(video_rows),
+        "video_charts": "\n".join(video_chart_lines),
+        "incidents": "\n".join(incident_lines) if incident_lines else "本次实验过程中未发生任何意外事件。",
+    }
 
-    (session_dir / "final_report.md").write_text(
-        "\n".join(lines), encoding="utf-8",
+    generate_report_from_template(
+        "final_report.md",
+        data,
+        session_dir / "final_report.md",
+        use_deepseek=bool(speed_data),
     )
     lg.info("最终报告已生成")
 
 
 def generate_incident_report(
-    session_dir: Path, incidents: list[dict],
+    session_dir: Path,
+    incidents: list[dict],
 ) -> None:
-    lines = [
-        "# 事件报告",
-        f"\n**生成时间**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
-        "",
-    ]
     if not incidents:
-        lines.append("本次实验过程中未发生任何意外事件。")
+        summary = "本次实验过程中未发生任何意外事件。"
+        details = ""
     else:
-        lines.append(f"共记录 {len(incidents)} 个事件。")
-        lines.append("")
+        summary = f"共记录 {len(incidents)} 个事件。"
+        detail_lines: list[str] = []
         for i, inc in enumerate(incidents, 1):
-            lines.extend([
+            detail_lines.extend([
                 f"## 事件 {i}: {inc['model']}",
                 "",
                 f"- **阶段**: {inc.get('phase', '未知')}",
@@ -959,15 +878,25 @@ def generate_incident_report(
                 f"- **处置**: {inc.get('resolution', 'N/A')}",
             ])
             if inc.get("stderr_snippet"):
-                lines.extend([
+                detail_lines.extend([
                     "",
                     "**vLLM 输出（末尾片段）**:",
                     f"```\n{inc['stderr_snippet']}\n```",
                 ])
-            lines.append("")
+            detail_lines.append("")
+        details = "\n".join(detail_lines)
 
-    (session_dir / "incident_report.md").write_text(
-        "\n".join(lines), encoding="utf-8",
+    data = {
+        "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "incident_summary": summary,
+        "incident_details": details,
+    }
+
+    generate_report_from_template(
+        "incident_report.md",
+        data,
+        session_dir / "incident_report.md",
+        use_deepseek=bool(incidents),
     )
     lg.info("事件报告已生成")
 
@@ -975,105 +904,21 @@ def generate_incident_report(
 def generate_readme(session_dir: Path, config: dict, models: list[str]) -> None:
     from experiments.benchmark_speed.benchmark import SCENARIOS
 
-    lines = [
-        "# 多模型综合基准测试",
-        "",
-        "本目录包含一次完整的多模型基准测试会话。",
-        "",
-        "## 目的",
-        "",
-        "系统评估多个 VLM 模型在游戏场景 AI 伴侣应用中的推理速度和视频理解能力。",
-        "",
-        "## 测试模型",
-        "",
-    ]
-    for i, m in enumerate(models, 1):
-        lines.append(f"{i}. `{m}`")
+    model_list = "\n".join(f"{i}. `{m}`" for i, m in enumerate(models, 1))
+    scenario_list = "\n".join(
+        f"- `{s.id}` ({s.name}): max_tokens={s.max_tokens}" for s in SCENARIOS
+    )
 
-    lines.extend([
-        "",
-        "## 实验内容",
-        "",
-        "### 1. 推理速度基准测试 (benchmark_speed)",
-        "",
-        "对游戏截图进行多场景推理，测量 TTFT、吞吐量和总推理时间。",
-        "",
-        "**场景列表**:",
-        "",
-    ])
-    for s in SCENARIOS:
-        lines.append(f"- `{s.id}` ({s.name}): max_tokens={s.max_tokens}")
+    data = {
+        "model_list": model_list,
+        "scenario_list": scenario_list,
+    }
 
-    lines.extend([
-        "",
-        "### 2. 视频理解 (video_understanding)",
-        "",
-        "完整流水线: PotPlayer 播放 → 窗口截图 → 帧差检测 → vLLM 描述 → DeepSeek 汇总",
-        "",
-        "## 复现步骤",
-        "",
-        "### 前置条件",
-        "",
-        "- Windows 10/11 + WSL2",
-        "- NVIDIA GPU (>= 12GB VRAM 推荐)",
-        "- Python >= 3.12, uv 包管理器",
-        "- WSL 中安装 vLLM",
-        "- PotPlayer（用于 video_understanding）",
-        "",
-        "### 步骤",
-        "",
-        "```bash",
-        "# 1. 安装依赖",
-        "uv sync",
-        "",
-        "# 2. 在项目根目录创建 .env",
-        "# DEEPSEEK_API_KEY=your_key",
-        "# DEEPSEEK_API_BASE_URL=https://api.deepseek.com",
-        "# PLAYER_EXE_PATH=D:\\Programs\\PotPlayer\\PotPlayerMini64.exe",
-        "",
-        "# 3. 确保模型已缓存在 WSL 中 (~/.cache/huggingface/hub/)",
-        "",
-        "# 4. 运行基准测试",
-        "uv run run_benchmark.py",
-        "",
-        "# 可选参数:",
-        "# --config my_config.toml",
-        "# --models Qwen/Qwen3.5-2B Qwen/Qwen3.5-0.8B",
-        "# --skip-speed   (仅运行 video_understanding)",
-        "# --skip-video   (仅运行 benchmark_speed)",
-        "```",
-        "",
-        "## 目录结构",
-        "",
-        "```",
-        ".",
-        "├── config.toml               # 配置快照",
-        "├── meta.json                  # 环境元数据",
-        "├── orchestrator.log           # 完整日志",
-        "├── README.md                  # 本文件",
-        "├── final_report.md            # 综合报告",
-        "├── incident_report.md         # 事件记录",
-        "├── charts/                    # 可视化图表",
-        "├── benchmark_speed/",
-        "│   ├── comparison_report.md",
-        "│   └── {model}/",
-        "│       ├── raw_data.csv",
-        "│       ├── report.md",
-        "│       └── benchmark.log",
-        "└── video_understanding/",
-        "    ├── comparison_report.md",
-        "    └── {model}/",
-        "        ├── report.md",
-        "        └── {video}_run{N}/",
-        "            ├── frames/",
-        "            ├── run_log.json",
-        "            └── summary.txt",
-        "```",
-        "",
-    ])
-
-    (session_dir / "README.md").write_text(
-        "\n".join(lines), encoding="utf-8",
+    generate_report_from_template(
+        "readme.md",
+        data,
+        session_dir / "README.md",
+        use_deepseek=False,
     )
     lg.info("README 已生成")
 
@@ -1084,22 +929,27 @@ def generate_readme(session_dir: Path, config: dict, models: list[str]) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="多模型基准测试")
     parser.add_argument(
-        "--config", default="config_benchmark.toml",
+        "--config",
+        default="config_benchmark.toml",
         help="配置文件 (默认: config_benchmark.toml)",
     )
     parser.add_argument(
-        "--models", nargs="+", default=None,
+        "--models",
+        nargs="+",
+        default=None,
         help="覆盖配置中的模型列表",
     )
     parser.add_argument("--skip-speed", action="store_true")
     parser.add_argument("--skip-quality", action="store_true")
     parser.add_argument("--skip-video", action="store_true")
     parser.add_argument(
-        "--skip-preflight", action="store_true",
+        "--skip-preflight",
+        action="store_true",
         help="跳过预飞行验证（假设所有模型可用）",
     )
     parser.add_argument(
-        "--skip-memory-probe", action="store_true",
+        "--skip-memory-probe",
+        action="store_true",
         help="跳过 GPU 显存探测（使用默认 0.5）",
     )
     args = parser.parse_args()
@@ -1131,7 +981,9 @@ def main() -> None:
 
     log_path = session_dir / "orchestrator.log"
     lg.add(
-        str(log_path), level="DEBUG", encoding="utf-8",
+        str(log_path),
+        level="DEBUG",
+        encoding="utf-8",
         format="{time:YYYY-MM-DD HH:mm:ss.SSS} | {level:<7} | {message}",
     )
 
@@ -1150,12 +1002,16 @@ def main() -> None:
         lg.info("Phase 0: 预飞行模型验证")
         lg.info("=" * 70)
         valid_models, incidents, gpu_util_map = run_preflight(
-            models, base_url, startup_timeout, poll_interval,
+            models,
+            base_url,
+            startup_timeout,
+            poll_interval,
             probe_memory=not args.skip_memory_probe,
         )
         lg.info(
             "预飞行完成: {}/{} 个模型通过",
-            len(valid_models), len(models),
+            len(valid_models),
+            len(models),
         )
         if incidents:
             lg.warning("失败模型: {}", [i["model"] for i in incidents])
@@ -1186,7 +1042,9 @@ def main() -> None:
 
         proc = None
         try:
-            gpu_util = gpu_util_map.get(model_id, config["vllm"]["gpu_memory_utilization"])
+            gpu_util = gpu_util_map.get(
+                model_id, config["vllm"]["gpu_memory_utilization"]
+            )
             proc = start_vllm(model_id, gpu_memory_utilization=gpu_util)
 
             lg.info("等待 vLLM 就绪 (超时: {}s) ...", startup_timeout)
@@ -1250,7 +1108,9 @@ def main() -> None:
     lg.info("基准测试完成")
     lg.info(
         "通过: {}/{} | 失败: {}",
-        len(completed_models), len(models), len(failed_models),
+        len(completed_models),
+        len(models),
+        len(failed_models),
     )
     lg.info("会话目录: {}", session_dir)
     if failed_models:

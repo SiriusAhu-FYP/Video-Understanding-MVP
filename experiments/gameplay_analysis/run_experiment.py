@@ -15,7 +15,6 @@
 from __future__ import annotations
 
 import argparse
-import csv
 import json
 import re
 import sys
@@ -40,6 +39,8 @@ sys.path.insert(0, str(_PROJECT_ROOT))
 from ahu_paimon_toolkit.utils.image import encode_image, get_image_mime, load_images
 from ahu_paimon_toolkit.utils.gpu import get_gpu_memory_mb
 from ahu_paimon_toolkit.vlm.model_utils import detect_model, model_short_name
+from experiments.utils.csv_io import init_csv as _init_csv, append_csv as _append_csv
+from experiments.utils.logging import setup_experiment_log
 
 ASSETS_IMAGES_DIR = _PROJECT_ROOT / "assets" / "images"
 
@@ -385,19 +386,17 @@ CSV_HEADERS = [
 
 
 def init_csv(csv_path: Path) -> None:
-    with open(csv_path, "w", newline="", encoding="utf-8") as f:
-        csv.writer(f).writerow(CSV_HEADERS)
+    _init_csv(csv_path, CSV_HEADERS)
 
 
 def append_csv(csv_path: Path, result: RunResult) -> None:
     preview = result.response_text.replace("\n", " ")
-    with open(csv_path, "a", newline="", encoding="utf-8") as f:
-        csv.writer(f).writerow([
-            result.model, result.task_id, result.task_name,
-            result.game, result.image_name, result.run_idx,
-            result.ttft_s, result.throughput_tps, result.total_time_s,
-            result.output_tokens, result.vram_mb, preview,
-        ])
+    _append_csv(csv_path, [
+        result.model, result.task_id, result.task_name,
+        result.game, result.image_name, result.run_idx,
+        result.ttft_s, result.throughput_tps, result.total_time_s,
+        result.output_tokens, result.vram_mb, preview,
+    ])
 
 
 # ── 报告生成 ──────────────────────────────────────────────────────
@@ -497,9 +496,7 @@ def run_experiment(
     report_dir = _REPORTS_DIR / f"{short_name}_{timestamp}"
     report_dir.mkdir(parents=True, exist_ok=True)
 
-    log_path = report_dir / "experiment.log"
-    lg.add(str(log_path), level="DEBUG", encoding="utf-8",
-           format="{time:YYYY-MM-DD HH:mm:ss.SSS} | {level:<7} | {message}")
+    log_sink_id = setup_experiment_log(report_dir / "experiment.log")
 
     lg.info("=" * 60)
     lg.info("游戏画面分析专项实验启动")

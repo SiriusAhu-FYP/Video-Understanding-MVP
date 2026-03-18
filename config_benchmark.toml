@@ -1,15 +1,16 @@
 [general]
 experiment_name = "multi_model_benchmark"
+output_dir = "results/v3"
 timestamp_format = "%Y-%m-%d_%H-%M-%S"
 
 [models]
 list = [
-    "Qwen/Qwen3.5-2B",
-    "Qwen/Qwen3.5-0.8B",
+    # "Qwen/Qwen3.5-2B",
+    # "Qwen/Qwen3.5-0.8B",
     "Qwen/Qwen3-VL-2B-Instruct",
     "OpenGVLab/InternVL2_5-2B",
-    "microsoft/Phi-3.5-vision-instruct",
-    "mistralai/Ministral-3-3B-Instruct-2512",
+    # "microsoft/Phi-3.5-vision-instruct",
+    # "mistralai/Ministral-3-3B-Instruct-2512",
     "deepseek-ai/deepseek-vl2-tiny",
     "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
 ]
@@ -25,7 +26,13 @@ poll_interval_s = 15
 enabled = true
 runs = 5
 warmup = 1
-scenarios = ["short_desc", "detailed_desc", "object_detection", "action_analysis", "ui_recognition"]
+scenarios = [
+    "short_desc",
+    "detailed_desc",
+    "object_detection",
+    "action_analysis",
+    "ui_recognition",
+]
 images = "all"
 
 [benchmark_quality]

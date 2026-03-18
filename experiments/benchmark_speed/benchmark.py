@@ -10,7 +10,6 @@
 from __future__ import annotations
 
 import argparse
-import csv
 import sys
 import time
 from dataclasses import dataclass
@@ -23,13 +22,14 @@ from openai import OpenAI
 
 _EXPERIMENT_DIR = Path(__file__).resolve().parent
 _PROJECT_ROOT = _EXPERIMENT_DIR.parent.parent
-_REPORTS_DIR = _EXPERIMENT_DIR / "reports"
 
 sys.path.insert(0, str(_PROJECT_ROOT))
 
-from ahu_paimon_toolkit.utils.image import encode_image, get_image_mime, load_images as _load_images_full
+from ahu_paimon_toolkit.utils.image import load_images as _load_images_full
 from ahu_paimon_toolkit.utils.gpu import get_gpu_memory_mb
 from ahu_paimon_toolkit.vlm.model_utils import detect_model, model_short_name
+from experiments.utils.csv_io import init_csv as _init_csv, append_csv as _append_csv
+from experiments.utils.logging import setup_experiment_log
 
 ASSETS_IMAGES_DIR = _PROJECT_ROOT / "assets" / "images"
 
@@ -198,22 +198,18 @@ CSV_HEADERS = [
 
 
 def init_csv(csv_path: Path) -> None:
-    with open(csv_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerow(CSV_HEADERS)
+    _init_csv(csv_path, CSV_HEADERS)
 
 
 def append_csv(csv_path: Path, result: RunResult) -> None:
     preview = result.response_text[:200].replace("\n", " ")
-    with open(csv_path, "a", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerow([
-            result.model, result.scenario_id, result.scenario_name,
-            result.image_name, result.run_idx,
-            result.ttft_s, result.throughput_tps, result.total_time_s,
-            result.output_tokens, result.vram_mb,
-            preview,
-        ])
+    _append_csv(csv_path, [
+        result.model, result.scenario_id, result.scenario_name,
+        result.image_name, result.run_idx,
+        result.ttft_s, result.throughput_tps, result.total_time_s,
+        result.output_tokens, result.vram_mb,
+        preview,
+    ])
 
 
 # ── 报告生成 ──────────────────────────────────────────────────────
@@ -332,10 +328,7 @@ def run_benchmark(
         report_dir = _REPORTS_DIR / f"{short_name}_{timestamp}"
     report_dir.mkdir(parents=True, exist_ok=True)
 
-    # 配置日志到文件
-    log_path = report_dir / "benchmark.log"
-    lg.add(str(log_path), level="DEBUG", encoding="utf-8",
-           format="{time:YYYY-MM-DD HH:mm:ss.SSS} | {level:<7} | {message}")
+    log_sink_id = setup_experiment_log(report_dir / "benchmark.log")
 
     lg.info("=" * 60)
     lg.info("VLM 基准测试启动")

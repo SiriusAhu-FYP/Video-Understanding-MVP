@@ -32,7 +32,8 @@ _REPORTS_DIR = _EXPERIMENT_DIR / "reports"
 
 sys.path.insert(0, str(_PROJECT_ROOT))
 
-from ahu_paimon_toolkit.vlm.model_utils import detect_model_from_url as detect_model, model_short_name
+from ahu_paimon_toolkit.vlm.model_utils import detect_model_from_url as detect_model, model_short_name  # noqa: E501
+from experiments.utils.logging import setup_experiment_log
 from ahu_paimon_toolkit.capture import (
     WindowNotFoundError,
     capture_window,
@@ -193,9 +194,15 @@ async def run_single_pipeline(
     wait_for_window(keyword)
 
     # 运行流水线：使用 cfg 中的实际模型名（自动检测的，非 config.toml 默认值）
+    import os
+    from dotenv import load_dotenv
+    load_dotenv(_PROJECT_ROOT / ".env")
+    deepseek_key = os.getenv("DEEPSEEK_API_KEY", "")
+    deepseek_base = os.getenv("DEEPSEEK_API_BASE_URL", "https://api.deepseek.com")
+
     queue = KeyFrameQueue()
     vlm_client = VLMClient(base_url=cfg.llm.vllm_base_url, model=cfg.llm.vllm_model)
-    summarizer = Summarizer()
+    summarizer = Summarizer(api_key=deepseek_key, api_base_url=deepseek_base)
     results: list[FrameDescription] = []
     stop_event = asyncio.Event()
     loop = asyncio.get_running_loop()
@@ -207,7 +214,12 @@ async def run_single_pipeline(
                 queue.inner,
                 loop,
                 stop_event,
-                on_frame_sampled,
+                window_keyword=cfg.capture.window_title_keyword,
+                interval_ms=cfg.capture.screenshot_interval_ms,
+                max_size=cfg.capture.max_size,
+                diff_method=cfg.algorithm.method,
+                diff_threshold=cfg.algorithm.diff_threshold,
+                on_frame_sampled=on_frame_sampled,
             )
         )
 
@@ -395,9 +407,7 @@ async def run_experiment(
         report_dir = _REPORTS_DIR / f"{short_name}_{timestamp}"
     report_dir.mkdir(parents=True, exist_ok=True)
 
-    log_path = report_dir / "experiment.log"
-    lg.add(str(log_path), level="DEBUG", encoding="utf-8",
-           format="{time:YYYY-MM-DD HH:mm:ss.SSS} | {level:<7} | {message}")
+    log_sink_id = setup_experiment_log(report_dir / "experiment.log")
 
     lg.info("=" * 60)
     lg.info("视频理解专项实验启动")
@@ -411,7 +421,16 @@ async def run_experiment(
         sys.exit(1)
     lg.info("视频文件: {}", [v.name for v in videos])
 
-    # 修改配置：设置模型名（自动检测）+ base_url
+    # 加载基础配置并覆盖模型名 + base_url
+    import tomllib
+    config_path = _PROJECT_ROOT / "config.toml"
+    if config_path.exists():
+        with open(config_path, "rb") as f:
+            base_cfg_dict = tomllib.load(f)
+        cfg = Settings(**base_cfg_dict)
+    else:
+        cfg = Settings()
+
     cfg_dict = cfg.model_dump()
     cfg_dict["llm"]["vllm_model"] = model_id
     cfg_dict["llm"]["vllm_base_url"] = effective_url
