@@ -1,0 +1,57 @@
+# SOTA Model Validation Experiment Configuration
+#
+# This experiment validates whether the current evaluation design (samples,
+# prompts, rubrics) is sound by running top-tier cloud models and checking
+# that they score near-perfect.  It is NOT a ranking experiment.
+
+[general]
+experiment_name = "sota_validation"
+output_dir = "results/v3-sota"
+timestamp_format = "%Y-%m-%d_%H-%M-%S"
+
+[models]
+list = [
+    "gemini-3.1-pro-preview",
+    "gpt-5.4",
+    "claude-opus-4-6",
+    "Qwen3-VL-235B-A22B-Instruct",
+    "qwen3.5-397b-a17b",
+    "qwen2.5-vl-72b-instruct",
+    "gpt-4.1",
+    "claude-sonnet-4-6",
+    "grok-4.1",
+    "glm-4.6v",
+]
+
+[api]
+base_url_env = "DMX_API_BASE_URL"
+api_key_env = "DMX_API_KEY"
+timeout_s = 180
+max_retries = 3
+retry_wait_s = 60
+
+# ── Experiments ──────────────────────────────────────────────────
+
+[experiments.image_quality]
+enabled = true
+runs = 5
+
+[experiments.video_quality]
+enabled = true
+runs = 5
+
+# ── Video Frame Extraction ───────────────────────────────────────
+
+[video]
+frame_interval_s = 1.0
+max_frames = 30
+cache_dir = "tmp/sota_frames"
+
+# ── Report Generation ────────────────────────────────────────────
+
+[reporting]
+use_deepseek = true
+language = "中文"
+deepseek_model = "deepseek-chat"
+max_tokens_per_section = 1024
+temperature = 0.3
