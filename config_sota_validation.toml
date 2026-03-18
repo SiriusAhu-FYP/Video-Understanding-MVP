@@ -30,6 +30,16 @@ timeout_s = 180
 max_retries = 3
 retry_wait_s = 60
 
+# ── Judge (DeepSeek scores all VLM responses) ───────────────────
+
+[judge]
+model = "deepseek-chat"
+base_url_env = "DEEPSEEK_API_BASE_URL"
+api_key_env = "DEEPSEEK_API_KEY"
+timeout_s = 120
+max_retries = 3
+retry_wait_s = 30
+
 # ── Experiments ──────────────────────────────────────────────────
 
 [experiments.image_quality]

@@ -1,7 +1,7 @@
 """SOTA Model Validation Orchestrator.
 
 Validates experiment design by running top-tier cloud models through DMXAPI.
-Reads config_sota_validation.toml for model list, API settings, and run params.
+All models run in parallel; DeepSeek is used as the unified judge.
 
 Usage:
     uv run experiments/sota_validation/run_sota_validation.py
@@ -37,6 +37,7 @@ from experiments.sota_validation.frame_extractor import extract_all_videos
 from experiments.sota_validation.preflight import run_preflight
 from experiments.sota_validation.run_image_experiment import run_image_experiment
 from experiments.sota_validation.run_video_experiment import run_video_experiment
+from experiments.sota_validation.visualization import generate_all_charts
 
 
 def load_config(path: Path) -> dict:
@@ -60,6 +61,8 @@ def _save_meta(session_dir: Path, config: dict, config_path: Path) -> None:
         "experiment": "sota_validation",
         "start_time": datetime.now().isoformat(),
         "models": config.get("models", {}).get("list", []),
+        "judge_model": config.get("judge", {}).get("model", "deepseek-chat"),
+        "parallel": True,
         "python_version": sys.version,
     }
     (session_dir / "meta.json").write_text(
@@ -89,12 +92,14 @@ def _generate_qa_report(
     """Generate the QA report for the SOTA validation experiment."""
     qa_dir = _PROJECT_ROOT / "QA" / "v3" / "sota_validation"
     qa_dir.mkdir(parents=True, exist_ok=True)
+    judge_model = config.get("judge", {}).get("model", "deepseek-chat")
 
     lines = [
         "# SOTA 模型校准实验 - 评估报告",
         "",
         f"**生成时间**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
         f"**数据来源**: `{session_dir.relative_to(_PROJECT_ROOT)}`",
+        f"**裁判模型**: {judge_model}",
         "",
         "---",
         "",
@@ -104,7 +109,14 @@ def _generate_qa_report(
         "如果 SOTA 模型普遍能获得接近满分，说明设计合理；",
         "如果某个样本让大部分 SOTA 模型失分，则优先怀疑设计问题。",
         "",
-        "## 2. 模型清单",
+        "## 2. 实验方法",
+        "",
+        "- **被测模型**通过 DMXAPI 完成任务回答",
+        f"- **{judge_model}** 统一作为裁判，根据 rubric 评分",
+        "- 所有模型**并行执行**，各自独立写入结果",
+        "- 每个样本 × 2 prompt 模式 × 5 次 = 10 次评估/模型",
+        "",
+        "## 3. 模型清单",
         "",
         f"计划测试 {len(models)} 个模型，通过预检 {len(passed_models)} 个：",
         "",
@@ -117,16 +129,10 @@ def _generate_qa_report(
 
     lines.extend([
         "",
-        "## 3. 预检方法",
+        "## 4. 预检方法",
         "",
-        "对每个模型发送一张 64x64 的小型 JPEG 图片，验证鉴权、多模态支持和响应质量。",
-        "只有通过预检的模型才进入正式实验。",
-        "",
-        "## 4. 限流与重试",
-        "",
-        "- 识别 HTTP 429 和中英文限流错误消息",
-        "- 限流时自动等待 60 秒后重试",
-        "- 网络/超时错误最多重试 3 次",
+        "使用一张真实游戏截图（最短边 512px，JPEG 压缩），并行发送给所有模型。",
+        "只有返回有意义响应的模型才进入正式实验。",
         "",
         "## 5. 视频处理方式",
         "",
@@ -134,17 +140,11 @@ def _generate_qa_report(
         "- 所有模型、所有轮次复用相同的帧序列",
         "- 帧序列作为多图输入发送给 API",
         "",
-        "## 6. 实验规模",
-        "",
-        "- 每个图片样本：每模型 × 2 prompt 模式 × 5 次 = 10 次评估",
-        "- 每个视频样本：每模型 × 2 prompt 模式 × 5 次 = 10 次评估",
-        "- 图片样本数：4，视频样本数：2",
-        "",
     ])
 
     # Image results
     if image_agg:
-        lines.extend(["## 7. 图片实验结果", ""])
+        lines.extend(["## 6. 图片实验结果", ""])
         for model_id, assets in sorted(image_agg.items()):
             short = model_id.split("/")[-1] if "/" in model_id else model_id
             lines.append(f"### {short}")
@@ -160,11 +160,11 @@ def _generate_qa_report(
                     )
             lines.append("")
     else:
-        lines.extend(["## 7. 图片实验结果", "", "未执行或无数据。", ""])
+        lines.extend(["## 6. 图片实验结果", "", "未执行或无数据。", ""])
 
     # Video results
     if video_agg:
-        lines.extend(["## 8. 视频实验结果", ""])
+        lines.extend(["## 7. 视频实验结果", ""])
         for model_id, assets in sorted(video_agg.items()):
             short = model_id.split("/")[-1] if "/" in model_id else model_id
             lines.append(f"### {short}")
@@ -180,7 +180,16 @@ def _generate_qa_report(
                     )
             lines.append("")
     else:
-        lines.extend(["## 8. 视频实验结果", "", "未执行或无数据。", ""])
+        lines.extend(["## 7. 视频实验结果", "", "未执行或无数据。", ""])
+
+    # Charts
+    charts_dir = session_dir / "charts"
+    if charts_dir.exists():
+        lines.extend(["## 8. 可视化", ""])
+        for png in sorted(charts_dir.glob("*.png")):
+            rel = png.relative_to(_PROJECT_ROOT)
+            lines.append(f"![{png.stem}]({rel})")
+            lines.append("")
 
     # Problems
     lines.extend(["## 9. 争议样本分析", ""])
@@ -208,7 +217,6 @@ def _generate_qa_report(
         "- 如果不适合，应改哪些样本或改哪里？",
     ])
 
-    # Incidents
     if incidents:
         lines.extend(["", "## 附录：事件记录", ""])
         for inc in incidents:
@@ -231,16 +239,15 @@ async def _main(args: argparse.Namespace) -> None:
         lg.error("No models specified in config")
         sys.exit(1)
 
-    # Load env
     from dotenv import load_dotenv
     load_dotenv(_PROJECT_ROOT / ".env")
 
+    # DMXAPI client for VLM calls
     api_cfg = config.get("api", {})
     api_key = os.getenv(api_cfg.get("api_key_env", "DMX_API_KEY"), "")
     base_url = os.getenv(api_cfg.get("base_url_env", "DMX_API_BASE_URL"), "https://www.dmxapi.cn")
-
     if not api_key:
-        lg.error("API key not set (env var: {})", api_cfg.get("api_key_env", "DMX_API_KEY"))
+        lg.error("DMXAPI key not set (env: {})", api_cfg.get("api_key_env"))
         sys.exit(1)
 
     client = DMXAPIClient(
@@ -251,6 +258,23 @@ async def _main(args: argparse.Namespace) -> None:
         retry_wait_s=api_cfg.get("retry_wait_s", 60),
     )
 
+    # DeepSeek client for judge calls
+    judge_cfg = config.get("judge", {})
+    judge_model = judge_cfg.get("model", "deepseek-chat")
+    judge_key = os.getenv(judge_cfg.get("api_key_env", "DEEPSEEK_API_KEY"), "")
+    judge_url = os.getenv(judge_cfg.get("base_url_env", "DEEPSEEK_API_BASE_URL"), "https://api.deepseek.com")
+    if not judge_key:
+        lg.error("DeepSeek API key not set (env: {})", judge_cfg.get("api_key_env"))
+        sys.exit(1)
+
+    judge_client = DMXAPIClient(
+        api_key=judge_key,
+        base_url=judge_url,
+        timeout_s=judge_cfg.get("timeout_s", 120),
+        max_retries=judge_cfg.get("max_retries", 3),
+        retry_wait_s=judge_cfg.get("retry_wait_s", 30),
+    )
+
     session_dir = _create_session_dir(config)
     _save_meta(session_dir, config, config_path)
 
@@ -259,13 +283,13 @@ async def _main(args: argparse.Namespace) -> None:
            format="{time:YYYY-MM-DD HH:mm:ss.SSS} | {level:<7} | {message}")
 
     lg.info("=" * 70)
-    lg.info("SOTA Validation Experiment")
+    lg.info("SOTA Validation Experiment (parallel, DeepSeek judge)")
     lg.info("Session: {}", session_dir)
-    lg.info("Models: {}", models)
+    lg.info("Models: {} | Judge: {}", len(models), judge_model)
     lg.info("=" * 70)
 
-    # Phase 0: Preflight
-    lg.info("Phase 0: Preflight")
+    # Phase 0: Preflight (parallel)
+    lg.info("Phase 0: Preflight (parallel)")
     passed_models, incidents = await run_preflight(client, models)
 
     if not passed_models:
@@ -273,23 +297,26 @@ async def _main(args: argparse.Namespace) -> None:
         _update_meta(session_dir, end_time=datetime.now().isoformat(),
                      passed_models=[], incidents=incidents)
         await client.close()
+        await judge_client.close()
         sys.exit(1)
 
-    # Phase 1: Image experiment
+    # Phase 1: Image experiment (all models in parallel)
     image_agg: dict = {}
     do_image = config.get("experiments", {}).get("image_quality", {}).get("enabled", True)
     if do_image and not args.skip_image:
         lg.info("=" * 70)
-        lg.info("Phase 1: Image Quality Experiment")
+        lg.info("Phase 1: Image Quality Experiment (parallel)")
         image_dir = session_dir / "image_quality"
         image_dir.mkdir(parents=True, exist_ok=True)
         image_runs = config.get("experiments", {}).get("image_quality", {}).get("runs", 5)
-        await run_image_experiment(client, passed_models, image_dir, runs=image_runs)
+        await run_image_experiment(
+            client, judge_client, judge_model, passed_models, image_dir, runs=image_runs
+        )
         image_agg = aggregate_results(image_dir, image_dir / "aggregated.csv", "image")
     else:
         lg.info("Skipping image experiment")
 
-    # Phase 2: Video experiment
+    # Phase 2: Video experiment (all models in parallel)
     video_agg: dict = {}
     do_video = config.get("experiments", {}).get("video_quality", {}).get("enabled", True)
     if do_video and not args.skip_video:
@@ -303,18 +330,20 @@ async def _main(args: argparse.Namespace) -> None:
             max_frames=video_cfg.get("max_frames", 30),
         )
 
-        lg.info("Phase 2b: Video Quality Experiment")
+        lg.info("Phase 2b: Video Quality Experiment (parallel)")
         video_dir = session_dir / "video_quality"
         video_dir.mkdir(parents=True, exist_ok=True)
         video_runs = config.get("experiments", {}).get("video_quality", {}).get("runs", 5)
-        await run_video_experiment(client, passed_models, cached_frames, video_dir, runs=video_runs)
+        await run_video_experiment(
+            client, judge_client, judge_model, passed_models, cached_frames, video_dir, runs=video_runs
+        )
         video_agg = aggregate_results(video_dir, video_dir / "aggregated.csv", "video")
     else:
         lg.info("Skipping video experiment")
 
-    # Phase 3: Aggregation + Reports
+    # Phase 3: Aggregation + Reports + Charts
     lg.info("=" * 70)
-    lg.info("Phase 3: Aggregation & Reporting")
+    lg.info("Phase 3: Aggregation, Charts & Reporting")
     all_agg = {}
     all_agg.update(image_agg)
     all_agg.update(video_agg)
@@ -325,6 +354,8 @@ async def _main(args: argparse.Namespace) -> None:
         session_dir / "comparison_report.md",
         incidents=incidents,
     )
+
+    generate_all_charts(session_dir, image_agg, video_agg)
 
     _generate_qa_report(
         session_dir, config, models, passed_models,
@@ -341,6 +372,7 @@ async def _main(args: argparse.Namespace) -> None:
     )
 
     await client.close()
+    await judge_client.close()
 
     lg.info("=" * 70)
     lg.info("SOTA Validation complete")
