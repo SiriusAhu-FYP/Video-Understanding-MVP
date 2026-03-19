@@ -123,7 +123,7 @@ def _compute_cell_stats(rows: list[dict]) -> dict[tuple[str, str], dict]:
             cells[key].append(score)
 
     result: dict[tuple[str, str], dict] = {}
-    for key in set(list(cells.keys()) | set(max_runs.keys())):
+    for key in set(cells.keys()) | set(max_runs.keys()):
         scores = cells.get(key, [])
         result[key] = {
             "count": len(scores),
@@ -681,11 +681,14 @@ async def _main(args: argparse.Namespace) -> None:
                     old_models.append(rows[0]["model"])
 
     config_models = config.get("models", {}).get("list", [])
+    # Only keep old models that are still in the config (drop removed models)
+    old_models = [m for m in old_models if m in config_models]
     new_models = [m for m in config_models if m not in old_models]
-    all_models = list(dict.fromkeys(old_models + config_models))
+    all_models = list(dict.fromkeys(old_models + new_models))
 
     lg.info("Old models ({}): {}", len(old_models), old_models)
     lg.info("New models ({}): {}", len(new_models), new_models)
+    lg.info("All models ({}): {}", len(all_models), all_models)
 
     # ═══════════════════════════════════════════════════════════════
     # Phase 1: Triage

@@ -19,7 +19,7 @@ list = [
     "qwen2.5-vl-72b-instruct",
     "gpt-4.1",
     "claude-sonnet-4-6",
-    "grok-4.1",
+    "glm-5",
     "kimi-k2.5",
 ]
 
