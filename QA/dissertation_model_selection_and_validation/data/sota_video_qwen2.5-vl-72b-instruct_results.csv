@@ -1,0 +1,329 @@
+asset_id,asset_type,dimension_scores,hallucinations,judge_latency_s,judge_retries,judge_success,max_score,missing_points,model,num_frames,prompt_mode,run,strengths,timestamp,total_score,vlm_error,vlm_error_type,vlm_latency_s,vlm_response,vlm_retries,vlm_success,weaknesses
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 1, ""hallucination_control"": 2}",[],8.969,0,True,10,"[""Could explicitly state the player was in a cave/underground environment"", ""Could note the player's situation was already weak/dangerous before the final encounter"", ""Could mention the player failed to stabilize the situation before the zombie closed in""]",qwen2.5-vl-72b-instruct,12,A_description,1,"[""Correctly identifies the zombie as the main threat and describes its approach"", ""Accurately sequences events from initial encounter to final death"", ""Clearly states the final outcome with correct attribution to the zombie"", ""Avoids unsupported claims and stays grounded in observable events"", ""Notes the decreasing health bar as evidence of escalating danger""]",2026-03-19T02:26:16.142490,9,,,32.547,"This video clip from a Minecraft game shows a sequence of events leading to the player's death. Here's a detailed analysis:
+
+1. **Main Threat or Important Event**: The main threat in this video is a zombie that appears in the cave. The zombie is initially seen at a distance but gradually moves closer to the player.
+
+2. **How the Situation Changes Over Time**:
+   - The player starts by exploring a dimly lit cave, holding bread and a torch.
+   - As the player moves forward, they encounter a zombie partially hidden behind a block.
+   - The player attempts to eat bread, likely to restore health, while keeping an eye on the zombie.
+   - The zombie continues to approach the player, and the player switches to a sword to prepare for combat.
+   - Despite the player's efforts to fight back, the zombie manages to get close enough to attack.
+
+3. **What Happens at the End**:
+   - The player engages in combat with the zombie using a stone sword.
+   - The zombie inflicts damage on the player, as indicated by the decreasing health bar.
+   - Eventually, the player's health reaches zero, and the screen displays ""You Died!"" along with the message ""SiriusAhu was slain by Zombie"" and a score of 19.
+   - The options to ""Respawn"" or go to the ""Title Screen"" are presented, indicating the end of the current play session.
+
+4. **Avoid Unsupported Guesses**: The analysis is based solely on the visual information provided in the frames, focusing on the player's actions, the zombie's movements, and the resulting outcome without making assumptions beyond what is observable.",0,True,"[""Assistant value is somewhat generic - could provide more specific insight about what went wrong strategically"", ""Does not explicitly mention the cave environment or the player's weak/dangerous state before the end""]"
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 1, ""hallucination_control"": 1}","[""Specifies the player eats bread to restore health — this detail is not mentioned in the provided scene summary and is an unsupported addition."", ""Mentions a 'stone sword' and 'narrow passage' — while plausible, these are specific details not confirmed by the reference and could be over-interpretation.""]",11.188,0,True,10,"[""Does not explicitly mention the player was already in a weak or dangerous state before the end (implied but not stated)."", ""Could more clearly note the transition from threat awareness to combat failure.""]",qwen2.5-vl-72b-instruct,12,A_description,2,"[""Correctly identifies the zombie as the main threat and describes the encounter sequence."", ""Clearly states that the situation worsens as the zombie attacks and reduces player health."", ""Accurately identifies the final outcome (player death) and attributes it to the zombie."", ""Provides a coherent narrative of events from beginning to end.""]",2026-03-19T02:26:39.954964,8,,,14.843,"In this video clip from a Minecraft game, the main threat is a zombie that appears in the cave. The player starts by exploring the cave and eating bread to restore health. As the player moves forward, they encounter a zombie standing in a narrow passage.
+
+The situation changes as the player attempts to engage the zombie with a stone sword. However, the zombie manages to attack the player multiple times, reducing their health significantly. Despite the player's efforts to fight back, the zombie continues to inflict damage.
+
+At the end of the sequence, the player's health reaches zero, and the screen displays ""You Died!"" indicating that the player has been defeated by the zombie. The options for ""Respawn"" or ""Title Screen"" appear, allowing the player to restart from a previous checkpoint or exit the game.",0,True,"[""Assistant value is somewhat generic, focusing on descriptive play-by-play rather than actionable insight about what went wrong strategically."", ""Contains minor speculative details not explicitly required or confirmed by the task definition.""]"
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 1, ""hallucination_control"": 1}","[""The response claims 'the player begins to approach it' and 'the player notices a zombie in the distance and begins to approach it.' The reference answer and task definition describe the zombie approaching the player, not vice versa. This reverses the dynamic and is not supported by the provided scene summary.""]",10.922,0,True,10,"[""Does not explicitly state that the player's situation worsens over time or that they were already in a weak/dangerous state."", ""Misses the opportunity to note the player's failure to stabilize the situation or effectively defend."", ""Does not mention the cave environment as part of the dangerous context.""]",qwen2.5-vl-72b-instruct,12,A_description,3,"[""Correctly identifies the zombie as the main threat and describes its approach."", ""Accurately sequences events from initial encounter to final death."", ""Clearly states the final outcome (player death) and attributes it to the zombie."", ""Provides specific details from the video (health bar, death message, respawn options).""]",2026-03-19T02:27:12.921961,8,,,21.765,"This video clip from a Minecraft game shows a sequence of events leading to the player's death. Here's a detailed analysis:
+
+1. **Main Threat or Important Event**: The main threat in this video is a zombie that appears in the cave. The zombie is initially seen at a distance but gradually moves closer to the player.
+
+2. **How the Situation Changes Over Time**:
+   - Initially, the player is exploring a dimly lit cave with a torch providing light.
+   - The player notices a zombie in the distance and begins to approach it.
+   - As the player gets closer, they switch from holding bread to a stone sword, indicating preparation for combat.
+   - The zombie continues to move towards the player, and the player attempts to attack it with the sword.
+   - Despite the player's efforts, the zombie manages to get close enough to attack the player.
+
+3. **What Happens at the End**:
+   - The player's health bar decreases as they take damage from the zombie.
+   - Eventually, the player's health reaches zero, and the screen displays ""You Died!"" along with the message ""SiriusAhu was slain by Zombie"" and a score of 19.
+   - The options ""Respawn"" and ""Title Screen"" appear, indicating the end of the current play session.
+
+4. **Avoid Unsupported Guesses**: The sequence clearly shows the progression from exploration to combat and ultimately to the player's defeat. There are no unsupported guesses in this description, as all actions and events are directly observable in the video frames.",0,True,"[""Assistant value is somewhat generic, focusing on description rather than actionable insight about what went wrong."", ""Contains minor speculative elements about player intentions (e.g., 'indicating preparation for combat').""]"
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 1, ""hallucination_control"": 2}",[],8.422,0,True,10,"[""Does not explicitly mention the player was already in a weak or dangerous state before the end."", ""Does not note the player's ineffective defense or failure to prevent the zombie from closing in."", ""Could explicitly state the transition from threat awareness to combat failure.""]",qwen2.5-vl-72b-instruct,12,A_description,4,"[""Correctly identifies the zombie as the main threat and describes its approach."", ""Accurately sequences events from initial encounter to final death."", ""Clearly states the player's health decreases and ends with death."", ""Correctly attributes death to the zombie."", ""Avoids unsupported claims and stays grounded in observable events.""]",2026-03-19T02:27:44.880552,9,,,21.047,"This video clip from a Minecraft game shows a sequence of events leading to the player's death. Here's a detailed analysis:
+
+1. **Main Threat or Important Event**: The main threat in this video is a zombie that appears in the cave. The zombie is initially seen at a distance but gradually moves closer to the player.
+
+2. **How the Situation Changes Over Time**:
+   - Initially, the player is exploring a dimly lit cave with a torch providing light.
+   - The player notices a zombie in the distance and begins to move towards it.
+   - As the player approaches, the zombie starts moving closer as well.
+   - The player attempts to engage the zombie using a sword, but the zombie manages to get close enough to attack.
+   - The player's health bar decreases as they take damage from the zombie's attacks.
+
+3. **What Happens at the End**:
+   - The player continues to fight the zombie, but their health drops significantly.
+   - Eventually, the player's health reaches zero, and the screen displays ""You Died!"" indicating that the player has been defeated by the zombie.
+   - The final score is shown as 19, and the player is given the option to respawn or return to the title screen.
+
+4. **Avoid Unsupported Guesses**: The sequence clearly shows the progression from exploration to combat and ultimately to the player's defeat. There are no unsupported guesses in this description, as all actions and events are directly observable in the video frames.",0,True,"[""Assistant value is somewhat generic; lacks deeper insight into why the player failed to stabilize the situation."", ""Could better emphasize the worsening situation over time beyond just health bar decrease.""]"
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 1, ""hallucination_control"": 1}","[""Minor speculation: 'The player notices a zombie in the distance and begins to approach it' - the clip doesn't clearly show the player's intentional approach versus defensive positioning.""]",9.687,0,True,10,"[""Does not explicitly mention the player was already in a weak or dangerous state before the end."", ""Could more clearly state the player failed to stabilize the situation before the zombie closed in.""]",qwen2.5-vl-72b-instruct,12,A_description,5,"[""Correctly identifies the zombie as the main threat and describes its approach."", ""Accurately sequences events from initial encounter to final death."", ""Clearly states the player's death is caused by the zombie."", ""Correctly identifies the final outcome with death screen details.""]",2026-03-19T02:28:09.400077,8,,,16.094,"This video clip from a Minecraft game shows a sequence of events leading to the player's death. Here's a detailed analysis:
+
+1. **Main Threat or Important Event**: The main threat in this video is the zombie that appears in the cave. The zombie is initially seen in the distance and gradually moves closer to the player.
+
+2. **How the Situation Changes Over Time**:
+   - Initially, the player is exploring a dimly lit cave with a torch providing light.
+   - The player notices a zombie in the distance and begins to approach it.
+   - As the player gets closer, the zombie becomes more visible and starts moving towards the player.
+   - The player attempts to engage the zombie using a sword but seems to be at a disadvantage due to low health or ineffective attacks.
+   - The zombie continues to move closer, and the player's health bar decreases as they take damage from the zombie's attacks.
+
+3. **What Happens at the End**:
+   - The player's health reaches zero after being attacked by the zombie.
+   - The screen displays the ""You Died!"" message, indicating that the player has been defeated by the zombie.
+   - The score is shown as 19, and the player is given the option to respawn or return to the title screen.
+
+4. **Avoid Unsupported Guesses**:
+   - The video clearly shows the progression of the encounter with the zombie, leading to the player's death.
+   - There are no unsupported guesses about the events; everything is based on the visual information provided in the frames.",0,True,"[""Assistant value is somewhat generic (describes what happened rather than providing actionable insight about what went wrong)."", ""Contains minor speculative elements about player intentions (e.g., 'begins to approach it') that aren't strictly supported.""]"
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""The specific claim about 'eating bread' is a minor over-interpretation not grounded in the provided scene summary.""]",10.094,0,True,10,"[""Does not explicitly mention the cave/underground environment, though this is implied in the analysis."", ""Could more explicitly state the player failed to stabilize the situation before the zombie closed in.""]",qwen2.5-vl-72b-instruct,12,B_assistant,1,"[""Correctly identifies the zombie as the main threat and describes the progression from encounter to death in proper sequence."", ""Clearly explains how danger escalates as the zombie approaches and the player's health is critically low."", ""Accurately states the final outcome (player death caused by the zombie) and provides useful, actionable advice about health management and caution."", ""Acknowledges limitations by stating what cannot be determined from the clip alone.""]",2026-03-19T02:28:42.605318,9,,,23.516,"Based on the sequence of images provided, here is an analysis of what is happening in the video:
+
+1. **What is happening to the player?**
+   - The player is exploring a cave and encounters a zombie. Initially, the player seems to be eating bread, possibly to restore health. As the zombie approaches, the player attempts to fight it using a stone sword. However, the player's health is critically low, as indicated by the single heart remaining in the health bar. Despite the attempt to fight, the player is ultimately defeated by the zombie.
+
+2. **How does the danger change during the clip?**
+   - The danger increases gradually as the zombie moves closer to the player. Initially, the zombie is at a distance, but as it gets closer, the threat becomes more immediate. The player's health status also indicates a high level of danger, with only one heart left, making the encounter with the zombie even more perilous.
+
+3. **Why does the final outcome happen?**
+   - The final outcome occurs because the player's health was already critically low when they encountered the zombie. The player attempted to fight the zombie but was unable to defeat it due to their weakened state. The zombie's attack resulted in the player's death, as indicated by the ""You Died!"" message.
+
+4. **What should the player have paid attention to?**
+   - The player should have been more cautious about their health status before engaging in combat. With only one heart remaining, the player was at a significant disadvantage against the zombie. Additionally, the player could have considered retreating or finding a safer spot to heal before confronting the zombie.
+
+5. **What cannot be determined from the clip alone?**
+   - It is not possible to determine the player's overall strategy or objectives in the game from this clip alone. We do not know if the player was intentionally exploring this area, if they had any specific goals, or if they were aware of other potential dangers in the vicinity. The clip only shows",0,True,"[""Contains one minor speculative claim about the player 'eating bread, possibly to restore health' which is not explicitly supported by the provided scene summary.""]"
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""The claim that the player is 'eating bread, possibly to restore health' is a minor speculation not grounded in the provided task definition."", ""The specific identification of a 'stone sword' as the weapon is an unsupported detail.""]",10.844,0,True,10,"[""Does not explicitly mention the cave/underground environment as part of the scene context."", ""Could more directly state the player failed to stabilize the situation before the zombie closed in.""]",qwen2.5-vl-72b-instruct,12,B_assistant,2,"[""Correctly identifies the zombie as the main threat and the sequence of approach and attack."", ""Clearly describes the escalation of danger as the zombie gets closer and the player's health is low."", ""Accurately states the final outcome (player death caused by the zombie)."", ""Provides useful, actionable advice about health management and positioning."", ""Acknowledges uncertainty about how the player's health became low.""]",2026-03-19T02:29:15.761974,9,,,23.062,"Based on the sequence of images provided, here is an analysis of what is happening in the video:
+
+1. **What is happening to the player?**
+   - The player is exploring a cave and encounters a zombie. Initially, the player seems to be eating bread, possibly to restore health. As the zombie approaches, the player attempts to fight it using a stone sword. However, the player's health is critically low, as indicated by the single heart remaining in the health bar. Despite the attempt to fight, the player is ultimately defeated by the zombie.
+
+2. **How does the danger change during the clip?**
+   - The danger increases gradually as the zombie moves closer to the player. Initially, the zombie is at a distance, but as it gets closer, the threat becomes more immediate. The player's health status also contributes to the increasing danger, as they have very little health left when the zombie attacks.
+
+3. **Why does the final outcome happen?**
+   - The final outcome occurs because the player's health was already critically low when the zombie attacked. The player attempted to fight back with a stone sword, but the damage from the zombie was too much for the player to handle with such limited health. This resulted in the player's death.
+
+4. **What should the player have paid attention to?**
+   - The player should have been more cautious about their health status before engaging in combat. With only one heart remaining, the player was at a significant disadvantage against the zombie. Additionally, the player might have benefited from retreating or finding a safer position to heal before confronting the zombie.
+
+5. **What cannot be determined from the clip alone?**
+   - It is unclear how the player's health became so low in the first place. The clip does not show any previous encounters or events that may have led to the player's critical health condition. Also, the player's inventory and other resources available are not fully visible, so it is unknown if there were other items o",0,True,"[""Makes a minor speculative claim about the player 'eating bread' which is not explicitly supported by the reference answer or task definition."", ""Assumes the player has a 'stone sword' without explicit confirmation from the provided context.""]"
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 2}",[],6.703,0,True,10,[],qwen2.5-vl-72b-instruct,12,B_assistant,3,"[""Correctly identifies the zombie as the main threat and describes its approach and attack."", ""Clearly explains the progression of danger from initial encounter to final death."", ""Accurately attributes the final outcome to the zombie attack."", ""Provides useful, grounded advice about health management and tactical retreat."", ""Explicitly acknowledges limitations of the clip, avoiding over-interpretation.""]",2026-03-19T02:29:48.364064,10,,,21.766,"Based on the sequence of images provided, here is an analysis of what is happening in the video:
+
+1. **What is happening to the player?**
+   - The player is exploring a cave and encounters a zombie. Initially, the player seems to be eating bread, possibly to restore health. As the zombie approaches, the player attempts to fight it using a stone sword. However, the player's health is critically low, as indicated by the single heart remaining in the health bar. Despite the attempt to fight, the player is ultimately defeated by the zombie.
+
+2. **How does the danger change during the clip?**
+   - The danger increases gradually as the zombie moves closer to the player. Initially, the zombie is at a distance, but as it gets closer, the threat becomes more immediate. The player's health status also contributes to the increasing danger, as they have very little health left when the zombie attacks.
+
+3. **Why does the final outcome happen?**
+   - The final outcome occurs because the player's health was already critically low when the zombie attacked. The player attempted to fight back with a stone sword, but the damage from the zombie was too much for the player to handle with such limited health. This resulted in the player's death.
+
+4. **What should the player have paid attention to?**
+   - The player should have been more cautious about their health status before engaging in combat. With only one heart remaining, the player was at a significant disadvantage against the zombie. Additionally, the player could have tried to retreat or find a safer position to avoid the zombie rather than fighting it head-on.
+
+5. **What cannot be determined from the clip alone?**
+   - It is not possible to determine the player's overall strategy or objectives in the game from this clip alone. We do not know if the player was intentionally exploring this area, if they had any specific goals, or if they were aware of other potential threats in the vicinity. Additionally, we cannot determine the ",0,True,[]
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""Minor speculation: The player eating bread 'possibly to restore health' and being 'distracted by eating bread' are interpretations not strictly supported by the clip description.""]",10.484,0,True,10,"[""Does not explicitly mention the player being in a weak or dangerous state before the end (though implied via health bar)."", ""Could more directly state the transition from threat awareness to combat failure.""]",qwen2.5-vl-72b-instruct,12,B_assistant,4,"[""Correctly identifies the zombie as the main threat and describes the encounter sequence."", ""Clearly explains the escalation of danger as the zombie approaches."", ""Accurately states the final outcome (player death caused by the zombie)."", ""Provides useful assistant-style advice about combat readiness and timing."", ""Acknowledges uncertainties about items and environment outside the immediate view.""]",2026-03-19T02:30:14.357580,9,,,19.281,"Based on the sequence of images provided, here's an analysis of what is happening in the video:
+
+1. **What is happening to the player?**
+   - The player is exploring a cave and encounters a zombie. Initially, the player seems to be eating bread, possibly to restore health. As the zombie approaches, the player switches to a sword and attempts to fight it. However, the player is ultimately defeated by the zombie, as indicated by the ""You Died!"" screen.
+
+2. **How does the danger change during the clip?**
+   - The danger increases gradually as the zombie moves closer to the player. Initially, the zombie is at a distance, but as it gets closer, the threat becomes more immediate. The player's health bar shows that they are taking damage from the zombie, which further escalates the danger.
+
+3. **Why does the final outcome happen?**
+   - The final outcome occurs because the player is unable to defeat the zombie before being killed. The player's health is depleted due to the zombie's attacks, leading to their death. The player might have been distracted by eating bread or not prepared enough to handle the zombie effectively.
+
+4. **What should the player have paid attention to?**
+   - The player should have paid more attention to the approaching zombie and been ready to engage in combat sooner. Instead of eating bread while the zombie was closing in, the player should have switched to their sword earlier and focused on attacking the zombie. Additionally, ensuring they had sufficient health and possibly using armor could have helped in surviving the encounter.
+
+5. **What cannot be determined from the clip alone?**
+   - It is unclear whether the player had any other items or tools that could have been useful in the fight, such as potions, better weapons, or armor. The exact reason why the player chose to eat bread at that moment is also not clear. Furthermore, the surrounding environment outside the immediate area shown in the frames is unknown, so it's uncertain if there were ",0,True,"[""Makes a slightly speculative claim about the player eating bread 'to restore health' without explicit visual evidence of health restoration intent."", ""Assumes the player was 'distracted by eating bread' which is an interpretation of motivation rather than observed fact.""]"
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""Specific mention of 'eating bread' and 'stone sword' as weapons/tools - these details should only be scored as hallucinations if they were not visible in the actual video frames.""]",10.796,0,True,10,"[""Could explicitly mention the cave environment as part of the scene description."", ""Does not explicitly state the player was already in a weak/dangerous state before the zombie encounter (though this is implied).""]",qwen2.5-vl-72b-instruct,12,B_assistant,5,"[""Correctly identifies the zombie as the main threat and describes the progression from encounter to death in proper sequence."", ""Clearly explains how danger escalates as the zombie approaches and the player's health decreases."", ""Accurately states the final outcome (player death caused by zombie) and provides useful, actionable advice for improvement."", ""Acknowledges limitations by noting what cannot be determined from the clip alone.""]",2026-03-19T02:30:47.861463,9,,,23.032,"Based on the sequence of images provided, here is an analysis of what is happening in the video:
+
+1. **What is happening to the player?**
+   - The player is exploring a cave and encounters a zombie. Initially, the player seems to be eating bread, possibly to restore health. As the zombie approaches, the player attempts to fight it using a stone sword. However, the player's health is critically low, as indicated by the heart icons in the bottom left corner. Despite trying to defend themselves, the player is eventually killed by the zombie.
+
+2. **How does the danger change during the clip?**
+   - The danger increases gradually as the zombie moves closer to the player. Initially, the zombie is at a distance, but it gets progressively nearer, posing a greater threat. The player's health also decreases over time, making the situation more perilous. The final frames show the zombie attacking the player, leading to their death.
+
+3. **Why does the final outcome happen?**
+   - The final outcome occurs because the player's health was already very low when they encountered the zombie. Eating bread did not fully restore their health, and they were unable to effectively combat the zombie with their stone sword. The combination of low health and the zombie's attacks resulted in the player's death.
+
+4. **What should the player have paid attention to?**
+   - The player should have been more cautious about their health status before engaging with the zombie. They should have ensured that their health was fully restored before entering a potentially dangerous area. Additionally, having better equipment or being prepared with more effective weapons could have helped in defending against the zombie.
+
+5. **What cannot be determined from the clip alone?**
+   - It is unclear how the player's health became so low in the first place. The clip does not show any previous encounters or events that might have led to the player's critical condition. Also, the player's inventory and other resourc",0,True,"[""Makes some speculative claims about player actions (eating bread to restore health, using a stone sword) that may not be fully supported if not clearly visible in the clip."", ""While generally grounded, includes some interpretation of player intentions that goes beyond strictly observable events.""]"
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""The response specifies environmental details ('rocky terrain', 'body of water') and a mission title ('For the Harbingers!') which are not mentioned in the provided scene summary and constitute mild over-interpretation beyond the generic description.""]",9.094,0,True,10,[],qwen2.5-vl-72b-instruct,17,A_description,1,"[""Correctly identifies the initial task state and objective (0/2)."", ""Accurately describes the progression of combat and the mission counter updating (1/2)."", ""Clearly states the final outcome as mission completion with reward notification."", ""Provides a structured, helpful assistant-style explanation of the player's actions and task progression.""]",2026-03-19T02:31:23.796247,9,,,25.109,"The video clip depicts a sequence from a game where the player's initial task is to defeat all opponents in a combat scenario. The player character, controlled by the player, approaches two enemies on a rocky terrain near a body of water.
+
+1. **Initial Task or Situation**: The player starts with the objective ""Defeat all opponents 0/2,"" indicating that they need to eliminate two enemies. The player character is seen approaching the enemies while preparing for combat.
+
+2. **Important Events During the Clip**:
+   - The player character uses a special ability, creating a glowing effect and launching an attack towards the enemies.
+   - The enemies are hit by the attack, and damage numbers appear above their heads, showing the impact of the player's actions.
+   - The player successfully defeats one enemy, as indicated by the change in the objective to ""Defeat all opponents 1/2.""
+   - The player continues to engage with the remaining enemy, using various attacks and abilities.
+   - The second enemy is also defeated, completing the objective ""For the Harbingers!"" and marking the successful completion of the task.
+
+3. **Final Change or Outcome**:
+   - After defeating both enemies, the screen displays ""Commission Complete,"" signifying the successful completion of the mission.
+   - The player receives rewards in the form of character experience points (EXP) for completing the task.
+   - The environment remains consistent throughout the clip, with the rocky terrain and water providing the backdrop for the combat.
+
+Overall, the video shows a successful combat sequence where the player effectively uses their character's abilities to defeat two enemies and complete the assigned mission.",0,True,"[""Contains minor speculative details not strictly required or verifiable from the generic task definition (e.g., 'rocky terrain near a body of water', 'glowing effect', exact mission name 'For the Harbingers!').""]"
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""Claim about 'Vaporize' elemental effect may be speculative unless clearly visible in the clip"", ""Specific mention of 'character experience points' as reward may be an assumption unless explicitly shown""]",8.906,0,True,10,[],qwen2.5-vl-72b-instruct,17,A_description,2,"[""Clearly identifies the initial task state with specific reference to 'Defeat all opponents 0/2'"", ""Correctly describes the progression from incomplete to complete mission state"", ""Accurately recognizes the final outcome with 'Commission Complete' and reward notification"", ""Provides a well-structured, helpful assistant-style explanation of the sequence"", ""Maintains correct chronological order of events from beginning to end""]",2026-03-19T02:31:56.250016,9,,,23.36,"The video clip depicts a sequence from a game where the player's initial task is to defeat all opponents in a combat scenario. 
+
+1. **Initial Task or Situation**: The player starts by facing two enemies on a rocky terrain near a body of water. The objective is clearly stated as ""Defeat all opponents 0/2.""
+
+2. **Important Events During the Clip**:
+   - The player character, controlled by the player, approaches the enemies while preparing for combat.
+   - The player uses various abilities and attacks to engage the enemies. These include ranged attacks and special skills that cause elemental effects like ""Vaporize.""
+   - The enemies are defeated one after another, with visual effects indicating damage and status changes.
+   - After defeating the first enemy, the player continues to attack the second enemy until it is also defeated.
+
+3. **Final Change or Outcome**:
+   - Once both enemies are defeated, the screen displays ""Commission Complete,"" indicating that the player has successfully completed the task.
+   - The player receives rewards such as character experience points, as shown on the screen.
+   - The environment remains the same, but the enemies are no longer present, and the player stands victorious on the battlefield.
+
+The video concludes with the player having successfully completed the mission and receiving the corresponding rewards.",0,True,"[""Makes some unsupported claims about specific game mechanics ('Vaporize' elemental effect) that may not be clearly visible or required"", ""Slightly over-describes combat details beyond what the rubric considers necessary""]"
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 2}",[],7.031,0,True,10,[],qwen2.5-vl-72b-instruct,17,A_description,3,"[""Correctly identifies the initial task state with specific objective text 'Defeat all opponents 0/2'"", ""Clearly describes the combat progression including player approach and attack execution"", ""Accurately identifies the state change from incomplete (0/2) to complete (2/2)"", ""Recognizes the final completion outcome with 'Commission Complete' message and rewards"", ""Provides helpful assistant-style interpretation of player actions and task progression"", ""Stays grounded in observable events without unsupported speculation""]",2026-03-19T02:32:27.892057,10,,,22.734,"In this video clip from a game, the player's initial task is to defeat all opponents as indicated by the objective ""Defeat all opponents 0/2"" on the screen. The player character, controlled by the player, approaches two enemies standing on a rocky surface near a body of water.
+
+The important events during the clip include the player character moving closer to the enemies and initiating combat. The player uses a special ability that creates a large, glowing arc of energy, which strikes both enemies simultaneously. This attack results in significant damage, as shown by the numbers appearing above the enemies' heads. The enemies are defeated, and the objective updates to ""Defeat all opponents 2/2,"" indicating that the task has been completed.
+
+The final change or outcome is the completion of the mission objective, with the message ""Commission Complete"" appearing on the screen. The player receives rewards for completing the task, including character experience points. The scene ends with the player character standing on the rocky surface, having successfully defeated the enemies and completed the commission.",0,True,[]
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 2}",[],7.015,0,True,10,[],qwen2.5-vl-72b-instruct,17,A_description,4,"[""Correctly identifies the initial task state and the objective text 'Defeat all opponents 0/2'."", ""Accurately describes the progression from combat initiation to enemy defeat."", ""Clearly states the final outcome with the objective updating to '2/2' and the 'Commission Complete' message."", ""Provides a grounded, step-by-step interpretation of the player's actions and the mission's progression."", ""Avoids unsupported claims about enemy identities or detailed mechanics not visible in the clip.""]",2026-03-19T02:32:57.275769,10,,,22.344,"In this video clip from a game, the player's initial task is to defeat all opponents as indicated by the objective ""Defeat all opponents 0/2"" displayed on the screen. The player character, controlled by the player, is seen approaching two enemies standing on a rocky surface near a body of water.
+
+The important events during the clip include the player character moving closer to the enemies and initiating an attack. The player uses a special ability that creates a large, glowing arc, which strikes both enemies simultaneously. This attack results in significant damage, as indicated by the numbers appearing above the enemies' heads. The enemies are defeated, and the objective updates to ""Defeat all opponents 2/2,"" confirming their elimination.
+
+The final change or outcome is the completion of the mission objective, as shown by the message ""Commission Complete"" at the top of the screen. The player receives rewards such as character experience points for completing the task. The scene ends with the player character standing on the rocky surface, having successfully defeated the enemies and completed the commission.",0,True,[]
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""Specifies 'wind-based attack' without clear evidence from the provided scene summary"", ""Mentions 'For the Harbingers!' objective text which may be an unsupported detail""]",9.172,0,True,10,"[""Does not explicitly mention that the clip alone cannot determine exact skill names or detailed intentions""]",qwen2.5-vl-72b-instruct,17,A_description,5,"[""Clearly identifies the initial task state with specific objective details (0/2)"", ""Accurately describes the progression of combat and mission completion"", ""Correctly recognizes the key change from incomplete to complete task status"", ""Provides detailed and helpful assistant-style interpretation of events"", ""Identifies the final outcome with specific completion indicators""]",2026-03-19T02:33:25.344964,9,,,21.063,"The video clip depicts a sequence from a game where the player's initial task is to defeat all opponents in a combat scenario. The player character, controlled by the player, approaches two enemies on a rocky terrain near a body of water.
+
+1. **Initial Task or Situation**: The player starts with the objective ""Defeat all opponents 0/2,"" indicating that they need to eliminate two enemies. The player character is seen approaching the enemies while preparing for combat.
+
+2. **Important Events During the Clip**:
+   - The player character uses an ability, likely a wind-based attack, to engage the enemies.
+   - The player successfully defeats one enemy, as indicated by the change in the objective to ""Defeat all opponents 1/2.""
+   - The player continues to fight and eventually defeats the second enemy, completing the objective ""For the Harbingers!"" and achieving ""Defeat all opponents 2/2.""
+
+3. **Final Change or Outcome**:
+   - After defeating both enemies, the player receives rewards such as character EXP and other in-game items.
+   - The screen displays ""Commission Complete,"" signifying the successful completion of the mission.
+   - The player character stands on the battlefield, with no further immediate objectives visible.
+
+The video concludes with the player having successfully completed their task and receiving the corresponding rewards, marking the end of this particular combat scenario.",0,True,"[""Makes a minor speculative claim about the attack type ('likely a wind-based attack') without clear support"", ""Includes some specific game terminology that may not be fully supported by the clip description""]"
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 2}",[],6.297,0,True,10,[],qwen2.5-vl-72b-instruct,17,B_assistant,1,"[""Correctly identifies the initial mission objective and its incomplete state."", ""Accurately describes the progression from approaching enemies to engaging in combat and defeating them."", ""Clearly recognizes the key change from incomplete to completed task status."", ""Correctly identifies the final outcome with specific evidence (\""Commission Complete\"" message, rewards)."", ""Provides a structured, assistant-style analysis that is grounded in observable evidence."", ""Explicitly acknowledges limitations about what cannot be determined from the clip.""]",2026-03-19T02:34:00.157800,10,,,25.64,"Based on the provided sequence of images from the game video, here is an analysis:
+
+### 1. What is the player trying to do?
+The player is attempting to complete a combat mission titled ""For the Harbingers!"" which requires defeating all opponents. The objective is clearly stated in the top-left corner of the screen.
+
+### 2. How does the task progress during the clip?
+- The player character approaches two enemies standing on a rocky platform.
+- The player uses a bow to attack the enemies from a distance.
+- As the player gets closer, they switch to melee attacks and use special abilities to defeat the enemies.
+- The health bars of the enemies decrease as they take damage.
+- Eventually, both enemies are defeated, and the player receives experience points and other rewards.
+
+### 3. What important change happens by the end?
+By the end of the clip, the player successfully completes the mission ""For the Harbingers!"" as indicated by the ""Commission Complete"" message at the top of the screen. The player also earns rewards such as character EXP.
+
+### 4. What evidence from the video supports your judgment?
+- The mission objective ""Defeat all opponents"" is visible throughout the sequence.
+- The health bars of the enemies decrease as the player attacks them.
+- The ""Commission Complete"" message appears after the enemies are defeated.
+- The player receives rewards, including character EXP, confirming the completion of the mission.
+
+### 5. What cannot be determined from the clip alone?
+- The specific abilities or skills used by the player character.
+- The exact strategy or tactics employed by the player to defeat the enemies.
+- The overall context of the game world or the player's progression beyond this particular mission.",0,True,[]
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 2}",[],6.625,0,True,10,[],qwen2.5-vl-72b-instruct,17,B_assistant,2,"[""Clearly identifies the initial task state with objective 'Defeat all opponents 0/2'"", ""Accurately describes the combat progression including enemy health depletion"", ""Explicitly states the key change from incomplete (0/2) to complete (2/2) task status"", ""Correctly identifies the final outcome with 'Commission Complete' and reward notification"", ""Provides structured, helpful assistant-style interpretation with evidence-based reasoning"", ""Avoids unsupported claims and acknowledges limitations of what can be determined""]",2026-03-19T02:34:36.601474,10,,,30.141,"Based on the provided sequence of images from the game video, here is the analysis:
+
+1. **What is the player trying to do?**
+   - The player is attempting to defeat all opponents as indicated by the objective ""Defeat all opponents 0/2"" which later changes to ""For the Harbingers!"" and then ""Defeat all opponents 2/2"". The goal is to complete this combat mission.
+
+2. **How does the task progress during the clip?**
+   - The player character approaches the enemies and engages in combat using various abilities. The player uses a bow to attack from a distance and then switches to melee combat with another character. The health bars of the enemies decrease as they take damage, and eventually, both enemies are defeated.
+
+3. **What important change happens by the end?**
+   - By the end of the clip, the player successfully defeats all opponents, completing the mission. The screen displays ""Commission Complete,"" indicating that the task has been successfully accomplished. The player also receives rewards such as character EXP.
+
+4. **What evidence from the video supports your judgment?**
+   - The objective updates from ""Defeat all opponents 0/2"" to ""For the Harbingers!"" and finally to ""Defeat all opponents 2/2,"" showing the progression of the task. The health bars of the enemies deplete as the player attacks them. The final frames show the ""Commission Complete"" message and the rewards received, confirming the completion of the mission.
+
+5. **What cannot be determined from the clip alone?**
+   - The specific strategies or abilities used by the player beyond what is visually shown. The exact mechanics of the game, such as the effects of different abilities or the stats of the characters and enemies, cannot be fully determined. Additionally, the broader context of the game world and any subsequent missions or objectives are not visible in this clip.",0,True,[]
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""The response claims the player 'switches characters' and uses 'elemental attacks like hydro (water) and pyro (fire)'. The rubric's uncertain points state that exact names of skills or attacks cannot be required unless clearly visible, and the provided task definition does not mention these specifics. This constitutes mild over-interpretation beyond what is strictly supported.""]",10.266,0,True,10,[],qwen2.5-vl-72b-instruct,17,B_assistant,3,"[""Correctly identifies the initial task state and the objective text progression (0/2 to 2/2)."", ""Clearly describes the combat progression and the final completion outcome."", ""Explicitly states the important change from incomplete to completed task."", ""Provides a structured, assistant-style analysis that is helpful and grounded in observable evidence."", ""Correctly identifies the final reward state and 'Commission Complete' message.""]",2026-03-19T02:35:12.502527,9,,,29.281,"Based on the provided sequence of images from the game video, here is an analysis:
+
+### 1. What is the player trying to do?
+The player is attempting to defeat all opponents in a combat scenario as indicated by the objective ""Defeat all opponents 0/2"" which later changes to ""For the Harbingers!"" and then ""Defeat all opponents 2/2"". The goal is to complete this task and earn rewards.
+
+### 2. How does the task progress during the clip?
+- Initially, the player approaches two enemies on a rocky terrain near water.
+- The player uses a character with a bow to attack the enemies.
+- As the battle progresses, the player switches characters and uses different abilities, including elemental attacks like hydro (water) and pyro (fire), to defeat the enemies.
+- The health bars of the enemies decrease until they are defeated.
+- After defeating both enemies, the player receives experience points and other rewards.
+
+### 3. What important change happens by the end?
+By the end of the clip, the player successfully defeats both enemies, completing the objective ""Defeat all opponents 2/2"". This results in the completion of the commission, as indicated by the ""Commission Complete"" message at the top of the screen. The player also earns rewards such as character EXP.
+
+### 4. What evidence from the video supports your judgment?
+- The objective text changes from ""Defeat all opponents 0/2"" to ""For the Harbingers!"" and finally to ""Defeat all opponents 2/2"", indicating the progression of the task.
+- The health bars of the enemies decrease and eventually disappear, showing that they have been defeated.
+- The ""Commission Complete"" message appears, confirming the successful completion of the task.
+- Rewards such as character EXP are displayed, further supporting the completion of the mission.
+
+### 5. What cannot be determined from the clip alone?
+- The specific strategies or abilities used by the player beyond what is visually evident.
+- The exact level or strength of the enemies.
+- Any additional ",0,True,"[""Makes some speculative claims about elemental attacks ('hydro', 'pyro') and character switching that are not strictly required or verifiable from the generic task description."", ""While not major hallucinations, these details go beyond the minimum expected points and introduce mild over-interpretation.""]"
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 2}",[],6.64,0,True,10,[],qwen2.5-vl-72b-instruct,17,B_assistant,4,"[""Correctly identifies the initial task state and objective ('Defeat all opponents 0/2')."", ""Accurately describes the progression from combat engagement to enemy defeat."", ""Clearly recognizes the final completion state ('Commission Complete', '2/2')."", ""Provides a structured, assistant-style analysis that directly addresses the evaluation questions."", ""Stays grounded in observable evidence (objective text changes, health bars, reward messages)."", ""Explicitly acknowledges limitations about what cannot be determined from the clip.""]",2026-03-19T02:35:50.150076,10,,,27.375,"Based on the provided sequence of images from the game video, here is an analysis:
+
+### 1. What is the player trying to do?
+The player is attempting to defeat all opponents in a combat scenario as indicated by the objective ""Defeat all opponents 0/2"" which later changes to ""For the Harbingers!"" and finally ""Defeat all opponents 2/2"". The goal is to complete the commission by defeating the enemies.
+
+### 2. How does the task progress during the clip?
+- Initially, the player approaches two enemies on a rocky terrain near water.
+- The player uses a character with a bow to attack the enemies from a distance.
+- As the player gets closer, they switch to another character who uses melee attacks.
+- The player successfully defeats both enemies, as indicated by the health bars depleting and the text ""Vaporize"" appearing.
+- After defeating the enemies, the player receives rewards such as character EXP and a completion message for the commission.
+
+### 3. What important change happens by the end?
+By the end of the clip, the player has completed the commission ""For the Harbingers!"" and defeated all opponents (2/2). The screen displays ""Commission Complete,"" indicating that the task has been successfully finished.
+
+### 4. What evidence from the video supports your judgment?
+- The objective text changes from ""Defeat all opponents 0/2"" to ""For the Harbingers!"" and then to ""Defeat all opponents 2/2.""
+- The health bars of the enemies deplete as the player attacks them.
+- The text ""Vaporize"" appears when the enemies are defeated.
+- The final frame shows ""Commission Complete"" along with the rewards obtained.
+
+### 5. What cannot be determined from the clip alone?
+- The specific abilities or skills used by the characters during the fight.
+- The exact strategy or plan the player had before starting the encounter.
+- The broader context of the game world or the player's overall mission objectives beyond this specific commission.",0,True,[]
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""Claim about character switching and specific character name (Faruzan) is potentially unsupported unless clearly visible in the clip."", ""Speculation about 'likely to use different abilities or strategies' goes beyond what can be determined from clip alone.""]",10.781,0,True,10,"[""Could explicitly state that the clip shows a transition from task setup to active combat to completion (though implied)."", ""Does not explicitly contrast the beginning and ending situations as 'different because enemies defeated and mission fulfilled' (though described).""]",qwen2.5-vl-72b-instruct,17,B_assistant,5,"[""Correctly identifies the initial task state (Defeat all opponents 0/2) and final completion state (2/2)."", ""Clearly describes the progression from incomplete to complete task status."", ""Accurately recognizes the key change: mission completion with reward notification."", ""Provides structured, helpful assistant-style interpretation with clear sections."", ""Uses specific evidence from the clip (objective text changes, visual effects, final messages).""]",2026-03-19T02:36:22.155299,9,,,25.36,"Based on the provided sequence of images from the game video, here is an analysis:
+
+### 1. What is the player trying to do?
+The player is attempting to defeat all opponents in a combat scenario as indicated by the objective ""Defeat all opponents 0/2"" which later changes to ""For the Harbingers!"" and finally ""Defeat all opponents 2/2"". The goal is to eliminate two enemies using their character's abilities.
+
+### 2. How does the task progress during the clip?
+- Initially, the player approaches the enemies while the objective shows ""Defeat all opponents 0/2"".
+- The player uses a bow-wielding character (Faruzan) to attack the enemies.
+- As the battle progresses, the player switches characters, likely to use different abilities or strategies.
+- The player successfully defeats one enemy, as indicated by the change in the objective to ""For the Harbingers!"" and then ""Defeat all opponents 1/2"".
+- The player continues to engage with the remaining enemy, eventually defeating both enemies.
+- After defeating both enemies, the player receives rewards such as Character EXP and completes the commission.
+
+### 3. What important change happens by the end?
+By the end of the clip, the player has successfully defeated both enemies, completing the objective ""Defeat all opponents 2/2"". The screen displays ""Commission Complete,"" indicating that the mission has been successfully finished. The player also receives rewards for completing the task.
+
+### 4. What evidence from the video supports your judgment?
+- The objective text changes from ""Defeat all opponents 0/2"" to ""For the Harbingers!"" and finally to ""Defeat all opponents 2/2"", showing the progression of the task.
+- Visual effects and damage numbers indicate successful attacks on the enemies.
+- The final frames show the ""Commission Complete"" message and reward notifications, confirming the completion of the task.
+
+### 5. What cannot be determined from the clip alone?
+- The specific abilities or skills used by the characters during the batt",0,True,"[""Makes some unsupported claims about character switching and specific character identity (Faruzan) which may not be clearly visible."", ""Over-specifies details like 'bow-wielding character' and 'switches characters' without clear evidence requirement.""]"
