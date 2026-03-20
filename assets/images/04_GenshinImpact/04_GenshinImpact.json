@@ -1,0 +1,111 @@
+{
+    "id": "04_GenshinImpact",
+    "type": "image",
+    "game": "GenshinImpact",
+    "image_file": "04_GenshinImpact.png",
+    "requirement": {
+        "id": "R04",
+        "name": "Exploration / Interaction Object Detection",
+        "goal": "Test whether the model can detect important nearby interactable or collectible objects in the environment, especially common game elements such as chests and dropped items."
+    },
+    "focus": [
+        "interaction object detection",
+        "collectible detection",
+        "exploration awareness",
+        "assistant usefulness",
+        "priority awareness",
+        "hallucination control"
+    ],
+    "task_definition": {
+        "scene_summary": "The screenshot shows the player in an outdoor area. A chest is visible on the right side near the player, and a dropped item is visible on the ground in front of the player. These are the main nearby exploration targets intended for evaluation.",
+        "evaluation_intent": "The tested model should detect the visible nearby chest and dropped item, identify them as relevant exploration or interaction targets, and avoid relying on game-specific distant objects."
+    },
+    "prompts": {
+        "A_description": "Please describe the important nearby objects in this game screenshot. Your answer should: (1) identify any visible interactable or collectible targets near the player, (2) explain where they are relative to the player, (3) focus on common game elements rather than distant game-specific landmarks, and (4) avoid unsupported guesses.",
+        "B_assistant": "You are a game assistant. Based only on this screenshot: (1) what nearby objects should the player pay attention to first? (2) where are they located? (3) what makes them relevant? (4) what cannot be determined from this screenshot alone?"
+    },
+    "reference_answer": {
+        "minimum_expected_points": [
+            "There is a chest near the player on the right side.",
+            "There is a dropped item or collectible on the ground near the player in front of them.",
+            "These are the main nearby exploration or interaction targets in the screenshot.",
+            "The answer should focus on the nearby chest and dropped item rather than requiring recognition of distant game-specific objects."
+        ],
+        "good_additional_points": [
+            "The chest is slightly to the right and a short distance away.",
+            "The dropped item is very close to the player and on the ground ahead.",
+            "A useful assistant should remind the player not to miss these nearby interactable objects."
+        ],
+        "uncertain_points": [
+            "The exact item type of the dropped object cannot be confidently determined from the screenshot alone.",
+            "The status of the chest (opened or unopened) should not be overclaimed unless clearly supported.",
+            "Distant landmarks or glowing objects should not be treated as required targets for this sample."
+        ],
+        "example_strict_answer": "There are two important nearby targets in this screenshot. On the right side near the player, there is a chest. On the ground in front of the player, there is a dropped collectible item. These are the main nearby objects the player should pay attention to during exploration. A useful assistant should remind the player not to miss the chest and the dropped item. However, the exact type of the dropped item cannot be determined confidently from this screenshot alone."
+    },
+    "scoring": {
+        "scale": {
+            "min": 0,
+            "max": 2,
+            "total_max": 10
+        },
+        "dimensions": [
+            {
+                "name": "core_understanding",
+                "description": "Whether the model correctly identifies the main nearby exploration targets.",
+                "criteria": {
+                    "2": "Clearly identifies both the chest and the dropped item as the main nearby targets.",
+                    "1": "Identifies only one of them or is vague.",
+                    "0": "Fails to identify the main nearby interaction targets."
+                }
+            },
+            {
+                "name": "key_information_coverage",
+                "description": "Whether the model covers the important visible object information and relative location.",
+                "criteria": {
+                    "2": "Mentions both key objects and their approximate positions relative to the player.",
+                    "1": "Mentions some relevant information but incompletely.",
+                    "0": "Misses most key information or focuses on irrelevant distant objects."
+                }
+            },
+            {
+                "name": "task_completion",
+                "description": "Whether the answer actually fulfills the detection task.",
+                "criteria": {
+                    "2": "Successfully identifies the nearby interaction targets and explains why they matter.",
+                    "1": "Partially completes the task.",
+                    "0": "Fails to complete the intended task."
+                }
+            },
+            {
+                "name": "assistant_value",
+                "description": "Whether the answer is useful as exploration assistance.",
+                "criteria": {
+                    "2": "Clearly points out what the player should not miss and why.",
+                    "1": "Somewhat useful but generic.",
+                    "0": "Not useful for exploration assistance."
+                }
+            },
+            {
+                "name": "hallucination_control",
+                "description": "Whether the model avoids overclaiming unsupported details.",
+                "criteria": {
+                    "2": "Stays grounded and does not overclaim the identity of distant or unclear objects.",
+                    "1": "Mostly grounded but somewhat imprecise.",
+                    "0": "Makes unsupported claims about distant landmarks or exact unclear object identities."
+                }
+            }
+        ],
+        "hard_penalties": [
+            "Missing the chest.",
+            "Missing the dropped item.",
+            "Treating distant game-specific objects as the required main answer.",
+            "Overclaiming the exact identity of the dropped item without visual support."
+        ]
+    },
+    "grading_prompt_for_judge_model": "You are grading the response of a tested vision-language model on a game screenshot understanding task. Score the response strictly using the provided rubric. Penalize unsupported guesses. Return JSON with per-dimension scores, total score, strengths, weaknesses, missing key points, and hallucinations.",
+    "metadata": {
+        "notes": "Full credit should be given if the answer correctly identifies the nearby chest and dropped item. Distant game-specific objects are not required for this sample.",
+        "version": "v1"
+    }
+}

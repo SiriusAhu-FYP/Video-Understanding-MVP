@@ -7,8 +7,8 @@ import time
 
 import pytest
 
-from pipeline.models import KeyFrame
-from pipeline.queue_manager import KeyFrameQueue
+from ahu_paimon_toolkit.models import KeyFrame
+from ahu_paimon_toolkit.pipeline.queue_manager import KeyFrameQueue
 
 
 def _make_keyframe(frame_id: int = 0, age_s: float = 0.0) -> KeyFrame:

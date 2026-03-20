@@ -1,4 +1,4 @@
-# 游戏画面分析专项实验 (Gameplay Analysis Experiment)
+# 游戏画面分析专项实验 (Gameplay Analysis)
 
 ## 实验目的
 
@@ -20,6 +20,8 @@
 
 ## 使用方法
 
+### 独立运行
+
 ```powershell
 # 运行全部任务（需要先在 WSL 中启动 vLLM 服务）
 uv run experiments/gameplay_analysis/run_experiment.py
@@ -40,21 +42,18 @@ uv run experiments/gameplay_analysis/run_experiment.py --base-url http://localho
 - 6 张游戏截图（明日方舟、赛博朋克2077、原神、我的世界、女神异闻录5、超级马里奥兄弟）
 - 每个模型共 72 次推理
 
-## 输出结构
+## 输出
+
+独立运行时输出到 `experiments/gameplay_analysis/reports/{model}_{timestamp}/`：
 
 ```
-experiments/gameplay_analysis/
-├── reports/
-│   └── {model_name}_{timestamp}/
-│       ├── raw_data.csv          # 每次推理的完整数据（含完整响应文本）
-│       ├── report.md             # Markdown 格式的实验报告
-│       └── experiment.log        # 运行日志
-└── logs/
-    └── bbox_{model_name}_{timestamp}/
-        ├── Arknights_*.png       # 标注了 UI 元素的图片
-        ├── Cyberpunk-2077_*.png
-        └── ...
+{model}_{timestamp}/
+├── raw_data.csv          # 每次推理的完整数据（含完整响应文本）
+├── report.md             # Markdown 格式的实验报告
+└── experiment.log        # 运行日志
 ```
+
+bbox 标注图输出到 `experiments/gameplay_analysis/logs/bbox_{model}_{timestamp}/`。
 
 ## 关键指标
 

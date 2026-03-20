@@ -7,7 +7,8 @@
    * **强制且唯一**使用 `uv` 进行包管理。任何需要安装依赖的指令必须是 `uv add <package>`。严禁使用 `pip`、`conda` 或提及它们。
 2. **配置驱动 (Config-Driven):**
    * 拒绝任何魔法数字 (Magic Numbers)。
-   * 所有的阈值（如 `diff_threshold`）、频率（如 `fps`）、尺寸限制（`max_size`）、超时时间（`expiry_time_ms`）以及 API 密钥/地址，必须统一从根目录的 `config.toml` 文件中读取。代码中只允许通过配置类调用。
+   * 流水线参数从 `config.toml` 读取，基准测试参数从 `config_benchmark.toml` 读取。
+   * 实验结果输出路径由 `config_benchmark.toml` 中的 `output_dir` 控制（如 `results/v3`）。
 3. **异步优先 (Async-First):**
    * 系统包含密集的网络 I/O（请求本地 WSL 的 vLLM 和云端 DeepSeek）和图片处理。
    * 核心流转必须基于 `asyncio`。网络请求必须使用 `httpx.AsyncClient` 或支持异步的 SDK。
@@ -15,22 +16,58 @@
 4. **时效性与丢弃原则:**
    * 队列中的图像帧必须带有生命周期戳。如果消费者（vLLM 推理端）处理过慢导致堆积，消费者在提取任务时，**必须主动丢弃**超过 `expiry_time_ms` 的过期帧，宁可丢帧也绝不处理陈旧数据。
 
+# Project Structure (项目结构规范)
+```
+Video-Understanding-MVP/
+├── ahu_paimon_toolkit/     # 核心 toolkit 包 (pip install -e)
+├── experiments/            # 实验脚本 (仅代码，不含数据)
+│   ├── benchmark_speed/    #   推理速度基准测试
+│   ├── benchmark_quality/  #   描述质量评估 (LLM-as-Judge)
+│   ├── gameplay_analysis/  #   游戏画面分析
+│   ├── video_understanding/#   视频理解流水线
+├── utils/                  # 实验间共享工具（根目录级别）
+│   ├── csv_io.py           #   CSV 读写
+│   ├── logging.py          #   loguru 日志设置
+│   ├── reporting.py        #   模板驱动报告生成 + DeepSeek
+│   └── vllm_manager.py     #   WSL vLLM 服务管理
+├── templates/              # 报告 Markdown 模板
+├── results/                # 实验结果 (git ignored)
+│   ├── v1/                 #   第一批实验
+│   ├── v2/                 #   第二批实验
+│   └── v3/                 #   第三批实验 (当前)
+├── assets/                 # 测试图片和视频
+├── tests/                  # pytest 测试
+├── blueprint/              # 项目设计文档
+├── config.toml             # 流水线配置
+├── config_benchmark.toml   # 基准测试配置
+└── run_benchmark.py        # 多模型基准测试编排器
+```
+
+**关键原则:**
+- `experiments/` 只包含实验脚本代码，所有输出（日志、报告、CSV）写入 `results/`。
+- `utils/` 存放实验间共享但不属于 `ahu_paimon_toolkit` 的工具代码。
+- `templates/` 提供报告模板，由 `utils/reporting.py` 加载并通过 DeepSeek 生成分析。
+- `results/` 在 `.gitignore` 中，不提交到版本控制。
+
 # Code Quality & Style
 1. **类型提示 (Type Hints):** 所有函数和方法必须包含完整的 Python 3 类型提示（如 `-> dict`, `list[str]`）。严格遵循 `Ruff` 的类型检查规则，代码需要用 `ruff check` 检查通过。
 2. **数据验证:** 进出大模型的结构化数据交互，强制使用 `Pydantic` 模型进行序列化和反序列化，确保格式严格正确。
-3. **日志与错误捕获:** 关键节点的流转（如“计算出状态增量为 X，送入队列”、“队列积压，丢弃 1 帧过期数据”）必须使用 `logging` 模块清晰打印，禁止使用简单的 `print`。
-4. **注释:** 核心算法（如帧差异对比公式、时序数据拼接逻辑）必须附带清晰的中文注释说明。
+3. **日志:** 使用 `from loguru import logger as lg`。实验脚本通过 `experiments.utils.logging.setup_experiment_log()` 设置文件日志。禁止使用 `print`。
+4. **注释:** 核心算法必须附带清晰的注释说明。
+
+# Report Generation (报告生成)
+- 报告通过模板驱动生成，模板位于 `templates/` 目录。
+- 模板使用 `{{placeholder}}` 语法注入数据表格和统计信息。
+- 模板中 `<!-- ANALYSIS -->` 标记的部分由 DeepSeek 生成深入分析。
+- 使用 `utils/reporting.generate_report_from_template()` 完成完整流程。
 
 # Workflow Protocol (工作流规范)
-1. **分步规划 (Plan Mode First):** 永远不要一次性输出几百行跨模块的代码。必须先给出架构设计或当前阶段的开发方案，询问用户：“是否同意按照此方案编写 XX 模块？”，得到肯定答复后再写代码。
-2. **Conventional Commits:** 在完成一个功能模块的代码编写并测试通过后，你必须主动提醒用户进行 Git 提交，并提供基于 Conventional Commits 规范的指令，例如：
-   * `feat(capture): 实现基于 OpenCV SSIM 的帧差异过滤`
-   * `feat(queue): 实现带过期机制的 asyncio 任务队列`
-   * `refactor: 将硬编码配置抽离至 config.toml`
-   * `chore: 使用 uv 初始化项目结构`
+1. **分步规划 (Plan Mode First):** 永远不要一次性输出几百行跨模块的代码。必须先给出架构设计或当前阶段的开发方案，询问用户确认后再写代码。
+2. **Conventional Commits:** 在完成一个功能模块的代码编写并测试通过后，你必须主动提醒用户进行 Git 提交，并提供基于 Conventional Commits 规范的指令。
+3. **代码复用:** 新增实验脚本时，优先复用 `utils/` 中的工具。CSV 操作用 `csv_io`，日志设置用 `logging`，报告生成用 `reporting`。
 
 # Output Format
-输出代码块时，请明确标出文件路径（如 `// src/pipeline/capture.py`）。输出终端指令时，确保它们在 PowerShell 中可无缝执行。
+输出代码块时，请明确标出文件路径。输出终端指令时，确保它们在 PowerShell 中可无缝执行。
 
 # 其他
-总是在开始任务前检查 `blueprint/project_context.md`来了解项目的基本设计。不要完全相信 `README.md`，它可能已经过时了。
+总是在开始任务前检查 `blueprint/project_context.md` 来了解项目的基本设计。不要完全相信 `README.md`，它可能已经过时了。

@@ -10,7 +10,7 @@ import asyncio
 
 from loguru import logger as lg
 
-from pipeline.runner import PipelineRunner
+from ahu_paimon_toolkit.pipeline.video_understanding import VideoUnderstandingPipeline as PipelineRunner
 
 
 async def run_pipeline() -> None:

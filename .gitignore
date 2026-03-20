@@ -12,11 +12,15 @@ wheels/
 # Secrets
 .env
 
-# Logs (root-level only)
-/logs/
+# Experiment results (large, generated data)
+results/
 
 # Video assets (too large for git)
 # assets/videos/
 
-# Temporary Files
+# Temporary files
 tmp/
+
+# OS files
+.DS_Store
+Thumbs.db

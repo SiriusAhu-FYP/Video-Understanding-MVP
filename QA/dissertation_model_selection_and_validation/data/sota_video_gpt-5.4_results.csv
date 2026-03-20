@@ -1,0 +1,322 @@
+asset_id,asset_type,dimension_scores,hallucinations,judge_latency_s,judge_retries,judge_success,max_score,missing_points,model,num_frames,prompt_mode,run,strengths,timestamp,total_score,vlm_error,vlm_error_type,vlm_latency_s,vlm_response,vlm_retries,vlm_success,weaknesses
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 1, ""hallucination_control"": 1}","[""Specific details about 'looking up a sloped cave passage' and 'emerging from a dark opening' are not mentioned in reference and may be over-interpretation"", ""Claim about player being 'already at critically low health' is somewhat speculative beyond 'weak or dangerous state'""]",9.812,0,True,10,"[""Does not explicitly state that the player's situation becomes more dangerous over time"", ""Could more clearly note the transition from threat awareness to combat failure""]",gpt-5.4,12,A_description,1,"[""Correctly identifies the zombie as the main threat and the cave environment"", ""Accurately describes the sequence: zombie approaches, player attempts recovery, combat ensues"", ""Clearly states the final outcome: player slain by zombie"", ""Recognizes the escalation of danger as the zombie closes in""]",2026-03-19T02:26:41.326257,8,,,57.813,"The main threat is a zombie approaching the player in a cave while the player is already at critically low health.
+
+Over the sequence, the player looks up a sloped cave passage and spots the zombie emerging from a dark opening. Instead of attacking immediately, the player switches to bread and starts eating, apparently trying to recover. While the player is doing that, the zombie keeps walking closer down the rocky slope. Once it gets very near, the player switches to a stone sword and tries to fight back.
+
+Near the end, the player lands at least one hit on the zombie, but the zombie is still alive and close enough to strike. The clip ends with the death screen: the player is slain by the zombie.",0,True,"[""Contains some speculative details not explicitly supported by the reference answer"", ""Assistant value is somewhat generic rather than providing specific actionable insight""]"
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""Specific inventory items (bread, stone sword) and particle effects are inferred without explicit support in the task definition."", ""Detailed actions like 'looks up a cave passage' and 'switches from bread to a stone sword' go beyond the provided summary.""]",12.063,0,True,10,"[""Could more explicitly state the player failed to stabilize the situation before the zombie closed in."", ""Does not mention the cave environment as clearly as the reference answer suggests.""]",gpt-5.4,12,A_description,2,"[""Correctly identifies the zombie as the main threat and the final cause of death."", ""Describes the sequence of events clearly: zombie approach, player actions, combat, and death."", ""Explicitly states the situation worsens and the player is at very low health, showing recognition of escalating danger."", ""Provides useful assistant-style insight about the player's delayed response and poor timing."", ""Accurately notes the death screen confirmation.""]",2026-03-19T02:28:58.505239,9,,,127.375,"The main threat is a zombie approaching the player in a cave while the player is already at very low health.
+
+Over the sequence, the player looks up a cave passage and notices the zombie appearing from a darker opening. Instead of attacking right away, the player switches to bread and starts eating, likely trying to recover or prepare while backing or holding position. During this time, the zombie keeps walking down the rocky slope and gets closer.
+
+As the zombie reaches melee range, the player switches from bread to a stone sword. The zombie is directly in front of them, and the player manages to land at least one hit, shown by the zombie flashing red and knockback particles appearing. However, because the player has almost no health left, the exchange is too late.
+
+At the end, the player is killed by the zombie, and the Minecraft death screen appears saying they were “slain by Zombie.”",0,True,"[""Contains some speculative details not strictly supported by the provided scene summary (e.g., 'looks up a cave passage,' 'switches to bread,' 'stone sword,' 'knockback particles')."", ""Assumes specific Minecraft mechanics (bread, stone sword) that may not be verifiable from the summary alone.""]"
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 1, ""hallucination_control"": 2}",[],9.75,0,True,10,"[""Could explicitly state the player's situation worsens over time (though implied)."", ""Does not mention the cave environment as part of the dangerous context."", ""Could note the player failed to effectively defend for part of the clip (distracted by eating).""]",gpt-5.4,12,A_description,3,"[""Correctly identifies the zombie as the main threat and describes its approach sequence."", ""Accurately states the final outcome (player death by zombie) with supporting detail from the death screen."", ""Clearly describes the progression of danger as the zombie gets closer."", ""Avoids unsupported claims and stays grounded in observable events."", ""Notes the player's attempt to recover (eating bread) before fighting.""]",2026-03-19T02:30:08.583903,9,,,58.015,"The main threat is a zombie in the cave while the player is already at very low health.
+
+Over the sequence, the player is standing in a stone cave and switches from tools to bread, apparently trying to recover instead of fighting immediately. While the player is eating, a zombie becomes visible in the darker opening ahead and slowly walks down toward them. The zombie keeps getting closer as the player finishes eating and moves forward a bit.
+
+Near the end, the zombie reaches melee range. The player switches to a stone sword and lands at least one hit on the zombie, shown by the damage particles and the zombie flashing red. However, the player does not survive the encounter.
+
+At the end of the clip, the death screen appears with the message that the player “was slain by Zombie.”",0,True,"[""Assistant value is somewhat generic; could better explain what went wrong strategically (e.g., failing to stabilize situation earlier, not creating distance)."", ""Does not explicitly highlight that the player was already in a weak/dangerous state from the beginning.""]"
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 1, ""hallucination_control"": 1}","[""Specific inventory actions (switching to bread, eating, switching to stone sword) are not mentioned in the provided scene summary and are speculative."", ""Mention of 'rocky tunnel/cavern', 'darker opening ahead', 'slope', and 'lit area' adds environmental details not confirmed by the given summary.""]",11.719,0,True,10,"[""Does not explicitly note that the player was already in a weak or dangerous state before the end (though implied by 'critically low health')."", ""Could more clearly state that the player failed to stabilize the situation before the zombie closed in.""]",gpt-5.4,12,A_description,4,"[""Correctly identifies the zombie as the main threat and the cave environment."", ""Accurately describes the sequence of events: zombie approaching, player attempting to recover/eat, then fighting back."", ""Clearly states the final outcome (player death) and correctly attributes it to the zombie with the death message."", ""Recognizes that the situation worsens over time as the zombie closes in.""]",2026-03-19T02:31:09.213116,8,,,50.859,"The main threat is a zombie approaching the player in a cave while the player is already at critically low health.
+
+Over the sequence, the player is standing in a rocky tunnel/cavern and notices a zombie appear from a darker opening ahead. Instead of attacking immediately, the player switches to bread and starts eating, likely trying to recover. While the player is doing that, the zombie keeps moving closer down the slope and into the lit area. Once it gets very near, the player switches to a stone sword and tries to fight back.
+
+At the end, the player lands at least one hit on the zombie, but the zombie is still close enough to attack, and the player dies. The final screen shows the death message: “SiriusAhu was slain by Zombie.”",0,True,"[""Contains some speculative details not explicitly supported by the task description (player switching to bread, eating to recover, switching to stone sword)."", ""Assistant value is somewhat generic; could provide more specific insight about what went wrong strategically.""]"
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""Specific weapon type ('stone sword') is not mentioned in the reference and is speculative."", ""Exact health level ('very low health') is an assumption beyond what the reference confirms.""]",10.984,0,True,10,"[""Does not explicitly mention the player was already in a weak/dangerous state before the end (though implied)."", ""Could more explicitly state the transition from threat awareness to direct combat failure.""]",gpt-5.4,12,A_description,5,"[""Correctly identifies the zombie as the main threat and the cave environment."", ""Accurately describes the sequence: zombie approaches, player attempts recovery, combat ensues, player dies."", ""Clearly states the situation worsens as the zombie gets closer while the player is vulnerable."", ""Correctly identifies the final outcome: death screen shows player slain by zombie."", ""Provides useful assistant-style insight about the player's failed recovery attempt and poor timing.""]",2026-03-19T02:32:07.923347,9,,,47.0,"The main threat is a zombie approaching the player in a cave while the player is already at very low health.
+
+Over the sequence, the player looks up a sloped cave passage and spots the zombie emerging from a dark opening. Instead of attacking right away, the player switches to bread and starts eating, apparently trying to recover. While this is happening, the zombie keeps moving down the slope and gets closer and closer. After the player finishes eating, the zombie is already within striking distance.
+
+Near the end, the player switches to a stone sword and attacks the zombie at least once, shown by the damage particles/hearts on the zombie. But the player has too little health left, and the zombie lands the final blow before it is defeated.
+
+At the end of the clip, the death screen appears: the player is slain by the zombie.",0,True,"[""Contains some speculative details not explicitly mentioned in the reference (specific weapon 'stone sword', exact health status 'very low health')."", ""Assumes player's exact actions (switching to bread, eating) without explicit confirmation from the reference.""]"
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 2}",[],7.219,0,True,10,[],gpt-5.4,12,B_assistant,1,"[""Clearly describes the sequence of events: zombie approach, player eating bread, switching to sword too late, and death."", ""Explicitly identifies the worsening situation over time, detailing how danger escalates from high to critical."", ""Correctly attributes the final death to the zombie and explains the cause (low health + delayed response)."", ""Provides highly useful, actionable advice about health awareness, threat assessment, and tactical priorities."", ""Stays well-grounded, acknowledges uncertainties, and avoids inventing unsupported events or causes.""]",2026-03-19T02:32:44.381714,10,,,25.469,"1. **What is happening to the player?**  
+The player is in a cave at **very low health** and spots a **zombie** coming down from a dark tunnel. Instead of immediately fighting or retreating, they **pull out bread and try to eat** while the zombie advances. By the time they switch back to a **stone sword**, the zombie is already in melee range. The player lands a hit, but then is **killed by the zombie**.
+
+2. **How does the danger change during the clip?**  
+- **Start:** Danger is already high because the player is on near-death health.  
+- **Middle:** The threat becomes visible: a zombie appears in the opening ahead.  
+- **Then:** Danger rises steadily as the zombie walks closer while the player is occupied eating.  
+- **End:** Danger becomes critical once the zombie reaches melee range and the player still has almost no health. At that point, a single hit is enough to kill them.
+
+3. **Why does the final outcome happen?**  
+The player dies because they **spent too long trying to recover with food while an enemy was closing in**, and they had **too little health to survive a hit**. In Minecraft, eating bread does not save you instantly in a direct melee emergency; healing takes time. The player switched to the sword **too late**, got only limited chance to respond, and the zombie landed the fatal blow.
+
+4. **What should the player have paid attention to?**  
+- **Their critical health** — at that HP, any melee contact is deadly.  
+- **The dark opening ahead** — that area was an obvious mob threat.  
+- **Distance to the zombie** — eating is only safe if there is enough space/time.  
+- **Immediate survival options** — back away, block the path, pillar up, or draw the sword sooner.  
+- **Hotbar readiness** — having the weapon ready mattered more than bread at that moment.
+
+5. **What cannot be determined from the clip alone?**  
+From these frames alone, we **cannot know**:  
+- what damaged the player before this clip,  
+- whether there were **other mobs** nearby off-scree",0,True,[]
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 2}",[],8.079,0,True,10,[],gpt-5.4,12,B_assistant,2,"[""Correctly identifies the zombie as the main threat and describes the sequence of events in detail, including the player's actions (eating bread) and the zombie's approach."", ""Clearly explains how the danger escalates from manageable to critical to lethal, capturing the worsening situation over time."", ""Accurately attributes the final death to the zombie and explains the cause (delayed reaction while healing at low health)."", ""Provides highly useful, actionable advice on what the player should have done differently (retreat, block, engage sooner, monitor health/distance)."", ""Stays well-grounded, explicitly lists uncertainties (e.g., why player was low health, other off-screen threats), and avoids unsupported claims.""]",2026-03-19T02:33:48.040110,10,,,56.437,"1. **What is happening to the player?**  
+The player is in a cave at **very low health** and spots a **zombie** coming from a dark passage. Instead of immediately fighting or retreating, they **switch to bread and start eating** while the zombie closes the distance. They only pull out the sword when the zombie is already in melee range, get at most **one hit in**, and then **die to the zombie**.
+
+2. **How does the danger change during the clip?**  
+- At first, the danger is **present but manageable**: the zombie is visible at a distance.  
+- It becomes **much more dangerous** when the player commits to eating instead of creating space, blocking off, or attacking.  
+- Once the zombie reaches close range, the situation becomes **critical**, because the player has almost no health and no margin for a single mistake.  
+- By the end, the danger is **immediate and lethal**: one zombie hit is enough to kill them.
+
+3. **Why does the final outcome happen?**  
+The player dies because they **spend too long healing in the open while an enemy is advancing**, then **react too late**. With health this low, they needed either:
+- more distance,
+- a barrier,
+- or to engage sooner.
+
+Instead, the zombie reaches melee range before the player is ready, and the player cannot survive the final hit.
+
+4. **What should the player have paid attention to?**  
+- **Their health**: they were effectively one hit from death.  
+- **The zombie’s distance and approach path**: it was clearly moving closer through the cave opening.  
+- **Timing of eating**: eating in front of a hostile mob without backing away or blocking is unsafe.  
+- **Positioning**: they should have retreated, pillar-blocked, or used the terrain to keep the zombie away while recovering.  
+- **Weapon readiness**: the sword came out too late.
+
+5. **What cannot be determined from the clip alone?**  
+- **Why the player was already so low on health** before this clip started.  
+- Whether there were **other threats nearby** off-screen or b",0,True,[]
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 2}",[],7.578,0,True,10,[],gpt-5.4,12,B_assistant,3,"[""Clearly describes the sequence of events: zombie approach, player attempts to heal, combat, and death."", ""Explicitly identifies the worsening situation over time, detailing the escalation from high danger to lethal threat."", ""Correctly attributes the final death to the zombie and explains the cause (low health, proximity, delayed defense)."", ""Provides highly useful, actionable advice about health awareness, distance management, and weapon readiness."", ""Stays well-grounded, acknowledges uncertainties (e.g., reason for low health, other enemies off-screen), and avoids unsupported claims.""]",2026-03-19T02:34:14.402520,10,,,18.281,"1. **What is happening to the player?**  
+The player is in a cave in *Minecraft* at **very low health** and tries to **eat bread to recover**. While doing that, a **zombie comes down from a dark opening ahead**, closes the distance, and engages in melee. The player switches to a **stone sword** and lands at least one hit, but is then **killed by the zombie**.
+
+2. **How does the danger change during the clip?**  
+- **Start:** Danger is already high because the player is at about **half a heart / critical HP**.  
+- **Middle:** The threat increases when the zombie becomes visible in the cave opening and keeps approaching.  
+- **Peak:** Danger becomes immediate when the player is still holding/eating bread while the zombie gets into melee range.  
+- **End:** Once face-to-face with the zombie at critical HP, the situation becomes effectively lethal; one more hit is enough to kill the player.
+
+3. **Why does the final outcome happen?**  
+The player dies because they are **already at almost no health** and allow a zombie to **reach melee range**. They spend time **trying to heal with bread**, but food healing is not instant enough to save them before the zombie arrives. Even after switching to the sword and striking back, the player does not have enough health margin to survive the zombie’s next hit.
+
+4. **What should the player have paid attention to?**  
+- Their **critical health**: at that HP, any hostile contact is extremely dangerous.  
+- The **dark cave opening ahead**: it’s an obvious mob approach path.  
+- The fact that **eating locks them into a vulnerable action** instead of defending or retreating.  
+- **Distance management**: they should have backed away, blocked off the passage, or created space before trying to heal.  
+- Having the **weapon ready sooner** rather than waiting until the zombie was already in striking range.
+
+5. **What cannot be determined from the clip alone?**  
+From these frames alone, we **cannot know for sure**:  
+- **Why** the player was al",0,True,[]
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""Specific claim that player tries to 'eat bread to recover' - the clip description only mentions worsening situation, not specific recovery actions."", ""Claim about switching to a 'stone sword' - weapon type is not specified in the provided scene summary."", ""Assumption about 'half a heart / critical health' as exact measurement rather than general low health.""]",12.735,0,True,10,"[""Does not explicitly mention the cave environment as part of the scene description."", ""Could more directly state the transition from threat awareness to combat failure as mentioned in the reference.""]",gpt-5.4,12,B_assistant,4,"[""Correctly identifies the zombie as the main threat and describes its approach and attack sequence."", ""Clearly explains how danger escalates from high to immediate/lethal as the zombie closes in."", ""Accurately states the final outcome (player death caused by zombie) and attributes it correctly."", ""Provides excellent assistant value with specific, actionable advice about health awareness, threat assessment, and safer options."", ""Maintains correct sequence of events: low health, zombie approach, attempted healing, late weapon switch, death.""]",2026-03-19T02:35:03.913270,9,,,41.937,"1. **What is happening to the player?**  
+The player is in a cave at **very low health** and tries to **eat bread to recover** while a **zombie approaches from a dark opening**. The zombie closes the distance before the player can safely recover, the player switches to a stone sword too late, lands a hit, but then is **killed by the zombie**.
+
+2. **How does the danger change during the clip?**  
+- **Start:** Danger is already high because the player is on about **half a heart / critical health**.  
+- **Middle:** The danger rises as the zombie becomes visible and keeps walking closer while the player is focused on eating.  
+- **End:** Danger becomes immediate/lethal once the zombie reaches melee range. At that health, **one hit is enough to kill**.
+
+3. **Why does the final outcome happen?**  
+The final outcome happens because the player is **critically low on HP** and spends precious time **trying to eat in front of an advancing hostile mob** instead of immediately creating distance, blocking the path, or attacking sooner. By the time the sword is drawn and a hit is landed, the zombie is already in range and gets the killing blow.
+
+4. **What should the player have paid attention to?**  
+- **Their health:** they were in one-hit territory.  
+- **The dark cave opening ahead:** it’s an obvious mob threat source.  
+- **The zombie’s approach path and distance:** healing in the open was unsafe.  
+- **Safer options:** back up, pillar/block the passage, keep the zombie at range, or heal only after securing space.
+
+5. **What cannot be determined from the clip alone?**  
+- **What caused the player to be so low on health before this clip.**  
+- **Whether there were other enemies nearby** off-screen or on the minimap.  
+- **Exact timing details** like whether the player could have finished healing before being hit if they acted slightly differently.  
+- **Why the player chose this action** (panic, misclick, lag, unfamiliarity, etc.).  
+- **Any audio cues** that might have warned ",0,True,"[""Makes some speculative claims about player actions (eating bread, switching to stone sword) that may not be fully supported by the clip description."", ""Assumes specific game mechanics (half a heart, one-hit kill) that might not be explicitly visible."", ""Somewhat over-interprets player's thought process and timing decisions.""]"
+01_Minecraft,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 2}",[],6.109,0,True,10,[],gpt-5.4,12,B_assistant,5,"[""Correctly identifies the zombie as the main threat and describes the sequence of events accurately"", ""Clearly explains how danger escalates from distant threat to immediate lethal situation"", ""Correctly attributes death to the zombie and explains the cause (low health, delayed response)"", ""Provides excellent assistant value with specific, actionable advice on what the player should have done"", ""Stays grounded in what is visible and explicitly notes what cannot be determined from the clip""]",2026-03-19T02:36:09.371273,10,,,52.719,"1. **What is happening to the player?**  
+The player is in a cave at **critical health** and very low food. They notice a **zombie** coming down from a dark passage. Instead of fighting immediately, they switch to **bread** and start eating, likely trying to recover. The zombie keeps closing in, the player finally switches to a **stone sword**, lands a hit, but is then **killed by the zombie**.
+
+2. **How does the danger change during the clip?**  
+- At first, the danger is **present but at some distance**: the zombie is visible up the slope.  
+- While the player is eating, the danger steadily **increases** because the zombie keeps approaching.  
+- Once the zombie reaches melee range, the danger becomes **immediate/lethal**, since the player only has about **half a heart / one hit left**.  
+- By the end, the situation is effectively unwinnable in that position unless the player had already created space or blocked the path.
+
+3. **Why does the final outcome happen?**  
+The player dies because they are already at **near-death health**, and they spend too long **eating while the zombie advances**. In Minecraft, eating bread does **not instantly restore health** in a way that saves you from an incoming melee hit, especially if your hunger/regen state isn’t ready fast enough. The player switches to the sword too late, gets only limited time to respond, and the zombie lands the killing blow.
+
+4. **What should the player have paid attention to?**  
+- **Their health bar first**: they were one hit from death.  
+- **The zombie’s approach path** from the dark cave opening.  
+- The fact that **eating is slow** and usually unsafe with an enemy already aggroed nearby.  
+- They should likely have prioritized one of these instead:
+  - **Backing away**
+  - **Blocking off the tunnel**
+  - **Keeping the sword ready**
+  - **Using terrain/knockback**
+  - **Lighting the dark opening earlier**
+
+5. **What cannot be determined from the clip alone?**  
+From these frames alone, we **cannot kno",0,True,[]
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""The response assumes specific character identities (Venti, Bennett) and attack names (Anemo burst) which are not guaranteed to be visible or identifiable from the clip description alone."", ""Claims about specific elemental reactions (Swirl, Vaporize) and status effects (Wet) are detailed interpretations that may not be fully supported if the clip only shows general combat.""]",10.359,0,True,10,[],gpt-5.4,17,A_description,1,"[""Excellent understanding of the event sequence from initial objective to combat to completion."", ""Clearly identifies the key state change from incomplete (0/2) to complete (2/2)."", ""Correctly recognizes the final outcome with reward notification and commission completion."", ""Provides highly detailed, useful assistant-style interpretation with specific game mechanics."", ""Accurately describes the progression of combat and the objective update.""]",2026-03-19T02:37:06.866171,9,,,51.375,"The clip starts with the player near a rainy shoreline with the active objective **“Defeat all opponents 0/2.”** Two enemies are marked ahead on the wet sand and shallow water.
+
+The player first faces them from a distance, briefly drawing a bow, then runs straight toward the target area. As the player gets close, the commission title **“For the Harbingers!”** appears and the two enemies become clearly identified as the current targets. The player then uses **Venti**, triggering a large Anemo burst that creates a swirling wind field around the enemies. Because the fight is happening in rain and shallow water, the enemies are shown as **Wet**, and the wind attack begins dealing swirl damage. After that, the player switches into close-range offense with **Bennett**, adding Pyro damage inside the vortex. This causes larger reaction damage, including **Swirl** and **Vaporize**, and the enemies’ health drops quickly.
+
+By the end of the clip, both opponents are defeated, updating the objective to **“Defeat all opponents 2/2.”** Rewards pop up, a **“Commission Complete”** banner appears, and the game advances to a new task: **“Destroy all flying targets using kuuvahki bullets 0/1.”**",0,True,"[""Contains some speculative details that may not be fully supported by the clip description (e.g., specific character names, elemental reactions, exact attack names)."", ""While detailed, some claims about specific game mechanics (Vaporize, Swirl) and character identities (Venti, Bennett) go beyond the minimum required understanding.""]"
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""Specific character names (Venti, Bennett) and their associated abilities are claimed without explicit evidence in the task definition."", ""Detailed elemental reactions (Vaporize) and specific enemy level (92) are mentioned without clear support from the provided scene summary.""]",9.297,0,True,10,[],gpt-5.4,17,A_description,2,"[""Excellent understanding of the event sequence from initial task state to combat progression to final completion."", ""Clear identification of the key state change from incomplete (0/2) to completed (2/2)."", ""Precise description of the final outcome with reward text and completion banner."", ""Provides high assistant value with detailed, helpful interpretation of player actions and task progression.""]",2026-03-19T02:37:38.694858,9,,,21.469,"At the start, the player is on a rainy shoreline in Genshin Impact with the objective **“Defeat all opponents 0/2.”** Two enemies are marked ahead on the wet rocks near the water.
+
+The player first aims briefly from a distance, then runs straight toward the pair instead of staying back. As they close in, the commission title **“For the Harbingers!”** appears and the two level 92 enemies become active. Once in range, the player uses **Venti’s** abilities: there is a close-up of Venti activating his burst, followed by a large swirling wind field that hits both enemies. Because the fight is happening in shallow water and rain, the enemies are marked **Wet**, and swirl damage numbers appear repeatedly. The player then switches to **Bennett**, creating a fiery explosion/field in the middle of the vortex. This adds pyro-based reactions, including **Vaporize**, while the enemies remain grouped and damaged inside the ongoing wind effect.
+
+By the end of the clip, both enemies are defeated: the objective updates from **1/2** to **2/2**, reward text appears, and a green **“Commission Complete”** banner is shown. A new nearby objective, **“Destroy all flying targets using kuuvahki bullets 0/1,”** appears afterward, indicating the combat commission has ended and the next task is now active.",0,True,"[""Somewhat speculative about character identities (Venti, Bennett) and specific elemental reactions (Vaporize) that may not be fully supported by the clip alone."", ""Includes potentially unsupported details about enemy level (92) and environmental effects (Wet status).""]"
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""Specific character names (Venti, Bennett) and their elemental abilities are presented as fact without qualification."", ""Detailed elemental reaction descriptions (Swirl, Vaporize) and environmental effects (rain causing Wet status) are inferred beyond the minimum required understanding.""]",8.938,0,True,10,[],gpt-5.4,17,A_description,3,"[""Excellent sequential description from initial objective to final completion."", ""Clearly identifies the key state change from 0/2 to 1/2 to 2/2."", ""Correctly recognizes the final outcome with reward notification and commission completion."", ""Provides high assistant value with detailed, grounded interpretation of player actions and combat mechanics."", ""Accurately describes the core task progression and combat engagement.""]",2026-03-19T02:38:46.081738,9,,,58.093,"The clip begins with the player in a rainy shoreline area with the active objective **“Defeat all opponents 0/2.”** Two enemies are marked ahead on a shallow rocky patch in the water, and the player is controlling **Venti**.
+
+The player first aims briefly from a distance, then runs straight toward the two enemies instead of staying back. As Venti gets close enough, the enemies become active and their levels appear. Venti then uses a large **Anemo** ability/burst, creating a swirling wind field around them. Because the fight is happening in shallow water during rain, the enemies are marked **Wet**, and the wind effect starts dealing swirl damage.
+
+As the attack continues, the player switches characters and follows up with additional attacks, including **Bennett’s** fiery strike. This causes bigger reaction damage, including **Swirl** and **Vaporize**, and the enemies are overwhelmed. Partway through the exchange, the objective updates to **“Defeat all opponents 1/2,”** and then soon after to **“Defeat all opponents 2/2.”**
+
+At the end of the clip, both enemies are defeated, rewards such as **Character EXP** appear, and the commission is marked **“Commission Complete.”** A new objective then appears, directing the player toward the next task: **“Destroy all flying targets using kuuvahki bullets 0/1.”**",0,True,"[""Somewhat speculative about elemental reactions and character abilities, though plausible."", ""Includes specific character names (Venti, Bennett) and elemental mechanics that may not be fully verifiable from the clip alone.""]"
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 0}","[""Specific character names (Venti, Bennett) not supported by the reference answer requirements"", ""Detailed elemental mechanics (Anemo ability, wind vortex, Swirl, Vaporize) not required or supported"", ""Environmental effect claims (enemies shown as Wet) that are speculative"", ""Quest title 'For the Harbingers!' and specific ability descriptions not supported"", ""Mention of 'new nearby objective about destroying a flying target' is an unsupported addition""]",11.265,0,True,10,[],gpt-5.4,17,A_description,4,"[""Correctly identifies the initial task state with objective 'Defeat all opponents 0/2'"", ""Accurately describes the progression from combat engagement to enemy defeat"", ""Clearly recognizes the final outcome with objective updating to '2/2' and reward notification"", ""Provides detailed, helpful explanation of player actions and task progression"", ""Correctly identifies the key state change from incomplete to completed task""]",2026-03-19T02:39:56.572776,8,,,61.547,"At the start, the player is on a rainy shoreline with the objective **“Defeat all opponents 0/2.”** Two enemies are standing ahead on the wet rocks near the water, marked by the quest indicator.
+
+During the clip, the player first aims briefly with **Venti** from a distance, then runs straight toward the two enemies instead of fighting from far away. Once close, the combat officially engages and the quest title **“For the Harbingers!”** appears. Venti then uses a powerful Anemo ability that creates a large wind vortex around the enemies. Because the fight is happening in shallow water/rain, the enemies are shown as **Wet**, and the vortex starts dealing swirl damage. The player follows up by switching to **Bennett**, adding Pyro attacks inside the vortex, which triggers more elemental reactions such as **Swirl** and **Vaporize** and rapidly damages both opponents.
+
+By the end of the clip, both enemies are defeated: the objective updates to **“Defeat all opponents 2/2,”** rewards appear, and a green **“Commission Complete”** banner is shown. A new nearby objective about destroying a flying target is visible afterward, indicating the combat task in this clip has been finished.",0,True,"[""Makes numerous unsupported claims about specific game mechanics and character identities"", ""Over-interprets elemental reactions and environmental effects not required by the task"", ""Includes speculative details that go beyond what can be reliably determined from the clip""]"
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""The response claims specific enemy levels (level 92) and specific elemental reaction names (Swirl/Wet, Vaporize). While plausible, these are fine-grained game details that the rubric's 'uncertain_points' advises against requiring or overclaiming unless clearly visible and essential. The mention of 'For the Harbingers!' as a commission title is also a specific detail not required by the minimum expected points.""]",9.75,0,True,10,[],gpt-5.4,17,A_description,5,"[""Correctly identifies the initial task state and objective text."", ""Accurately describes the combat progression and character actions in sequence."", ""Clearly states the key change from incomplete (0/2) to completed (2/2)."", ""Correctly identifies the final outcome with reward and completion banner."", ""Provides detailed, helpful play-by-play that adds assistant value.""]",2026-03-19T02:40:51.835760,9,,,44.0,"At the start of the clip, the player is on a rainy shoreline with the active objective **“Defeat all opponents 0/2.”** Two enemies are standing ahead in the shallow water under a marker.
+
+The player briefly aims with Venti, then runs straight toward the two enemies to start the fight. As they get close, the commission title **“For the Harbingers!”** appears and the two level 92 enemies become active. Venti then uses a large Anemo ability that creates a wind vortex around the enemies, pulling or trapping them together in the wet area. Damage numbers and **Swirl/Wet** reactions appear. After that, the player switches characters and follows up with a fiery attack from Bennett, creating more reaction damage including **Vaporize** while the enemies are grouped.
+
+By the end of the clip, both enemies are defeated: the objective updates from **1/2** to **2/2**, rewards appear, and a green **“Commission Complete”** banner is shown. A new task then appears on the left, directing the player to **“Destroy all flying targets using kuuvahki bullets 0/1”** at a distant marker.",0,True,"[""Includes some speculative details about elemental reactions and enemy levels that may not be strictly necessary or fully supported, slightly lowering hallucination control.""]"
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""The response assumes specific character identities (Venti, Bennett) and elemental reactions. While plausible, the rubric's 'uncertain_points' states that exact names of skills/attacks cannot be required unless clearly visible, making these claims slightly unsupported."", ""Mentions 'new objective also becomes active afterward' about destroying flying targets. This is an extrapolation beyond the core completion event described in the reference answer.""]",11.047,0,True,10,[],gpt-5.4,17,B_assistant,1,"[""Excellent sequential breakdown of events from initial objective to completion."", ""Clearly identifies the key state change from 0/2 to 2/2 and the appearance of 'Commission Complete'."", ""Provides strong assistant value by structuring the response with clear sections and citing specific on-screen evidence."", ""Correctly notes the transition from incomplete to complete task status.""]",2026-03-19T02:41:48.214876,9,,,46.625,"1. **What the player is trying to do**
+
+The player is trying to complete a combat commission/objective in **Genshin Impact**: **defeat two marked opponents**.
+
+2. **How the task progresses during the clip**
+
+- The clip begins with the on-screen objective **“Defeat all opponents 0/2”** and a waypoint marker over two enemies standing on the shore.
+- The player starts at range with **Venti**, briefly aims/shoots, then runs toward the two enemies.
+- As the player closes in, the commission title appears as **“For the Harbingers!”** with the same objective **0/2**.
+- Once in melee/casting range, the player uses **Venti’s burst**, creating a large swirling wind field that pulls/hits both enemies.
+- The player then follows up with more attacks and character swaps, including **Bennett**, causing reaction damage such as **Swirl**, **Wet**, and **Vaporize**.
+- The enemy count updates from **0/2** to **1/2**, then to **2/2** as both enemies are defeated.
+
+3. **What important change happens by the end**
+
+By the end, the fight objective is **fully completed**:
+- **“Defeat all opponents 2/2”**
+- then **“Commission Complete”** appears.
+
+A new objective also becomes active afterward: **“Destroy all flying targets using kuuvahki bullets 0/1”**.
+
+4. **What evidence supports this judgment**
+
+- Early frames clearly show the quest text: **“Defeat all opponents 0/2.”**
+- There are visibly **two enemies** ahead, both marked and later shown as **Lv. 92**.
+- The player advances from about **56–57m** away to close range.
+- Mid-clip, Venti’s burst animation appears: cinematic close-up followed by a large **Anemo vortex** around the enemies.
+- Damage and reaction text appears during combat: **Swirl**, **Wet**, **Vaporize**, with large damage numbers.
+- The objective counter visibly changes:
+  - **0/2**
+  - **1/2**
+  - **2/2**
+- Final frames show:
+  - **“For the Harbingers!” Defeat all opponents 2/2**
+  - **“Commission Complete”**
+  - reward popups like **Obtained Character EXP x20**
+  - and the",0,True,"[""Somewhat speculative in naming specific characters (Venti, Bennett) and elemental reactions (Swirl, Wet, Vaporize) without explicit visual confirmation required by the rubric."", ""Includes details about enemy level (Lv. 92) and distance (56–57m) that may be over-interpreted or not strictly necessary for the core task understanding.""]"
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""The response claims to see specific damage/reaction text like 'Swirl, Wet, Vaporize' - while plausible, this level of detail about elemental reactions goes beyond the minimum expected points and could be considered slightly speculative if not clearly visible."", ""Specific character names (Venti, Bennett) and their abilities are identified without explicit support in the task definition - these could be considered unsupported claims about fine-grained details.""]",10.687,0,True,10,[],gpt-5.4,17,B_assistant,2,"[""Excellent sequential breakdown of events from initial state to completion."", ""Clearly identifies the key state change from incomplete (0/2) to complete (2/2)."", ""Provides specific, well-structured evidence from the video."", ""Correctly recognizes the final outcome with reward notification."", ""High assistant value with organized, helpful interpretation.""]",2026-03-19T02:42:45.952489,9,,,46.688,"1. **What the player is trying to do**  
+The player is trying to complete a combat commission/objective: **defeat two marked enemies**.
+
+2. **How the task progresses during the clip**  
+- The clip starts with the on-screen objective **“Defeat all opponents 0/2”** and a marker over two enemies standing on the shore/water.  
+- The player first aims from range with Venti, then runs closer instead of staying at long range.  
+- After closing the distance, the player engages the two level 92 enemies.  
+- Venti uses a large Anemo burst, creating a vortex that hits/pulls both enemies together.  
+- The player follows up with additional attacks and character swapping, including Bennett’s Pyro burst/attack, causing reaction damage like **Swirl** and **Vaporize**.  
+- One enemy goes down first, changing the counter to **1/2**.  
+- The second enemy is then finished, completing the objective.
+
+3. **What important change happens by the end**  
+By the end, the commission is **completed**: the objective changes from **“Defeat all opponents 0/2”** to **“2/2”**, then shows **“Commission Complete.”** A new nearby objective also appears afterward.
+
+4. **Evidence from the video**  
+- Early frames clearly show the quest text: **“Defeat all opponents 0/2.”**  
+- The distance to the target drops from about **56–57m** down into close range, showing the player moving in.  
+- Two enemies are visible ahead, later labeled **Lv. 92**.  
+- Venti’s burst animation appears, followed by a large wind field/vortex around the enemies.  
+- Damage and reaction text appear during combat: **Swirl, Wet, Vaporize**.  
+- Mid-fight, the objective updates to **“Defeat all opponents 1/2.”**  
+- Near the end, it updates to **“Defeat all opponents 2/2”** and then the green banner **“Commission Complete”** appears.  
+- Reward text appears on screen, such as **Character EXP** and a reward icon.
+
+5. **What cannot be determined from the clip alone**  
+- The full story context of the commission beyond the title **“For t",0,True,"[""Somewhat speculative about specific game mechanics (Swirl, Vaporize) and character abilities."", ""Overly detailed description of combat mechanics that may not be fully supported."", ""Mentions enemy level (92) and specific character names (Venti, Bennett) which could be considered beyond minimum requirements.""]"
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""Specific character names (Venti, Bennett) and their associated abilities are inferred but not strictly required or confirmed by the task definition."", ""Detailed elemental reaction mechanics (Swirl, Wet, Vaporize) are described with certainty beyond what the rubric considers necessary or verifiable.""]",9.907,0,True,10,[],gpt-5.4,17,B_assistant,3,"[""Excellent sequential breakdown of events from initial objective to completion."", ""Clear identification of the key state change from 0/2 to 2/2."", ""Strong recognition of the final outcome with specific evidence (Commission Complete banner, reward pop-ups)."", ""Provides high assistant value with structured, detailed explanation of progression."", ""Correctly notes what cannot be determined from the clip alone.""]",2026-03-19T02:44:06.837196,9,,,70.203,"1. **What the player is trying to do**  
+The player is trying to complete a combat objective/commission by **defeating two enemies**.
+
+2. **How the task progresses during the clip**  
+- The clip begins with the on-screen objective **“Defeat all opponents 0/2”** and a marker about **56 m** away.  
+- The player first aims from range, then **runs toward the two enemies** standing on the wet shoreline.  
+- As the player gets closer, the commission title appears as **“For the Harbingers!”** with the same sub-objective: **Defeat all opponents 0/2**.  
+- Once in range, the player uses **Venti’s abilities**, including a large **Anemo burst** that creates a vortex and hits both enemies together.  
+- The fight continues with elemental reactions visible, including **Swirl**, **Wet**, and later **Vaporize**, after switching to **Bennett** for close-range Pyro damage.  
+- The enemy count advances from **0/2** to **1/2**, then to **2/2**.
+
+3. **What important change happens by the end**  
+By the end, the combat objective is **fully completed**:  
+- **“Defeat all opponents 2/2”** is shown,  
+- then a **“Commission Complete”** banner appears,  
+- and the game automatically shifts attention to a **new tracked objective**: **“Destroy all flying targets using kuuvahki bullets 0/1”** at roughly **277 m** away.
+
+4. **What evidence supports this judgment**  
+- Early frames clearly show **“Defeat all opponents 0/2”**.  
+- Two humanoid enemies are visible ahead on the shore, later labeled **Lv. 92**.  
+- The player moves from about **56–57 m** away to close combat range.  
+- Venti’s burst animation is shown in close-up, followed by a large wind field and **Swirl** damage text.  
+- Combat text such as **Wet**, **Swirl**, and **Vaporize** appears, showing the enemies are being actively damaged.  
+- The objective counter visibly changes to **1/2** and then **2/2**.  
+- Reward pop-ups like **Character EXP x20** appear after the enemies go down.  
+- The green **“Commission Complete”** banner co",0,True,"[""Somewhat speculative in naming specific characters (Venti, Bennett) and abilities (Anemo burst, Pyro damage) without explicit visual confirmation required by the rubric."", ""Overly detailed description of elemental reactions (Swirl, Wet, Vaporize) may exceed the 'avoid unsupported guesses about fine-grained game details' guideline.""]"
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""The response assumes specific character identities (Venti, Bennett) and attack names (burst) which are not strictly required by the rubric and could be considered mild over-interpretation if not clearly labeled in the video."", ""Mentions 'kuuvahki bullets' objective appearing afterward - while this may be visible, it extends beyond the core task completion focus.""]",10.687,0,True,10,[],gpt-5.4,17,B_assistant,4,"[""Excellent sequential breakdown of events from initial task state through combat to completion."", ""Clearly identifies the key change from incomplete (0/2) to complete (2/2) task status."", ""Provides detailed, specific evidence from the video (UI text, distance markers, character names, reactions)."", ""Strong assistant value with structured, informative explanation of player actions and progression."", ""Correctly identifies the final outcome with commission completion and reward notification.""]",2026-03-19T02:44:56.730517,9,,,39.984,"1. **What the player is trying to do**  
+They are trying to complete a combat commission/objective by defeating two marked enemies.
+
+2. **How the task progresses during the clip**  
+- The clip starts with the on-screen goal **“Defeat all opponents 0/2”** and a marker over two enemies standing on the shore.  
+- The player first aims from range with **Venti**, then runs closer instead of staying at long distance.  
+- As they approach, the commission title appears as **“For the Harbingers!”** with the same objective: **Defeat all opponents 0/2**.  
+- Once in range, the player uses **Venti’s burst**, creating a large wind vortex that pulls/hits both enemies together.  
+- Damage numbers and reaction text appear, including **Swirl** and **Wet**, showing the enemies are being grouped and damaged in the rain/water area.  
+- The player then switches to **Bennett** and adds a fiery attack/explosion, causing more reaction damage such as **Vaporize**.  
+- The objective counter advances from **0/2** to **1/2**, then to **2/2** as both enemies are defeated.
+
+3. **What important change happens by the end**  
+The combat objective is completed: the commission changes from an active fight to a finished state, showing **“Defeat all opponents 2/2”** and then **“Commission Complete.”** A new nearby objective is also shown afterward: **“Destroy all flying targets using kuuvahki bullets 0/1.”**
+
+4. **Evidence from the video supporting this judgment**  
+- Early UI text clearly reads: **“Defeat all opponents 0/2.”**  
+- Two enemies are visibly standing together ahead, with levels later shown as **Lv. 92**.  
+- The player closes distance from about **56–57m** down into melee/combat range.  
+- Venti’s cinematic burst activation is shown, followed by a visible wind field/vortex around the enemies.  
+- Combat feedback appears: **Swirl**, **Wet**, large damage numbers, then **Vaporize** after Bennett attacks.  
+- The objective counter visibly updates to **1/2** and then **2/2**.  
+- Reward text ",0,True,"[""Somewhat speculative about character identities (Venti, Bennett) and specific attack names without explicit visual confirmation requirement."", ""Includes minor details (enemy level Lv. 92, specific elemental reactions) that may exceed the 'minimum expected points' threshold.""]"
+02_GenshinImpact,video,"{""event_sequence_understanding"": 2, ""key_change_recognition"": 2, ""outcome_understanding"": 2, ""assistant_value"": 2, ""hallucination_control"": 1}","[""Specific character identification (Venti, Bennett) is claimed without clear evidence requirement in rubric"", ""Detailed elemental reaction analysis (Anemo/Swirl, Pyro, Vaporize) may be over-interpreted beyond what's strictly visible"", ""Assumption about commission being 'daily commission' or specific progression type goes beyond uncertain points guidance""]",11.484,0,True,10,[],gpt-5.4,17,B_assistant,5,"[""Excellent understanding of the event sequence from initial task state to combat progression to completion"", ""Clearly identifies the key change from incomplete (0/2) to complete (2/2) task status"", ""Accurately recognizes the final outcome with specific evidence of completion state and reward"", ""Provides highly detailed assistant-style interpretation with specific UI elements and progression tracking"", ""Correctly identifies the player's objective to defeat opponents and the combat nature of the task""]",2026-03-19T02:45:51.720782,9,,,44.313,"1. **What the player is trying to do**
+
+The player is trying to complete a combat commission/objective in *Genshin Impact* by **defeating two marked enemies**. The on-screen objective explicitly says **“Defeat all opponents 0/2”** and later the commission title appears as **“For the Harbingers!”**.
+
+2. **How the task progresses during the clip**
+
+- The clip begins with the player standing on the shore, looking at two enemies in shallow water/rocky flats under a quest marker beam.
+- The player first **aims briefly with Venti’s bow**, then starts **running toward the enemies** instead of staying at long range.
+- As the player closes in, the commission title appears more clearly: **“For the Harbingers!” – Defeat all opponents 0/2**.
+- Once near the two level 92 enemies, the player uses **Venti’s elemental burst**, creating a large **wind vortex** around them.
+- The vortex starts dealing **Anemo/Swirl** damage and pulls or groups the enemies in place.
+- The player then continues the fight with additional elemental attacks, including **Pyro** after switching to **Bennett**, causing reaction text like **“Wet,” “Swirl,” and “Vaporize.”**
+- The enemy counter progresses from **0/2** to **1/2**, and then to **2/2**, showing both targets are defeated.
+
+3. **What important change happens by the end**
+
+By the end, the combat objective is **fully completed**:
+- **“Defeat all opponents 2/2”**
+- A green banner appears: **“Commission Complete”**
+
+Also, a **new objective** becomes active afterward:  
+**“Destroy all flying targets using kuuvahki bullets 0/1”**, indicating the game transitions to the next task after the fight.
+
+4. **What evidence from the video supports this judgment**
+
+Key evidence visible in the frames:
+
+- Early frames show the objective text: **“Defeat all opponents 0/2”**
+- A glowing marker and two enemies are visible ahead at roughly **56m**, then **48m**, **43m**, etc., showing the player is advancing toward the target.
+- The quest name appears: **“For the Harbin",0,True,"[""Somewhat speculative about specific character identities (Venti, Bennett) and elemental reactions that may not be fully supported"", ""Overly detailed interpretation of combat mechanics that goes beyond minimum expected points"", ""Includes analysis of follow-up objective that wasn't part of the core task evaluation""]"

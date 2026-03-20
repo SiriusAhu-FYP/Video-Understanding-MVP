@@ -32,13 +32,9 @@ _REPORTS_DIR = _EXPERIMENT_DIR / "reports"
 
 sys.path.insert(0, str(_PROJECT_ROOT))
 
-from toolkit.common import (
-    ASSETS_VIDEOS_DIR,
-    detect_model_from_url as detect_model,
-    model_short_name,
-)
-
-from pipeline.capture import (
+from ahu_paimon_toolkit.vlm.model_utils import detect_model_from_url as detect_model, model_short_name  # noqa: E501
+from utils.logging import setup_experiment_log
+from ahu_paimon_toolkit.capture import (
     WindowNotFoundError,
     capture_window,
     compute_diff,
@@ -46,16 +42,18 @@ from pipeline.capture import (
     frame_to_base64,
     run_capture_loop,
 )
-from pipeline.config import Settings, get_settings, setup_logging
-from pipeline.models import (
+from ahu_paimon_toolkit.config import ToolkitSettings as Settings, setup_logging
+from ahu_paimon_toolkit.models import (
     FrameDescription,
     FrameRecord,
     KeyFrame,
     PipelineResult,
 )
-from pipeline.queue_manager import KeyFrameQueue
-from pipeline.summarizer import Summarizer
-from pipeline.vlm import VLMClient
+from ahu_paimon_toolkit.pipeline.queue_manager import KeyFrameQueue
+from ahu_paimon_toolkit.pipeline.summarizer import Summarizer
+from ahu_paimon_toolkit.vlm.client import AsyncVLMClient as VLMClient
+
+ASSETS_VIDEOS_DIR = _PROJECT_ROOT / "assets" / "videos"
 
 _VIDEOS_DIR = ASSETS_VIDEOS_DIR
 
@@ -92,8 +90,10 @@ def _kill_all_players() -> None:
 
 def launch_player(video_path: Path) -> subprocess.Popen:
     """启动播放器播放视频，返回进程句柄用于后续清理。"""
-    secrets = get_settings().secrets
-    player_exe = secrets.player_exe_path
+    import os
+    from dotenv import load_dotenv
+    load_dotenv(_PROJECT_ROOT / ".env")
+    player_exe = os.getenv("PLAYER_EXE_PATH", "")
     if not player_exe:
         raise RuntimeError(
             "PLAYER_EXE_PATH 未在 .env 中配置，无法启动播放器"
@@ -194,9 +194,15 @@ async def run_single_pipeline(
     wait_for_window(keyword)
 
     # 运行流水线：使用 cfg 中的实际模型名（自动检测的，非 config.toml 默认值）
+    import os
+    from dotenv import load_dotenv
+    load_dotenv(_PROJECT_ROOT / ".env")
+    deepseek_key = os.getenv("DEEPSEEK_API_KEY", "")
+    deepseek_base = os.getenv("DEEPSEEK_API_BASE_URL", "https://api.deepseek.com")
+
     queue = KeyFrameQueue()
     vlm_client = VLMClient(base_url=cfg.llm.vllm_base_url, model=cfg.llm.vllm_model)
-    summarizer = Summarizer()
+    summarizer = Summarizer(api_key=deepseek_key, api_base_url=deepseek_base)
     results: list[FrameDescription] = []
     stop_event = asyncio.Event()
     loop = asyncio.get_running_loop()
@@ -208,7 +214,12 @@ async def run_single_pipeline(
                 queue.inner,
                 loop,
                 stop_event,
-                on_frame_sampled,
+                window_keyword=cfg.capture.window_title_keyword,
+                interval_ms=cfg.capture.screenshot_interval_ms,
+                max_size=cfg.capture.max_size,
+                diff_method=cfg.algorithm.method,
+                diff_threshold=cfg.algorithm.diff_threshold,
+                on_frame_sampled=on_frame_sampled,
             )
         )
 
@@ -240,17 +251,18 @@ async def run_single_pipeline(
 
         consumer_task = asyncio.ensure_future(consume())
 
-        # 定时器
+        # 定时器: stop exactly at video duration to avoid capturing
+        # PotPlayer post-playback UI (PotPlayer does NOT black-screen on end)
         duration_s = cfg.capture.recording_duration_s
         async def timer() -> None:
             lg.info("录制计时器启动，{}s 后停止", duration_s)
             start = time.monotonic()
             while not stop_event.is_set():
                 if time.monotonic() - start >= duration_s:
-                    lg.info("录制时间已到，停止截图")
+                    lg.info("视频播放时间已到，立即停止截图")
                     stop_event.set()
                     break
-                await asyncio.sleep(0.5)
+                await asyncio.sleep(0.3)
 
         timer_task = asyncio.ensure_future(timer())
 
@@ -383,8 +395,7 @@ async def run_experiment(
     Returns:
         {video_name: [PipelineResult per run]}
     """
-    cfg = get_settings()
-    effective_url = base_url or cfg.llm.vllm_base_url
+    effective_url = base_url or "http://localhost:8000/v1"
 
     # 自动检测模型
     model_id = detect_model(effective_url)
@@ -397,23 +408,32 @@ async def run_experiment(
         report_dir = _REPORTS_DIR / f"{short_name}_{timestamp}"
     report_dir.mkdir(parents=True, exist_ok=True)
 
-    log_path = report_dir / "experiment.log"
-    lg.add(str(log_path), level="DEBUG", encoding="utf-8",
-           format="{time:YYYY-MM-DD HH:mm:ss.SSS} | {level:<7} | {message}")
+    log_sink_id = setup_experiment_log(report_dir / "experiment.log")
 
     lg.info("=" * 60)
     lg.info("视频理解专项实验启动")
     lg.info("模型: {} | 重复次数: {}", model_id, num_runs)
     lg.info("=" * 60)
 
-    # 发现视频文件
+    # 发现视频文件 (supports flat & per-asset sub-folder layouts)
     videos = sorted(_VIDEOS_DIR.glob("*.mp4"))
+    if not videos:
+        videos = sorted(_VIDEOS_DIR.glob("*/*.mp4"))
     if not videos:
         lg.error("未找到视频文件: {}", _VIDEOS_DIR)
         sys.exit(1)
     lg.info("视频文件: {}", [v.name for v in videos])
 
-    # 修改配置：设置模型名（自动检测）+ base_url
+    # 加载基础配置并覆盖模型名 + base_url
+    import tomllib
+    config_path = _PROJECT_ROOT / "config.toml"
+    if config_path.exists():
+        with open(config_path, "rb") as f:
+            base_cfg_dict = tomllib.load(f)
+        cfg = Settings(**base_cfg_dict)
+    else:
+        cfg = Settings()
+
     cfg_dict = cfg.model_dump()
     cfg_dict["llm"]["vllm_model"] = model_id
     cfg_dict["llm"]["vllm_base_url"] = effective_url
@@ -423,8 +443,10 @@ async def run_experiment(
     for video_path in videos:
         video_name = video_path.stem
         duration = get_video_duration_s(video_path)
-        # 录制时长 = 视频时长 + 3s 缓冲
-        rec_duration = int(duration) + 3
+        # No extra buffer: PotPlayer does NOT black-screen on end; it shows
+        # its UI which produces false keyframes.  Subtract the ~2s player
+        # startup delay so we stop *before* the video finishes.
+        rec_duration = max(1, int(duration) - 1)
 
         lg.info("─" * 40)
         lg.info("视频: {} ({:.1f}s) | 录制时长: {}s", video_name, duration, rec_duration)

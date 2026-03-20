@@ -1,0 +1,113 @@
+{
+    "id": "03_GenshinImpact",
+    "type": "image",
+    "game": "GenshinImpact",
+    "image_file": "03_GenshinImpact.png",
+    "requirement": {
+        "id": "R03",
+        "name": "Quest / Text / Instruction Understanding",
+        "goal": "Test whether the model can understand the current quest objective, read visible quest text and directional hints, and infer what the player should do next."
+    },
+    "focus": [
+        "quest text understanding",
+        "instruction understanding",
+        "directional hint understanding",
+        "next-step inference",
+        "assistant usefulness",
+        "uncertainty control"
+    ],
+    "task_definition": {
+        "scene_summary": "The screenshot shows a Genshin Impact quest scene where the player needs to reach a destination within a time limit. The quest text is visible on the left, including a directional hint indicating that the destination is lower and 44 meters away.",
+        "evaluation_intent": "The tested model should identify the current quest goal, use visible text and directional hints to infer the next action, and avoid unsupported guesses."
+    },
+    "prompts": {
+        "A_description": "Please describe the current objective in this game screenshot. Your answer should: (1) explain the quest goal, (2) summarize the visible directional hints, (3) describe what the player is expected to do next, and (4) avoid guessing anything not supported by the image.",
+        "B_assistant": "You are a game assistant. Based only on this screenshot: (1) what should the player do next? (2) what visible evidence supports your judgment? (3) is the key challenge here combat or navigation? (4) what cannot be determined from this screenshot alone?"
+    },
+    "reference_answer": {
+        "minimum_expected_points": [
+            "The current task is to reach the destination within the time limit.",
+            "The quest progress is 0/1.",
+            "The visible hint says the destination is lower.",
+            "The destination is about 44 meters away.",
+            "The player should continue moving forward along the visible path and go downward toward the target.",
+            "This screenshot is mainly about navigation or reaching the objective, not immediate combat."
+        ],
+        "good_additional_points": [
+            "The visible path ahead supports the idea of moving forward.",
+            "The instruction combines quest text and spatial hinting.",
+            "The player is currently positioned at a higher place than the target."
+        ],
+        "uncertain_points": [
+            "The remaining time cannot be determined from this screenshot alone.",
+            "The exact route beyond the visible path cannot be fully determined.",
+            "It cannot be determined whether enemies will appear later on the route."
+        ],
+        "example_strict_answer": "The current objective is to reach the destination within the time limit, and the progress is 0/1. The visible quest hint says the target is lower and about 44 meters away. Based on the screenshot, the player should move forward along the path ahead and descend toward the lower target location. This scene is mainly about navigation and quest progression rather than immediate combat. However, the exact remaining time and the full route beyond the visible area cannot be determined from this screenshot alone."
+    },
+    "scoring": {
+        "scale": {
+            "min": 0,
+            "max": 2,
+            "total_max": 10
+        },
+        "dimensions": [
+            {
+                "name": "core_understanding",
+                "description": "Whether the model correctly identifies the core quest objective and the nature of the task.",
+                "criteria": {
+                    "2": "Clearly identifies that the task is to reach a destination within a time limit and recognizes the navigation nature of the scene.",
+                    "1": "Partially identifies the objective but misses the timed or navigation aspect.",
+                    "0": "Misidentifies the task or fails to describe the objective correctly."
+                }
+            },
+            {
+                "name": "key_information_coverage",
+                "description": "Whether the model covers the important visible textual and directional information.",
+                "criteria": {
+                    "2": "Correctly mentions the quest goal, 0/1 progress, lower direction, and approximate distance.",
+                    "1": "Mentions some but not all important visible information.",
+                    "0": "Misses most key visible information or reads it incorrectly."
+                }
+            },
+            {
+                "name": "task_completion",
+                "description": "Whether the answer explains what the player should do next based on the screenshot.",
+                "criteria": {
+                    "2": "Clearly explains the next action using visible evidence.",
+                    "1": "Gives a partially correct next step but lacks evidence or clarity.",
+                    "0": "Fails to infer the next action in a useful way."
+                }
+            },
+            {
+                "name": "assistant_value",
+                "description": "Whether the answer is useful as game-assistant guidance.",
+                "criteria": {
+                    "2": "Provides clear and actionable navigation guidance.",
+                    "1": "Provides somewhat useful but generic guidance.",
+                    "0": "Provides little or no useful assistance."
+                }
+            },
+            {
+                "name": "hallucination_control",
+                "description": "Whether the model avoids unsupported claims.",
+                "criteria": {
+                    "2": "Avoids unsupported guesses and clearly distinguishes uncertainty.",
+                    "1": "Mostly grounded but does not explicitly state uncertainty.",
+                    "0": "Makes unsupported claims, such as inventing remaining time, enemies, or exact route details."
+                }
+            }
+        ],
+        "hard_penalties": [
+            "Claiming the scene is mainly about fighting.",
+            "Ignoring the 'lower' directional hint.",
+            "Inventing a visible countdown timer that is not shown.",
+            "Making strong claims about enemies or route details not visible in the screenshot."
+        ]
+    },
+    "grading_prompt_for_judge_model": "You are grading the response of a tested vision-language model on a game screenshot understanding task. Score the response strictly using the provided rubric. Penalize unsupported guesses. Return JSON with per-dimension scores, total score, strengths, weaknesses, missing key points, and hallucinations.",
+    "metadata": {
+        "notes": "This sample focuses on quest reading and navigation inference, not combat.",
+        "version": "v1"
+    }
+}
