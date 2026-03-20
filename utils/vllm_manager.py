@@ -56,6 +56,9 @@ MODEL_SPECIFIC_ARGS: dict[str, dict] = {
     "Qwen/Qwen3.5-2B": {},
     "Qwen/Qwen3.5-0.8B": {},
     "Qwen/Qwen3-VL-2B-Instruct": {},
+    "Qwen/Qwen3-VL-4B-Instruct": {
+        "gpu-memory-utilization": 0.85,
+    },
     "OpenGVLab/InternVL2_5-2B": {},
     "microsoft/Phi-3.5-vision-instruct": {},
     "mistralai/Ministral-3-3B-Instruct-2512": {
